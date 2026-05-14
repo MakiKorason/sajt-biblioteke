@@ -34,14 +34,49 @@ const GOOGLE_TRANSLATE_SCRIPT_ID = 'google-translate-script';
 const LANGUAGE_STORAGE_KEY = 'siteLanguage';
 const GOOGLE_TRANSLATE_COOKIE_NAME = 'googtrans';
 
-/** Ukloni googtrans — vrednost /sr/sr ne vraća pouzdano original i često ostavlja „pola“ prevoda. */
+function translateCookieSuffix() {
+  const secure = typeof window !== 'undefined' && window.location.protocol === 'https:';
+  return `path=/;SameSite=Lax${secure ? ';Secure' : ''}`;
+}
+
+/**
+ * Google Translate googtrans treba na deljenom „korenskom“ domenu (npr. .bibliotekaruma.rs),
+ * ne na .www.domen.rs — inače kolačić ne važi na apex hostu i lako ostane konflikt sa starim vrednostima.
+ */
+function googtransCookieDomain(hostname) {
+  if (!hostname || hostname === 'localhost' || hostname.endsWith('.localhost')) return null;
+  if (/^\d+\.\d+\.\d+\.\d+$/.test(hostname)) return null;
+  const root = hostname.startsWith('www.') ? hostname.slice(4) : hostname;
+  return `.${root}`;
+}
+
+/** Ukloni googtrans — sve varijante (host-only + .host + .root) da produkcija ne ostane sa duplim kolačićima. */
 function clearTranslateCookie() {
   const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
+  const host = window.location.hostname;
+  const suffix = `${translateCookieSuffix()};expires=${expire};max-age=0`;
   try {
-    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;path=/;expires=${expire};max-age=0`;
-    const host = window.location.hostname;
-    if (host && host !== 'localhost') {
-      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;path=/;domain=.${host};expires=${expire};max-age=0`;
+    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;${suffix}`;
+    if (!host || host === 'localhost' || host.endsWith('.localhost') || /^\d+\.\d+\.\d+\.\d+$/.test(host)) {
+      return;
+    }
+    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;domain=.${host};${suffix}`;
+    const root = host.startsWith('www.') ? host.slice(4) : host;
+    document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=;domain=.${root};${suffix}`;
+  } catch {
+    // ignore
+  }
+}
+
+function writeGoogtransCookie(value) {
+  const suffix = `${translateCookieSuffix()};max-age=31536000`;
+  const host = window.location.hostname;
+  const domain = googtransCookieDomain(host);
+  try {
+    if (domain) {
+      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${value};domain=${domain};${suffix}`;
+    } else {
+      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${value};${suffix}`;
     }
   } catch {
     // ignore
@@ -77,15 +112,9 @@ function InnerApp() {
       clearTranslateCookie();
       return;
     }
-    const cookieValue = `/sr/${targetLanguage}`;
-    try {
-      document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;max-age=31536000`;
-      if (window.location.hostname && window.location.hostname !== 'localhost') {
-        document.cookie = `${GOOGLE_TRANSLATE_COOKIE_NAME}=${cookieValue};path=/;domain=.${window.location.hostname};max-age=31536000`;
-      }
-    } catch {
-      // ignore cookie failures (privacy settings, blocked cookies, etc.)
-    }
+    // Obriši stare / dupli kolačiće (npr. posle starog deploy-a sa domain=.www...), pa upiši jedan ispravan.
+    clearTranslateCookie();
+    writeGoogtransCookie(`/sr/${targetLanguage}`);
   };
 
   const handleLanguageClick = (targetLanguage) => {
@@ -161,11 +190,14 @@ function InnerApp() {
       return undefined;
     }
 
+    let attempts = 0;
+    const maxAttempts = 80;
     const interval = setInterval(() => {
-      if (applyLanguage()) {
+      attempts += 1;
+      if (applyLanguage() || attempts >= maxAttempts) {
         clearInterval(interval);
       }
-    }, 350);
+    }, 250);
 
     return () => clearInterval(interval);
   }, [language]);
