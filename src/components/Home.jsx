@@ -468,6 +468,95 @@ const Home =()=> {
   </Row>
 </Container> */}
 
+
+<Container  className=" container-library ms-auto mt-4 mb-4 ">
+ 
+<h2 className= "container-title"  >Огласна табла актуелних догађаја - Градска библиотека Атанасије Стојковић Рума</h2>
+<hr style={{margin: '0 auto', width: '50%' ,border: '1px solid' }} /> <Row>
+    <Col md={4} className='mt-3 mb-3 text-center '>
+    
+        <Suspense fallback={<div>Loading Calendar...</div>}>
+          <Calendar  onChange={onChange} value={date}  tileClassName={tileClassName}  />
+        </Suspense>
+      {/* Modal za prikaz slike */}
+              <Modal show={showImage} onHide={() => setShowImage(false)} centered size="md">
+        <Modal.Header closeButton style={{backgroundColor: '#f3f2ee'}}>
+          <Modal.Title>Догађај</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center" style={{backgroundColor: '#f3f2ee'}}>
+          {modalImage && (
+            <img src={modalImage} alt="Слика за изабрани датум" style={{width: '100%', height: 'auto'}} loading="lazy" />
+          )}
+        </Modal.Body>
+        <Modal.Footer style={{backgroundColor: '#f3f2ee'}}>
+          <Button variant="secondary" onClick={() => setShowImage(false)} aria-label="Затвори модал са сликом">
+            Затвори
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </Col>  
+
+    <Col md={8} className='mt-3 mb-3 text-center'>
+      <div className="carousel-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+        <div className="carousel-images" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
+            <AnimatedImage
+              src={imageSets[imageSetIndex][0]}
+              alt="Прва слика"
+              className="container-image"
+              width="400"
+              height="300"
+              style={{ 
+                height: 'auto',
+                width: '100%',
+                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
+              }}
+            />
+          </Suspense>
+          
+          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
+            <AnimatedImage
+              src={imageSets[imageSetIndex][1]}
+              alt="Друга слика"
+              className="container-image"
+              width="400"
+              height="300"
+              style={{ 
+                height: 'auto',
+                width: '100%',
+                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
+              }}
+            />
+          </Suspense>
+        </div>
+        
+        <Button 
+          variant="secondary" 
+          onClick={toggleImageSet}
+          style={{ 
+            borderRadius: '50%',
+            width: window.innerWidth < 768 ? '35px' : '40px',
+            height: window.innerWidth < 768 ? '35px' : '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: window.innerWidth < 768 ? '16px' : '18px',
+            padding: '0',
+            fontWeight: 'bold',
+            marginLeft: '10px',
+            marginTop: window.innerWidth < 768 ? '10px' : '0'
+          }}
+          aria-label="Пребаци скуп слика"
+          title={isForward ? "Пребаци на следећи скуп" : "Врати на претходни скуп"}
+        >
+          {isForward ? '→' : '←'}
+        </Button>
+      </div>
+    </Col>
+  </Row>
+</Container>
+
+
 <Container className=" container-library ms-auto mt-4 mb-4">
       
       {/* Наслов */}
@@ -556,93 +645,6 @@ const Home =()=> {
 
       </Row>
     </Container>
-
-<Container  className=" container-library ms-auto mt-4 mb-4 ">
- 
-<h2 className= "container-title"  >Огласна табла актуелних догађаја - Градска библиотека Атанасије Стојковић Рума</h2>
-<hr style={{margin: '0 auto', width: '50%' ,border: '1px solid' }} /> <Row>
-    <Col md={4} className='mt-3 mb-3 text-center '>
-    
-        <Suspense fallback={<div>Loading Calendar...</div>}>
-          <Calendar  onChange={onChange} value={date}  tileClassName={tileClassName}  />
-        </Suspense>
-      {/* Modal za prikaz slike */}
-              <Modal show={showImage} onHide={() => setShowImage(false)} centered size="md">
-        <Modal.Header closeButton style={{backgroundColor: '#f3f2ee'}}>
-          <Modal.Title>Догађај</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="text-center" style={{backgroundColor: '#f3f2ee'}}>
-          {modalImage && (
-            <img src={modalImage} alt="Слика за изабрани датум" style={{width: '100%', height: 'auto'}} loading="lazy" />
-          )}
-        </Modal.Body>
-        <Modal.Footer style={{backgroundColor: '#f3f2ee'}}>
-          <Button variant="secondary" onClick={() => setShowImage(false)} aria-label="Затвори модал са сликом">
-            Затвори
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </Col>  
-
-    <Col md={8} className='mt-3 mb-3 text-center'>
-      <div className="carousel-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
-        <div className="carousel-images" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
-            <AnimatedImage
-              src={imageSets[imageSetIndex][0]}
-              alt="Прва слика"
-              className="container-image"
-              width="400"
-              height="300"
-              style={{ 
-                height: 'auto',
-                width: '100%',
-                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
-              }}
-            />
-          </Suspense>
-          
-          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
-            <AnimatedImage
-              src={imageSets[imageSetIndex][1]}
-              alt="Друга слика"
-              className="container-image"
-              width="400"
-              height="300"
-              style={{ 
-                height: 'auto',
-                width: '100%',
-                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
-              }}
-            />
-          </Suspense>
-        </div>
-        
-        <Button 
-          variant="secondary" 
-          onClick={toggleImageSet}
-          style={{ 
-            borderRadius: '50%',
-            width: window.innerWidth < 768 ? '35px' : '40px',
-            height: window.innerWidth < 768 ? '35px' : '40px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: window.innerWidth < 768 ? '16px' : '18px',
-            padding: '0',
-            fontWeight: 'bold',
-            marginLeft: '10px',
-            marginTop: window.innerWidth < 768 ? '10px' : '0'
-          }}
-          aria-label="Пребаци скуп слика"
-          title={isForward ? "Пребаци на следећи скуп" : "Врати на претходни скуп"}
-        >
-          {isForward ? '→' : '←'}
-        </Button>
-      </div>
-    </Col>
-  </Row>
-</Container>
 
   
         <Container className='mt-4 '>
