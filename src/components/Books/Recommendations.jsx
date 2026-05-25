@@ -370,6 +370,32 @@ const Recommendations =()=>{
                 </Col>
               </Row>
             )}
+             {activeKeyNaucno === 'januar' && (
+              <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+                  <img
+                    src="https://delfi.rs/_img/artikli/2016/04/kroz_vasionu_i_vekove_vv.jpg"
+                    alt="Милутин Миланковић"
+                    loading="lazy"
+                    width="300"
+                    height="450"
+                    itemProp="image"
+                    referrerPolicy="no-referrer"
+                    className="container-image"
+                    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                  <p className="container-text">
+                    <strong>Наша препорука за март — Научно одељење</strong><br/><br/>
+                    <strong>Аутор:</strong> Милутин Миланковић<br/>
+                    <strong>Наслов: „Кроз васиону и векове”</strong><br/><br/> Књига „Кроз васиону и векове” није само водич кроз историју астрономије, већ један имагинарни времеплов ка необичним и невероватним световима. Написана је у форми писама драгој пријатељици, што чини да научне теме буду приказане на поетски начин и постану блиске читаоцу.
+
+Путујући кроз васиону и време, покушавајући да одгонетне најдубље тајне космоса, Миланковић заправо трага за одговорима о човеку и његовом месту у свету.
+                  </p>
+                </Col>
+              </Row>
+            )}
             {activeKeyNaucno === 'februar' && (
               <Row>
                 <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
