@@ -9,11 +9,9 @@ import ministarstvo from '../images/ministarstvo.webp';
 import opstina from '../images/opstina.webp';
  import biblioteka from '../images/biblioteka.webp';
 import konkurs from '../images/konkurs.webp';
-import bombardovanje from '../images/bombardovanje.jpg';
 import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
-import miljkovic from '../images/miljkovic.webp'
 import logoDigitalna from '../images/logoDigitalna.webp'
 import mojVuneni from '../images/mojVuneni.jpg'
 import saradnja from '../images/saradnja.jpg'
@@ -29,15 +27,14 @@ import digitalna from '../images/digitalna.webp';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-import azbukvar from '../images/azbukovar.jpg'
+import kosara from '../images/kosara.jpg';
+import jole from '../images/jole.jpg';
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
-
+import program from '../images/program.jpg'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
-
-// Bootstrap JS is imported in index.js
 
 
 const Calendar = React.lazy(() => import('react-calendar'));
@@ -73,10 +70,10 @@ const Home =()=> {
       
       isSameDay(date, EVENTS_YEAR, 3, 22)
        || // фебруар (month: 1)
-      isSameDay(date, EVENTS_YEAR, 3, 2 ) || // март (month: 2)
-      isSameDay(date, EVENTS_YEAR, 2, 26) 
+      isSameDay(date, EVENTS_YEAR, 4, 15 ) || // март (month: 2)
+      isSameDay(date, EVENTS_YEAR, 4, 28) 
        ||
-      isSameDay(date, EVENTS_YEAR, 2, 31) 
+      isSameDay(date, EVENTS_YEAR, 4, 30) 
          // март (month: 2)
     ) {
       return 'marked-date';
@@ -94,14 +91,14 @@ const Home =()=> {
     }
 
     // Klik na означене датуме (приказ слике у модал-у)
-    if (date.getMonth(bombardovanje) === 2 && date.getDate() === 31) {
-      setModalImage(bombardovanje);
+    if (date.getMonth() === 4 && date.getDate() === 30) {
+      setModalImage(jole);
       setShowImage(true);
       return;
     }
 
-    if (date.getMonth() === 3 && date.getDate() === 2) {
-      setModalImage(azbukvar);
+    if (date.getMonth() === 4 && date.getDate() === 28) {
+      setModalImage(kosara);
       setShowImage(true);
       return;
     }
@@ -111,8 +108,8 @@ const Home =()=> {
       return;
     }
    
-    if (date.getMonth() === 2 && date.getDate() === 26) {
-      setModalImage(miljkovic);
+    if (date.getMonth() === 4 && date.getDate() === 15) {
+      setModalImage(program);
       setShowImage(true);
       return;
     }
@@ -123,8 +120,8 @@ const Home =()=> {
   const imageSets = useMemo(() => [
     // Одељење огласне табле: Хуго (11. фебруар) ближе календару, Вaсилије (6. фебруар) десно
     // Render koristi samo [0] i [1], zato pravimo setove po 2 slike.
-    [mojVuneni,azbukvar],
-    [bombardovanje, miljkovic],
+    [jole, kosara],
+    [program, mojVuneni],
   ], []);
   
   const toggleImageSet = () => {

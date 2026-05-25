@@ -206,7 +206,7 @@ function InnerApp() {
     <>
       {/* Mora postojati u DOM-u da bi se TranslateElement inicijalizovao (ranije je bio samo u zakomentarisanom top-baru). */}
       <div id="google_translate_element" aria-hidden="true" />
-{/* 
+ 
       <div className="top-bar">
         <div className="bar-content">
         <span>Са задовољством обавештавамо наше кориснике да је библиотека обогатила своју понуду аудио-књигама. Више информација можете добити у наставку, на почетној страници сајта.</span>  
@@ -216,7 +216,7 @@ function InnerApp() {
           <a href="https://www.facebook.com/bibliotekaatanasijestojkovic.ruma" target="_blank" rel="noopener noreferrer" aria-label="Facebook biblioteke" style={{ fontSize: '1em', color: 'inherit' }}><i className="fab fa-facebook"></i> Facebook</a></span>  
         </div>
         <div id="google_translate_element" />
-      </div>  */}
+      </div>  
            
           
     
