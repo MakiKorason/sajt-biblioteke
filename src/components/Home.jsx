@@ -35,9 +35,8 @@ import AnimatedCard from './Department/AnimatedCard';
 
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
-import { FaSearchPlus } from 'react-icons/fa';
 import audioKnjiga from '../images/audioKnjiga.png'
-import program from '../images/program.jpg'
+
 // Bootstrap JS is imported in index.js
 
 
@@ -422,26 +421,7 @@ const Home =()=> {
   </Col>
 </Row>
 
-<Container className="container-library ms-auto mt-4 mb-4">
-<Col md={12} >
-<p className="container-text">📌 Обавештење о радном времену библиотеке
 
-поводом манифестације „Дани словенске писмености и културе“
-<br/><hr/> Радно време библиотеке биће измењено:
-<ul >
-<li>У петак, 15. маја, библиотека ће радити од 8.00 до 15.00 часова.</li>
-<li>У суботу, 16. маја, библиотека не ради.</li>
-<li>Током наредне недеље радно време је од 8.00 до 13.00 часова.</li>
-
-<li>У четвртак библиотека не ради поводом славе библиотеке.</li>
-<li>У суботу, 23. маја, библиотека не ради.</li>
-<li>Од понедељка, 25. маја, библиотека се враћа на уобичајено радно време.</li>
-</ul>
-
-Хвала на разумевању.</p>
-</Col>
-
-</Container>
 
 {/* <Container className="container-library ms-auto mt-4 mb-4">
   <Row>
@@ -490,37 +470,6 @@ const Home =()=> {
     </Col>
   </Row>
 </Container> */}
-
-{/* Kolаж сарадње са Матицом српском */}
-{/* Колаж сарадње са Матицом српском */}
-<Container className="container-library mt-4 mb-4">
-  <Row className="justify-content-center">
-    <Col xs={12} className="text-center">
-      <Suspense fallback={<div className="container-text py-4">Учитавање слике…</div>}>
-        <AnimatedImage
-          src={program}
-          alt="Програм"
-          className="img-fluid d-block mx-auto clickable-image"
-          style={{ maxWidth: 'min(100%, 960px)', cursor: 'pointer' }}
-          title="Клик за увећање"
-          onClick={() => handleImageClick(program, 'Програм', 'xl')}
-        />
-      </Suspense>
-      <Button
-        type="button"
-        variant="secondary"
-        className="mt-3 d-inline-flex align-items-center gap-2"
-        style={{ backgroundColor: '#3f2c11', borderColor: '#3f2c11', color: '#f3f2ee' }}
-        onClick={() => handleImageClick(program, 'Програм', 'xl')}
-        aria-label="Прикажи слику програма у већој величини"
-      >
-        <FaSearchPlus aria-hidden />
-        Увећај слику програма
-      </Button>
-    </Col>
-  </Row>
-</Container>
-
 
 <Container className=" container-library ms-auto mt-4 mb-4">
       
