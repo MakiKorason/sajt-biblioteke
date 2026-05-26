@@ -35,7 +35,7 @@ import program from '../images/program.jpg'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
-
+import konkursRoman from '../images/konkursRoman.jpg'
 
 const Calendar = React.lazy(() => import('react-calendar'));
 const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
@@ -302,7 +302,7 @@ const Home =()=> {
       {/* SLIDES */}
       <div className="carousel-inner">
 
-        <div className="carousel-item active">
+        {/* <div className="carousel-item active">
           <img
             src={biblioteka}
             alt="Зграда библиотеке у Руми"
@@ -328,8 +328,33 @@ const Home =()=> {
             </p>
            
           </div>
+        </div>  */}
+  <div className="carousel-item active">
+          <img
+            src={konkursRoman}
+            alt="Зграда библиотеке у Руми"
+            className="d-block w-100 image-carousel img-fluid"
+            loading="lazy"
+            width="1200"
+            height="675"
+          />
+          <div className="carousel-caption">
+            <p className="carousel-caption-text">
+           
+              <br />
+              <Button
+                href="https://www.facebook.com/photo?fbid=1611070854351865&set=a.512519967540298&locale=sr_RS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-light container-button"
+                aria-label="Сазнајте више о згради библиотеке"
+              >
+                ДЕТАЉНИЈЕ
+              </Button>
+            </p>
+           
+          </div>
         </div> 
-
         <div className="carousel-item">
           <img
             src={digitalna}
