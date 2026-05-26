@@ -7,7 +7,7 @@ import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
 import ministarstvo from '../images/ministarstvo.webp';
 import opstina from '../images/opstina.webp';
- import biblioteka from '../images/biblioteka.webp';
+//  import biblioteka from '../images/biblioteka.webp';
 import konkurs from '../images/konkurs.webp';
 import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
