@@ -36,6 +36,7 @@ import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
 import konkursRoman from '../images/konkursRoman.jpg'
+import obavestenje from '../images/obavestenja.jpg'
 
 const Calendar = React.lazy(() => import('react-calendar'));
 const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
@@ -302,34 +303,18 @@ const Home =()=> {
       {/* SLIDES */}
       <div className="carousel-inner">
 
-        {/* <div className="carousel-item active">
+         <div className="carousel-item active">
           <img
-            src={biblioteka}
+            src={obavestenje}
             alt="Зграда библиотеке у Руми"
             className="d-block w-100 image-carousel img-fluid"
             loading="lazy"
             width="1200"
             height="675"
           />
-          <div className="carousel-caption">
-            <p className="carousel-caption-text">
-              Зграда Градске библиотеке „Атанасије Стојковић" представља пример
-              јединственог архитектонског стваралаштва.
-              <br />
-              <Button
-                href="https://www.gradnja.rs/rekonstrukcija-dom-vojske-jna-ruma/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light container-button"
-                aria-label="Сазнајте више о згради библиотеке"
-              >
-                ДЕТАЉНИЈЕ
-              </Button>
-            </p>
-           
-          </div>
-        </div>  */}
-  <div className="carousel-item active">
+         
+        </div>  
+  <div className="carousel-item">
           <img
             src={konkursRoman}
             alt="Зграда библиотеке у Руми"
