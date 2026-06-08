@@ -36,7 +36,7 @@ import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
 import konkursRoman from '../images/konkursRoman.jpg'
-import obavestenje from '../images/obavestenja.jpg'
+
 
 const Calendar = React.lazy(() => import('react-calendar'));
 const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
@@ -303,18 +303,7 @@ const Home =()=> {
       {/* SLIDES */}
       <div className="carousel-inner">
 
-         <div className="carousel-item active">
-          <img
-            src={obavestenje}
-            alt="Зграда библиотеке у Руми"
-            className="d-block w-100 image-carousel img-fluid"
-            loading="lazy"
-            width="1200"
-            height="675"
-          />
-         
-        </div>  
-  <div className="carousel-item">
+  <div className="carousel-item active">
           <img
             src={konkursRoman}
             alt="Зграда библиотеке у Руми"

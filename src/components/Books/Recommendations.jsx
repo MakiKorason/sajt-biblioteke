@@ -11,6 +11,7 @@ const RECOMMENDATION_ARCHIVE_MONTHS = [
   ['februar', 'Фебруар'],
   ['mart', 'Март'],
   ['april', 'Април'],
+  ['maj', "Мај"]
 ];
 
 const Recommendations =()=>{
@@ -256,6 +257,7 @@ const Recommendations =()=>{
 "Џепне приче" су савршен избор за децу која воле да откривају свет кроз игру и смех.
                   </p>
                 </Col>
+                
               </Row>
             )}
      
