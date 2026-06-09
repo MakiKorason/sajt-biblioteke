@@ -16,9 +16,9 @@ const RECOMMENDATION_ARCHIVE_MONTHS = [
 
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('april');
-  const [activeKeyDeca, setActiveKeyDeca] = useState('april');
-  const [activeKeyNaucno, setActiveKeyNaucno] = useState('april');
+  const [activeKey, setActiveKey] = useState('maj');
+  const [activeKeyDeca, setActiveKeyDeca] = useState('maj');
+  const [activeKeyNaucno, setActiveKeyNaucno] = useState('maj');
 
     
    
@@ -99,9 +99,9 @@ const Recommendations =()=>{
         <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука — Дечије одељење</h3>
         <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
-              <img
-                src="https://www.malasrpskaprodavnica.com/user/include/etno/images/items/knjiga_knjiga_slucajnosti.jpg"
-                alt="Књига случајности — Оса Линд"
+                <img
+                src="https://static.kupindoslike.com/Narodne-price-i-umotvorine-za-decu_slika_O_165034897.jpg"
+                alt="Narodne umotvorine"
                 loading="lazy"
                 width="300"
                 height="450"
@@ -114,29 +114,17 @@ const Recommendations =()=>{
                   margin: '0 auto',
                   marginTop: '2rem'
                 }}
-              />
+              /> 
           </Col>
 
           <Col xs={12} md={8} lg={8}>
-            <p className='container-text'>
-              <strong>Наша препорука</strong><br/>
-              <strong>Дечје одељење</strong><br/><br/>
-              <strong>Аутор:</strong> Оса Линд<br/>
-              <strong>Наслов:</strong> „Књига случајности"<br/><br/>
-              Када дванаестогодишња Хана Деметер пронађе „Књигу случајности“, једна прочитана реченица заувек мења њен свет. Та мистериозна књига писана је само за њу, али Хана тек треба да открије ко ју је написао и због чега. Оно што је до тада деловало као врло компликован живот претвара се у низ узбудљивих авантура, испуњених новим пријатељствима, али и тајнама и опасностима.
-              <br/><br/>
-              Овај роман намењен је деци узраста од 11 до 15 година, али ће лако освојити и старије читаоце својом маштовитом причом и неизвесношћу.
-            </p>
-            <Button
-                        variant="secondary"
-                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D0%9E%D1%81%D0%B0+%D0%9B%D0%B8%D0%BD%D0%B4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Остала дела Славенке Дракулић коју поседује наша библиотека"
-                        style={{marginTop: '0.5rem'}}
-                      >
-                        Остала дела овог аутора којe поседује наша библиотека
-                      </Button>
+       
+          <p className='container-text'>
+       
+              <strong>Наслов:</strong>„Народне приче и умотворине за децу"<br/><br/>„Народне приче и умотворине за децу“ представљају право мало благо српске усмене традиције. У овој богато илустрованој књизи мали читаоци могу да уживају у народним причама, пословицама, загонеткама, разбрајалицама, брзалицама, питалицама и народним веровањима. Кроз занимљиве и маштовите садржаје деца упознају лепоту српског језика, развијају говор, богате речник и подстичу радозналост и логичко размишљање.
+Ова књига је одличан избор за заједничко породично читање, али и за самостално истраживање најмлађих читалаца. <br/><br/>Намењена је деци предшколског и млађег школског узраста, као и свима који желе да кроз игру и забаву открију богатство народне књижевности.
+          </p>
+          
           </Col>
         </Row>
 
@@ -176,6 +164,50 @@ const Recommendations =()=>{
                     Ауторка подстиче младе читаоце да самостално наставе с праћењем путоказа тако што ће посетити најближе музеје, спомен-куће, галерије и библиотеке. Тако читање постаје прави истраживачки подухват, а важна порука на том путу јесте да се успех ствара трудом и вером у себе, о чему сведоче животи и дела наших великана.
                   </p>
                 </Col>
+              </Row>
+            )}
+               {activeKeyDeca === 'maj' && (
+              <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+         <img
+                src="https://www.malasrpskaprodavnica.com/user/include/etno/images/items/knjiga_knjiga_slucajnosti.jpg"
+                alt="Књига случајности — Оса Линд"
+                loading="lazy"
+                width="300"
+                height="450"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '2rem'
+                }}
+              />
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                    <p className='container-text'>
+     
+              <strong>Аутор:</strong> Оса Линд<br/>
+              <strong>Наслов:</strong> „Књига случајности"<br/><br/>
+              Када дванаестогодишња Хана Деметер пронађе „Књигу случајности“, једна прочитана реченица заувек мења њен свет. Та мистериозна књига писана је само за њу, али Хана тек треба да открије ко ју је написао и због чега. Оно што је до тада деловало као врло компликован живот претвара се у низ узбудљивих авантура, испуњених новим пријатељствима, али и тајнама и опасностима.
+              <br/><br/>
+              Овај роман намењен је деци узраста од 11 до 15 година, али ће лако освојити и старије читаоце својом маштовитом причом и неизвесношћу.
+
+            </p>
+  <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D0%9E%D1%81%D0%B0+%D0%9B%D0%B8%D0%BD%D0%B4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    
+                        style={{marginTop: '0.5rem'}}
+                      >
+                        Остала дела овог аутора којe поседује наша библиотека
+                      </Button>
+                </Col>
+
               </Row>
             )}
                 {activeKeyDeca === 'mart' && (
@@ -277,8 +309,8 @@ const Recommendations =()=>{
         <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
               <img
-                src="https://static.kupindoslike.com/Bluz-tvoje-duse-Anders-Hansen_slika_O_166544681.jpg"
-                alt="Блуз твоје душе — Андерс Хансен"
+                src="https://delfi.rs/_img/artikli/2022/02/ovladaj_svojim_emocijama_vv.jpg"
+                alt="Овладај својим емоцијама"
                 loading="lazy"
                 width="300"
                 height="450"
@@ -297,14 +329,29 @@ const Recommendations =()=>{
           <Col xs={12} md={8} lg={8}>
             <br/>
             <p className='container-text'>
-              <strong>Наша препорука</strong><br/>
-              <strong>Научно одељење</strong><br/><br/>
-              <strong>Аутор:</strong> Андерс Хансен<br/>
-              <strong>Наслов:</strong> „Блуз твоје душе"<br/><br/>
-              „Блуз твоје душе" је научнопопуларна књига која на занимљив начин разматра једну велику савремену загонетку — зашто многи људи имају проблема с менталним здрављем, упркос све бољим условима живота. Полазећи од чињенице да смо потомци оних који су преживљавали у много тежим околностима, аутор објашњава како наш мозак и даље функционише по старим обрасцима. Књига нуди биолошки увид у наше ментално и физичко стање, с циљем да боље разумемо сопствене реакције и осећања.
+        
+              <strong>Аутор:</strong> Тибо Морис<br/>
+              <strong>Наслов:</strong> „Овладај својим емоцијама"<br/><br/>
+             Књига „Овладај својим емоцијама“ нуди јасан и практичан водич за разумевање сопствених мисли и осећања. Полази од важне идеје да на нашу срећу не утиче оно што нам се дешава, већ став који заузимамо према животу и ситуацијама кроз које пролазимо.
+
+Кроз књигу ћете научити једноставне и применљиве начине да се изборите са емоцијама, да их разумете и усмерите тако да раде у вашу корист. Аутор вас постепено води ка промени начина размишљања, нудећи јасан приступ „репрограмирању“ ума, уз практичну радну свеску која додатно олакшава примену свега наученог.
+    <br/><br/>
+„Ум је место за себе и у себи може да претвори пакао у рај, рај у пакао.“ — Џон Милтон
+    <br/><br/>
+Ово је књига коју препоручујемо свима који желе да боље разумеју себе и направе корак ка унутрашњем миру и стабилности.
               <br/><br/>
-              Интересантно и корисно штиво за све који су спремни да мењају поглед на себе и свет.
+           
             </p>
+              <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D0%BC%D0%BE%D1%80%D0%B8%D1%81+%D1%82%D0%B8%D0%B1%D0%BE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    
+                        style={{marginTop: '0.5rem'}}
+                      >
+                        Остала дела овог аутора којe поседује наша библиотека
+                      </Button>
           </Col>
         </Row>
 
@@ -343,6 +390,39 @@ const Recommendations =()=>{
                     Кроз бројне примере из клиничке праксе, аутор показује како деца често несвесно преузимају улогу спасилаца својих родитеља, настојећи да очувају равнотежу у породици. „Наша деца оболевају покушавајући да нас излече, а пре свега да излече наша породична стабла“, истиче Клавије.
                     Књига је намењена свима који желе свесније да сагледају дечји свет, али и значај наслеђа наших предака.
                   </p>
+                </Col>
+              </Row>
+            )}
+
+            {activeKeyNaucno === 'maj' && (
+              <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+                   
+ <img
+                src="https://static.kupindoslike.com/Bluz-tvoje-duse-Anders-Hansen_slika_O_166544681.jpg"
+                alt="Блуз твоје душе — Андерс Хансен"
+                loading="lazy"
+                width="300"
+                height="450"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '2rem'
+                }}
+              />
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                <p className='container-text'>
+              <strong>Аутор:</strong> Андерс Хансен<br/>
+              <strong>Наслов:</strong> „Блуз твоје душе"<br/><br/>
+              „Блуз твоје душе" је научнопопуларна књига која на занимљив начин разматра једну велику савремену загонетку — зашто многи људи имају проблема с менталним здрављем, упркос све бољим условима живота. Полазећи од чињенице да смо потомци оних који су преживљавали у много тежим околностима, аутор објашњава како наш мозак и даље функционише по старим обрасцима. Књига нуди биолошки увид у наше ментално и физичко стање, с циљем да боље разумемо сопствене реакције и осећања.
+              <br/><br/>
+              Интересантно и корисно штиво за све који су спремни да мењају поглед на себе и свет.
+            </p>
                 </Col>
               </Row>
             )}
@@ -439,14 +519,14 @@ const Recommendations =()=>{
         <Row>
           <Col xs={12} md={5} lg={5} className="text-center mt-2 mt-md-0">
             <a
-              href="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
+              href="https://delfi.rs/_img/artikli/2019/11/citac_vv.jpg"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Отвори слику корице — Медузе живе заувек док их не ухвате, Нађа Петровић"
+
             >
               <img
-                src="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
-                alt="Корица књиге „Медузе живе заувек док их не ухвате" 
+                src="https://delfi.rs/_img/artikli/2019/11/citac_vv.jpg"
+                alt="Читач" 
                 loading="lazy"
                 width="380"
                 height="570"
@@ -463,30 +543,43 @@ const Recommendations =()=>{
               />
             </a>
             <hr/><br/>
-            <a
-              href="https://www.rtv.rs/sr_ci/vojvodina/novi-sad/nadja-petrovic-meduze-zive-zauvek-dok-ih-ne-uhvate-(audio)_1658495.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="container-text d-inline-block mt-3"
-              style={{ color: '#3f2c11', textDecoration: 'underline' }}
-            >
-              Нађа Петровић — прилог РТВ-а (аудио)
-            </a>
+        <iframe
+  width="460"
+  height="315"
+  src="https://www.youtube.com/embed/WF5rKEBs1wM"
+  title="YouTube video player"
+  frameBorder="0"
+  allowFullScreen
+></iframe>
           </Col>
           <Col xs={12} md={7} lg={7}>
             <p className='container-text'>
-              <strong>Наша препорука</strong><br/>
-              <strong>Одељење за одрасле</strong><br/><br/>
-              <strong>Аутор:</strong> Нађа Петровић<br/>
-              <strong>Наслов:</strong> „Медузе живе заувек док их не ухвате"<br/><br/>
-              „Медузе живе заувек", роман Нађе Петровић, доноси аутентичан књижевни глас који истражује слојеве између сна и јаве. Почиње као тинејџерска драма одрастања, али убрзо прераста у узбудљиву интимну исповест.
-              <br/><br/>
-              Испричан у првом лицу, роман пружа суптилан увид у унутрашњи свет младе јунакиње Саре. То је прича о дубокој крхкости, о страху од смрти, али и страху од живота. Атмосфера је истовремено прожета нежном романтиком и сировом стварношћу одрастања.
-              <br/><br/>
-              Откријте зашто је овај роман право освежење међу делима савремене књижевности.
+             
+              <strong>Аутор: Бернхард Шлинк</strong><br/>
+              <strong>Наслов: „Читач“</strong> <br/><br/>
+               Роман „Читач“ доноси снажну и слојевиту причу о љубави, кривици и суочавању са прошлошћу. У средишту радње налази се необична и емотивно интензивна веза између веома младог младића и знатно старије жене, која оставља трајан траг и обликује његов каснији живот.
+
+Радња је смештена у послератну Немачку, с освртом на период Другог светског рата и време након њега, када друштво почиње да се суочава са сопственом прошлошћу и одговорношћу. Кроз судбину главних ликова, роман отвара сложена питања морала, кривице и слепог извршавања наређења. Посебно је упечатљив лик жене која се, као некадашња надзорница у логору, суочава са последицама својих поступака, откривајући сложеност људске природе.
+
+   <br/><br/>Ово је уједно и прича о љубави која не познаје правила ни границе, о осећању које не бира ни време ни околности, већ остаје дубоко урезано у сећању.
+
+  <br/><br/>По овом роману снимљен је и филм (2008) који је постигао велики успех и освојио бројне награде. За своју улогу, глумица Кејт Винслет освојила је Оскара за најбољу глумицу, као и БАФТА награду, Златни глобус и награду Удружења филмских глумаца, док је сам филм био номинован и за најпрестижније категорије, укључујући најбољи филм .
+
+Топла препорука свима који желе да читају дело које подстиче на размишљање и оставља снажан утисак.
+            
             </p>
-         
+           <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D1%88%D0%BB%D0%B8%D0%BD%D0%BA+%D0%B1%D0%B5%D1%80%D0%BD%D1%85%D0%B0%D1%80%D0%B4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    
+                        style={{marginTop: '0.5rem'}}
+                      >
+                        Остала дела овог аутора којe поседује наша библиотека
+                      </Button>
           </Col>
+
         </Row>
 
             <Row><br/> <hr/>
@@ -658,46 +751,61 @@ const Recommendations =()=>{
                   </Row>
                 )}
 
-                {activeKey === 'novembar' && (
+                
+                  {activeKey === 'maj' && (
                   <Row>
                     <Col xs={12} sm={12} md={4} lg={4} xl={4} className=" text-center mt-4">
-                      <a 
-                        href="https://www.vulkani.rs/files/thumbs/files/images/slike_proizvoda/thumbs_1200/6495_1200_1200px.jpg" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        aria-label="Разум и осећајност - корица књиге"
-                        title="Разум и осећајност - Џејн Остин"
-                      >
-                        <img 
-                          src="https://www.vulkani.rs/files/thumbs/files/images/slike_proizvoda/thumbs_1200/6495_1200_1200px.jpg" 
-                          alt="Разум и осећајност - корица књиге Џејн Остин, препорука библиотекара"
-                          title="Разум и осећајност - Џејн Остин"
-                          className="container-image"
-                          loading="lazy"
-                          width="300"
-                          height="450"
-                          itemProp="image"
-                          referrerPolicy="no-referrer"
-                          style={{maxWidth: '105%', height: 'auto', display: 'block', margin: '0 auto'}}
-                        />
-                      </a>
+                      <a
+              href="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Отвори слику корице — Медузе живе заувек док их не ухвате, Нађа Петровић"
+            >
+              <img
+                src="https://static.rtv.rs/slike/2025/09/22/nadja-petrovic-meduze-zive-zauvek-geopoetika.jpg"
+                alt="Корица књиге „Медузе живе заувек док их не ухвате" 
+                loading="lazy"
+                width="380"
+                height="570"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  width: '100%',
+                  maxWidth: 'min(100%, 420px)',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '1rem'
+                }}
+              />
+            </a>
+            <hr/><br/>
+            <a
+              href="https://www.rtv.rs/sr_ci/vojvodina/novi-sad/nadja-petrovic-meduze-zive-zauvek-dok-ih-ne-uhvate-(audio)_1658495.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="container-text d-inline-block mt-3"
+              style={{ color: '#3f2c11', textDecoration: 'underline' }}
+            >
+              Нађа Петровић — прилог РТВ-а (аудио)
+            </a>
                     </Col>
                     <Col xs={12} sm={12} md={8} lg={8} xl={8} className="mt-4">
-                      <p className="container-text">📖 Препорука за новембар: „Разум и осећајност" – роман који прати емоционални живот две сестре. Код једне преовлађује осјећајност, код друге разум. Обе су драге и миле, а кроз њихове приче добијамо увид у једно време и његове обичаје. Топла и духовита приповест савршена је за хладне новембарске вечери, уз шољу топлог напитка и миран кутак за читање.</p>
-                      <Button
-                        variant="secondary"
-                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib/results?q=%D0%BE%D1%81%D1%82%D0%B8%D0%BD%2C%20%D1%9F*&lib=gbru"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Прегледај остала дела Џејн Остин"
-                        style={{marginTop: '0.5rem'}}
-                      >
-                        Oстала дела ове ауторке
-                      </Button> </Col>
+                    <p className='container-text'>
+        
+              <strong>Аутор:</strong> Нађа Петровић<br/>
+              <strong>Наслов:</strong> „Медузе живе заувек док их не ухвате"<br/><br/>
+              „Медузе живе заувек", роман Нађе Петровић, доноси аутентичан књижевни глас који истражује слојеве између сна и јаве. Почиње као тинејџерска драма одрастања, али убрзо прераста у узбудљиву интимну исповест.
+              <br/><br/>
+              Испричан у првом лицу, роман пружа суптилан увид у унутрашњи свет младе јунакиње Саре. То је прича о дубокој крхкости, о страху од смрти, али и страху од живота. Атмосфера је истовремено прожета нежном романтиком и сировом стварношћу одрастања.
+              <br/><br/>
+              Откријте зашто је овај роман право освежење међу делима савремене књижевности.
+            </p>
+
+                      </Col>
                    
                   </Row>
                 )}
-                
               </Col>
 
                   
