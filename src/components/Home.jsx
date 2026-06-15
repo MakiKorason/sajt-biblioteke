@@ -471,7 +471,15 @@ const Home =()=> {
   <Row>
     <Col md={12} className="mt-3 mb-3 text-center">
       <img  className="img-fluid w-100" alt="Пријава за конкурс" src={prijavaKonkurs} />
-    </Col>
+      
+    </Col> <a
+        href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-primary"
+      >
+        Детаљније
+      </a>
   </Row>
 </Container>
 <Container  className=" container-library ms-auto mt-4 mb-4 ">
