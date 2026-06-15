@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {  Row, Col,  Container, Button, Nav } from 'react-bootstrap';
+import { Row, Col, Container, Button, Nav, Table } from 'react-bootstrap';
 
 import { Helmet } from 'react-helmet-async';
 import './Recommendations.css';
-import AnimatedCard from '../Department/AnimatedCard'; 
+import AnimatedCard from '../Department/AnimatedCard';
+import { GENRE_MENU, GENRE_BOOKS, cobissSearchUrl } from '../../data/genreBooks'; 
 
 const RECOMMENDATION_ARCHIVE_MONTHS = [
  
@@ -19,6 +20,9 @@ const Recommendations =()=>{
   const [activeKey, setActiveKey] = useState('maj');
   const [activeKeyDeca, setActiveKeyDeca] = useState('maj');
   const [activeKeyNaucno, setActiveKeyNaucno] = useState('maj');
+  const [genreKey, setGenreKey] = useState('triler');
+
+  const genreBooks = GENRE_BOOKS[genreKey] ?? [];
 
     
    
@@ -816,61 +820,75 @@ const Recommendations =()=>{
     </div>
   </AnimatedCard>
 
-            {/* <h2 className='container-title mb-2 mt-4'>Жанровске препоруке</h2>
+            <h2 className="container-title mb-2 mt-4">Књиге по жанру</h2>
             <hr />
+            <p className="container-text mb-4">
+              У табели су приказани романи одређеног жанра које поседује Градска библиотека.
+              За детаље о доступности кликните на COBISS+.
+            </p>
 
-            <Nav
-              variant="pills"
-              activeKey={genreKey}
-              onSelect={setGenreKey}
-              className="mb-4 genre-nav flex-wrap"
-            >
-              <Nav.Item>
-                <Nav.Link eventKey="roman" className="genre-nav-link">Роман</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="triler" className="genre-nav-link">Трилер</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="ljubavni" className="genre-nav-link">Љубавни</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="istorijski" className="genre-nav-link">Историјски</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="drama" className="genre-nav-link">Драме</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="horor" className="genre-nav-link">Хорори</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="naucna_fantastika" className="genre-nav-link">Научна фантастика</Nav.Link>
-              </Nav.Item>
-            </Nav>
+            <Row className="genre-books-layout">
+              <Col xs={12} md={3} lg={3} className="mb-3 mb-md-0">
+                <div className="genre-side-nav" role="tablist" aria-label="Жанрови">
+                  {GENRE_MENU.map(({ key, label }) => (
+                    <button
+                      key={key}
+                      type="button"
+                      role="tab"
+                      className="genre-tab-btn container-text"
+                      onClick={() => setGenreKey(key)}
+                      aria-selected={genreKey === key}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </Col>
 
-            <Container className="genre-recommendations-container">
-              <Row className="g-3">
-                {genreRecommendations[genreKey]?.map((item, idx) => (
-                  <Col key={`${genreKey}-${idx}`} xs={12} md={4}>
-                    <AnimatedCard className="genre-card">
-                      <p className="genre-card-title">{item.naslov}</p>
-                      <p className="genre-card-desc">{item.opis}</p>
-                      <Button
-                        variant="secondary"
-                        href={cobissSearchUrl(item.keyword)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="genre-card-button"
-                        aria-label={`Прегледајте ${item.naslov} у COBISS+`}
-                      >
-                        Прегледај у COBISS+
-                      </Button>
-                    </AnimatedCard>
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          */}
+              <Col xs={12} md={9} lg={9}>
+                <div className="genre-recommendations-container">
+                  {genreBooks.length === 0 ? (
+                    <p className="container-text text-center py-4">
+                      За овај жанр још увек нема унетих књига.
+                    </p>
+                  ) : (
+                    <div className="genre-table-wrap">
+                      <Table responsive striped className="brown-table genre-books-table mb-0">
+                        <thead>
+                          <tr>
+                            <th>Аутор</th>
+                            <th>Наслов</th>
+                            <th className="genre-col-year">Година</th>
+                            <th className="genre-col-cobiss">COBISS+</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {genreBooks.map((book, idx) => (
+                            <tr key={`${genreKey}-${idx}`}>
+                              <td>{book.author}</td>
+                              <td>{book.title}</td>
+                              <td className="genre-col-year">{book.year ?? '—'}</td>
+                              <td className="genre-col-cobiss">
+                                <Button
+                                  variant="secondary"
+                                  size="sm"
+                                  href={cobissSearchUrl(book.cobissQuery)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={`Претражи „${book.title}" у COBISS+`}
+                                >
+                                  Претрага
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </Table>
+                    </div>
+                  )}
+                </div>
+              </Col>
+            </Row>
         </Container>
         </>
     );

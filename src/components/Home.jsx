@@ -35,8 +35,7 @@ import program from '../images/program.jpg'
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
-import konkursRoman from '../images/konkursRoman.jpg'
-
+import biblioteka from '../images/biblioteka.webp'
 
 const Calendar = React.lazy(() => import('react-calendar'));
 const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
@@ -305,7 +304,7 @@ const Home =()=> {
 
   <div className="carousel-item active">
           <img
-            src={konkursRoman}
+            src={biblioteka}
             alt="Зграда библиотеке у Руми"
             className="d-block w-100 image-carousel img-fluid"
             loading="lazy"
@@ -314,7 +313,7 @@ const Home =()=> {
           />
           <div className="carousel-caption">
             <p className="carousel-caption-text">
-           
+            Градска библиотека „Атанасије Стојковић“ у Руми, као најстарија културна институција у овом крају, од самог оснивања игра значајну улогу у очувању и промоцији културе и образовања. 
               <br />
               <Button
                 href="https://www.facebook.com/photo?fbid=1611070854351865&set=a.512519967540298&locale=sr_RS"

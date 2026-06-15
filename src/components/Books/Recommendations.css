@@ -77,5 +77,83 @@
   margin: 0 auto;
 }
 
+.genre-books-layout {
+  margin-bottom: 1rem;
+}
+
+.genre-side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.genre-tab-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #3f2c11;
+  border-radius: 8px;
+  background-color: #f3f2ee;
+  color: #3f2c11;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.genre-tab-btn:hover,
+.genre-tab-btn:focus,
+.genre-tab-btn[aria-selected='true'] {
+  background-color: #f3f2ee;
+  color: #3f2c11;
+  border-color: #3f2c11;
+  box-shadow: none;
+  outline: none;
+}
+
+.genre-table-wrap {
+  overflow-x: auto;
+}
+
+.genre-books-table.brown-table {
+  border: #362101;
+  font-size: 1rem;
+}
+
+.genre-books-table.brown-table th {
+  background-color: #ad9e876e;
+  color: #362101;
+}
+
+.genre-books-table.brown-table td {
+  background-color: #f3f0e970;
+  color: #362101;
+  font-weight: 600;
+}
+
+.genre-books-table th,
+.genre-books-table td {
+  vertical-align: middle;
+}
+
+.genre-col-year {
+  width: 5.5rem;
+  text-align: center;
+}
+
+.genre-col-cobiss {
+  width: 7rem;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .genre-col-year,
+  .genre-col-cobiss {
+    width: auto;
+  }
+
+  .genre-books-table {
+    font-size: 0.9rem;
+  }
+}
+
 
 
