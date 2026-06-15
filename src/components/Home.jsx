@@ -36,6 +36,7 @@ import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
 import biblioteka from '../images/biblioteka.webp'
+import prijavaKonkurs from'../images/prijavaKonkurs.jpg'
 
 const Calendar = React.lazy(() => import('react-calendar'));
 const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
@@ -466,7 +467,13 @@ const Home =()=> {
   </Row>
 </Container> */}
 
-
+<Container className="container-library ms-auto mt-4 mb-4">
+  <Row>
+    <Col md={12} className="mt-3 mb-3 text-center">
+      <img  className="img-fluid w-100" alt="Пријава за конкурс" src={prijavaKonkurs} />
+    </Col>
+  </Row>
+</Container>
 <Container  className=" container-library ms-auto mt-4 mb-4 ">
  
 <h2 className= "container-title"  >Огласна табла актуелних догађаја - Градска библиотека Атанасије Стојковић Рума</h2>
