@@ -209,8 +209,9 @@ function InnerApp() {
  
       <div className="top-bar">
         <div className="bar-content">
-        <span>Са задовољством обавештавамо наше кориснике да је библиотека обогатила своју понуду аудио-књигама. Више информација можете добити у наставку, на почетној страници сајта.</span>  
-          <span>&nbsp;| Радно време библиотеке од 08:00 до 20:00</span>
+        {/* <span>Са задовољством обавештавамо наше кориснике да је библиотека обогатила своју понуду аудио-књигама. Више информација можете добити у наставку, на почетној страници сајта.</span>  
+          <span>&nbsp;| Радно време библиотеке од 08:00 до 20:00</span> */}
+          <span>Поштовани корисници, обавештавамо вас да библиотека неће радити у суботу 27.6.2026. године.</span>
           <span> &nbsp;| <a href="https://youtube.com/@gradskabibliotekaruma" target="_blank" rel="noopener noreferrer" aria-label="YouTube kanal biblioteke" style={{ marginRight: '10px', fontSize: '1em', color: 'inherit' }}><i className="fab fa-youtube"></i> YouTube</a> |
           <a href="https://www.instagram.com/gradska_biblioteka_ruma" target="_blank" rel="noopener noreferrer" aria-label="Instagram biblioteke" style={{ marginRight: '10px', fontSize: '1em', color: 'inherit' }}><i className="fab fa-instagram"></i> Instagram</a> |
           <a href="https://www.facebook.com/bibliotekaatanasijestojkovic.ruma" target="_blank" rel="noopener noreferrer" aria-label="Facebook biblioteke" style={{ fontSize: '1em', color: 'inherit' }}><i className="fab fa-facebook"></i> Facebook</a></span>  
