@@ -27,7 +27,7 @@ import digitalna from '../images/digitalna.webp';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-import kosara from '../images/kosara.jpg';
+import sladjana from '../images/sladjana.jpg';
 import jole from '../images/jole.jpg';
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
@@ -68,14 +68,10 @@ const Home =()=> {
 
     // Означени датуми: 27. фебруар + 24. и 26. март 2026.
     if (
-      
-      isSameDay(date, EVENTS_YEAR, 3, 22)
-       || // фебруар (month: 1)
-      isSameDay(date, EVENTS_YEAR, 4, 15 ) || // март (month: 2)
-      isSameDay(date, EVENTS_YEAR, 4, 28) 
-       ||
-      isSameDay(date, EVENTS_YEAR, 4, 30) 
-         // март (month: 2)
+      isSameDay(date, EVENTS_YEAR, 6, 3)
+      || isSameDay(date, EVENTS_YEAR, 3, 22)
+      || isSameDay(date, EVENTS_YEAR, 4, 15)
+      || isSameDay(date, EVENTS_YEAR, 4, 30)
     ) {
       return 'marked-date';
     }
@@ -91,18 +87,19 @@ const Home =()=> {
       return;
     }
 
-    // Klik na означене датуме (приказ слике у модал-у)
+    // Klik na označene datume (prikaz slike u modal-u)
+    if (date.getMonth() === 6 && date.getDate() === 3) {
+      setModalImage(sladjana);
+      setShowImage(true);
+      return;
+    }
+
     if (date.getMonth() === 4 && date.getDate() === 30) {
       setModalImage(jole);
       setShowImage(true);
       return;
     }
 
-    if (date.getMonth() === 4 && date.getDate() === 28) {
-      setModalImage(kosara);
-      setShowImage(true);
-      return;
-    }
     if (date.getMonth() === 3 && date.getDate() === 22) {
       setModalImage(mojVuneni);
       setShowImage(true);
@@ -119,10 +116,7 @@ const Home =()=> {
   }, []);
 
   const imageSets = useMemo(() => [
-    // Одељење огласне табле: Хуго (11. фебруар) ближе календару, Вaсилије (6. фебруар) десно
-    // Render koristi samo [0] i [1], zato pravimo setove po 2 slike.
-    [jole, kosara],
-    [program, mojVuneni],
+    [sladjana, jole],
   ], []);
   
   const toggleImageSet = () => {
@@ -517,7 +511,7 @@ const Home =()=> {
           <Suspense fallback={<div>Loading AnimatedImage...</div>}>
             <AnimatedImage
               src={imageSets[imageSetIndex][0]}
-              alt="Прва слика"
+              alt="Слађана — догађај"
               className="container-image"
               width="400"
               height="300"
@@ -532,7 +526,7 @@ const Home =()=> {
           <Suspense fallback={<div>Loading AnimatedImage...</div>}>
             <AnimatedImage
               src={imageSets[imageSetIndex][1]}
-              alt="Друга слика"
+              alt="Јоле — догађај"
               className="container-image"
               width="400"
               height="300"
@@ -545,6 +539,7 @@ const Home =()=> {
           </Suspense>
         </div>
         
+        {imageSets.length > 1 && (
         <Button 
           variant="secondary" 
           onClick={toggleImageSet}
@@ -566,6 +561,7 @@ const Home =()=> {
         >
           {isForward ? '→' : '←'}
         </Button>
+        )}
       </div>
     </Col>
   </Row>
