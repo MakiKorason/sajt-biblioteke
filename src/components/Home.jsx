@@ -13,7 +13,7 @@ import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import logoDigitalna from '../images/logoDigitalna.webp'
-import mojVuneni from '../images/mojVuneni.jpg'
+import tesla from '../images/tesla.jpg'
 import saradnja from '../images/saradnja.jpg'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import beke from '../images/beke.webp';
@@ -28,10 +28,10 @@ import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
 import sladjana from '../images/sladjana.jpg';
-import jole from '../images/jole.jpg';
+
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
-import program from '../images/program.jpg'
+
 import pokrajina from '../images/pokrajina.webp';
 import { Helmet } from "react-helmet-async";
 import audioKnjiga from '../images/audioKnjiga.png'
@@ -69,9 +69,8 @@ const Home =()=> {
     // Означени датуми: 27. фебруар + 24. и 26. март 2026.
     if (
       isSameDay(date, EVENTS_YEAR, 6, 3)
-      || isSameDay(date, EVENTS_YEAR, 3, 22)
-      || isSameDay(date, EVENTS_YEAR, 4, 15)
-      || isSameDay(date, EVENTS_YEAR, 4, 30)
+
+      || isSameDay(date, EVENTS_YEAR, 6, 10)
     ) {
       return 'marked-date';
     }
@@ -93,30 +92,21 @@ const Home =()=> {
       setShowImage(true);
       return;
     }
+ 
 
-    if (date.getMonth() === 4 && date.getDate() === 30) {
-      setModalImage(jole);
+    if (date.getMonth() === 6 && date.getDate() === 10) {
+      setModalImage(tesla);
       setShowImage(true);
       return;
     }
+ 
 
-    if (date.getMonth() === 3 && date.getDate() === 22) {
-      setModalImage(mojVuneni);
-      setShowImage(true);
-      return;
-    }
-   
-    if (date.getMonth() === 4 && date.getDate() === 15) {
-      setModalImage(program);
-      setShowImage(true);
-      return;
-    }
 
     setShowImage(false);
   }, []);
 
   const imageSets = useMemo(() => [
-    [sladjana, jole],
+    [ tesla, sladjana],
   ], []);
   
   const toggleImageSet = () => {
