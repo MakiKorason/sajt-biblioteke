@@ -19,9 +19,9 @@ const RECOMMENDATION_ARCHIVE_MONTHS = [
 
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('maj');
-  const [activeKeyDeca, setActiveKeyDeca] = useState('maj');
-  const [activeKeyNaucno, setActiveKeyNaucno] = useState('maj');
+  const [activeKey, setActiveKey] = useState('jun');
+  const [activeKeyDeca, setActiveKeyDeca] = useState('jun');
+  const [activeKeyNaucno, setActiveKeyNaucno] = useState('jun');
   const [genreKey, setGenreKey] = useState('triler');
 
   const genreBooks = GENRE_BOOKS[genreKey] ?? [];
