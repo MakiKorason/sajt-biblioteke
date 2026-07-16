@@ -400,7 +400,7 @@ function InnerApp() {
               <div>
                 <span>АДРЕСА: ГЛАВНА 114, РУМА</span>
                 <span> |Радно време: понедељак-петак: 08-20h и суботом: 08-13h </span>
-                <span> | <FaEnvelope style={{ fontSize: '20px', color: '#4b301f' }} /> gbasruma@gmail.com</span>
+                <span> | <FaEnvelope style={{ fontSize: '20px', color: '#4b301f' }} /> gbasruma@gmail.com <br/>gradskabibliotekaruma@gmail.com</span>
                 <span> | <a href="https://youtube.com/@gradskabibliotekaruma" target="_blank" rel="noopener noreferrer">YouTube</a></span>
                 <span> | <a href="https://www.facebook.com/bibliotekaatanasijestojkovic.ruma" target="_blank" rel="noopener noreferrer">Facebook</a></span>
                 <span> | <a href="https://www.instagram.com/gradska_biblioteka_ruma" target="_blank" rel="noopener noreferrer">Instagram</a></span>

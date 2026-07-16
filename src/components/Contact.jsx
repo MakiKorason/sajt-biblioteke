@@ -139,7 +139,8 @@ const Contact = () => {
                   <h2 className="container-title">E-mail</h2>
                   <FaEnvelope className="container-icon" style={{ fontSize: '2em' }} />
                   <hr />
-                  <h5>gbasruma@gmail.com</h5>
+                  <h5>gbasruma@gmail.com<br/></h5><hr/>
+                 <h5> gradskabibliotekaruma@gmail.com</h5>
                 </Card.Body>
               </Card>
             </Col>
