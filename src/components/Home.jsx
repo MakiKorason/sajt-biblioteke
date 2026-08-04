@@ -13,7 +13,9 @@ import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import logoDigitalna from '../images/logoDigitalna.webp'
-import tesla from '../images/tesla.jpg'
+import filmTesla from '../images/filmTesla.png'
+import kosare from '../images/kosare.png'
+import karavansaraj from '../images/karavansaraj.png'
 import saradnja from '../images/saradnja.jpg'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import beke from '../images/beke.webp';
@@ -27,8 +29,6 @@ import digitalna from '../images/digitalna.webp';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-import sladjana from '../images/sladjana.jpg';
-
 import 'react-calendar/dist/Calendar.css';
 import AnimatedCard from './Department/AnimatedCard'; 
 
@@ -66,11 +66,11 @@ const Home =()=> {
     const isSameDay = (d, year, month, day) =>
       d.getFullYear() === year && d.getMonth() === month && d.getDate() === day;
 
-    // Означени датуми: 27. фебруар + 24. и 26. март 2026.
+    // Означени датуми: 10. август, 26. и 28. август 2026.
     if (
-      isSameDay(date, EVENTS_YEAR, 6, 3)
-
-      || isSameDay(date, EVENTS_YEAR, 6, 10)
+      isSameDay(date, EVENTS_YEAR, 7, 10)
+      || isSameDay(date, EVENTS_YEAR, 7, 26)
+      || isSameDay(date, EVENTS_YEAR, 7, 28)
     ) {
       return 'marked-date';
     }
@@ -87,15 +87,20 @@ const Home =()=> {
     }
 
     // Klik na označene datume (prikaz slike u modal-u)
-    if (date.getMonth() === 6 && date.getDate() === 3) {
-      setModalImage(sladjana);
+    if (date.getMonth() === 7 && date.getDate() === 10) {
+      setModalImage(filmTesla);
       setShowImage(true);
       return;
     }
- 
 
-    if (date.getMonth() === 6 && date.getDate() === 10) {
-      setModalImage(tesla);
+    if (date.getMonth() === 7 && date.getDate() === 26) {
+      setModalImage(karavansaraj);
+      setShowImage(true);
+      return;
+    }
+
+    if (date.getMonth() === 7 && date.getDate() === 28) {
+      setModalImage(kosare);
       setShowImage(true);
       return;
     }
@@ -106,8 +111,14 @@ const Home =()=> {
   }, []);
 
   const imageSets = useMemo(() => [
-    [ tesla, sladjana],
+    [filmTesla, karavansaraj, kosare],
   ], []);
+
+  const announcementAlts = [
+    'Никола Тесла: између књиге и идеје — пројекција филма',
+    'Кошаре — промоција књиге',
+    'Каравансарај — промоција збирке песама',
+  ];
   
   const toggleImageSet = () => {
     // Ако постоји само један сет слика, нема шта да се мења
@@ -498,35 +509,22 @@ const Home =()=> {
     <Col md={8} className='mt-3 mb-3 text-center'>
       <div className="carousel-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
         <div className="carousel-images" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
-            <AnimatedImage
-              src={imageSets[imageSetIndex][0]}
-              alt="Слађана — догађај"
-              className="container-image"
-              width="400"
-              height="300"
-              style={{ 
-                height: 'auto',
-                width: '100%',
-                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
-              }}
-            />
-          </Suspense>
-          
-          <Suspense fallback={<div>Loading AnimatedImage...</div>}>
-            <AnimatedImage
-              src={imageSets[imageSetIndex][1]}
-              alt="Јоле — догађај"
-              className="container-image"
-              width="400"
-              height="300"
-              style={{ 
-                height: 'auto',
-                width: '100%',
-                maxWidth: window.innerWidth < 768 ? '280px' : '400px'
-              }}
-            />
-          </Suspense>
+          {imageSets[imageSetIndex].map((image, index) => (
+            <Suspense key={index} fallback={<div>Loading AnimatedImage...</div>}>
+              <AnimatedImage
+                src={image}
+                alt={announcementAlts[index]}
+                className="container-image"
+                width="400"
+                height="300"
+                style={{
+                  height: 'auto',
+                  width: '100%',
+                  maxWidth: window.innerWidth < 768 ? '280px' : '400px'
+                }}
+              />
+            </Suspense>
+          ))}
         </div>
         
         {imageSets.length > 1 && (

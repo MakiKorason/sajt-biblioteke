@@ -14,14 +14,15 @@ const RECOMMENDATION_ARCHIVE_MONTHS = [
   ['april', 'Април'],
   ['maj', "Мај"],
    ['jun', "Јун"],
+   ['jul', "Јул"]
    
 ];
 
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('jun');
-  const [activeKeyDeca, setActiveKeyDeca] = useState('jun');
-  const [activeKeyNaucno, setActiveKeyNaucno] = useState('jun');
+  const [activeKey, setActiveKey] = useState('jul');
+  const [activeKeyDeca, setActiveKeyDeca] = useState('jul');
+  const [activeKeyNaucno, setActiveKeyNaucno] = useState('jul');
   const [genreKey, setGenreKey] = useState('triler');
 
   const genreBooks = GENRE_BOOKS[genreKey] ?? [];
@@ -333,7 +334,7 @@ const Recommendations =()=>{
                 
               </Row>
             )}
-     
+            
               
           
           </Col>
@@ -640,17 +641,13 @@ const Recommendations =()=>{
       <div id="menu3" className="container tab-pane fade show active">
         <br/>
         <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа</h3>
+       <hr/><br/>
         <Row>
           <Col xs={12} md={5} lg={5} className="text-center mt-2 mt-md-0">
-            <a
-              href="https://delfi.rs/_img/artikli/2020/10/urugvajka_vv.jpg"
-              target="_blank"
-              rel="noopener noreferrer"
-
-            >
+            
               <img
-                src="https://delfi.rs/_img/artikli/2020/10/urugvajka_vv.jpg"
-              alt="Уругвајка аргентинског писца Педра Мариала"
+                src="https://delfi.rs/_img/artikli/2023/02/ljudi_koje_srecemo_na_odmoru_vv.jpg"
+              alt="Ljudi koje srecemo na odmoru"
                 loading="lazy"
                 width="380"
                 height="570"
@@ -665,23 +662,63 @@ const Recommendations =()=>{
                   marginTop: '1rem'
                 }}
               />
-            </a>
-          
+            
+          <Col className="mt-5">
+           <div
+  style={{
+    width: '100%',
+    maxWidth: '800px',
+    margin: '1.5rem auto',
+  }}
+>
+  <iframe
+    src="https://www.youtube.com/embed/19Dyv7Kpmx8"
+    title="Ljudi koje srećemo na odmoru"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+    referrerPolicy="strict-origin-when-cross-origin"
+    style={{
+      width: '100%',
+      aspectRatio: '16 / 9',
+      border: 0,
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+      display: 'block',
+    }}
+  />
+</div></Col>
 
           </Col>
           <Col xs={12} md={7} lg={7}>
             <p className='container-text'>
              
-              <strong>Аутор: Педро Маирал</strong><br/>
-              <strong>Наслов: „Уругвајка“</strong> <br/><br/>
-               Роман "Уругвајка" аргентинског писца Педра Мариала је роман који наизглед говори о једном кратком путовању, али заправо истражује много дубље теме – кризу средњих година, преиспитивање сопствених избора, љубав, брак, родитељство и потрагу за смислом. Главни јунак, писац Лукас Перејра, одлази у Монтевидео са намером да подигне хонорар и накратко побегне од свакодневице која га све више притиска. Међутим, планови се не одвијају онако како је замислио, па се суочава са сопственим илузијама, страховима и жељама.
-Мариал пише непосредно, духовито и веома уверљиво, стварајући роман који се чита лако, али оставља простор за размишљање. "Уругвајка" је прича о тренуцима када човек поверује да се срећа налази негде другде, да би тек кроз сопствене заблуде почео да открива шта му је заиста важно. Ово је роман који ће привући љубитеље савремене књижевности, а његов ненаметљив тон задржава читаочеву пажњу до самог краја.
+              <strong>Аутор: Емили Хенри</strong><br/>
+              <strong>Наслов: „Људи које срећемо на одмору“</strong> <br/><br/>
+              
+ Постоје пријатељства која трају годинама, а постоје и она која се неприметно претварају у нешто много дубље. Роман „Људи које срећемо на одмору“ Емили Хенри доноси управо такву причу – духовиту, топлу и емотивну.
 
-            
+Попи и Алекс су потпуне супротности. Она је спонтана, авантуристичког духа и увек у покрету, док је он миран, повучен и најсрећнији код куће. Ипак, једна ствар их годинама повезује: сваког лета заједно одлазе на одмор. Све док се једно путовање не заврши тако да престану да разговарају.
+
+Две године касније, Попи одлучује да покуша да поправи оно што је изгубљено и предлаже још један заједнички одмор. Пред њима је последња прилика да се суоче са прошлошћу, неизговореним осећањима и питањем да ли је њихово пријатељство одувек било нешто више.
+
+Емили Хенри вешто преплиће хумор, романсу и искрене разговоре о љубави, пријатељству и личном сазревању. Кроз живописне описе путовања и убедљиве ликове, роман подсећа да понекад најважније особе у нашем животу сретнемо онда када то најмање очекујемо. Љубав Попи и Алекса је ванвременска и безусловна – она стрпљиво чека прави тренутак, одолева времену, удаљености и неспоразумима, показујући да су најлепше љубавне приче често оне које најпре израсту из искреног пријатељства.
+
+Ако волите савремене љубавне приче, духовите дијалоге и књиге које буде жељу за путовањима, „Људи које срећемо на одмору“ је роман који ће вас насмејати, дирнути и оставити са осмехом.
             </p>
        
+       <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=henri,+emili*"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Остала дела Светислава Басара у фонду библиотеке"
+                        style={{ marginTop: '0.5rem' }}
+                      >
+                        Остала дела овог аутора
+                      </Button>
           </Col>
-
+   
         </Row>
 
             <Row><br/> <hr/>
@@ -701,7 +738,7 @@ const Recommendations =()=>{
                     <Col xs={12} sm={12} md={4} lg={4} xl={4} className=" text-center mt-4">
                       
                         <img 
-                          src="https://laguna.rs/_img/korice/5830/mileva_anstajn_teorija_tuge-slavenka_drakulic_v.jpg?v=1676990837" 
+                          src="https://laguna.oozmi-cdn.com/images/0923df67-82e1-40cd-88c0-eb672f5987d5/Mileva-Ajnstajn-teorija-tuge-w560.avif" 
                           alt="Милева Ајнштајн - теорија туге - корица књиге Славенке Дракулић, препорука библиотекара"
                           title="Милева Ајнштајн - теорија туге - Славенка Дракулић"
                           className="container-image"
@@ -943,13 +980,18 @@ const Recommendations =()=>{
                         <strong>Наша препорука за јун — Одељење за одрасле</strong><br/><br/>
                         <strong>Аутор:</strong> Бернхард Шлинк<br/>
                         <strong>Наслов:</strong> „Читач"<br/><br/>
-                        Роман „Читач“ доноси снажну и слојевitu priču o ljubavi, krivici i suocavanju sa prošloscu. U sredistu radnje nalazi se neobicna i emotivno intenzivna veza izmedju veoma mladog mladica i znatno starije zene, koja ostavlja trajan trag i oblikuje njegov kasniji zivot.
+                       Роман „Читач“ доноси снажну и слојевиту причу о љубави, кривици и суочавању са прошлошћу. У средишту радње налази се необична и емотивно интензивна веза између веома младог младића и знатно старије жене, која оставља трајан траг и обликује његов каснији живот.
+
+ <br/><br/>
+
+Топла препорука свима који желе да прочитају дело које подстиче на размишљање, преиспитивање и оставља снажан утисак.
+
                         <br/><br/>
                       
-                        Ovo je ujedno i priča o ljubavi koja ne poznaje pravila ni granice, o osecanju koje ne bira ni vreme ni okolnosti, već ostaje duboko urezano u secanje.
+                      Ово је уједно и прича о љубави која не познаје правила ни границе, о осећању које не бира ни време ни околности, већ остаје дубоко урезано у сећање.
                       
-                        <br/><br/>
-                        Topla preporuka svima koji zele da citaju delo koje podstice na razmisljanje i ostavlja snažan utisak.
+                       
+                  
                       </p>
                       <Button
                         variant="secondary"
@@ -964,6 +1006,50 @@ const Recommendations =()=>{
                     </Col>
                   </Row>
                 )}
+                 {activeKey === 'jul' && (
+                  <Row>
+                    <Col xs={12} sm={12} md={4} lg={4} xl={4} className="text-center mt-4">
+                      <a
+              href="https://delfi.rs/_img/artikli/2020/10/urugvajka_vv.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+
+            >
+              <img
+                src="https://delfi.rs/_img/artikli/2020/10/urugvajka_vv.jpg"
+              alt="Уругвајка аргентинског писца Педра Мариала"
+                loading="lazy"
+                width="380"
+                height="570"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  width: '100%',
+                  maxWidth: 'min(100%, 420px)',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '1rem'
+                }}
+              />
+            </a>
+                      
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={8} xl={8} className="mt-4">
+                      <p className="container-text">
+                        <strong>Наша препорука за јун — Одељење за одрасле</strong><br/><br/>
+                        <strong>Аутор:</strong> Педро Маирал<br/>
+                        <strong>Наслов:</strong> „Уругвајка“<br/><br/>
+                    Роман "Уругвајка" аргентинског писца Педра Мариала је роман који наизглед говори о једном кратком путовању, али заправо истражује много дубље теме – кризу средњих година, преиспитивање сопствених избора, љубав, брак, родитељство и потрагу за смислом. Главни јунак, писац Лукас Перејра, одлази у Монтевидео са намером да подигне хонорар и накратко побегне од свакодневице која га све више притиска. Међутим, планови се не одвијају онако како је замислио, па се суочава са сопственим илузијама, страховима и жељама. <br/><br/>
+Мариал пише непосредно, духовито и веома уверљиво, стварајући роман који се чита лако, али оставља простор за размишљање. "Уругвајка" је прича о тренуцима када човек поверује да се срећа налази негде другде, да би тек кроз сопствене заблуде почео да открива шта му је заиста важно. Ово је роман који ће привући љубитеље савремене књижевности, а његов ненаметљив тон задржава читаочеву пажњу до самог краја.
+ <br/><br/>   
+                      </p>
+                     
+                    </Col>
+                  </Row>
+                )}
+
+                
               </Col>
 
                   
