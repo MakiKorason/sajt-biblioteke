@@ -70,7 +70,7 @@ import 'react-calendar/dist/Calendar.css';
 
 const Calendar = React.lazy(() => import('react-calendar'));
 
-const EVENTS_YEAR = 2026;
+
 
 const Home = () => {
   const [date, setDate] = useState(new Date());

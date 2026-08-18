@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Row, Col, Container, Button, Nav, Table } from 'react-bootstrap';
+import { Row, Col, Container, Button, Nav } from 'react-bootstrap';
 
 import { Helmet } from 'react-helmet-async';
 import './Recommendations.css';
 import AnimatedCard from '../Department/AnimatedCard';
-import { GENRE_MENU, GENRE_BOOKS, cobissSearchUrl } from '../../data/genreBooks'; 
+
 
 const RECOMMENDATION_ARCHIVE_MONTHS = [
  
@@ -23,9 +23,9 @@ const Recommendations =()=>{
   const [activeKey, setActiveKey] = useState('jul');
   const [activeKeyDeca, setActiveKeyDeca] = useState('jul');
   const [activeKeyNaucno, setActiveKeyNaucno] = useState('jul');
-  const [genreKey, setGenreKey] = useState('triler');
 
-  const genreBooks = GENRE_BOOKS[genreKey] ?? [];
+
+
 
     
    
