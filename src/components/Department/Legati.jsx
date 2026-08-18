@@ -1,163 +1,705 @@
-import { Col, Container, Row } from "react-bootstrap"
-import Legat1 from '../../images/Legat1.webp'
-import Legat2 from '../../images/Legat2.webp'
-import Legat3 from '../../images/Legat3.webp'
-import AnimatedImage from "./AnimatedImage";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { LiaBookSolid } from "react-icons/lia";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
+import "./Legati.css";
 
-const Legati= ()=>{
-   return(
-    
-    <>
-       
-         <Helmet>
-  <title>Легати – Библиотека Рума</title>
-  <meta
-    name="description"
-    content="Колекција легата Николе Дреновца, Милутина Стојковића и Оливере Шијачки у Градској библиотеци Рума."
-  />
-  <link rel="canonical" href="https://www.bibliotekaruma.rs/legati-biblioteke" />
+import Legat1 from "../../images/Legat1.webp";
+import Legat2 from "../../images/Legat2.webp";
+import Legat3 from "../../images/Legat3.webp";
 
-  {/* Open Graph */}
-  <meta property="og:title" content="Легати – Библиотека Рума" />
-  <meta
-    property="og:description"
-    content="Колекција легата Николе Дреновца, Милутина Стојковића и Оливере Шијачки у Градској библиотеци Рума."
-  />
-  <meta property="og:url" content="https://www.bibliotekaruma.rs/legati-biblioteke" />
-  <meta property="og:type" content="website" />
+import AnimatedImage from "./AnimatedImage";
 
-  <script type="application/ld+json">
-    {`
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Легати – Библиотека Рума",
-      "description": "Колекција легата Николе Дреновца, Милутина Стојковића и Оливере Шијачки у Градској библиотеци Рума.",
-      "url": "https://www.bibliotekaruma.rs/legati-biblioteke",
-      "inLanguage": "sr",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Почетна",
-            "item": "https://www.bibliotekaruma.rs/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Завичајно",
-            "item": "https://www.bibliotekaruma.rs/zavicajno"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Легати",
-            "item": "https://www.bibliotekaruma.rs/legati-biblioteke"
-          }
-        ]
-      },
-      "mainEntity": {
-        "@type": "Library",
-        "@id": "https://www.bibliotekaruma.rs/#organization",
-        "name": "Градска библиотека „Атанасије Стојковић“ Рума",
-        "url": "https://www.bibliotekaruma.rs/",
-        "logo": "https://www.bibliotekaruma.rs/logo.webp",
-        "sameAs": [
-          "https://www.facebook.com/BibliotekaRuma",
-          "https://www.instagram.com/bibliotekaruma",
-          "https://www.youtube.com/channel/CHANNEL_ID"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Трг Слободе 1",
-          "addressLocality": "Рума",
-          "postalCode": "22400",
-          "addressCountry": "RS"
+const Legati = () => {
+  const pageTitle =
+    "Легати – Градска библиотека „Атанасије Стојковић“ Рума";
+
+  const pageDescription =
+    "Легати Градске библиотеке „Атанасије Стојковић“ у Руми – колекције Николе Дреновца, Милутина Стојковића и Оливере Шијачки.";
+
+  const canonicalUrl =
+    "https://www.bibliotekaruma.rs/legati-biblioteke";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: pageTitle,
+    description: pageDescription,
+    url: canonicalUrl,
+    inLanguage: "sr-Cyrl",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Градска библиотека „Атанасије Стојковић“ Рума",
+      url: "https://www.bibliotekaruma.rs/",
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Почетна",
+          item: "https://www.bibliotekaruma.rs/",
         },
-        "telephone": "+381 22 424-501",
-        "email": "info@bibliotekaruma.rs"
-      }
-    }
-    `}
-  </script>
-</Helmet>
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Завичајно",
+          item: "https://www.bibliotekaruma.rs/zavicajno",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Легати",
+          item: canonicalUrl,
+        },
+      ],
+    },
+    mainEntity: {
+      "@type": "Library",
+      "@id": "https://www.bibliotekaruma.rs/#organization",
+      name: "Градска библиотека „Атанасије Стојковић“ Рума",
+      url: "https://www.bibliotekaruma.rs/",
+      logo: "https://www.bibliotekaruma.rs/logo.webp",
+      sameAs: [
+        "https://www.facebook.com/BibliotekaRuma",
+        "https://www.instagram.com/bibliotekaruma",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Трг Слободе 1",
+        addressLocality: "Рума",
+        postalCode: "22400",
+        addressCountry: "RS",
+      },
+      telephone: "+381 22 424-501",
+      email: "info@bibliotekaruma.rs",
+    },
+  };
 
-     <Container className='container-library mt-4 mb-4 '>
-        <div className="container-frame">
-    <Row> <h1 className="container-title" >Легати</h1> 
-    <div className="container-icon">
-                       <LiaBookSolid /><LiaBookSolid/><LiaBookSolid/></div> 
-     <hr />
-     <Col md={12}>
-     <p className="container-text">
-    Румска библиотека, као једна од најзначајнијих културних установа у нашем граду, која за циљ има очување, неговање и промовисање књиге и читалаштва, у свом раду има и задатак сакупљања и очувања уметничких стваралаштва значајних писаца.
-  </p>
-  <p className="container-text">
-    Мотив за формирање легата Градске библиотеке у Руми је био обогаћивање фонда за добробит корисника, као и сведочанство о времену и људима.
-  </p>
-  <p className="container-text">
-    Легати су значајни јер пружају могућност за исцрпнија истраживања једне области или једног предмета. Они су и незаменљив документ при проучавању живота и рада легатора.
-    </p>
-    <hr/>
-     </Col>
-  
-   <Row className="text-center" >
-    <Col md={4} className="text-center"> 
-    <AnimatedImage src={Legat1} alt="Легат Николе Дреновца" style={{ transform: 'rotate(220deg)' }} />
-</Col>
-   <Col md={4} className="text-center"> 
-   <AnimatedImage src={Legat2} alt="Легат Милутина Стојковића" style={{ transform: 'rotate(220deg)' }} />
-    </Col>
-    <Col md={4} className="text-center">
-    <AnimatedImage src={Legat3} alt="Легат Оливере шијачки" /> 
-     <div className="container-icon">
-      <br/><LiaBookSolid /><LiaBookSolid/><LiaBookSolid/></div></Col></Row>
+  return (
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
 
-  <Col  md={12}>
-    <br/><hr/> <h2 className="container-title">Легат Николе Дреновца</h2>    
-  <p className='container-text'>Никола Дреновац, свештеник, књижевник и преводилац, рођен је у Руми 17. децембра 1907. године. У Словенији и Срему је радио као свештено лице, па затим одлази у Америку. По завршетку Другог светског рата враћа се у Југославију где ради као уредник „Слободне речи“, „Просвете“ и Литерарне редакције „Радио Београда“.</p>
-  <p className='container-text'>Никола Дреновац је почетком својих тридесетих година почео да пише поезију и прозу. Посебно место у његовом стваралаштву заузимају деца, којима је са много поштовања, љубави и оригиналности даривао неке од најлепших стихова.</p>
-  <p className='container-text'>Као један од најзначајнијих песника послератне Југославије, Никола Дреновац, својим књижевним опусом заслужује уважавање и поштовање својих суграђана. Управо због тога Градска библиотека „Атанасије Стојковић“ у склопу свог фонда поседује и Легат Николе Дреновца. Легат је формиран 1996. године, има 287 публикација које су обрађене у складу са свим библиотечким правилима и стандардима.</p>
-  <p className='container-text'>Свака обрађена публикација има свој инвентарни број, сигнатуру и УДК број и статус архивског примерка. Легат садржи дела која највећим делом припадају периоду од 60-тих до 90- тих година прошлог века. Ту су монографске публикације које се већином баве књижевношћу, а незнатан број публикација припада стручној литератури.</p>
-    </Col> 
-    <hr/>
+        <meta name="description" content={pageDescription} />
 
-          <h2 className="container-title">Легат Милутина Стојковића</h2> 
-  
-         <Col md={12}>
+        <link rel="canonical" href={canonicalUrl} />
 
-         <p className="container-text">
-           <br/>Легат проф. др Хаџи Милутина Стојковића, угледног универзитетског и политичког радника и стручњака, спада у оне легате који су живи и чији се обим фонда активношћу легатора, проширује.</p>
-  <p className='container-text'>Овај легат је посебан јер се у њему налази преко 46 уџбеника које је легатор написао. Претежно из предмета статистике, медицине, пољопривреде, економије и четири монографије страних држава и градова. Ту су и наслови из области религије и деловања Српске православне цркве.</p>
-  <p className='container-text'>Све књиге овог легата су обрађене, а поклоњене књиге, документи и други поклони могу се користити само у Читаоници Градске библиотеке. Легат чине и документи и материјали са међународних скупова, и конференција којима је др Стојковић присуствовао.</p>
-  <p className='container-text'>С обзиром на дугогодишњи просветни рад проф. др Стојковића, у легату се налази већи број дипломских радова студената који су код њега дипломирали.</p>
-  <p className='container-text'>Легатор, проф. др Милутин Стојковић се обавезао да ће о легату обавештавати јавност и повремено излагати и упознати је са деловима грађе, што и чини сваком пригодном приликом.</p>
-        </Col>
-         
-      <hr/>
-      <h2 className="container-title" >Легат Оливере Шијачки</h2>
-        <Col md={12}> 
-  <p className='container-text'><br/> Спомен збирка Оливере Шијачки представља физички одвојену целину од остатка фонда наше библиотеке и носи назив „Спомен збирка Оливере Шијачки“.</p>
-  <p className='container-text'>Оливера Шијачки је рођена у Новом Саду 1938. године, где је завршила Филозофски факултет и где је живела и радила. Удајом улази у породицу Шијачки, која води порекло из Вогња, па отуда и жеља наследника да се баш нашој библиотеци и граду Руми подари њена спомен збирка.</p>
-  <p className='container-text'>Оливера је писала највише поезију, а највећи део свог стваралаштва посветила је писању за децу, зато и не чуди што је постала један од заштитних знакова Змајевих дечијих игара.</p>
-  <p className='container-text'>Спомен збирка Оливере Шијачки броји 603 публикације, међу којима су монографске и серијске публикације, као и легаторове књиге. Публикације унутар збирке највећим делом припадају периоду седамдесетих и осамдесетих година прошлог века, мада значајан број припада и првој деценији новог миленијума.</p>
-  <p className='container-text'>Значајан део ове збирке су дечије књиге, од којих је 54 на српском језику, док је осталих 27 на страном језику, претежно македонском и руском.</p>
-  <p className='container-text'>Спомен збирка Оливере Шијачки поред своје књижевне и културне вредности посебна је и због тога што све публикације које се налазе у збирци имају посвету легатору, преко 95% посвета, од којих се истичу: Мирослав Антић, Перо Зубац, Гроздана Олујић и Драшко Ређеп. Посвете исписане у публикацијама у већини случајева откривају природу односа Оливере Шијачки и поменутих аутора.</p>
-    </Col>
-    
+        <meta property="og:title" content={pageTitle} />
 
- 
-     <hr />
-    </Row>
-    </div>
-     </Container>
+        <meta
+          property="og:description"
+          content={pageDescription}
+        />
+
+        <meta property="og:url" content={canonicalUrl} />
+
+        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:image"
+          content="https://www.bibliotekaruma.rs/images/Legat1.webp"
+        />
+
+        <meta property="og:locale" content="sr_RS" />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+
+        <meta
+          name="twitter:title"
+          content={pageTitle}
+        />
+
+        <meta
+          name="twitter:description"
+          content={pageDescription}
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.bibliotekaruma.rs/images/Legat1.webp"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
+      <main>
+
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+
+        <section className="legati-hero">
+
+          <div className="legati-hero-decoration legati-hero-decoration-left"></div>
+
+          <div className="legati-hero-decoration legati-hero-decoration-right"></div>
+
+          <div className="legati-hero-content">
+
+            <span className="legati-hero-label">
+              ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+            </span>
+
+            <h1>
+              Легати
+            </h1>
+
+            <p>
+              Збирке које чувају успомену на људе,
+              њихово стваралаштво и време у коме су живели.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <Container className="legati-page">
+
+          {/* =====================================================
+              UVOD
+          ===================================================== */}
+
+          <section className="legati-intro-section">
+
+            <div className="section-heading">
+
+              <span>
+                О ЛЕГАТИМА
+              </span>
+
+              <h2>
+                Културно наслеђе које остаје
+              </h2>
+
+            </div>
+
+
+            <Row className="g-5 align-items-center">
+
+              <Col lg={8}>
+
+                <div className="legati-text">
+
+                  <p>
+                    Румска библиотека, као једна од најзначајнијих
+                    културних установа у нашем граду, која за циљ
+                    има очување, неговање и промовисање књиге и
+                    читалаштва, у свом раду има и задатак сакупљања
+                    и очувања уметничког стваралаштва значајних
+                    писаца.
+                  </p>
+
+                  <p>
+                    Мотив за формирање легата Градске библиотеке
+                    у Руми био је обогаћивање фонда за добробит
+                    корисника, као и сведочанство о времену и људима.
+                  </p>
+
+                  <p>
+                    Легати су значајни јер пружају могућност за
+                    исцрпнија истраживања једне области или једног
+                    предмета. Они су и незаменљив документ при
+                    проучавању живота и рада легатора.
+                  </p>
+
+                </div>
+
+              </Col>
+
+
+              <Col lg={4}>
+
+                <div className="legati-intro-symbol">
+
+                  <LiaBookSolid />
+
+                  <span>ЗНАЊЕ</span>
+
+                  <span>СЕЋАЊЕ</span>
+
+                  <span>НАСЛЕЂЕ</span>
+
+                </div>
+
+              </Col>
+
+            </Row>
+
+          </section>
+
+
+          {/* =====================================================
+              LEgATI CARDS
+          ===================================================== */}
+
+          <section className="legati-overview-section">
+
+            <div className="section-heading text-center">
+
+              <span>
+                ЗБИРКЕ
+              </span>
+
+              <h2>
+                Легати наше библиотеке
+              </h2>
+
+              <p>
+                Три посебне целине које представљају драгоцени
+                део библиотечког и културног наслеђа Руме.
+              </p>
+
+            </div>
+
+
+            <Row className="g-4">
+
+              {/* NIKOLA DRENOVAC */}
+
+              <Col lg={4} md={6}>
+
+                <article className="legat-card">
+
+                  <div className="legat-card-image">
+
+                    <AnimatedImage
+                      src={Legat1}
+                      alt="Легат Николе Дреновца"
+                    />
+
+                  </div>
+
+                  <div className="legat-card-content">
+
+                    <span>
+                      ЛЕГАТ I
+                    </span>
+
+                    <h3>
+                      Никола Дреновац
+                    </h3>
+
+                    <p>
+                      Свештеник, књижевник и преводилац,
+                      један од значајних песника послератне
+                      Југославије.
+                    </p>
+
+                    <a
+                      href="#nikola-drenovac"
+                      className="legat-card-link"
+                    >
+                      Сазнајте више
+                      <span>→</span>
+                    </a>
+
+                  </div>
+
+                </article>
+
+              </Col>
+
+
+              {/* MILUTIN STOJKOVIC */}
+
+              <Col lg={4} md={6}>
+
+                <article className="legat-card">
+
+                  <div className="legat-card-image">
+
+                    <AnimatedImage
+                      src={Legat2}
+                      alt="Легат Милутина Стојковића"
+                    />
+
+                  </div>
+
+                  <div className="legat-card-content">
+
+                    <span>
+                      ЛЕГАТ II
+                    </span>
+
+                    <h3>
+                      Милутин Стојковић
+                    </h3>
+
+                    <p>
+                      Универзитетски професор, стручњак и
+                      аутор великог броја стручних публикација.
+                    </p>
+
+                    <a
+                      href="#milutin-stojkovic"
+                      className="legat-card-link"
+                    >
+                      Сазнајте више
+                      <span>→</span>
+                    </a>
+
+                  </div>
+
+                </article>
+
+              </Col>
+
+
+              {/* OLIVERA SIJACKI */}
+
+              <Col lg={4} md={6}>
+
+                <article className="legat-card">
+
+                  <div className="legat-card-image">
+
+                    <AnimatedImage
+                      src={Legat3}
+                      alt="Спомен збирка Оливере Шијачки"
+                    />
+
+                  </div>
+
+                  <div className="legat-card-content">
+
+                    <span>
+                      ЛЕГАТ III
+                    </span>
+
+                    <h3>
+                      Оливера Шијачки
+                    </h3>
+
+                    <p>
+                      Књижевница чија је спомен збирка
+                      посебно значајна за књижевност за децу.
+                    </p>
+
+                    <a
+                      href="#olivera-sijacki"
+                      className="legat-card-link"
+                    >
+                      Сазнајте више
+                      <span>→</span>
+                    </a>
+
+                  </div>
+
+                </article>
+
+              </Col>
+
+            </Row>
+
+          </section>
+
+
+          {/* =====================================================
+              NIKOLA DRENOVAC
+          ===================================================== */}
+
+          <section
+            id="nikola-drenovac"
+            className="legat-detail-section"
+          >
+
+            <Row className="g-0 align-items-center">
+
+              <Col lg={5}>
+
+                <div className="legat-detail-image">
+
+                  <AnimatedImage
+                    src={Legat1}
+                    alt="Легат Николе Дреновца"
+                  />
+
+                </div>
+
+              </Col>
+
+
+              <Col lg={7}>
+
+                <div className="legat-detail-content">
+
+                  <span className="legat-detail-label">
+                    ЛЕГАТ I
+                  </span>
+
+                  <h2>
+                    Легат Николе Дреновца
+                  </h2>
+
+                  <p>
+                    Никола Дреновац, свештеник, књижевник и
+                    преводилац, рођен је у Руми 17. децембра
+                    1907. године. У Словенији и Срему је радио
+                    као свештено лице, па затим одлази у Америку.
+                  </p>
+
+                  <p>
+                    По завршетку Другог светског рата враћа се
+                    у Југославију где ради као уредник
+                    „Слободне речи“, „Просвете“ и Литерарне
+                    редакције „Радио Београда“.
+                  </p>
+
+                  <p>
+                    Никола Дреновац је почетком својих тридесетих
+                    година почео да пише поезију и прозу.
+                    Посебно место у његовом стваралаштву заузимају
+                    деца, којима је са много поштовања, љубави и
+                    оригиналности даривао неке од најлепших стихова.
+                  </p>
+
+                  <p>
+                    Градска библиотека „Атанасије Стојковић“
+                    у склопу свог фонда поседује Легат Николе
+                    Дреновца. Легат је формиран 1996. године и
+                    има 287 публикација које су обрађене у складу
+                    са свим библиотечким правилима и стандардима.
+                  </p>
+
+                  <p>
+                    Свака обрађена публикација има свој инвентарни
+                    број, сигнатуру и УДК број и статус архивског
+                    примерка. Легат највећим делом садржи публикације
+                    из периода од шездесетих до деведесетих година
+                    прошлог века.
+                  </p>
+
+                </div>
+
+              </Col>
+
+            </Row>
+
+          </section>
+
+
+          {/* =====================================================
+              MILUTIN STOJKOVIC
+          ===================================================== */}
+
+          <section
+            id="milutin-stojkovic"
+            className="legat-detail-section legat-detail-reverse"
+          >
+
+            <Row className="g-0 align-items-center">
+
+              <Col
+                lg={5}
+                className="order-1 order-lg-2"
+              >
+
+                <div className="legat-detail-image">
+
+                  <AnimatedImage
+                    src={Legat2}
+                    alt="Легат Милутина Стојковића"
+                  />
+
+                </div>
+
+              </Col>
+
+
+              <Col
+                lg={7}
+                className="order-2 order-lg-1"
+              >
+
+                <div className="legat-detail-content">
+
+                  <span className="legat-detail-label">
+                    ЛЕГАТ II
+                  </span>
+
+                  <h2>
+                    Легат Милутина Стојковића
+                  </h2>
+
+                  <p>
+                    Легат проф. др Хаџи Милутина Стојковића,
+                    угледног универзитетског и политичког радника
+                    и стручњака, спада у оне легате који су живи
+                    и чији се обим фонда активношћу легатора
+                    проширује.
+                  </p>
+
+                  <p>
+                    Овај легат је посебан јер се у њему налази
+                    преко 46 уџбеника које је легатор написао.
+                    Претежно су из области статистике, медицине,
+                    пољопривреде и економије.
+                  </p>
+
+                  <p>
+                    Ту су и четири монографије страних држава
+                    и градова, као и наслови из области религије
+                    и деловања Српске православне цркве.
+                  </p>
+
+                  <p>
+                    Све књиге овог легата су обрађене, а поклоњене
+                    књиге, документи и други поклони могу се
+                    користити само у Читаоници Градске библиотеке.
+                  </p>
+
+                  <p>
+                    Легат чине и документи и материјали са
+                    међународних скупова и конференција којима
+                    је др Стојковић присуствовао.
+                  </p>
+
+                  <p>
+                    С обзиром на дугогодишњи просветни рад проф.
+                    др Стојковића, у легату се налази већи број
+                    дипломских радова студената који су код њега
+                    дипломирали.
+                  </p>
+
+                </div>
+
+              </Col>
+
+            </Row>
+
+          </section>
+
+
+          {/* =====================================================
+              OLIVERA SIJACKI
+          ===================================================== */}
+
+          <section
+            id="olivera-sijacki"
+            className="legat-detail-section"
+          >
+
+            <Row className="g-0 align-items-center">
+
+              <Col lg={5}>
+
+                <div className="legat-detail-image">
+
+                  <AnimatedImage
+                    src={Legat3}
+                    alt="Спомен збирка Оливере Шијачки"
+                  />
+
+                </div>
+
+              </Col>
+
+
+              <Col lg={7}>
+
+                <div className="legat-detail-content">
+
+                  <span className="legat-detail-label">
+                    ЛЕГАТ III
+                  </span>
+
+                  <h2>
+                    Легат Оливере Шијачки
+                  </h2>
+
+                  <p>
+                    Спомен збирка Оливере Шијачки представља
+                    физички одвојену целину од остатка фонда
+                    наше библиотеке и носи назив
+                    „Спомен збирка Оливере Шијачки“.
+                  </p>
+
+                  <p>
+                    Оливера Шијачки је рођена у Новом Саду
+                    1938. године, где је завршила Филозофски
+                    факултет и где је живела и радила.
+                  </p>
+
+                  <p>
+                    Удајом улази у породицу Шијачки, која води
+                    порекло из Вогња, па отуда и жеља наследника
+                    да се баш нашој библиотеци и граду Руми
+                    подари њена спомен збирка.
+                  </p>
+
+                  <p>
+                    Оливера је писала највише поезију, а највећи
+                    део свог стваралаштва посветила је писању
+                    за децу, зато и не чуди што је постала један
+                    од заштитних знакова Змајевих дечијих игара.
+                  </p>
+
+                  <p>
+                    Спомен збирка Оливере Шијачки броји
+                    603 публикације, међу којима су монографске
+                    и серијске публикације, као и легаторове књиге.
+                  </p>
+
+                  <p>
+                    Публикације унутар збирке највећим делом
+                    припадају периоду седамдесетих и осамдесетих
+                    година прошлог века, мада значајан број
+                    припада и првој деценији новог миленијума.
+                  </p>
+
+                  <p>
+                    Значајан део ове збирке су дечије књиге,
+                    од којих је 54 на српском језику, док је
+                    осталих 27 на страном језику, претежно
+                    македонском и руском.
+                  </p>
+
+                  <p>
+                    Посебну вредност представљају посвете
+                    легатору. Више од 95% публикација има
+                    посвету, а међу ауторима се истичу
+                    Мирослав Антић, Перо Зубац, Гроздана Олујић
+                    и Драшко Ређеп.
+                  </p>
+
+                </div>
+
+              </Col>
+
+            </Row>
+
+          </section>
+
+
+          {/* =====================================================
+              ZAVRŠNA DEKORACIJA
+          ===================================================== */}
+
+          <div
+            className="legati-books-decoration"
+            aria-hidden="true"
+          >
+
+            <LiaBookSolid />
+            <LiaBookSolid />
+            <LiaBookSolid />
+
+          </div>
+
+        </Container>
+
+      </main>
     </>
-    )
-}
+  );
+};
 
-export default Legati
+export default Legati;

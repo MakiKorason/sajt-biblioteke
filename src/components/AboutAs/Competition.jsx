@@ -1,172 +1,650 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
+import {
+  FaFileAlt,
+  FaBookOpen,
+  FaUsers,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaPenFancy,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaAward,
+} from "react-icons/fa";
+
 import AnimatedCard from "../Department/AnimatedCard";
 import konkurs from "../../images/konkurs.webp";
+
+import "./Competition.css";
 
 const Competition = () => {
   return (
     <>
+      {/* =====================================================
+          SEO
+      ===================================================== */}
+
       <Helmet>
-        <title>Конкурс – Библиотека Рума</title>
+        <title>
+          Књижевни конкурс „Атанасије Стојковић“ – Библиотека Рума
+        </title>
+
         <meta
           name="description"
-          content="Конкурс за први необјављени роман на српском језику отворен од 21. јула до 15. новембра 2025."
+          content="Књижевни конкурс „Атанасије Стојковић“ за први необјављени роман на српском језику. Погледајте услове конкурса, начин пријаве и адресу за достављање рукописа."
         />
+
         <link
           rel="canonical"
           href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
         />
 
-        <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Library",
-          "name": "Градска библиотека „Атанасије Стојковић“",
-          "url": "https://www.bibliotekaruma.rs/konkurs-biblioteke",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Главна 114",
-            "addressLocality": "Рума",
-            "postalCode": "22400",
-            "addressCountry": "RS"
-          },
-          "openingHours": "Mo-Fr 08:00-20:00, Sa 08:00-13:00",
-          "telephone": "+38122490047"
-        }
-      `}</script>
+        <meta
+          property="og:title"
+          content="Књижевни конкурс „Атанасије Стојковић“"
+        />
+
+        <meta
+          property="og:description"
+          content="Конкурс за први необјављени роман на српском језику у организацији Градске библиотеке „Атанасије Стојковић“ у Руми."
+        />
+
+        <meta
+          property="og:url"
+          content="https://www.bibliotekaruma.rs/konkurs-biblioteke"
+        />
+
+        <meta property="og:type" content="website" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Library",
+            name: 'Градска библиотека „Атанасије Стојковић“ Рума',
+            url: "https://www.bibliotekaruma.rs/konkurs-biblioteke",
+
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Главна 114",
+              addressLocality: "Рума",
+              postalCode: "22400",
+              addressCountry: "RS",
+            },
+
+            openingHours: "Mo-Fr 08:00-20:00, Sa 08:00-13:00",
+
+            telephone: "+38122490047",
+          })}
+        </script>
       </Helmet>
 
-      <Container className="container-library mt-4 mb-4">
-        <Row>
-          <Col xs={12}>
-            <h1 className="container-title">
-              КЊИЖЕВНИ КОНКУРС „АТАНАСИЈЕ СТОЈКОВИЋ“
-            </h1>
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
-            <p className="container-text text-center">
-              За први необјављени роман на српском језику
+      <section className="competition-hero">
+        <div className="competition-hero-decoration competition-decoration-left">
+          <FaPenFancy />
+        </div>
+
+        <div className="competition-hero-decoration competition-decoration-right">
+          <FaBookOpen />
+        </div>
+
+        <div className="competition-hero-content">
+          <span className="competition-hero-label">
+            ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+          </span>
+
+          <h1>Књижевни конкурс</h1>
+
+          <p>
+            „Атанасије Стојковић“
+          </p>
+
+          <span className="competition-hero-subtitle">
+            За први необјављени роман на српском језику
+          </span>
+        </div>
+      </section>
+
+      {/* =====================================================
+          GLAVNI SADRŽAJ
+      ===================================================== */}
+
+      <Container className="competition-page">
+
+        {/* =====================================================
+            UVODNA SEKCIJA
+        ===================================================== */}
+
+        <section className="competition-intro">
+
+          <div className="competition-section-heading">
+            <span>КЊИЖЕВНИ КОНКУРС</span>
+
+            <h2>
+              Речи које заслужују да буду прочитане
+            </h2>
+
+            <p>
+              Градска библиотека „Атанасије Стојковић“ расписује књижевни
+              конкурс за први необјављени роман написан на српском језику.
             </p>
-          </Col>
-        </Row>
+          </div>
 
-        <Row className="mb-4">
-          <Col md={12} className="text-center">
-            <AnimatedCard>
-              <img
-                src={konkurs}
-                alt="Конкурс - илустрација"
-                style={{ width: "20%" }}
-                loading="lazy"
-              />
-            </AnimatedCard>
-          </Col>
-        </Row>
+          <Row className="align-items-center g-5">
 
-        <h2 className="container-title">Услови конкурса</h2>
+            <Col lg={5} className="text-center">
 
-        <AnimatedCard>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item container-text">
-              Конкурс се односи на први, до сада необјављени роман написан на
-              српском језику.
-            </li>
+              <AnimatedCard className="competition-image-card">
 
-            <li className="list-group-item container-text">
-              Право учешћа имају аутори из Србије и расејања.
-            </li>
+                <img
+                  src={konkurs}
+                  alt="Илустрација књижевног конкурса „Атанасије Стојковић“"
+                  className="competition-image"
+                  loading="lazy"
+                />
 
-            <li className="list-group-item container-text">
-              Конкурс је отворен од <strong>21. јула до 15. новембра 2026. године.</strong>
-            </li>
+              </AnimatedCard>
 
-            <li className="list-group-item container-text">
+            </Col>
+
+            <Col lg={7}>
+
+              <div className="competition-intro-text">
+
+                <div className="competition-highlight">
+                  <FaAward />
+
+                  <div>
+                    <strong>
+                      Књижевни конкурс „Атанасије Стојковић“
+                    </strong>
+
+                    <span>
+                      Прилика за нове ауторе и необјављене романе.
+                    </span>
+                  </div>
+                </div>
+
+                <p>
+                  Конкурс је намењен ауторима који желе да својим првим
+                  необјављеним романом учествују у избору за књижевну награду
+                  која носи име значајне личности наше културне историје.
+                </p>
+
+                <p>
+                  Посебна пажња посвећена је анонимности аутора током
+                  вредновања рукописа, како би жири могао да донесе одлуку
+                  искључиво на основу књижевног квалитета дела.
+                </p>
+
+              </div>
+
+            </Col>
+
+          </Row>
+
+        </section>
+
+
+        {/* =====================================================
+            INFORMACIJE
+        ===================================================== */}
+
+        <section className="competition-info">
+
+          <Row className="g-4">
+
+            <Col md={4}>
+
+              <AnimatedCard className="competition-info-card">
+
+                <div className="competition-info-icon">
+                  <FaCalendarAlt />
+                </div>
+
+                <span>РОК ЗА ПРИЈАВУ</span>
+
+                <h3>
+                  21. јул – 15. новембар 2026.
+                </h3>
+
+              </AnimatedCard>
+
+            </Col>
+
+
+            <Col md={4}>
+
+              <AnimatedCard className="competition-info-card">
+
+                <div className="competition-info-icon">
+                  <FaBookOpen />
+                </div>
+
+                <span>ВРСТА ДЕЛА</span>
+
+                <h3>
+                  Први необјављени роман
+                </h3>
+
+              </AnimatedCard>
+
+            </Col>
+
+
+            <Col md={4}>
+
+              <AnimatedCard className="competition-info-card">
+
+                <div className="competition-info-icon">
+                  <FaUsers />
+                </div>
+
+                <span>КО МОЖЕ УЧЕСТВОВАТИ</span>
+
+                <h3>
+                  Аутори из Србије и расејања
+                </h3>
+
+              </AnimatedCard>
+
+            </Col>
+
+          </Row>
+
+        </section>
+
+
+        {/* =====================================================
+            USLOVI KONKURSA
+        ===================================================== */}
+
+        <section className="competition-conditions">
+
+          <div className="competition-section-heading">
+
+            <span>УСЛОВИ КОНКУРСА</span>
+
+            <h2>
+              Све што је потребно за пријаву
+            </h2>
+
+            <p>
+              Пре слања рукописа пажљиво проверите све услове конкурса.
+            </p>
+
+          </div>
+
+
+          <AnimatedCard className="competition-conditions-card">
+
+            <div className="competition-condition">
+
+              <div className="competition-condition-icon">
+                <FaCheckCircle />
+              </div>
+
+              <div>
+                <h3>
+                  Ко може учествовати?
+                </h3>
+
+                <p>
+                  Конкурс се односи на први, до сада необјављени роман
+                  написан на српском језику. Право учешћа имају аутори
+                  из Србије и расејања.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="competition-condition">
+
+              <div className="competition-condition-icon">
+                <FaCalendarAlt />
+              </div>
+
+              <div>
+                <h3>
+                  Рок за достављање
+                </h3>
+
+                <p>
+                  Конкурс је отворен од{" "}
+                  <strong>21. јула до 15. новембра 2026. године.</strong>
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="competition-condition">
+
+              <div className="competition-condition-icon">
+                <FaFileAlt />
+              </div>
+
+              <div>
+
+                <h3>
+                  Шта треба доставити?
+                </h3>
+
+                <p>
+                  Аутори своје рукописе достављају под шифром, а не под
+                  именом и презименом, како би се обезбедила потпуна
+                  анонимност током рада жирија.
+                </p>
+
+
+                <div className="competition-documents">
+
+                  <div className="competition-document">
+
+                    <FaFileAlt />
+
+                    <div>
+
+                      <strong>
+                        Попуњена пријава за конкурс
+                      </strong>
+
+                      <span>
+                        Образац можете преузети овде.
+                      </span>
+
+                      <Button
+                        onClick={() =>
+                          window.open("/Конкурс.pdf", "_blank")
+                        }
+                        className="competition-download-button"
+                        aria-label="Преузми пријаву за конкурс"
+                      >
+                        <FaFileAlt />
+                        Преузми пријаву
+                      </Button>
+
+                    </div>
+
+                  </div>
+
+
+                  <div className="competition-document">
+
+                    <FaBookOpen />
+
+                    <div>
+
+                      <strong>
+                        Рукопис романа
+                      </strong>
+
+                      <span>
+                        Рукопис одштампан у три примерка.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <div className="competition-document">
+
+                    <FaFileAlt />
+
+                    <div>
+
+                      <strong>
+                        Електронска верзија рукописа
+                      </strong>
+
+                      <span>
+                        WORD или PDF формат, достављен на USB меморији
+                        или CD-у.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <div className="competition-document">
+
+                    <FaUsers />
+
+                    <div>
+
+                      <strong>
+                        Мала затворена коверта
+                      </strong>
+
+                      <span>
+                        Коверта са разрешењем шифре и личним подацима аутора.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div className="competition-condition">
+
+              <div className="competition-condition-icon">
+                <FaUsers />
+              </div>
+
+              <div>
+
+                <h3>
+                  Састав жирија
+                </h3>
+
+                <p>
+                  Пристигле рукописе оцењиваће трочлани жири састављен од
+                  једног књижевника, једног књижевног критичара и једног
+                  представника Градске библиотеке „Атанасије Стојковић“.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="competition-condition">
+
+              <div className="competition-condition-icon">
+                <FaAward />
+              </div>
+
+              <div>
+
+                <h3>
+                  Шта обезбеђује библиотека?
+                </h3>
+
+                <p>
+                  Градска библиотека „Атанасије Стојковић“ сноси трошкове
+                  лектуре, коректуре, припреме за штампу и техничког
+                  уређења награђеног романа.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="competition-important">
+
               <strong>
-                Аутори своје рукописе достављају под шифром, а не под именом и
-                презименом, како би се обезбедила потпуна анонимност током рада
-                жирија.
+                Важно
               </strong>
 
-              <br />
-              <br />
+              <p>
+                Жири чита и оцењује рукописе искључиво под шифром.
+                Коверта са личним подацима отвара се тек након доношења
+                одлуке о награђеном рукопису, чиме се обезбеђује потпуна
+                непристрасност поступка.
+              </p>
 
-              За учешће на Конкурсу потребно је у <strong>велику А4 коверту</strong> доставити:
+            </div>
 
-              <ul className="mt-3">
-                <li>
-                  <strong>Попуњену пријаву за конкурс</strong>, коју можете
-                  преузети овде:
-                  <br />
-                  <Button
-                    onClick={() => window.open("/Конкурс.pdf", "_blank")}
-                    className="btn btn-secondary btn-sm mt-2"
-                    aria-label="Преузми пријаву за конкурс"
-                  >
-                    Преузми пријаву
-                  </Button>
-                </li>
+          </AnimatedCard>
 
-                <li className="mt-3">
-                  <strong>Рукопис романа одштампан у три примерка.</strong>
-                </li>
+        </section>
 
-                <li className="mt-3">
-                  <strong>Рукопис у електронској форми</strong> (WORD или PDF
-                  формат), достављен на USB меморији или CD-у.
-                </li>
 
-                <li className="mt-3">
-                  <strong>Малу затворену коверту</strong> са
-                  <strong> разрешењем шифре</strong>, која треба да садржи:
-                  <ul>
-                    <li>име и презиме аутора,</li>
-                    <li>место пребивалишта,</li>
-                    <li>адресу становања,</li>
-                    <li>број телефона,</li>
-                    <li>e-mail адресу.</li>
-                  </ul>
-                </li>
-              </ul>
+        {/* =====================================================
+            ADRESA
+        ===================================================== */}
 
-              <br />
+        <section className="competition-contact">
 
-              <strong>Важно:</strong> Жири чита и оцењује рукописе искључиво под
-              шифром. Коверта са личним подацима отвара се тек након доношења
-              одлуке о награђеном рукопису, чиме се обезбеђује потпуна
-              непристрасност поступка.
-            </li>
+          <div className="competition-section-heading">
 
-            <li className="list-group-item container-text">
-              Пристигле рукописе оцењиваће трочлани жири састављен од једног
-              књижевника, једног књижевног критичара и једног представника
-              Градске библиотеке „Атанасије Стојковић“.
-            </li>
+            <span>ДОСТАВЉАЊЕ РАДОВА</span>
 
-            <li className="list-group-item container-text">
-              Градска библиотека „Атанасије Стојковић“ сноси трошкове лектуре,
-              коректуре, припреме за штампу и техничког уређења награђеног
-              романа.
-            </li>
+            <h2>
+              Где послати рукопис?
+            </h2>
 
-            <li className="list-group-item container-text">
-              <strong>Радове слати на адресу:</strong>
-              <br />
-              Градска библиотека „Атанасије Стојковић“
-              <br />
-              (за Конкурс „Атанасије Стојковић“)
-              <br />
-              Главна 114
-              <br />
-              22400 Рума
-            </li>
+          </div>
 
-            <li className="list-group-item container-text">
-              Додатне информације можете добити на телефон
-              <strong> 060/505-39-23</strong> (Ивана Костадиновић) или путем
-              e-mail адресе <strong>gbasruma@gmail.com</strong>.
-            </li>
-          </ul>
-        </AnimatedCard>
+
+          <Row className="g-4">
+
+            <Col lg={7}>
+
+              <AnimatedCard className="competition-address-card">
+
+                <div className="competition-contact-icon">
+                  <FaMapMarkerAlt />
+                </div>
+
+                <div>
+
+                  <span className="competition-contact-label">
+                    АДРЕСА ЗА ДОСТАВЉАЊЕ
+                  </span>
+
+                  <h3>
+                    Градска библиотека „Атанасије Стојковић“
+                  </h3>
+
+                  <p>
+                    (за Конкурс „Атанасије Стојковић“)
+                    <br />
+                    Главна 114
+                    <br />
+                    22400 Рума
+                  </p>
+
+                </div>
+
+              </AnimatedCard>
+
+            </Col>
+
+
+            <Col lg={5}>
+
+              <AnimatedCard className="competition-contact-card">
+
+                <div className="competition-contact-item">
+
+                  <FaPhone />
+
+                  <div>
+
+                    <span>
+                      ТЕЛЕФОН
+                    </span>
+
+                    <strong>
+                      060/505-39-23
+                    </strong>
+
+                    <small>
+                      Ивана Костадиновић
+                    </small>
+
+                  </div>
+
+                </div>
+
+
+                <div className="competition-contact-item">
+
+                  <FaEnvelope />
+
+                  <div>
+
+                    <span>
+                      E-MAIL
+                    </span>
+
+                    <strong>
+                      gbasruma@gmail.com
+                    </strong>
+
+                  </div>
+
+                </div>
+
+              </AnimatedCard>
+
+            </Col>
+
+          </Row>
+
+        </section>
+
+
+        {/* =====================================================
+            ZAVRŠNA PORUKA
+        ===================================================== */}
+
+        <section className="competition-final">
+
+          <FaPenFancy />
+
+          <h2>
+            Можда је управо ваш роман следећа прича
+            коју ће читати хиљаде људи.
+          </h2>
+
+          <p>
+            Позивамо ауторе да своје рукописе пријаве на конкурс
+            „Атанасије Стојковић“.
+          </p>
+
+        </section>
+
+
+        {/* =====================================================
+            DEKORACIJA
+        ===================================================== */}
+
+        <div className="competition-books-decoration">
+
+          <FaBookOpen />
+          <FaPenFancy />
+          <FaBookOpen />
+
+        </div>
+
       </Container>
     </>
   );

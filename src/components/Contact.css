@@ -1,68 +1,823 @@
-/* Contact.css */
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
 
-.contact-container {
-  background: #f8f6f2;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(80,60,40,0.08);
-  padding: 32px 16px;
-  margin-top: 32px;
-  margin-bottom: 32px;
+.contact-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
-.contact-card {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(80,60,40,0.07);
-  background: #fff;
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 90px 20px 85px;
+  margin-bottom: 65px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #59421f 55%,
+      #6c5128 100%
+    );
+
+  color: #f3f2ee;
+  text-align: center;
 }
 
-.contact-title {
-  color: #4b301f;
-  font-family: 'Georgia', serif;
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.contact-hero-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  opacity: 0.78;
+}
+
+.contact-hero h1 {
+  margin: 0 0 20px;
+
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.contact-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+
+  font-size: 1.4rem;
+  line-height: 1.9;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   HERO DEKORACIJA
+   ========================================================= */
+
+.contact-hero-decoration {
+  position: absolute;
+
+  border: 1px solid rgba(243, 242, 238, 0.12);
+  border-radius: 50%;
+}
+
+.contact-hero-decoration-left {
+  width: 450px;
+  height: 450px;
+
+  left: -180px;
+  top: -250px;
+}
+
+.contact-hero-decoration-right {
+  width: 550px;
+  height: 550px;
+
+  right: -220px;
+  bottom: -360px;
+}
+
+
+/* =========================================================
+   OPŠTI NASLOVI
+   ========================================================= */
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading > span,
+.contact-map-header > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #8b6a37;
+
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.18em;
 }
 
-.contact-label {
-  color: #4b301f;
+.section-heading h2,
+.contact-map-header h2 {
+  margin: 0;
+
+  color: #3f2c11;
+
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
   font-weight: 500;
 }
 
-.contact-btn {
-  background: #4b301f;
-  border: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: background 0.2s;
+.section-heading p {
+  max-width: 720px;
+
+  margin: 18px auto 0;
+
+  color: #6b655d;
+
+  font-size: 1.25rem;
+  line-height: 1.85;
 }
-.contact-btn:hover, .contact-btn:focus {
-  background: #7c5a3a;
+
+
+/* =========================================================
+   INFO KARTICE
+   ========================================================= */
+
+.contact-info-section {
+  margin-bottom: 90px;
 }
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 24px;
+
+  height: 100%;
+
+  padding: 35px;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+  border-radius: 18px;
+
+  background: #fff;
+
+  color: #3f2c11;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 30px rgba(63, 44, 17, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.contact-info-card:hover {
+  color: #3f2c11;
+
+  transform: translateY(-5px);
+
+  border-color: rgba(63, 44, 17, 0.25);
+
+  box-shadow:
+    0 15px 35px rgba(63, 44, 17, 0.1);
+}
+
+
+/* =========================================================
+   IKONA
+   ========================================================= */
 
 .contact-icon {
-  font-size: 2.2em;
-  color: #7c5a3a;
-  margin-bottom: 8px;
+  flex: 0 0 62px;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f3f2ee;
+
+  color: #3f2c11;
+
+  font-size: 1.7rem;
 }
 
-.contact-info h4 {
-  color: #4b301f;
-  font-size: 1.1em;
-  margin-bottom: 0.5em;
+
+/* =========================================================
+   TEKST INFO KARTICE
+   ========================================================= */
+
+.contact-card-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #8b6a37;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
 }
 
-.contact-social a {
-  color: #4b301f;
-  font-size: 1.5em;
-  margin: 0 10px;
-  transition: color 0.2s;
+.contact-info-card h3 {
+  margin: 0 0 8px;
+
+  color: #3f2c11;
+
+  font-size: 1.5rem;
+  font-weight: 600;
 }
-.contact-social a:hover {
-  color: #7c5a3a;
+
+.contact-info-card p {
+  margin: 0 0 7px;
+
+  color: #777;
+
+  font-size: 1.2rem;
+  line-height: 1.7;
 }
+
+.contact-info-card a {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #3f2c11;
+
+  font-size: 1.2rem;
+
+  text-decoration: none;
+
+  word-break: break-word;
+}
+
+.contact-info-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   TELEFONI
+   ========================================================= */
+
+.contact-main-section {
+  margin-bottom: 100px;
+}
+
+.phone-panel {
+  height: 100%;
+
+  padding: 48px;
+
+  border-radius: 22px;
+
+  background: #3f2c11;
+
+  color: #f3f2ee;
+
+  box-shadow:
+    0 15px 45px rgba(63, 44, 17, 0.15);
+}
+
+.phone-panel-header > span {
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.7;
+}
+
+.phone-panel-header h2 {
+  margin: 14px 0 17px;
+
+  font-size: 2.5rem;
+
+  font-weight: 500;
+}
+
+.phone-panel-header p {
+  color: rgba(243, 242, 238, 0.75);
+
+  font-size: 1.2rem;
+
+  line-height: 1.85;
+}
+
+.phone-list {
+  margin-top: 38px;
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 22px 0;
+
+  border-top: 1px solid rgba(243, 242, 238, 0.14);
+
+  color: #f3f2ee;
+
+  text-decoration: none;
+
+  transition: padding-left 0.2s ease;
+}
+
+.phone-item:last-child {
+  border-bottom: 1px solid rgba(243, 242, 238, 0.14);
+}
+
+.phone-item:hover {
+  color: #fff;
+
+  padding-left: 7px;
+}
+
+.phone-item-icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(243, 242, 238, 0.1);
+
+  font-size: 1.15rem;
+}
+
+.phone-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(243, 242, 238, 0.68);
+
+  font-size: 0.95rem;
+}
+
+.phone-item strong {
+  font-size: 1.45rem;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   FORMA
+   ========================================================= */
+
+.contact-form-card {
+  height: 100%;
+
+  padding: 48px;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+
+  border-radius: 22px;
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 40px rgba(63, 44, 17, 0.07);
+}
+
+.form-heading {
+  margin-bottom: 32px;
+}
+
+.form-heading p {
+  margin-left: 0;
+}
+
+.contact-form-card .form-label {
+  margin-bottom: 9px;
+
+  color: #3f2c11;
+
+  font-size: 1.05rem;
+
+  font-weight: 600;
+}
+
+.contact-form-card .form-control {
+  min-height: 60px;
+
+  padding: 15px 17px;
+
+  border: 1px solid #ddd8ce;
+
+  border-radius: 10px;
+
+  background: #faf9f6;
+
+  color: #3f2c11;
+
+  font-size: 1.15rem;
+
+  box-shadow: none;
+}
+
+.contact-form-card textarea.form-control {
+  min-height: 190px;
+
+  resize: vertical;
+}
+
+.contact-form-card .form-control:focus {
+  border-color: #8b6a37;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 0 3px rgba(139, 106, 55, 0.12);
+}
+
+
+/* =========================================================
+   DUGME FORME
+   ========================================================= */
+
+.contact-submit-button {
+  width: 100%;
+
+  min-height: 62px;
+
+  margin-top: 24px;
+
+  border: none !important;
+
+  border-radius: 10px;
+
+  background: #3f2c11 !important;
+
+  color: #fff !important;
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-submit-button:hover {
+  background: #59421f !important;
+
+  transform: translateY(-2px);
+}
+
+.contact-result {
+  margin-top: 16px;
+
+  padding: 14px;
+
+  border-radius: 8px;
+
+  background: #f3f2ee;
+
+  color: #3f2c11;
+
+  text-align: center;
+
+  font-size: 1.05rem;
+}
+
+.contact-result.success {
+  background: #eef5ed;
+
+  color: #365b36;
+}
+
+
+/* =========================================================
+   DRUŠTVENE MREŽE
+   ========================================================= */
+
+.social-section {
+  margin-bottom: 100px;
+}
+
+.social-card {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 220px;
+
+  padding: 35px 20px;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+
+  border-radius: 18px;
+
+  background: #fff;
+
+  color: #3f2c11;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 30px rgba(63, 44, 17, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-card:hover {
+  color: #3f2c11;
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 16px 35px rgba(63, 44, 17, 0.1);
+}
+
+.social-card svg {
+  margin-bottom: 17px;
+
+  font-size: 2.8rem;
+}
+
+.social-card span {
+  font-size: 1.35rem;
+
+  font-weight: 600;
+}
+
+.social-card small {
+  margin-top: 6px;
+
+  color: #777;
+
+  font-size: 1.05rem;
+}
+
+.social-card.youtube svg {
+  color: #ff0000;
+}
+
+.social-card.facebook svg {
+  color: #1877f2;
+}
+
+.social-card.instagram svg {
+  color: #e4405f;
+}
+
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+
+.contact-map-section {
+  margin-top: 20px;
+
+  background: #f3f2ee;
+}
+
+.contact-map-header {
+  padding: 65px 20px 40px;
+
+  text-align: center;
+}
+
+.contact-map-header p {
+  margin: 14px 0 0;
+
+  color: #6b655d;
+
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+}
+
+.contact-map {
+  width: 100%;
+  height: 420px;
+}
+
+.contact-map iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .contact-page {
+    font-size: 18px;
+  }
+
+  .contact-hero {
+    padding: 70px 20px 65px;
+  }
+
+  .contact-info-section,
+  .contact-main-section,
+  .social-section {
+    margin-bottom: 70px;
+  }
+
+  .phone-panel,
+  .contact-form-card {
+    padding: 34px;
+  }
+
+  .contact-info-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .contact-info-card p,
+  .contact-info-card a {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILNI
+   ========================================================= */
 
 @media (max-width: 767px) {
-  .contact-container {
-    padding: 16px 4px;
+
+  .contact-page {
+    font-size: 18px;
   }
-} 
+
+  .contact-hero {
+    padding: 60px 18px 55px;
+
+    margin-bottom: 45px;
+  }
+
+  .contact-hero-label {
+    font-size: 0.75rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .contact-hero p {
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+  }
+
+  .section-heading h2,
+  .contact-map-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .section-heading p {
+    font-size: 1.1rem;
+  }
+
+  .contact-info-card {
+    padding: 27px;
+
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-basis: 50px;
+
+    font-size: 1.35rem;
+  }
+
+  .contact-card-label {
+    font-size: 0.8rem;
+  }
+
+  .contact-info-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-info-card p,
+  .contact-info-card a {
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+  }
+
+  .phone-panel,
+  .contact-form-card {
+    padding: 30px;
+
+    border-radius: 18px;
+  }
+
+  .phone-panel-header h2 {
+    font-size: 2rem;
+  }
+
+  .phone-panel-header p {
+    font-size: 1.1rem;
+  }
+
+  .phone-item strong {
+    font-size: 1.25rem;
+  }
+
+  .contact-form-card .form-label {
+    font-size: 1rem;
+  }
+
+  .contact-form-card .form-control {
+    font-size: 1.1rem;
+  }
+
+  .social-card {
+    min-height: 190px;
+  }
+
+  .social-card span {
+    font-size: 1.25rem;
+  }
+
+  .contact-map {
+    height: 350px;
+  }
+}
+
+
+/* =========================================================
+   VEOMA MALI EKRANI
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .contact-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .contact-hero p {
+    font-size: 1.05rem;
+  }
+
+  .section-heading h2,
+  .contact-map-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-info-card {
+    padding: 23px;
+  }
+
+  .contact-info-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info-card p,
+  .contact-info-card a {
+    font-size: 1.05rem;
+  }
+
+  .contact-form-card {
+    padding: 23px;
+  }
+
+  .phone-panel {
+    padding: 24px;
+  }
+}

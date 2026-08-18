@@ -1,0 +1,729 @@
+/* =========================================================
+   MISSION & VISION
+========================================================= */
+
+.mission-page {
+  max-width: 1240px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: #30251b;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.mission-hero {
+  position: relative;
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #503815 48%,
+      #2c2115 100%
+    );
+
+  color: #f7f2e8;
+}
+
+.mission-hero-background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.mission-hero-circle {
+  position: absolute;
+
+  border: 1px solid rgba(231, 198, 137, 0.18);
+
+  border-radius: 50%;
+}
+
+.mission-circle-one {
+  width: 560px;
+  height: 560px;
+
+  right: -180px;
+  top: -200px;
+}
+
+.mission-circle-two {
+  width: 700px;
+  height: 700px;
+
+  left: -400px;
+  bottom: -550px;
+}
+
+.mission-hero-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 850px;
+
+  padding: 90px 0;
+}
+
+.mission-hero-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 28px;
+
+  color: #d9b978;
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.mission-hero-label span {
+  width: 35px;
+  height: 1px;
+
+  background: #d9b978;
+}
+
+.mission-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3.8rem, 8vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+}
+
+.mission-hero h1 em {
+  color: #d9b978;
+  font-style: italic;
+}
+
+.mission-hero p {
+  max-width: 680px;
+
+  margin: 35px 0 0;
+
+  color: rgba(247, 242, 232, 0.82);
+
+  font-size: 1.18rem;
+
+  line-height: 1.8;
+}
+
+.mission-hero-book {
+  position: absolute;
+
+  z-index: 2;
+
+  color: rgba(217, 185, 120, 0.12);
+
+  pointer-events: none;
+}
+
+.mission-hero-book svg {
+  width: 220px;
+  height: 220px;
+}
+
+.mission-book-left {
+  left: 5%;
+  bottom: -35px;
+
+  transform: rotate(-15deg);
+}
+
+.mission-book-right {
+  right: 5%;
+  top: 45px;
+
+  transform: rotate(10deg);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.mission-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: #9b742f;
+
+  font-size: 0.74rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.mission-eyebrow span {
+  width: 30px;
+  height: 2px;
+
+  background: #c39a50;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.mission-intro {
+  max-width: 900px;
+
+  margin-bottom: 80px;
+}
+
+.mission-intro h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.mission-intro h2 em {
+  color: #a4782d;
+
+  font-style: italic;
+}
+
+.mission-intro-text {
+  max-width: 800px;
+
+  margin-top: 28px;
+
+  color: #6d6153;
+
+  font-size: 1.1rem;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.mission-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-bottom: 120px;
+
+  border-top: 1px solid #ded3c0;
+  border-bottom: 1px solid #ded3c0;
+}
+
+.mission-stat {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 125px;
+
+  padding: 25px 35px;
+
+  border-right: 1px solid #ded3c0;
+}
+
+.mission-stat:last-child {
+  border-right: 0;
+}
+
+.mission-stat-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1e8d7;
+
+  color: #9a702c;
+
+  font-size: 1.45rem;
+}
+
+.mission-stat-content .animated-counter {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MAIN BLOCKS
+========================================================= */
+
+.mission-block {
+  margin-bottom: 130px;
+}
+
+.mission-image-wrapper {
+  position: relative;
+}
+
+.mission-image {
+  width: 100%;
+
+  height: 500px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 20px 55px rgba(54, 38, 17, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.mission-image:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 28px 65px rgba(54, 38, 17, 0.18);
+}
+
+.mission-image-caption {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 18px;
+
+  background: rgba(63, 44, 17, 0.9);
+
+  color: #f7f2e8;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 0.04em;
+}
+
+.mission-image-caption svg {
+  color: #d9b978;
+
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.mission-content {
+  position: relative;
+
+  padding: 25px 10px;
+}
+
+.mission-number {
+  margin-bottom: 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1rem;
+
+  color: #b9aa94;
+}
+
+.mission-content h2 {
+  max-width: 600px;
+
+  margin: 0 0 28px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+
+  color: #352719;
+}
+
+.mission-content h2 em {
+  color: #a4782d;
+
+  font-style: italic;
+}
+
+.mission-content p {
+  max-width: 600px;
+
+  margin-bottom: 20px;
+
+  color: #665a4d;
+
+  font-size: 1.05rem;
+
+  line-height: 1.85;
+}
+
+.mission-content-line {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2d8c8;
+
+  color: #8c7654;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+.mission-content-line svg {
+  color: #a4782d;
+}
+
+
+/* =========================================================
+   FINAL STATEMENT
+========================================================= */
+
+.mission-final {
+  position: relative;
+
+  padding: 90px 30px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11,
+      #59401c
+    );
+
+  color: #fff;
+
+  border-radius: 5px;
+}
+
+.mission-final-decoration {
+  position: absolute;
+
+  right: 45px;
+  top: 25px;
+
+  color: rgba(217, 185, 120, 0.1);
+}
+
+.mission-final-decoration svg {
+  width: 150px;
+  height: 150px;
+}
+
+.mission-final .mission-eyebrow {
+  justify-content: center;
+
+  color: #d9b978;
+}
+
+.mission-final .mission-eyebrow span {
+  background: #d9b978;
+}
+
+.mission-final h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+}
+
+.mission-final h2 em {
+  color: #d9b978;
+
+  font-style: italic;
+}
+
+.mission-final p {
+  max-width: 620px;
+
+  margin: 25px auto 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.mission-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 75px;
+
+  color: #c8b28d;
+}
+
+.mission-decoration span {
+  width: 100px;
+  height: 1px;
+
+  background: #ded3c0;
+}
+
+.mission-decoration svg {
+  width: 32px;
+  height: 32px;
+
+  color: #9c7330;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .mission-page {
+    padding-top: 75px;
+  }
+
+  .mission-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-stat {
+    border-right: 0;
+
+    border-bottom: 1px solid #ded3c0;
+  }
+
+  .mission-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .mission-image {
+    height: 450px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .mission-page {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .mission-hero {
+    min-height: 430px;
+  }
+
+  .mission-hero-content {
+    padding: 70px 20px;
+  }
+
+  .mission-hero-label {
+    font-size: 0.63rem;
+
+    line-height: 1.5;
+  }
+
+  .mission-hero-label span {
+    display: none;
+  }
+
+  .mission-hero h1 {
+    font-size: 3.8rem;
+  }
+
+  .mission-hero p {
+    margin-top: 25px;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
+
+  .mission-hero-book {
+    opacity: 0.3;
+  }
+
+  .mission-book-left {
+    left: -70px;
+  }
+
+  .mission-book-right {
+    right: -70px;
+  }
+
+  .mission-intro {
+    margin-bottom: 65px;
+  }
+
+  .mission-intro h2 {
+    font-size: 2.45rem;
+  }
+
+  .mission-intro-text {
+    font-size: 1rem;
+  }
+
+  .mission-stats {
+    margin-bottom: 80px;
+  }
+
+  .mission-stat {
+    padding: 22px 20px;
+  }
+
+  .mission-block {
+    margin-bottom: 80px;
+  }
+
+  .mission-image {
+    height: 360px;
+  }
+
+  .mission-content {
+    padding: 10px 0;
+  }
+
+  .mission-content h2 {
+    font-size: 2.4rem;
+  }
+
+  .mission-content p {
+    font-size: 1rem;
+  }
+
+  .mission-final {
+    padding: 65px 25px;
+  }
+
+  .mission-final h2 {
+    font-size: 2.4rem;
+  }
+
+  .mission-final-decoration {
+    right: -25px;
+  }
+
+  .mission-decoration span {
+    width: 50px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .mission-hero h1 {
+    font-size: 3.25rem;
+  }
+
+  .mission-intro h2 {
+    font-size: 2.15rem;
+  }
+
+  .mission-content h2 {
+    font-size: 2.15rem;
+  }
+
+  .mission-image {
+    height: 310px;
+  }
+
+  .mission-image-caption {
+    left: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 0.7rem;
+  }
+
+  .mission-final h2 {
+    font-size: 2.05rem;
+  }
+
+}

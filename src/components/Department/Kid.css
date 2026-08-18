@@ -1,0 +1,712 @@
+/* =====================================================
+   KID PAGE
+===================================================== */
+
+.kid-page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.kid-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #513914 50%,
+      #6b4d1c 100%
+    );
+
+  color: #ffff;
+}
+
+
+.kid-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1100px, 90%);
+  margin: auto;
+
+  text-align: center;
+}
+
+
+.kid-hero-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+
+  color: #ffff;
+}
+
+
+.kid-hero h1 {
+  margin: 0;
+
+  font-size: clamp(2.2rem, 7vw, 5.5rem);
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+
+
+.kid-hero p {
+  max-width: 700px;
+
+  margin: 30px auto 0;
+
+  color: rgba(243,242,238,0.78);
+
+  font-size: 1.55rem;
+  line-height: 1.8;
+}
+
+
+/* dekoracija */
+
+.kid-hero-decoration {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border: 1px solid rgba(216,189,128,0.25);
+
+  border-radius: 50%;
+}
+
+
+.kid-hero-decoration-left {
+  left: -130px;
+  top: -100px;
+}
+
+
+.kid-hero-decoration-right {
+  right: -130px;
+  bottom: -100px;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.kid-page .section-heading {
+  max-width: 850px;
+
+  margin-bottom: 65px;
+}
+
+
+.kid-page .section-heading > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #967338;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.kid-page .section-heading h2 {
+  margin: 0;
+
+  color: #3f2c11;
+
+  font-size: clamp(2.7rem, 5vw, 4.8rem);
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  letter-spacing: -2px;
+}
+
+
+.kid-page .section-heading p {
+  max-width: 700px;
+
+  margin-top: 25px;
+
+  color: #6a6257;
+
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.kid-intro-section {
+  padding: 100px 0;
+}
+
+
+.kid-text {
+  color: #514a41;
+}
+
+
+.kid-text p {
+  margin-bottom: 25px;
+
+  font-size: 1.18rem;
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   IMAGE STACK
+===================================================== */
+
+.kid-image-stack {
+  position: relative;
+
+  min-height: 570px;
+}
+
+
+.kid-image-card {
+  position: absolute;
+
+  overflow: hidden;
+
+  background: #e8e3d8;
+
+  box-shadow:
+    0 20px 50px rgba(63,44,17,0.12);
+}
+
+
+.kid-image-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.kid-image-main {
+  top: 0;
+  right: 0;
+
+  width: 82%;
+  height: 500px;
+
+  border-radius: 0 70px 0 70px;
+}
+
+
+.kid-image-small {
+  left: 0;
+  bottom: 0;
+
+  width: 52%;
+  height: 250px;
+
+  border: 10px solid #f3f2ee;
+
+  border-radius: 50px 0 50px 0;
+}
+
+
+/* =====================================================
+   CULTURAL SECTION
+===================================================== */
+
+.kid-cultural-section {
+  padding: 100px 0;
+}
+
+
+/* =====================================================
+   EVENT CARD
+===================================================== */
+
+.kid-event-card {
+  overflow: hidden;
+
+  margin-bottom: 70px;
+
+  background: #eeeae1;
+
+  border: 1px solid rgba(63,44,17,0.08);
+
+  box-shadow:
+    0 15px 45px rgba(63,44,17,0.07);
+}
+
+
+.kid-event-content {
+  padding: 60px;
+}
+
+
+.kid-event-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #967338;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+
+.kid-event-content h3 {
+  margin-bottom: 25px;
+
+  color: #3f2c11;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.05;
+
+  font-weight: 600;
+}
+
+
+.kid-event-content p {
+  margin-bottom: 20px;
+
+  color: #5f574d;
+
+  font-size: 1.25rem;
+
+  line-height: 1.85;
+}
+
+
+.kid-event-image {
+  height: 100%;
+
+  min-height: 450px;
+
+  overflow: hidden;
+}
+
+
+.kid-event-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   FULL EVENT
+===================================================== */
+
+.kid-full-event {
+  padding: 90px 40px;
+
+  margin-bottom: 70px;
+
+  text-align: center;
+
+  background: #f3f2ee;
+}
+
+
+.kid-full-event .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 35px;
+}
+
+
+.kid-centered-text {
+  max-width: 800px;
+
+  margin: 0 auto 25px;
+
+  color: #5f574d;
+
+  font-size: 1.18rem;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   POETRY
+===================================================== */
+
+.kid-poetry-decoration {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  margin-top: 40px;
+
+  color: #967338;
+
+  font-size: 1.5rem;
+}
+
+
+/* =====================================================
+   RECITATION
+===================================================== */
+
+.kid-recitation-event {
+  background: #e9e4d9;
+}
+
+
+/* =====================================================
+   FINAL EVENT
+===================================================== */
+
+.kid-final-event {
+  background: #f0ede6;
+}
+
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.kid-mission {
+  margin-top: 100px;
+
+  padding: 100px 30px;
+
+  background: #3f2c11;
+
+  color: #f3f2ee;
+
+  text-align: center;
+}
+
+
+.kid-mission-inner {
+  max-width: 850px;
+
+  margin: auto;
+}
+
+
+.kid-mission-inner > svg {
+  margin-bottom: 25px;
+
+  color: #d8bd80;
+
+  font-size: 3rem;
+}
+
+
+.kid-mission h2 {
+  margin: 0 0 30px;
+
+  color: #f3f2ee;
+
+  font-size: clamp(2.8rem, 5vw, 5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+
+.kid-mission p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: rgba(243,242,238,0.72);
+
+  font-size: 1.5rem;
+
+  line-height: 1.85;
+}
+
+
+/* =====================================================
+   BOOK DECORATION
+===================================================== */
+
+.kid-books-decoration {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  padding: 60px 0 20px;
+
+  color: #967338;
+
+  font-size: 1.5rem;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+  .kid-page {
+    padding-top: 60px;
+  }
+
+
+  .kid-intro-section,
+  .kid-cultural-section {
+    padding: 70px 0;
+  }
+
+
+  .kid-image-stack {
+    min-height: 520px;
+
+    margin-top: 20px;
+  }
+
+
+  .kid-image-main {
+    width: 82%;
+    height: 450px;
+  }
+
+
+  .kid-event-content {
+    padding: 45px;
+  }
+
+
+  .kid-event-image {
+    min-height: 380px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+  .kid-hero {
+    min-height: 420px;
+
+    padding: 70px 20px;
+  }
+
+
+  .kid-hero h1 {
+    font-size: 3.3rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .kid-hero-label {
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  .kid-hero p {
+    font-size: 1.5rem;
+  }
+
+
+  .kid-page {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+
+  .kid-intro-section,
+  .kid-cultural-section {
+    padding: 60px 0;
+  }
+
+
+  .kid-page .section-heading {
+    margin-bottom: 40px;
+  }
+
+
+  .kid-page .section-heading h2 {
+    font-size: 2.8rem;
+  }
+
+
+  .kid-text p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+
+  .kid-image-stack {
+    min-height: 430px;
+
+    margin-top: 20px;
+  }
+
+
+  .kid-image-main {
+    width: 86%;
+
+    height: 370px;
+  }
+
+
+  .kid-image-small {
+    width: 55%;
+
+    height: 200px;
+  }
+
+
+  .kid-event-card {
+    margin-bottom: 45px;
+  }
+
+
+  .kid-event-content {
+    padding: 35px 25px;
+  }
+
+
+  .kid-event-content h3 {
+    font-size: 2.2rem;
+  }
+
+
+  .kid-event-content p {
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+  }
+
+
+  .kid-event-image {
+    min-height: 300px;
+  }
+
+
+  .kid-full-event {
+    padding: 60px 20px;
+
+    margin-bottom: 45px;
+  }
+
+
+  .kid-centered-text {
+    font-size: 1.5rem;
+
+    line-height: 1.8;
+  }
+
+
+  .kid-mission {
+    margin-top: 60px;
+
+    padding: 70px 20px;
+  }
+
+
+  .kid-mission h2 {
+    font-size: 3rem;
+  }
+
+
+  .kid-mission p {
+    font-size: 1rem;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .kid-hero h1 {
+    font-size: 2.8rem;
+  }
+
+
+  .kid-page .section-heading h2 {
+    font-size: 2.4rem;
+  }
+
+
+  .kid-image-stack {
+    min-height: 360px;
+  }
+
+
+  .kid-image-main {
+    height: 310px;
+  }
+
+
+  .kid-image-small {
+    height: 160px;
+  }
+
+
+  .kid-event-content {
+    padding: 30px 20px;
+  }
+
+
+  .kid-event-content h3 {
+    font-size: 2rem;
+  }
+
+
+  .kid-event-image {
+    min-height: 260px;
+  }
+
+
+  .kid-mission h2 {
+    font-size: 2.5rem;
+  }
+
+}

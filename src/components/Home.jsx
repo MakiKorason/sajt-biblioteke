@@ -1,896 +1,1211 @@
-import React, { useState, useCallback, useMemo, Suspense, useEffect, useRef } from 'react';
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  Suspense
+} from 'react';
+
 import './Home.css';
-import { Button, Col, Container, Row, Modal } from 'react-bootstrap';
+
+import {
+  Button,
+  Col,
+  Container,
+  Row,
+  Modal
+} from 'react-bootstrap';
+
+import {
+  FaArrowRight,
+  FaCalendarAlt,
+  FaBookOpen,
+  FaHeadphones,
+  FaSearch,
+  FaFileAlt,
+  FaUsers,
+  FaTimes
+} from 'react-icons/fa';
+
+import { Helmet } from 'react-helmet-async';
+
 import ImageModal from './ImageModal';
+import AnimatedCard from './Department/AnimatedCard';
+
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
 import ministarstvo from '../images/ministarstvo.webp';
 import opstina from '../images/opstina.webp';
-//  import biblioteka from '../images/biblioteka.webp';
 import konkurs from '../images/konkurs.webp';
 import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
-import logoDigitalna from '../images/logoDigitalna.webp'
-import filmTesla from '../images/filmTesla.png'
-import kosare from '../images/kosare.png'
-import karavansaraj from '../images/karavansaraj.png'
-import saradnja from '../images/saradnja.jpg'
-import '@react-pdf-viewer/core/lib/styles/index.css';
+import logoDigitalna from '../images/logoDigitalna.webp';
+
+import filmTesla from '../images/filmTesla.png';
+import kosare from '../images/kosare.png';
+import karavansaraj from '../images/karavansaraj.png';
+
+import saradnja from '../images/saradnja.jpg';
+import saradnja1 from '../images/saradnja1.webp';
+import saradnja2 from '../images/saradnja2.webp';
+import saradnja3 from '../images/saradnja3.webp';
+
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
 import trkulja from '../images/trkulja.webp';
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
+
 import karoselSlika from '../images/karoselSlika.webp';
 import digitalna from '../images/digitalna.webp';
-import saradnja1 from '../images/saradnja1.webp';
-import saradnja2 from '../images/saradnja2.webp';
-import saradnja3 from '../images/saradnja3.webp';
-import 'react-calendar/dist/Calendar.css';
-import AnimatedCard from './Department/AnimatedCard'; 
 
 import pokrajina from '../images/pokrajina.webp';
-import { Helmet } from "react-helmet-async";
-import audioKnjiga from '../images/audioKnjiga.png'
-import biblioteka from '../images/biblioteka.webp'
-import prijavaKonkurs from'../images/prijavaKonkurs.jpg'
+import audioKnjiga from '../images/audioKnjiga.png';
+import biblioteka from '../images/biblioteka.webp';
+import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
+
+import 'react-calendar/dist/Calendar.css';
 
 const Calendar = React.lazy(() => import('react-calendar'));
-const AnimatedImage = React.lazy(() => import('./Department/AnimatedImage'));
 
+const EVENTS_YEAR = 2026;
 
-const Home =()=> { 
-
- const EVENTS_YEAR = 2026;
-
-  // Почетни датум у календару: данашњи датум (без ручног означавања 1. фебруара)
+const Home = () => {
   const [date, setDate] = useState(new Date());
 
-  const [showFriends, setShowFriends] = useState(false);
   const [showImage, setShowImage] = useState(false);
   const [modalImage, setModalImage] = useState(null);
-  const [imageSetIndex, setImageSetIndex] = useState(0);
-  const [isForward, setIsForward] = useState(true);
-  
-  // State for image modal
+
+  const [showFriends, setShowFriends] = useState(false);
+
   const [showImageModal, setShowImageModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '', title: '', size: 'lg' });
-  // const [showAboutDetails, setShowAboutDetails] = useState(false);
 
-  const tileClassName = useCallback(({ date, view }) => {
-    if (view !== 'month' || !(date instanceof Date)) return;
+  const [selectedImage, setSelectedImage] = useState({
+    src: '',
+    alt: '',
+    title: '',
+    size: 'lg'
+  });
 
-    const isSameDay = (d, year, month, day) =>
-      d.getFullYear() === year && d.getMonth() === month && d.getDate() === day;
+  /*
+   * --------------------------------------------------
+   * DOGAĐAJI
+   * --------------------------------------------------
+   */
 
-    // Означени датуми: 10. август, 26. и 28. август 2026.
-    if (
-      isSameDay(date, EVENTS_YEAR, 7, 10)
-      || isSameDay(date, EVENTS_YEAR, 7, 26)
-      || isSameDay(date, EVENTS_YEAR, 7, 28)
-    ) {
-      return 'marked-date';
-    }
-  }, []);
-
-
-  const onChange = useCallback(date =>{
-    setDate(date);
-  
- 
-    if (!(date instanceof Date) || date.getFullYear() !== EVENTS_YEAR) {
-      setShowImage(false);
-      return;
-    }
-
-    // Klik na označene datume (prikaz slike u modal-u)
-    if (date.getMonth() === 7 && date.getDate() === 10) {
-      setModalImage(filmTesla);
-      setShowImage(true);
-      return;
-    }
-
-    if (date.getMonth() === 7 && date.getDate() === 26) {
-      setModalImage(karavansaraj);
-      setShowImage(true);
-      return;
-    }
-
-    if (date.getMonth() === 7 && date.getDate() === 28) {
-      setModalImage(kosare);
-      setShowImage(true);
-      return;
-    }
- 
-
-
-    setShowImage(false);
-  }, []);
-
-  const imageSets = useMemo(() => [
-    [filmTesla, karavansaraj, kosare],
-  ], []);
-
-  const announcementAlts = [
-    'Никола Тесла: између књиге и идеје — пројекција филма',
-    'Кошаре — промоција књиге',
-    'Каравансарај — промоција збирке песама',
-  ];
-  
-  const toggleImageSet = () => {
-    // Ако постоји само један сет слика, нема шта да се мења
-    if (imageSets.length <= 1) {
-      return;
-    }
-    setImageSetIndex((prevIndex) => {
-      const lastIndex = imageSets.length - 1;
-      let nextIndex = prevIndex + (isForward ? 1 : -1);
-      if (nextIndex > lastIndex) {
-        setIsForward(false);
-        nextIndex = prevIndex - 1;
-      } else if (nextIndex < 0) {
-        setIsForward(true);
-        nextIndex = prevIndex + 1;
+  const events = useMemo(
+    () => ({
+      '2026-08-10': {
+        image: filmTesla,
+        title: 'Никола Тесла: између књиге и идеје'
+      },
+      '2026-08-26': {
+        image: karavansaraj,
+        title: 'Каравансарај'
+      },
+      '2026-08-28': {
+        image: kosare,
+        title: 'Кошаре'
       }
-      return nextIndex;
-    });
-  };
+    }),
+    []
+  );
 
-  // Function to handle image click
+  const getDateKey = useCallback((selectedDate) => {
+    if (!(selectedDate instanceof Date)) {
+      return '';
+    }
 
-  const handleCloseImageModal = () => {
+    const year = selectedDate.getFullYear();
+    const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+    const day = String(selectedDate.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  }, []);
+
+  const tileClassName = useCallback(
+    ({ date: calendarDate, view }) => {
+      if (view !== 'month' || !(calendarDate instanceof Date)) {
+        return undefined;
+      }
+
+      const key = getDateKey(calendarDate);
+
+      if (events[key]) {
+        return 'marked-date';
+      }
+
+      return undefined;
+    },
+    [events, getDateKey]
+  );
+
+  const handleCalendarChange = useCallback(
+    (selectedDate) => {
+      setDate(selectedDate);
+
+      const key = getDateKey(selectedDate);
+      const selectedEvent = events[key];
+
+      if (selectedEvent) {
+        setModalImage(selectedEvent.image);
+        setShowImage(true);
+      } else {
+        setShowImage(false);
+        setModalImage(null);
+      }
+    },
+    [events, getDateKey]
+  );
+
+  /*
+   * --------------------------------------------------
+   * IMAGE MODAL
+   * --------------------------------------------------
+   */
+
+  const handleImageClick = useCallback(
+    (image, title, modalSize = 'lg') => {
+      setSelectedImage({
+        src: image,
+        alt: title,
+        title,
+        size: modalSize
+      });
+
+      setShowImageModal(true);
+    },
+    []
+  );
+
+  const handleCloseImageModal = useCallback(() => {
     setShowImageModal(false);
-    setSelectedImage({ src: '', alt: '', title: '', size: 'lg' });
-  };
 
-  const handleImageClick = (image, title, modalSize = 'lg') => {
-    setModalImage(image);
-    setSelectedImage({ src: image, alt: title, title, size: modalSize });
-    setShowImageModal(true);
-  };
-
-  // Ensure Bootstrap carousel is initialized
-  const carouselRef = useRef(null);
-  
-  useEffect(() => {
-    let carouselInstance = null;
-    let initTimer = null;
-    
-    const initCarousel = () => {
-      const carouselElement = carouselRef.current;
-      if (!carouselElement) {
-        // Retry if element is not ready
-        initTimer = setTimeout(initCarousel, 100);
-        return;
-      }
-      
-      // Check if Bootstrap is available
-      if (typeof window === 'undefined' || !window.bootstrap || !window.bootstrap.Carousel) {
-        initTimer = setTimeout(initCarousel, 100);
-        return;
-      }
-      
-      try {
-        // Get or create instance - Bootstrap 5 way
-        carouselInstance = window.bootstrap.Carousel.getOrCreateInstance(carouselElement, {
-          interval: 30000,
-          ride: 'carousel',
-          wrap: true,
-          keyboard: true,
-          pause: 'hover'
-        });
-        
-        // Ensure it's cycling
-        if (carouselInstance && !carouselInstance._interval) {
-          carouselInstance.cycle();
-        }
-      } catch (error) {
-        console.error('Error initializing carousel:', error);
-      }
-    };
-
-    // Initialize after a short delay to ensure DOM is ready
-    initTimer = setTimeout(initCarousel, 200);
-    
-    return () => {
-      if (initTimer) {
-        clearTimeout(initTimer);
-      }
-      // Cleanup on unmount
-      if (carouselInstance) {
-        try {
-          carouselInstance.dispose();
-        } catch (error) {
-          // Ignore cleanup errors
-        }
-      }
-    };
+    setSelectedImage({
+      src: '',
+      alt: '',
+      title: '',
+      size: 'lg'
+    });
   }, []);
+
+  /*
+   * --------------------------------------------------
+   * CAROUSEL
+   * --------------------------------------------------
+   */
+
+  const carouselSlides = useMemo(
+    () => [
+      {
+        image: biblioteka,
+        alt: 'Зграда Градске библиотеке у Руми',
+        title: 'ВАЖНО ОБАВЕШТЕЊЕ',
+        text:
+          'Обавештавамо кориснике да библиотека током јула и августа неће радити суботом због годишњих одмора и високих температура.',
+        button: null
+      },
+      {
+        image: digitalna,
+        alt: 'Атанасије Стојковић',
+        title: 'АТАНАСИЈЕ СТОЈКОВИЋ',
+        text:
+          'Румљанин Атанасије Стојковић био је најобразованији Србин прве трећине 19. века.',
+        button: {
+          href: 'https://www.facebook.com/watch/?v=1235424304400303',
+          text: 'ДЕТАЉНИЈЕ'
+        }
+      },
+      {
+        image: karoselSlika,
+        alt: 'Култура за све',
+        title: 'КУЛТУРА ЗА СВЕ',
+        text:
+          'Пројекат „Култура за све“ представља јачање техничких капацитета наше установе.',
+        button: {
+          href: 'https://sremskevesti.rs/sva-odeljenja-rumske-gradske-biblioteke-atanasije-stojkovic-dostupna-ljudima-ostecenog-sluha-slepim-i-slabovidim-osobama/',
+          text: 'ДЕТАЉНИЈЕ'
+        }
+      },
+      {
+        image: books,
+        alt: 'Омиљене књиге наших корисника',
+        title: 'ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА',
+        text:
+          'Погледајте које су књиге најомиљеније међу корисницима Градске библиотеке.',
+        button: {
+          href: 'https://www.facebook.com/bibliotekaatanasijestojkovic.ruma/videos/967554408223187',
+          text: 'ДЕТАЉНИЈЕ'
+        }
+      }
+    ],
+    []
+  );
+
+  /*
+   * --------------------------------------------------
+   * PARTNERI
+   * --------------------------------------------------
+   */
+
+  const institutionalPartners = [
+    {
+      image: ministarstvo,
+      alt: 'Министарство културе Србије',
+      className: 'partner-ministry'
+    },
+    {
+      image: opstina,
+      alt: 'Општина Рума',
+      className: 'partner-municipality'
+    },
+    {
+      image: pokrajina,
+      alt: 'Покрајински секретаријат за културу',
+      className: 'partner-province'
+    },
+    {
+      image: matica,
+      alt: 'Матица српска',
+      className: 'partner-matica'
+    },
+    {
+      image: narodna,
+      alt: 'Народна библиотека Србије',
+      className: 'partner-national'
+    },
+    {
+      image: muzej,
+      alt: 'Музеј у Руми',
+      className: 'partner-museum'
+    },
+    {
+      image: turisticka,
+      alt: 'Туристичка организација Рума',
+      className: 'partner-tourism'
+    },
+    {
+      image: kc,
+      alt: 'Културни центар Рума',
+      className: 'partner-cultural'
+    }
+  ];
+
+  const friends = [
+    {
+      image: Panonija,
+      alt: 'Панонија књижара у Руми'
+    },
+    {
+      image: Boss,
+      alt: 'Босс компанија Рума'
+    },
+    {
+      image: trkulja,
+      alt: 'Тркуља керамика Рума'
+    },
+    {
+      image: Frigo,
+      alt: 'Фриго Жика Рума'
+    },
+    {
+      image: beke,
+      alt: 'Беке компанија Рума'
+    }
+  ];
 
   return (
     <>
-  <Helmet>
-  <title>Градска библиотека Атанасије Стојковић Рума</title>
-  <meta name="description" content="Градска библиотека Атанасије Стојковић у Руми нуди широк избор књига, дигитални фонд, културне догађаје и образовне програме. Откријте нашу колекцију, учествујте у догађајима и истражите богату историју библиотеке." />
-  <meta name="keywords" content="библиотека, Рума, књиге, догађаји, препоруке, Атанасије Стојковић" />
-  <link rel="canonical" href="https://www.bibliotekaruma.rs/" />
-  
-  {/* Open Graph meta tags za Facebook sharing */}
-  <meta property="og:title" content="Градска библиотека Атанасије Стојковић Рума – званични сајт" />
-  <meta property="og:description" content="Градска библиотека Атанасије Стојковић у Руми нуди широк избор књига, дигитални фонд, културне догађаје и образовне програме. Откријте нашу колекцију, учествујте у догађајима и истражите богату историју библиотеке." />
-  <meta property="og:image" content="https://www.bibliotekaruma.rs/logo.webp" />
-  <meta property="og:image:width" content="256" />
-  <meta property="og:image:height" content="256" />
-  <meta property="og:image:alt" content="Градска библиотека Атанасије Стојковић Рума" />
-  <meta property="og:image:type" content="image/webp" />
-  <meta property="og:url" content="https://www.bibliotekaruma.rs/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Градска библиотека Рума" />
-  <meta property="og:locale" content="sr_RS" />
-  
-  {/* Twitter Card meta tags */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Градска библиотека Атанасије Стојковић Рума – званични сајт" />
-  <meta name="twitter:description" content="Градска библиотека Атанасије Стојковић у Руми нуди широк избор књига, дигитални фонд, културне догађаје и образовне програме." />
-  <meta name="twitter:image" content="https://www.bibliotekaruma.rs/logo.webp" />
-  <script type="application/ld+json">
-    {`
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.bibliotekaruma.rs/#website",
-            "url": "https://www.bibliotekaruma.rs/",
-            "name": "Градска библиотека Рума",
-            "alternateName": "Градска библиотека Атанасије Стојковић Рума",
-            "description": "Званични сајт Градске библиотеке у Руми",
-            "publisher": {
-              "@id": "https://www.bibliotekaruma.rs/#organization"
+      <Helmet>
+        <title>
+          Градска библиотека Атанасије Стојковић Рума
+        </title>
+
+        <meta
+          name="description"
+          content="Градска библиотека Атанасије Стојковић у Руми нуди широк избор књига, дигитални фонд, културне догађаје и образовне програме."
+        />
+
+        <meta
+          name="keywords"
+          content="библиотека, Рума, књиге, догађаји, препоруке, Атанасије Стојковић"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.bibliotekaruma.rs/"
+        />
+
+        <meta
+          property="og:title"
+          content="Градска библиотека Атанасије Стојковић Рума – званични сајт"
+        />
+
+        <meta
+          property="og:description"
+          content="Званични сајт Градске библиотеке Атанасије Стојковић у Руми."
+        />
+
+        <meta
+          property="og:image"
+          content="https://www.bibliotekaruma.rs/logo.webp"
+        />
+
+        <meta
+          property="og:url"
+          content="https://www.bibliotekaruma.rs/"
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+
+        <meta
+          property="og:site_name"
+          content="Градска библиотека Рума"
+        />
+
+        <meta
+          property="og:locale"
+          content="sr_RS"
+        />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+
+        <meta
+          name="twitter:title"
+          content="Градска библиотека Атанасије Стојковић Рума"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Званични сајт Градске библиотеке Атанасије Стојковић у Руми."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.bibliotekaruma.rs/logo.webp"
+        />
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.bibliotekaruma.rs/#website",
+                  "url": "https://www.bibliotekaruma.rs/",
+                  "name": "Градска библиотека Рума",
+                  "alternateName": "Градска библиотека Атанасије Стојковић Рума",
+                  "description": "Званични сајт Градске библиотеке у Руми",
+                  "publisher": {
+                    "@id": "https://www.bibliotekaruma.rs/#organization"
+                  }
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.bibliotekaruma.rs/#organization",
+                  "name": "Градска библиотека Рума",
+                  "alternateName": "Градска библиотека Атанасије Стојковић Рума",
+                  "url": "https://www.bibliotekaruma.rs/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.bibliotekaruma.rs/logo.webp"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/bibliotekaatanasijestojkovic.ruma",
+                    "https://www.instagram.com/gradska_biblioteka_ruma",
+                    "https://youtube.com/@gradskabibliotekaruma"
+                  ]
+                }
+              ]
             }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.bibliotekaruma.rs/#organization",
-            "name": "Градска библиотека Рума",
-            "alternateName": "Градска библиотека Атанасије Стојковић Рума",
-            "description": "Званични сајт Градске библиотеке у Руми",
-            "url": "https://www.bibliotekaruma.rs/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.bibliotekaruma.rs/logo.webp"
-            },
-            "sameAs": [
-              "https://www.facebook.com/bibliotekaatanasijestojkovic.ruma",
-              "https://www.instagram.com/gradska_biblioteka_ruma",
-              "https://youtube.com/@gradskabibliotekaruma"
-            ]
-          }
-        ]
-      }
-    `}
-  </script>
-</Helmet>
+          `}
+        </script>
+      </Helmet>
 
-<Row>
-  <Col md={12}>
-    <div
-      ref={carouselRef}
-      id="bibliotekaCarousel"
-      className="carousel slide"
-      data-bs-ride="carousel"
-      data-bs-interval="30000"
-      data-bs-wrap="true"
-      data-bs-keyboard="true"
-      data-bs-pause="false"
-    >
-      {/* INDICATORS */}
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#bibliotekaCarousel" data-bs-slide-to="0" className="active" aria-label="Прва слика" />
-        <button type="button" data-bs-target="#bibliotekaCarousel" data-bs-slide-to="1" aria-label="Друга слика" />
-        <button type="button" data-bs-target="#bibliotekaCarousel" data-bs-slide-to="2" aria-label="Трећа слика" />
-        <button type="button" data-bs-target="#bibliotekaCarousel" data-bs-slide-to="3" aria-label="Четврта слика" />
-      </div>
+      {/* =====================================================
+          HERO CAROUSEL
+      ====================================================== */}
 
-      {/* SLIDES */}
-      <div className="carousel-inner">
-
-  <div className="carousel-item active">
-          <img
-            src={biblioteka}
-            alt="Зграда библиотеке у Руми"
-            className="d-block w-100 image-carousel img-fluid"
-            loading="lazy"
-            width="1200"
-            height="675"
-          />
-          <div className="carousel-caption">
-            <p className="carousel-caption-text">
-              <span >ВАЖНО ОБАВЕШТЕЊЕ</span><br/><hr/>
-            {/* Градска библиотека „Атанасије Стојковић“ у Руми, као најстарија културна институција у овом крају, од самог оснивања игра значајну улогу у очувању и промоцији културе и образовања.  */}
-            Обавештавамо кориснике да библиотека током јула и августа неће радити суботом због годишњих одмора и високих температура.
-              <br />
-              {/* <Button
-                href="https://www.facebook.com/photo?fbid=1611070854351865&set=a.512519967540298&locale=sr_RS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light container-button"
-                aria-label="Сазнајте више о згради библиотеке"
-              >
-                ДЕТАЉНИЈЕ
-              </Button> */}
-            </p>
-           
-          </div>
-        </div> 
-        <div className="carousel-item">
-          <img
-            src={digitalna}
-            alt="Атанасије Стојковић"
-            className="d-block w-100 image-carousel img-fluid clickable-image"
-            loading="lazy"
-            onClick={() =>
-              handleImageClick(digitalna, 'Атанасије Стојковић')
-            }
-          />
-          <div className="carousel-caption">
-            <p className="carousel-caption-text">
-              Румљанин Атанасије Стојковић био је најобразованији Србин
-              прве трећине 19. века.
-              <br />
-              <Button
-                href="https://www.facebook.com/watch/?v=1235424304400303"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light container-button btn-lg"
-                aria-label="Сазнајте више о Атанасију Стојковићу"
-              >
-                ДЕТАЉНИЈЕ
-              </Button>
-            </p>
-          </div>
-        </div>
-
-        <div className="carousel-item">
-          <img
-            src={karoselSlika}
-            alt="Култура за све"
-            className="d-block w-100 image-carousel img-fluid clickable-image"
-            loading="lazy"
-            onClick={() =>
-              handleImageClick(karoselSlika, 'Култура за све')
-            }
-          />
-          <div className="carousel-caption">
-            <p className="carousel-caption-text">
-              Пројекат „Култура за све“ представља јачање техничких капацитета наше установе.
-              <br />
-              <Button
-                href="https://sremskevesti.rs/sva-odeljenja-rumske-gradske-biblioteke-atanasije-stojkovic-dostupna-ljudima-ostecenog-sluha-slepim-i-slabovidim-osobama/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light container-button"
-                aria-label="Сазнајте више о пројекту Култура за све"
-              >
-                ДЕТАЉНИЈЕ
-              </Button>
-            </p>
-          </div>
-        </div>
-
-        <div className="carousel-item">
-          <img
-            src={books}
-            alt="Омиљене књиге наших корисника"
-            className="d-block w-100 image-carousel img-fluid clickable-image"
-            loading="lazy"
-            onClick={() =>
-              handleImageClick(books, 'ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА')
-            }
-          />
-          <div className="carousel-caption">
-            <p className="carousel-caption-text">
-              ОМИЉЕНЕ КЊИГЕ НАШИХ КОРИСНИКА
-              <br />
-              <Button
-                href="https://www.facebook.com/bibliotekaatanasijestojkovic.ruma/videos/967554408223187"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn container-button"
-                style={{ backgroundColor: "#6c757d", color: "#fff", border: "none" }}
-                aria-label="Сазнајте више о омиљеним књигама корисника"
-              >
-                ДЕТАЉНИЈЕ
-              </Button>
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </Col>
-</Row>
-
-
-
-{/* <Container className="container-library ms-auto mt-4 mb-4">
-  <Row>
-    <Col md={12}>
-      <h1 className="container-title" >
-        Градска библиотека Атанасије Стојковић у Руми
-      </h1>
-      <br/>
-      <div className='container-text'>
-        <p>
-          Градска библиотека „Атанасије Стојковић" у Руми је најстарија културна институција у овом крају, која непрекидно ради на унапређењу културног и просветног живота заједнице. Библиотека носи име знаменитог Румљанина Атанасија Стојковића, најобразованијег Србина прве трећине 19. века, који је својим радом и доприносом оставио неизбрисив траг у српској култури и науци.
-        </p>
-
-        <button
-          type="button"
-          className="btn btn-secondary about-details-toggle"
-          onClick={() => setShowAboutDetails((prev) => !prev)}
-          aria-expanded={showAboutDetails}
-          aria-controls="about-more-details"
-        >
-          ДЕТАЉНИЈЕ
-        </button>
-
+      <section className="home-hero">
         <div
-          id="about-more-details"
-          className={`about-more-details ${showAboutDetails ? 'expanded' : 'collapsed'}`}
-          aria-hidden={!showAboutDetails}
+          id="bibliotekaCarousel"
+          className="carousel slide home-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="30000"
+          data-bs-wrap="true"
+          data-bs-keyboard="true"
+          data-bs-pause="hover"
         >
-          <p>
-            Наша библиотека нуди широк спектар услуга и програма за све категорије корисника. Поседујемо богат књижни фонд од преко 80.000 публикација, који обухвата белетристику, научну и стручну литературу, дечије књиге, као и специјалне колекције и легате. Осим традиционалног библиотечког фонда, наша библиотека је поносна на дигиталну библиотеку која омогућава бесплатан приступ дигитализованим књигама, документима и публикацијама од културног значаја за локалну средину.
-          </p>
+          <div className="carousel-indicators">
+            {carouselSlides.map((slide, index) => (
+              <button
+                key={slide.title}
+                type="button"
+                data-bs-target="#bibliotekaCarousel"
+                data-bs-slide-to={index}
+                className={index === 0 ? 'active' : ''}
+                aria-label={`Слајд ${index + 1}`}
+              />
+            ))}
+          </div>
 
-          <p>
-            Библиотека активно организује бројне културне манифестације и догађаје током целе године. Најзначајније манифестације укључују Дане словенске писмености и културе, Дане Атанасија Стојковића, Румску књижевну колонију и Румско културно лето. Ови догађаји окупљају писце, уметнике, научнике и све љубитеље књиге и културе, чинећи библиотеку живим културним центром града.
-          </p>
+          <div className="carousel-inner">
+            {carouselSlides.map((slide, index) => (
+              <div
+                className={`carousel-item ${
+                  index === 0 ? 'active' : ''
+                }`}
+                key={slide.title}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="d-block w-100 home-carousel-image"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  width="1200"
+                  height="675"
+                  onClick={() =>
+                    handleImageClick(
+                      slide.image,
+                      slide.alt
+                    )
+                  }
+                />
 
-          <p>
-            Наша библиотека је подељена на неколико специјализованих одељења која служе различитим потребама корисника. Одељење за одрасле читаоце нуди широк избор белетристике и стручне литературе, Одељење за децу и омладину организује програме за најмлађе читаоце, Одељење завичајне грађе чува и промовише локалну историју и културу, док Одељење научне и стручне литературе обезбеђује приступ публикацијама из готово свих области људског знања.
-          </p>
+                <div className="carousel-overlay" />
 
-          <p>
-            Кроз пројекте као што су „Култура за све" и друге иницијативе, библиотека ради на томе да све своје садржаје учини доступним свим грађанима, укључујући особе са инвалидитетом. Наша библиотека је модерна, приступачна и отворена за све, и непрекидно ради на унапређењу својих услуга и проширењу свог утицаја у локалној заједници.
-          </p>
+                <div className="carousel-caption home-caption">
+                  <div className="caption-content">
+                    <span className="caption-kicker">
+                      {index === 0
+                        ? 'ВАЖНО ОБАВЕШТЕЊЕ'
+                        : 'ГРАДСКА БИБЛИОТЕКА РУМА'}
+                    </span>
+
+                    <h2>{slide.title}</h2>
+
+                    <p>{slide.text}</p>
+
+                    {slide.button && (
+                      <a
+                        href={slide.button.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="home-button home-button-light"
+                      >
+                        {slide.button.text}
+                        <FaArrowRight />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#bibliotekaCarousel"
+            data-bs-slide="prev"
+            aria-label="Претходни слајд"
+          >
+            <span className="carousel-control-prev-icon" />
+          </button>
+
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#bibliotekaCarousel"
+            data-bs-slide="next"
+            aria-label="Следећи слајд"
+          >
+            <span className="carousel-control-next-icon" />
+          </button>
         </div>
-      </div>
-    </Col>
-  </Row>
-</Container> */}
+      </section>
 
-<Container className="container-library ms-auto mt-4 mb-4">
-  <Row>
-    <Col md={12} className="mt-3 mb-3 text-center">
-      <img  className="img-fluid w-100" alt="Пријава за конкурс" src={prijavaKonkurs} />
-      
-    </Col> <a
-        href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn-primary"
+      {/* =====================================================
+          KONKURS
+      ====================================================== */}
+
+      <section className="home-section">
+        <Container>
+          <div className="notice-card">
+            <div className="notice-image">
+              <img
+                src={prijavaKonkurs}
+                alt="Пријава за конкурс"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="notice-content">
+              <span className="section-kicker">
+                АКТУЕЛНО
+              </span>
+
+              <h2>
+                Пријава за конкурс
+              </h2>
+
+              <p>
+                Погледајте актуелни конкурс и
+                информације о начину пријављивања.
+              </p>
+
+              <a
+                href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
+                className="home-button"
+              >
+                ДЕТАЉНИЈЕ
+                <FaArrowRight />
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          EVENTS
+      ====================================================== */}
+
+      <section className="home-section events-section">
+        <Container>
+          <div className="section-heading">
+            <span className="section-kicker">
+              КАЛЕНДАР
+            </span>
+
+            <h2>
+              Огласна табла актуелних догађаја
+            </h2>
+
+            <p>
+              Изаберите означени датум за више
+              информација о догађају.
+            </p>
+          </div>
+
+          <Row className="align-items-center g-4">
+            <Col lg={4}>
+              <div className="calendar-card">
+                <div className="calendar-icon">
+                  <FaCalendarAlt />
+                </div>
+
+                <Suspense
+                  fallback={
+                    <div className="calendar-loading">
+                      Учитавање календара...
+                    </div>
+                  }
+                >
+                  <Calendar
+                    onChange={handleCalendarChange}
+                    value={date}
+                    tileClassName={tileClassName}
+                    locale="sr-Latn"
+                  />
+                </Suspense>
+              </div>
+            </Col>
+
+            <Col lg={8}>
+              <div className="events-gallery">
+                <div className="events-gallery-header">
+                  <span className="section-kicker">
+                    НАЈАВЕ
+                  </span>
+
+                  <h3>
+                    Догађаји библиотеке
+                  </h3>
+                </div>
+
+                <div className="event-images">
+                  <img
+                    src={filmTesla}
+                    alt="Никола Тесла: између књиге и идеје — пројекција филма"
+                    loading="lazy"
+                    onClick={() =>
+                      handleImageClick(
+                        filmTesla,
+                        'Никола Тесла: између књиге и идеје'
+                      )
+                    }
+                  />
+
+                  <img
+                    src={karavansaraj}
+                    alt="Каравансарај — промоција"
+                    loading="lazy"
+                    onClick={() =>
+                      handleImageClick(
+                        karavansaraj,
+                        'Каравансарај'
+                      )
+                    }
+                  />
+
+                  <img
+                    src={kosare}
+                    alt="Кошаре — промоција"
+                    loading="lazy"
+                    onClick={() =>
+                      handleImageClick(
+                        kosare,
+                        'Кошаре'
+                      )
+                    }
+                  />
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* EVENT MODAL */}
+
+      <Modal
+        show={showImage}
+        onHide={() => setShowImage(false)}
+        centered
+        size="lg"
+        className="event-modal"
       >
-        Детаљније
-      </a>
-  </Row>
-</Container>
-<Container  className=" container-library ms-auto mt-4 mb-4 ">
- 
-<h2 className= "container-title"  >Огласна табла актуелних догађаја - Градска библиотека Атанасије Стојковић Рума</h2>
-<hr style={{margin: '0 auto', width: '50%' ,border: '1px solid' }} /> <Row>
-    <Col md={4} className='mt-3 mb-3 text-center '>
-    
-        <Suspense fallback={<div>Loading Calendar...</div>}>
-          <Calendar  onChange={onChange} value={date}  tileClassName={tileClassName}  />
-        </Suspense>
-      {/* Modal za prikaz slike */}
-              <Modal show={showImage} onHide={() => setShowImage(false)} centered size="md">
-        <Modal.Header closeButton style={{backgroundColor: '#f3f2ee'}}>
-          <Modal.Title>Догађај</Modal.Title>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            Догађај
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="text-center" style={{backgroundColor: '#f3f2ee'}}>
+
+        <Modal.Body>
           {modalImage && (
-            <img src={modalImage} alt="Слика за изабрани датум" style={{width: '100%', height: 'auto'}} loading="lazy" />
+            <img
+              src={modalImage}
+              alt="Слика за изабрани датум"
+              className="event-modal-image"
+            />
           )}
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor: '#f3f2ee'}}>
-          <Button variant="secondary" onClick={() => setShowImage(false)} aria-label="Затвори модал са сликом">
+
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => setShowImage(false)}
+          >
             Затвори
           </Button>
         </Modal.Footer>
       </Modal>
-    </Col>  
 
-    <Col md={8} className='mt-3 mb-3 text-center'>
-      <div className="carousel-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
-        <div className="carousel-images" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {imageSets[imageSetIndex].map((image, index) => (
-            <Suspense key={index} fallback={<div>Loading AnimatedImage...</div>}>
-              <AnimatedImage
-                src={image}
-                alt={announcementAlts[index]}
-                className="container-image"
-                width="400"
-                height="300"
-                style={{
-                  height: 'auto',
-                  width: '100%',
-                  maxWidth: window.innerWidth < 768 ? '280px' : '400px'
-                }}
-              />
-            </Suspense>
-          ))}
-        </div>
-        
-        {imageSets.length > 1 && (
-        <Button 
-          variant="secondary" 
-          onClick={toggleImageSet}
-          style={{ 
-            borderRadius: '50%',
-            width: window.innerWidth < 768 ? '35px' : '40px',
-            height: window.innerWidth < 768 ? '35px' : '40px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: window.innerWidth < 768 ? '16px' : '18px',
-            padding: '0',
-            fontWeight: 'bold',
-            marginLeft: '10px',
-            marginTop: window.innerWidth < 768 ? '10px' : '0'
-          }}
-          aria-label="Пребаци скуп слика"
-          title={isForward ? "Пребаци на следећи скуп" : "Врати на претходни скуп"}
-        >
-          {isForward ? '→' : '←'}
-        </Button>
-        )}
-      </div>
-    </Col>
-  </Row>
-</Container>
+      {/* =====================================================
+          AUDIO BOOKS
+      ====================================================== */}
 
+      <section className="home-section audio-section">
+        <Container>
+          <div className="section-heading">
+            <span className="section-kicker">
+              НОВА УСЛУГА
+            </span>
 
-<Container className=" container-library ms-auto mt-4 mb-4">
-      
-      {/* Наслов */}
-      <Row>
-        <Col>
-          <h2 className="container-title">
-          Нова услуга: аудио-књиге
-          </h2>
-          <a className="container-text text-centar" href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3">Линк за регистрацију и слање захтева за аудио књигу</a>
-        </Col>
-      </Row>
+            <h2>
+              Аудио-књиге
+            </h2>
 
-      <br/><hr/>
-      <Row className="align-items-center">
-        
-        {/* Лево – слика */}
-        <Col md={6}>
-          <AnimatedImage
-          src={audioKnjiga}
-            alt="Аудио књиге"
-           
-          />
-              <AnimatedImage
-          src={saradnja}
-            alt="Аудио књиге"
-           
-          />
-        </Col>
-        
-        
-        {/* Десно – текст */}
-        <Col md={6}>
-        <p className='container-text'>
-  Почев од 23. априла, у Градској библиотеци „Атанасије Стојковић“ у Руми доступан је пилот пројекат „Књига прича“, који доноси могућност слушања аудио-књига.
+            <p>
+              Нова могућност за све кориснике
+              Градске библиотеке.
+            </p>
 
-  Током шест месеци трајања пројекта, корисницима је омогућен једноставан приступ садржају – довољно је скенирати QR код у библиотеци или приступити платформи директно путем овог:{" "}
-  
-  <a 
-    href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    линка
-  </a>
-
-  <br/>Након истека шестомесечног пробног периода, корисницима Градске библиотеке са плаћеном чланарином биће омогућено да наставе са коришћењем платформе.
-  <br /><hr />
-
-  Ова услуга намењена је свима који желе другачији начин уживања у књигама, посебно особама са оштећењем вида, али и онима који, због свакодневних обавеза, немају времена за читање.
-
-  Понуда обухвата разноврсне жанрове, укључујући књижевност, популарну психологију, историју и школску лектиру.
-
-  
-</p>
-          <p className='container-text'>
-          Пројекат се реализује у сарадњи Градске библиотеке и платформе „Књига прича“, под руководством директора библиотеке Дамира Васиљевића Тоскића и Ненада Иђошког, директора и суоснивача платформе „Књига прича“.
-          </p>
-        </Col>
-       <Col md={12} className='container-title'>Правила за коришћење и упутство за регистровање на платформу <hr/>
-       <ol className="container-text">
-  <li>Преузмите на свој мобилни телефон Knjigapriča апликацију.</li>
-  <li>Отворите налог.</li>
-  <li>
-    Аудио-књиге можете позајмити без доласка у Библиотеку, скенирањем QR кода или кликом на овај  <a 
-    href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    линк
-  </a> за регистрацијску форму.
-  </li>
-  <li>
-    Попуните форму која ће се отворити скенирањем кода и пошаљите је. На Ваш имејл ћете добити обавештење да Вам је омогућен приступ аудио-књизи. Књига ће бити доступна за слушање у оквиру таба Моја библиотека (Изнајмљене) у апликацији Knjigapriča – аудио књиге.
-  </li>
-  <li>
-    За позајмицу аудио-књига можете се обратити и библиотекару, а аудио-књиге из доступне базе можете прегледати на сајту за аудио књиге или у оквиру свог налога у преузетој апликацији.
-  </li>
-  <li>
-    У случају да захтев за позајмицу подносите лично у Библиотеци, неопходно је да библиотекару дате своју имејл адресу на коју ће стићи информација о позајмици.
-  </li>
-  <li>
-    Када добијете информацију о позајмици, у свом налогу, у оквиру таба Моја библиотека, одаберите књигу коју сте позајмили.
-  </li>
-</ol>
-       </Col>
-
-      </Row>
-    </Container>
-
-  
-        <Container className='mt-4 '>
-         <Row className='text-center feature-icons-row'>
-         <Col md={4} className='mt-4 feature-icon-col'>     
-         <AnimatedCard>
-        <a href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru" target="_blank" rel="noopener noreferrer">
-        <p className='container-title feature-icon-title'>Претражите<br/> наш фонд  </p> </a><img 
-      src={cobbis}
-      alt="COBISS" 
-      className='container-image feature-icon-image'
-      style={{border:'none', width: "75%"}}
-      width="200"
-      height="200"
-      loading="lazy"
-      />
-  </AnimatedCard> 
-     </Col>
-           <Col md={4} className='mt-4 feature-icon-col'>
-               <AnimatedCard>
-                <a href="https://www.digitalna.bibliotekaruma.rs/" target='_blank' rel="noopener noreferrer">  <p className='container-title feature-icon-title'>  
-               Наш дигитални<br/> фонд </p></a>
-     <img 
-      src={logoDigitalna}
-       alt="Грб Градске библиотеке Рума" 
-       className='container-image digital-logo feature-icon-image'
-       style={{ width: '88%', maxWidth: '360px', height: 'auto' }}
-       width="360"
-       height="220"
-       loading="lazy"
-       itemProp="image"
-       /> </AnimatedCard>
-       </Col> 
-                  <Col  md={4}  className='mt-0 feature-icon-col'>
-                  <AnimatedCard>
-             <a href="https://www.facebook.com/photo/?fbid=1326535312805422&set=a.512519967540298" target="_blank" rel="noopener noreferrer" className="konkurs-link">
-              <p className="container-title mb-0 feature-icon-title">
-                 Књижевни <br/>конкурс
-               </p>
-             </a>
-             <img 
-       src={konkurs}
-       alt="Конкурс" 
-      className='container-image konkurs-logo feature-icon-image'
-       style={{border:'none', width:'45%'}}
-               width="250"
-               height="200"
-               loading="lazy"
-             />
-           </AnimatedCard>
-         </Col></Row>
-    
-           <Row>   
-            <Col md={12}>
-      
-       </Col></Row>
-       </Container>
-
-<Container className="container-library ms-auto mt-0 mb-4 matica-section">
- 
-  <Row className="justify-content-center">
-    <Col md={3} className="mb-3 matica-images-left">
-      <img 
-        src={saradnja1} 
-        alt="Сарадња са Матицом српском 1" 
-        className="img-fluid matica-image"
-        style={{ 
-          width: '100%', 
-          height: 'auto', 
-          borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
-        }}
-        loading="lazy"
-      />
-    </Col>
-    <Col md={3} className="mb-3 matica-images-right">
-      <img 
-        src={saradnja3} 
-        alt="Сарадња са Матицом српском 2" 
-        className="img-fluid matica-image"
-        style={{ 
-          width: '100%', 
-          height: 'auto', 
-          borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
-        }}
-        loading="lazy"
-      />
-
-      <img 
-        src={saradnja2} 
-        alt="Сарадња са Матицом српском 3" 
-        className="img-fluid matica-image matica-image-stack"
-        style={{ 
-          width: '100%', 
-          height: 'auto', 
-          borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
-        }}
-        loading="lazy"
-      />
-    </Col> 
-    <Col md={6} className="matica-text-col">
-      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <p className="matica-text" style={{ 
-          fontSize: '1.2rem', 
-          lineHeight: '1.8', 
-          color: '#3f2c11',
-          fontFamily: 'Arial',
-          marginTop: '7rem',
-          padding: '0 1rem'
-        }}>
-         Година 2025. завршена је на најлепши могући начин, а сам крај године обележио је најсјајнији тренутак наше сарадње са Матицом српском, која нам је доделила захвалницу за сарадњу, помоћ и подршку током протекле године. Награда, коју је у име библиотеке примио директор Дамир Васиљевић Тоскић, још једном потврђује значајну улогу наше библиотеке у културном и просветном животу заједнице.
-        </p>
-        <hr/>
-      </div>
-    </Col>
-  
-  </Row>
-</Container>
-        <br/><hr/>
-   <AnimatedCard>
-      <Container className='container-library ms-auto mt-4 mb-4' >
-        <Row>
-    
-    <Row>
-
-  <Col md={12}>
-        <h2 className='container-title'>Званични документи Градске библиотеке Атанасије Стојковић у Руми</h2><br/>
-        <p className='container-text'>Правилник о условима и начину коришћења библиотечке грађе</p>
-        <Button
-  onClick={() => window.open('/Pravilnik.pdf', '_blank')}
-className='btn btn-secondary'
-aria-label="Преузми правилник о условима и начину коришћења библиотечке грађе"
->
-ДЕТАЉНИЈЕ
-</Button><hr/>
-<p className='container-text'>Статут установе Градске библиотеке „Атанасије Стојковић“ Рума </p>
-        <Button
-  onClick={() => window.open('/Statut.pdf', '_blank')}
-className='btn btn-secondary'
-aria-label="Преузми статут установе Градске библиотеке Атанасије Стојковић Рума"
->
-ДЕТАЉНИЈЕ
-</Button><br/><hr/> </Col>
-</Row>
-    </Row>
-      </Container>
-</AnimatedCard>
-    <br/><hr/>
-
-<h2 className='container-title'>Пријатељи и сарадници Градске библиотеке Атанасије Стојковић у Руми</h2>
-<Row className='image-background lazy-bg '>
-    <div className="carousel-item active">
-      <div  style={{backgroundColor:'rgba(0, 0, 0, 0.1)'}} >
-     < Row>
-          <Col md={12} className='text-center' > 
-        <img style={{width:'10%' }} src={ministarstvo} alt='Министарство културе Србије' loading="lazy"  />
-<img style={{width:'15%'}}  src={opstina} alt='Општина Рума' loading="lazy"  />     
-<img src={pokrajina} style={{width:'7%'}} alt='Покрајински секретаријат за културу' loading="lazy"  />
-    </Col></Row>
-      
-          <hr/> 
-          <Col md={12} className='text-center'>
-          <img style={{width:'13%'}}  src={matica} alt='Матица српска' loading="lazy" />  
-<img style={{width:'8%'}}  alt='Народна библиотека Србије' src={narodna} loading="lazy"  /> 
-       <img style={{width:'18%', marginTop:'1em', marginLeft:'1rem'}} src={muzej} alt='Музеј у Руми' loading="lazy"  />
-          <img style={{width:'15%',marginLeft:'1rem' }} src={turisticka} alt='Туристичка организација Рума' loading="lazy" />
-          <img  style={{width:'6%', marginLeft:'1rem'}}  src={kc} alt="Културни центар Рума"  loading="lazy"  />
-         </Col>
+            <a
+              href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="section-link"
+            >
+              Регистрација и слање захтева
+              <FaArrowRight />
+            </a>
           </div>
-      </div>     
-</Row>
 
-<div
-  style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)', width: '100%' }}
-  className="container mt-3"
->
-  <h2 style={{marginLeft:'26rem'}}>Пријатељи библиотеке</h2>
-  {!showFriends && (
-  <button
-    type="button"
-    className="btn btn-secondary"
-      onClick={() => setShowFriends(true)}
-      aria-label="Прикажи пријатеље библиотеке"
-  >
-    Пријатељи библиотеке
-  </button>
-  )}
-  {showFriends && (
-    <div className="text-center" style={{position: 'relative'}}>
-      <button
-        type="button"
-        className="btn mb-3"
-        style={{ backgroundColor: '#343a40', color: 'white', border: 'none', position: 'absolute', top: '-1.5rem', left: '0.5rem', zIndex: 2 }}
-        onClick={() => setShowFriends(false)}
-        aria-label="Затвори пријатеље библиотеке"
-      >
-        Затвори
-      </button>
-      <div className="d-flex justify-content-center align-items-center flex-wrap" style={{marginTop: '2.5rem'}}>
-    <img
-      style={{ width: '12%', marginRight:'1rem', objectFit: 'contain' }}
-      src={Panonija}
-      alt="Панонија књижара у Руми"
-      width="144"
-      height="72"
-      loading="lazy"
-    />
-    <img
-      style={{ width: '12%', objectFit: 'contain' }}
-      src={Boss}
-      alt="Босс компанија Рума"
-      width="144"
-      height="72"
-      loading="lazy"
-    />
-    <img
-      style={{ width: '20%', objectFit: 'contain' }}
-      src={trkulja}
-      alt="Тркуља керамика Рума"
-      width="180"
-      height="90"
-      loading="lazy"
-    />
-    <img
-      style={{ width: '10%', objectFit: 'contain' }}
-      src={Frigo}
-      alt="Фриго Жика Рума"
-      width="120"
-      height="60"
-      loading="lazy"
-    />
-    <img
-      style={{ width: '12%', marginLeft:'1rem', objectFit: 'contain' }}
-      src={beke}
-      alt="Беке компанија Рума"
-      width="144"
-      height="72"
-      loading="lazy"
-    />
-  </div>
-    </div>
-    )}
-</div><hr/>
+          <Row className="align-items-center g-5">
+            <Col lg={6}>
+              <div className="audio-images">
+                <img
+                  src={audioKnjiga}
+                  alt="Аудио-књиге"
+                  loading="lazy"
+                />
 
-      {/* Image Modal */}
+                <img
+                  src={saradnja}
+                  alt="Сарадња на пројекту аудио-књига"
+                  loading="lazy"
+                />
+              </div>
+            </Col>
+
+            <Col lg={6}>
+              <div className="content-card">
+                <div className="content-card-icon">
+                  <FaHeadphones />
+                </div>
+
+                <p>
+                  Почев од 23. априла, у Градској
+                  библиотеци „Атанасије Стојковић“
+                  у Руми доступан је пилот пројекат
+                  „Књига прича“, који доноси могућност
+                  слушања аудио-књига.
+                </p>
+
+                <p>
+                  Током шест месеци трајања пројекта,
+                  корисницима је омогућен једноставан
+                  приступ садржају – довољно је
+                  скенирати QR код у библиотеци или
+                  приступити платформи директно путем
+                  <a
+                    href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {' '}овог линка
+                  </a>.
+                </p>
+
+                <p>
+                  Ова услуга намењена је свима који
+                  желе другачији начин уживања у
+                  књигама, посебно особама са
+                  оштећењем вида, али и онима који,
+                  због свакодневних обавеза, немају
+                  времена за читање.
+                </p>
+
+                <p>
+                  Понуда обухвата разноврсне жанрове,
+                  укључујући књижевност, популарну
+                  психологију, историју и школску
+                  лектиру.
+                </p>
+              </div>
+            </Col>
+          </Row>
+
+          <div className="instructions-card">
+            <div className="instructions-header">
+              <FaBookOpen />
+              <h3>
+                Правила за коришћење и регистрацију
+              </h3>
+            </div>
+
+            <ol>
+              <li>
+                Преузмите на свој мобилни телефон
+                Knjigapriča апликацију.
+              </li>
+
+              <li>
+                Отворите налог.
+              </li>
+
+              <li>
+                Аудио-књиге можете позајмити без
+                доласка у Библиотеку, скенирањем
+                QR кода или кликом на
+                <a
+                  href="https://izdavanje.knjigaprica.com/r/ABlQaR6Ev0Tsgs0ZVByXLV1IMqA3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {' '}линк за регистрацију
+                </a>.
+              </li>
+
+              <li>
+                Попуните форму и пошаљите је.
+                На Ваш имејл ћете добити обавештење
+                да Вам је омогућен приступ аудио-књизи.
+              </li>
+
+              <li>
+                За позајмицу аудио-књига можете се
+                обратити и библиотекару.
+              </li>
+
+              <li>
+                У случају да захтев подносите лично
+                у Библиотеци, неопходно је да
+                библиотекару дате своју имејл адресу.
+              </li>
+
+              <li>
+                Када добијете информацију о позајмици,
+                у свом налогу одаберите књигу коју сте
+                позајмили.
+              </li>
+            </ol>
+          </div>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          QUICK ACCESS
+      ====================================================== */}
+
+      <section className="home-section quick-section">
+        <Container>
+          <div className="section-heading">
+            <span className="section-kicker">
+              БРЗИ ПРИСТУП
+            </span>
+
+            <h2>
+              Истражите наше дигиталне услуге
+            </h2>
+          </div>
+
+          <Row className="g-4">
+            <Col md={4}>
+              <AnimatedCard>
+                <a
+                  href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quick-card"
+                >
+                  <div className="quick-icon">
+                    <FaSearch />
+                  </div>
+
+                  <h3>
+                    Претражите наш фонд
+                  </h3>
+
+                  <img
+                    src={cobbis}
+                    alt="COBISS"
+                    loading="lazy"
+                  />
+
+                  <span>
+                    Претражи фонд
+                    <FaArrowRight />
+                  </span>
+                </a>
+              </AnimatedCard>
+            </Col>
+
+            <Col md={4}>
+              <AnimatedCard>
+                <a
+                  href="https://www.digitalna.bibliotekaruma.rs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quick-card"
+                >
+                  <div className="quick-icon">
+                    <FaBookOpen />
+                  </div>
+
+                  <h3>
+                    Наш дигитални фонд
+                  </h3>
+
+                  <img
+                    src={logoDigitalna}
+                    alt="Дигитална библиотека Рума"
+                    className="digital-logo"
+                    loading="lazy"
+                  />
+
+                  <span>
+                    Отвори дигиталну библиотеку
+                    <FaArrowRight />
+                  </span>
+                </a>
+              </AnimatedCard>
+            </Col>
+
+            <Col md={4}>
+              <AnimatedCard>
+                <a
+                  href="https://www.facebook.com/photo/?fbid=1326535312805422&set=a.512519967540298"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quick-card"
+                >
+                  <div className="quick-icon">
+                    <FaFileAlt />
+                  </div>
+
+                  <h3>
+                    Књижевни конкурс
+                  </h3>
+
+                  <img
+                    src={konkurs}
+                    alt="Књижевни конкурс"
+                    className="contest-logo"
+                    loading="lazy"
+                  />
+
+                  <span>
+                    Погледај конкурс
+                    <FaArrowRight />
+                  </span>
+                </a>
+              </AnimatedCard>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          MATICA
+      ====================================================== */}
+
+      <section className="home-section matica-section">
+        <Container>
+          <Row className="align-items-center g-4">
+            <Col lg={6}>
+              <div className="matica-gallery">
+                <img
+                  src={saradnja1}
+                  alt="Сарадња са Матицом српском"
+                  loading="lazy"
+                />
+
+                <div>
+                  <img
+                    src={saradnja3}
+                    alt="Сарадња са Матицом српском"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src={saradnja2}
+                    alt="Сарадња са Матицом српском"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </Col>
+
+            <Col lg={6}>
+              <div className="matica-content">
+                <span className="section-kicker">
+                  САРАДЊА
+                </span>
+
+                <h2>
+                  Матица српска
+                </h2>
+
+                <p>
+                  Година 2025. завршена је на најлепши
+                  могући начин, а сам крај године
+                  обележио је најсјајнији тренутак наше
+                  сарадње са Матицом српском, која нам
+                  је доделила захвалницу за сарадњу,
+                  помоћ и подршку током протекле године.
+                </p>
+
+                <p>
+                  Награда, коју је у име библиотеке
+                  примио директор Дамир Васиљевић
+                  Тоскић, још једном потврђује значајну
+                  улогу наше библиотеке у културном и
+                  просветном животу заједнице.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          DOCUMENTS
+      ====================================================== */}
+
+      <section className="home-section documents-section">
+        <Container>
+          <div className="section-heading">
+            <span className="section-kicker">
+              ДОКУМЕНТИ
+            </span>
+
+            <h2>
+              Званични документи библиотеке
+            </h2>
+
+            <p>
+              Преглед основних аката Градске библиотеке
+              „Атанасије Стојковић“ у Руми.
+            </p>
+          </div>
+
+          <Row className="g-4 justify-content-center">
+            <Col md={6}>
+              <div className="document-card">
+                <div className="document-icon">
+                  <FaFileAlt />
+                </div>
+
+                <h3>
+                  Правилник о условима и начину
+                  коришћења библиотечке грађе
+                </h3>
+
+                <Button
+                  variant="secondary"
+                  onClick={() =>
+                    window.open(
+                      '/Pravilnik.pdf',
+                      '_blank'
+                    )
+                  }
+                >
+                  ДЕТАЉНИЈЕ
+                  <FaArrowRight />
+                </Button>
+              </div>
+            </Col>
+
+            <Col md={6}>
+              <div className="document-card">
+                <div className="document-icon">
+                  <FaFileAlt />
+                </div>
+
+                <h3>
+                  Статут установе Градске библиотеке
+                  „Атанасије Стојковић“ Рума
+                </h3>
+
+                <Button
+                  variant="secondary"
+                  onClick={() =>
+                    window.open(
+                      '/Statut.pdf',
+                      '_blank'
+                    )
+                  }
+                >
+                  ДЕТАЉНИЈЕ
+                  <FaArrowRight />
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          PARTNERS
+      ====================================================== */}
+
+      <section className="home-section partners-section">
+        <Container>
+          <div className="section-heading">
+            <span className="section-kicker">
+              САРАДЊА
+            </span>
+
+            <h2>
+              Пријатељи и сарадници библиотеке
+            </h2>
+          </div>
+
+          <div className="partners-grid">
+            {institutionalPartners.map((partner) => (
+              <div
+                className="partner-logo"
+                key={partner.alt}
+              >
+                <img
+                  src={partner.image}
+                  alt={partner.alt}
+                  className={partner.className}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="friends-box">
+            <div className="friends-header">
+              <div>
+                <span className="section-kicker">
+                  ПОДРШКА
+                </span>
+
+                <h3>
+                  Пријатељи библиотеке
+                </h3>
+              </div>
+
+              <button
+                type="button"
+                className="friends-toggle"
+                onClick={() =>
+                  setShowFriends(!showFriends)
+                }
+                aria-expanded={showFriends}
+              >
+                {showFriends ? (
+                  <>
+                    <FaTimes />
+                    Затвори
+                  </>
+                ) : (
+                  <>
+                    <FaUsers />
+                    Прикажи пријатеље
+                  </>
+                )}
+              </button>
+            </div>
+
+            {showFriends && (
+              <div className="friends-grid">
+                {friends.map((friend) => (
+                  <div
+                    className="friend-logo"
+                    key={friend.alt}
+                  >
+                    <img
+                      src={friend.image}
+                      alt={friend.alt}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          IMAGE MODAL
+      ====================================================== */}
+
       <ImageModal
         show={showImageModal}
         onHide={handleCloseImageModal}
@@ -899,9 +1214,8 @@ aria-label="Преузми статут установе Градске библ
         title={selectedImage.title}
         size={selectedImage.size || 'lg'}
       />
-
     </>
   );
-}
+};
 
 export default Home;

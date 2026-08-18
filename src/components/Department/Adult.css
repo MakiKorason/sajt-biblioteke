@@ -1,30 +1,604 @@
+/* =========================================================
+   ADULT PAGE
+   Јединствени стил као Contact / Services / Manifestations
+========================================================= */
 
-.container-image {
-  max-width: 95%;
-  height: auto;
-  margin-top: 2%;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 4%; 
-  pointer-events: none;
+.adult-page {
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
-/* .container-image2{
-  height: 25%;
-  width: 25%;
-  margin-left: 6%;
-  pointer-events: none;
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.adult-hero {
+  position: relative;
+  overflow: hidden;
+  background: #3f2c11;
+  color: #f3f2ee;
+  padding: 90px 20px 85px;
+  margin-bottom: 70px;
 }
 
-.container-image3{
-  height: 90%;
-  width: 70%;
-  margin-left: 8%;
-  pointer-events: none;
-} 
+.adult-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-.container-image4{
-  height: 70%;
-  width: 50%;
-  pointer-events: none;
-} */
+.adult-hero-label {
+  display: block;
+  margin-bottom: 18px;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+
+  color: #d7c7a5;
+}
+
+.adult-hero h1 {
+  margin: 0;
+
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.adult-hero p {
+  max-width: 680px;
+  margin: 25px auto 0;
+
+  font-size: 1.28rem;
+  line-height: 1.8;
+
+  color: rgba(243, 242, 238, 0.82);
+}
+
+
+/* HERO DECORATION */
+
+.adult-hero-decoration {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.adult-hero-decoration::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.adult-hero-decoration-left {
+  left: -120px;
+  top: -110px;
+}
+
+.adult-hero-decoration-right {
+  right: -120px;
+  bottom: -140px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.adult-page .section-heading {
+  margin-bottom: 45px;
+}
+
+.adult-page .section-heading span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #8b6a35;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.adult-page .section-heading h2 {
+  margin: 0;
+
+  color: #3f2c11;
+
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.adult-page .section-heading p {
+  max-width: 700px;
+
+  margin: 18px 0 0;
+
+  color: #6f6b64;
+
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.adult-intro-section {
+  margin-bottom: 100px;
+}
+
+.adult-text p {
+  margin-bottom: 22px;
+
+  color: #514d47;
+
+  font-size: 1.13rem;
+  line-height: 1.85;
+}
+
+.adult-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   IMAGE STACK
+========================================================= */
+
+.adult-image-stack {
+  position: relative;
+
+  min-height: 560px;
+
+  padding: 20px 20px 80px 50px;
+}
+
+.adult-image-card {
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #fff;
+
+  box-shadow:
+    0 18px 50px rgba(63, 44, 17, 0.14);
+}
+
+.adult-image-card img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.adult-image-main {
+  height: 450px;
+}
+
+.adult-image-small {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 55%;
+  height: 210px;
+
+  border: 8px solid #f3f2ee;
+}
+
+
+/* =========================================================
+   CULTURAL SECTION
+========================================================= */
+
+.adult-cultural-section {
+  margin-bottom: 90px;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.adult-event-card {
+  overflow: hidden;
+
+  margin-bottom: 50px;
+
+  border-radius: 24px;
+
+  background: #fff;
+
+  box-shadow:
+    0 15px 45px rgba(63, 44, 17, 0.09);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.adult-event-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 22px 55px rgba(63, 44, 17, 0.14);
+}
+
+.adult-event-content {
+  padding: 50px;
+}
+
+.adult-event-label {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #8b6a35;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.adult-event-content h3 {
+  margin: 0 0 22px;
+
+  color: #3f2c11;
+
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.adult-event-content p {
+  margin-bottom: 18px;
+
+  color: #55514b;
+
+  font-size: 1.2rem;
+  line-height: 1.85;
+}
+
+.adult-event-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EVENT IMAGE
+========================================================= */
+
+.adult-event-image {
+  height: 100%;
+
+  min-height: 360px;
+}
+
+.adult-event-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   FULL EVENT / GALLERY
+========================================================= */
+
+.adult-full-event {
+  margin-top: 80px;
+  margin-bottom: 70px;
+}
+
+.adult-full-event .section-heading {
+  text-align: center;
+}
+
+.adult-full-event .section-heading span {
+  margin-bottom: 10px;
+}
+
+.adult-centered-text {
+  max-width: 900px;
+
+  margin: -15px auto 45px;
+
+  text-align: center;
+
+  color: #55514b;
+
+  font-size: 1.13rem;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.adult-gallery {
+  margin-top: 20px;
+}
+
+.adult-gallery-item {
+  overflow: hidden;
+
+  height: 360px;
+
+  border-radius: 20px;
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 35px rgba(63, 44, 17, 0.10);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.adult-gallery-item:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 45px rgba(63, 44, 17, 0.15);
+}
+
+.adult-gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.adult-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   FINAL EVENT
+========================================================= */
+
+.adult-final-event {
+  margin-top: 50px;
+}
+
+
+/* =========================================================
+   BOOK DECORATION
+========================================================= */
+
+.adult-books-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 65px 0 20px;
+
+  color: #8b6a35;
+
+  font-size: 1.35rem;
+}
+
+.adult-books-decoration svg:nth-child(2) {
+  font-size: 1.7rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .adult-hero {
+    padding: 75px 20px 70px;
+    margin-bottom: 55px;
+  }
+
+  .adult-intro-section {
+    margin-bottom: 75px;
+  }
+
+  .adult-image-stack {
+    min-height: auto;
+
+    padding: 0;
+
+    margin-top: 30px;
+  }
+
+  .adult-image-main {
+    height: 430px;
+  }
+
+  .adult-image-small {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: 65%;
+    height: 200px;
+
+    margin: -80px 0 0 auto;
+  }
+
+  .adult-event-content {
+    padding: 38px;
+  }
+
+  .adult-event-image {
+    min-height: 330px;
+  }
+
+  .adult-full-event {
+    margin-top: 60px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .adult-hero {
+    padding: 65px 18px 60px;
+    margin-bottom: 45px;
+  }
+
+  .adult-hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+  }
+
+  .adult-hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .adult-hero p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .adult-page .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .adult-page .section-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .adult-intro-section {
+    margin-bottom: 60px;
+  }
+
+  .adult-text p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .adult-image-main {
+    height: 330px;
+  }
+
+  .adult-image-small {
+    width: 70%;
+    height: 170px;
+
+    margin-top: -60px;
+  }
+
+  .adult-event-card {
+    border-radius: 18px;
+
+    margin-bottom: 35px;
+  }
+
+  .adult-event-content {
+    padding: 30px 25px;
+  }
+
+  .adult-event-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .adult-event-content p {
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+
+  .adult-event-image {
+    min-height: 280px;
+  }
+
+  .adult-full-event {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .adult-centered-text {
+    font-size: 0.96rem;
+    line-height: 1.75;
+
+    margin-bottom: 30px;
+  }
+
+  .adult-gallery-item {
+    height: 300px;
+  }
+
+  .adult-hero-decoration {
+    width: 180px;
+    height: 180px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .adult-hero {
+    padding: 55px 15px;
+  }
+
+  .adult-hero h1 {
+    font-size: 2rem;
+  }
+
+  .adult-event-content {
+    padding: 25px 20px;
+  }
+
+  .adult-event-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .adult-gallery-item {
+    height: 260px;
+  }
+
+  .adult-image-main {
+    height: 280px;
+  }
+
+  .adult-image-small {
+    height: 145px;
+  }
+
+}

@@ -1,28 +1,876 @@
+/* =========================================================
+   EMPLOYEES PAGE
+========================================================= */
 
-.employees-text {
-    font-weight: bold; 
-    font-size: 2rem;
-    color:#66452c; 
-animation: fadeInText 3s forwards;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  font-family: 'Garamond', serif;
+.employees-page {
+  max-width: 1240px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  color: #30251b;
 }
 
 
-.employee-card {
-    color:#66452c; 
-    background: linear-gradient(135deg, #f3f0e970, #ad9e876e);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
-   border: 2px solid #ccc; 
-  border-radius: 1rem;  
-     text-align: center;
+/* =========================================================
+   HERO
+========================================================= */
+
+.employees-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #503815 48%,
+      #2c2115 100%
+    );
+  color: #f7f2e8;
 }
- .employees{
-    text-align: center;
-    color: #66452c;
+
+.employees-hero-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.employees-hero-circle {
+  position: absolute;
+  border: 1px solid rgba(231, 198, 137, 0.18);
+  border-radius: 50%;
+}
+
+.circle-one {
+  width: 520px;
+  height: 520px;
+  right: -150px;
+  top: -180px;
+}
+
+.circle-two {
+  width: 720px;
+  height: 720px;
+  left: -400px;
+  bottom: -550px;
+}
+
+.employees-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 90px 0;
+}
+
+.employees-hero-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  color: #d9b978;
+}
+
+.employees-label-line {
+  width: 36px;
+  height: 1px;
+  background: #d9b978;
+}
+
+.employees-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.employees-hero h1 span {
+  color: #d9b978;
+  font-style: italic;
+}
+
+.employees-hero p {
+  max-width: 650px;
+  margin: 35px 0 0;
+
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(247, 242, 232, 0.82);
+}
+
+.employees-hero-book {
+  position: absolute;
+  z-index: 2;
+
+  color: rgba(217, 185, 120, 0.12);
+
+  pointer-events: none;
+}
+
+.employees-hero-book svg {
+  width: 220px;
+  height: 220px;
+}
+
+.employees-book-left {
+  left: 5%;
+  bottom: -30px;
+  transform: rotate(-15deg);
+}
+
+.employees-book-right {
+  right: 5%;
+  top: 50px;
+  transform: rotate(10deg);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.employees-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #9b742f;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.employees-eyebrow span {
+  width: 30px;
+  height: 2px;
+  background: #c39a50;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.employees-intro {
+  margin-bottom: 90px;
+}
+
+.employees-intro-heading {
+  max-width: 780px;
+  margin-bottom: 45px;
+}
+
+.employees-intro-heading h2,
+.employees-section-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: #352719;
+}
+
+.employees-intro-heading h2 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.employees-intro-heading em {
+  color: #a4782d;
+  font-style: italic;
+}
+
+.employees-intro-content {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 45px;
+
+  padding: 48px;
+
+  background: #fffdf8;
+  border: 1px solid #e8dfcf;
+  border-radius: 4px;
+
+  box-shadow:
+    0 18px 45px rgba(63, 44, 17, 0.06);
+}
+
+.employees-intro-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: #a47a32;
+}
+
+.employees-intro-icon svg {
+  width: 72px;
+  height: 72px;
+}
+
+.employees-intro-text p {
+  margin: 0 0 20px;
+
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #55483a;
+}
+
+.employees-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.employees-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-bottom: 110px;
+
+  border-top: 1px solid #ded3c0;
+  border-bottom: 1px solid #ded3c0;
+}
+
+.employees-stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 125px;
+  padding: 25px 35px;
+
+  border-right: 1px solid #ded3c0;
+}
+
+.employees-stat:last-child {
+  border-right: 0;
+}
+
+.employees-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f1e8d7;
+  color: #9a702c;
+
+  font-size: 1.7rem;
+}
+
+.employees-stat strong {
+  display: block;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #382918;
+}
+
+.employees-stat span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 0.82rem;
+  color: #766a5d;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.employees-section-heading {
+  max-width: 750px;
+  margin-bottom: 48px;
+}
+
+.employees-section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.employees-section-heading p {
+  max-width: 680px;
+  margin: 22px 0 0;
+
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #716456;
+}
+
+
+/* =========================================================
+   DEPARTMENTS
+========================================================= */
+
+.employees-departments {
+  margin-bottom: 110px;
+}
+
+.employees-card {
+  position: relative;
+  height: 100%;
+  min-height: 390px;
+
+  padding: 38px;
+
+  overflow: hidden;
+
+  background: #fffdf8;
+  border: 1px solid #e5dccd;
+  border-radius: 5px;
+
+  box-shadow:
+    0 10px 35px rgba(54, 38, 17, 0.055);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.employees-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 0;
+
+  background: #b08337;
+
+  transition: height 0.35s ease;
+}
+
+.employees-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #d2bc93;
+
+  box-shadow:
+    0 20px 55px rgba(54, 38, 17, 0.11);
+}
+
+.employees-card:hover::before {
+  height: 100%;
+}
+
+.employees-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.employees-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background: #f2eadc;
+  color: #956b28;
+
+  font-size: 1.8rem;
+}
+
+.employees-card-number {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1rem;
+  color: #b9aa94;
+}
+
+.employees-card-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+
+  color: #9b742f;
+}
+
+.employees-card h3 {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: #352719;
+}
+
+.employees-divider {
+  width: 45px;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #c7a668;
+}
+
+.employees-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.employees-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.employee-role {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #998d7d;
+}
+
+.employees-list strong {
+  font-size: 1.03rem;
+  font-weight: 600;
+  color: #44372a;
+}
+
+.employees-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 35px;
+  padding-top: 18px;
+
+  border-top: 1px solid #eee7da;
+
+  font-size: 0.78rem;
+  color: #8c7c68;
+}
+
+.employees-card-footer svg {
+  color: #ad8134;
+  transition: transform 0.3s ease;
+}
+
+.employees-card:hover .employees-card-footer svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MANAGEMENT
+========================================================= */
+
+.employees-management {
+  margin-bottom: 110px;
+}
+
+.employees-feature-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 85px 115px 1fr 120px;
+  align-items: center;
+  gap: 35px;
+
+  min-height: 260px;
+  padding: 45px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11,
+      #5a411c
+    );
+
+  color: #fff;
+
+  border: 0;
+  border-radius: 5px;
+
+  box-shadow:
+    0 20px 55px rgba(63, 44, 17, 0.16);
+}
+
+.employees-feature-number {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1rem;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.employees-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+
+  border: 1px solid rgba(217, 185, 120, 0.45);
+  border-radius: 50%;
+
+  color: #d9b978;
+
+  font-size: 2.5rem;
+}
+
+.employees-feature-content .employees-card-label {
+  color: #d9b978;
+}
+
+.employees-feature-content h3 {
+  margin: 7px 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.15rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.employees-feature-content p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.employees-feature-decoration {
+  display: flex;
+  justify-content: flex-end;
+
+  color: rgba(217, 185, 120, 0.12);
+}
+
+.employees-feature-decoration svg {
+  width: 105px;
+  height: 105px;
+}
+
+
+/* =========================================================
+   OTHER
+========================================================= */
+
+.employees-other {
+  margin-bottom: 80px;
+}
+
+.employees-card-light {
+  background: #f7f3eb;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   BOTTOM DECORATION
+========================================================= */
+
+.employees-books-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 80px;
+
+  color: #c8b28d;
+}
+
+.employees-books-decoration span {
+  width: 90px;
+  height: 1px;
+
+  background: #ded3c0;
+}
+
+.employees-books-decoration svg {
+  width: 25px;
+  height: 25px;
+
+  opacity: 0.65;
+}
+
+.employees-books-decoration svg:nth-of-type(2) {
+  width: 35px;
+  height: 35px;
+
+  color: #9c7330;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .employees-page {
+    padding-top: 70px;
+  }
+
+  .employees-hero {
+    min-height: 440px;
+  }
+
+  .employees-hero-content {
+    padding: 75px 20px;
+  }
+
+  .employees-hero-book {
+    opacity: 0.6;
+  }
+
+  .employees-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .employees-stat {
+    border-right: 0;
+    border-bottom: 1px solid #ded3c0;
+  }
+
+  .employees-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .employees-feature-card {
+    grid-template-columns: 80px 100px 1fr;
+  }
+
+  .employees-feature-decoration {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .employees-page {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .employees-hero {
+    min-height: 420px;
+  }
+
+  .employees-hero-content {
+    padding: 65px 20px;
+  }
+
+  .employees-hero-label {
+    font-size: 0.65rem;
+    line-height: 1.5;
+  }
+
+  .employees-label-line {
+    display: none;
+  }
+
+  .employees-hero h1 {
+    font-size: 4rem;
+  }
+
+  .employees-hero p {
+    margin-top: 25px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .employees-hero-book {
+    opacity: 0.3;
+  }
+
+  .employees-book-right {
+    right: -50px;
+  }
+
+  .employees-book-left {
+    left: -70px;
+  }
+
+  .employees-intro {
+    margin-bottom: 70px;
+  }
+
+  .employees-intro-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  .employees-intro-content {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 30px 25px;
+  }
+
+  .employees-intro-icon {
+    justify-content: flex-start;
+  }
+
+  .employees-intro-text p {
+    font-size: 1rem;
+  }
+
+  .employees-stats {
+    margin-bottom: 75px;
+  }
+
+  .employees-stat {
+    padding: 22px 20px;
+  }
+
+  .employees-departments,
+  .employees-management {
+    margin-bottom: 75px;
+  }
+
+  .employees-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .employees-section-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .employees-card {
+    min-height: auto;
+    padding: 30px 25px;
+  }
+
+  .employees-card h3 {
+    font-size: 1.7rem;
+  }
+
+  .employees-feature-card {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    padding: 35px 25px;
+  }
+
+  .employees-feature-icon {
+    width: 75px;
+    height: 75px;
+
     font-size: 2rem;
-    font-weight: bold;
-    animation: fadeInText 4.5s forwards;
- }
+  }
+
+  .employees-feature-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .employees-feature-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .employees-books-decoration {
+    margin-top: 55px;
+  }
+
+  .employees-books-decoration span {
+    width: 45px;
+  }
+
+}
 
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .employees-hero h1 {
+    font-size: 3.4rem;
+  }
+
+  .employees-hero p {
+    font-size: 0.95rem;
+  }
+
+  .employees-intro-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .employees-section-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .employees-card {
+    padding: 25px 20px;
+  }
+
+  .employees-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .employees-list strong {
+    font-size: 0.98rem;
+  }
+
+  .employees-feature-content h3 {
+    font-size: 1.55rem;
+  }
+
+}

@@ -1,96 +1,557 @@
+/* =========================================================
+   EVENTS PAGE
+========================================================= */
+
+.events-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 15px 60px;
+}
+
+
+/* =========================================================
+   NASLOV STRANICE
+========================================================= */
+
+.events-page-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.events-page-title span {
+  display: block;
+  margin-bottom: 12px;
+  color: #8b6a37;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.events-page-title h1 {
+  margin: 0 0 18px;
+  color: #3f2c11;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.events-page-title p {
+  max-width: 750px;
+  margin: 0 auto;
+  color: #6b655d;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RED SA KARTICAMA
+========================================================= */
+
+.events-page > .row {
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: 24px;
+}
+
+.events-page > .row:last-of-type {
+  margin-bottom: 0;
+}
+
+.events-page > .row > [class*="col-"] {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   KARTICE
+========================================================= */
 
 .events-card {
-  max-width: 100%; 
-  justify-content: space-evenly;
-  min-height: 400px; /* Fixed minimum height for all cards */
-  height: 100%; /* Ensure all cards have same height */
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  overflow: hidden; 
-  border: 0.5rem solid #ccc; 
-  border-radius: 2%; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-  background-color: #fff; 
-  padding: 1.5rem; 
-  box-sizing: border-box;
-  text-align: center; 
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  position: relative;
-  flex-wrap: wrap;
-}
-
-/* Ensure all cards in a row have the same height */
-.events-card .card-body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Standardize image sizes */
-.events-card .card-img {
-  width: 180px !important; /* Fixed width for all images */
-  height: 180px !important; /* Fixed height for all images */
-  object-fit: cover; /* Maintain aspect ratio */
-  border-radius: 50% !important; /* Make all images circular */
-  margin: 0 auto;
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .events-card {
-    min-height: 350px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .events-card .card-img {
-    width: 140px !important;
-    height: 140px !important;
-  }
-  
-  .events-card .container-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .events-card .container-text {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .events-card {
-    min-height: 320px;
-    padding: 0.8rem;
-  }
-  
-  .events-card .card-img {
-    width: 120px !important;
-    height: 120px !important;
-  }
-}
-
-/* Ensure equal height for columns */
-.row .col {
-  display: flex;
-  flex-direction: column;
-}
-
-.row .col > * {
-  flex: 1;
-}
-
-body.modal-open {
-    padding-right: 0 !important;
-}
-
-body.form-submitted {
+  background: #ffffff;
+  border: 1px solid rgba(63, 44, 17, 0.14);
+  border-radius: 14px;
   overflow: hidden;
-  padding-right: 0 !important;
+
+  box-shadow:
+    0 5px 18px rgba(63, 44, 17, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
+.events-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(63, 44, 17, 0.12);
+
+  border-color: rgba(63, 44, 17, 0.28);
+}
+
+
+/* =========================================================
+   SADRŽAJ KARTICE
+========================================================= */
+
+.events-card .card-body {
+  padding: 20px;
+  height: 100%;
+}
+
+.events-card .row {
+  height: 100%;
+}
+
+
+/* =========================================================
+   SLIKA
+========================================================= */
+
+.events-card .card-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  display: block;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.events-card:hover .card-img {
+  filter: brightness(0.96);
+}
+
+.clickable-image {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   NASLOV KARTICE
+========================================================= */
+
+.events-card .container-title {
+  color: #3f2c11;
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.events-card .container-title svg {
+  color: #8a6d3b;
+  margin-left: 6px;
+  vertical-align: -2px;
+  font-size: 1.25em;
+}
+
+
+/* =========================================================
+   TEKST KARTICE
+========================================================= */
+
+.events-card .container-text {
+  color: #5e5a53;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-top: 15px;
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   DUGME
+========================================================= */
+
+.events-card .btn-secondary {
+  align-self: flex-start;
+
+  background-color: #3f2c11;
+  border: 1px solid #3f2c11;
+
+  color: #ffffff;
+
+  padding: 11px 22px;
+  border-radius: 7px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.events-card .btn-secondary:hover,
+.events-card .btn-secondary:focus {
+  background-color: #5a401b;
+  border-color: #5a401b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-content {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(63, 44, 17, 0.12);
+}
+
+.modal-header .btn-close {
+  margin-right: 5px;
+}
+
+.modal-body {
+  padding: 35px;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(63, 44, 17, 0.12);
+  padding: 18px 25px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #3f2c11;
+  border-color: #3f2c11;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   TEKST U MODALU
+========================================================= */
+
+.modal-body .container-text {
+  color: #4f4a43;
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+.modal-body strong {
+  font-size: 1.2rem;
+}
+
+.modal-body p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+.modal-body li {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.modal-body .container-icon {
+  color: #8a6d3b;
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+
+/* =========================================================
+   SLIKE U MODALU
+========================================================= */
+
+.modal-body .container-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.container-iframe {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.container-iframe iframe {
+  width: 100%;
+  min-height: 450px;
+  border: 0;
+  display: block;
+}
+
+
+/* =========================================================
+   HR
+========================================================= */
+
+.modal-body hr {
+  border: 0;
+  border-top: 1px solid rgba(63, 44, 17, 0.15);
+  margin: 28px 0;
+}
+
+
+/* =========================================================
+   LINKOVI U MODALU
+========================================================= */
+
+.modal-body a {
+  color: #6d4d1e;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(109, 77, 30, 0.35);
+  text-underline-offset: 3px;
+}
+
+.modal-body a:hover {
+  color: #3f2c11;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .events-page {
+    padding-top: 30px;
+  }
+
+  .events-page-title {
+    margin-bottom: 40px;
+  }
+
+  .events-page-title h1 {
+    font-size: 3rem;
+  }
+
+  .events-page-title p {
+    font-size: 1.15rem;
+  }
+
+  .events-card .card-body {
+    padding: 20px;
+  }
+
+  .events-card .card-img {
+    height: 190px;
+  }
+
+  .events-card .container-title {
+    font-size: 1.45rem;
+  }
+
+  .events-card .container-text {
+    font-size: 1.12rem;
+    line-height: 1.75;
+  }
+
+  .modal-body .container-text,
+  .modal-body p {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILNI
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .events-page {
+    padding: 25px 12px 45px;
+  }
+
+  .events-page-title {
+    margin-bottom: 35px;
+  }
+
+  .events-page-title span {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .events-page-title h1 {
+    font-size: 2.4rem;
+  }
+
+  .events-page-title p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+
+
+  /* RED */
+
+  .events-page > .row {
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: 0;
+  }
+
+  .events-page > .row > [class*="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+  }
+
+
+  /* KARTICA */
+
+  .events-card {
+    border-radius: 12px;
+  }
+
+  .events-card .card-body {
+    padding: 20px;
+  }
+
+
+  /* SLIKA */
+
+  .events-card .card-img {
+    height: 215px;
+    margin-bottom: 8px;
+  }
+
+
+  /* NASLOV */
+
+  .events-card .container-title {
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-top: 8px;
+  }
+
+  .events-card .container-title svg {
+    font-size: 1.15em;
+  }
+
+
+  /* TEKST */
+
+  .events-card .container-text {
+    font-size: 1.12rem;
+    line-height: 1.8;
+    margin-top: 15px;
+    margin-bottom: 22px;
+  }
+
+
+  /* DUGME */
+
+  .events-card .btn-secondary {
+    align-self: center;
+    margin-top: 5px;
+    padding: 11px 22px;
+    font-size: 1rem;
+  }
+
+
+  /* MODAL */
+
+  .modal-body {
+    padding: 22px 16px;
+  }
+
+  .modal-body .container-text,
+  .modal-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .modal-body strong {
+    font-size: 1.1rem;
+  }
+
+  .modal-body li {
+    font-size: 1.08rem;
+  }
+
+  .modal-body a {
+    font-size: 1.1rem;
+  }
+
+  .modal-footer {
+    padding: 15px;
+  }
+
+  .container-iframe iframe {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================================
+   VEOMA MALI EKRANI
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .events-page-title h1 {
+    font-size: 2.2rem;
+  }
+
+  .events-page-title p {
+    font-size: 1.05rem;
+  }
+
+  .events-card .card-body {
+    padding: 18px;
+  }
+
+  .events-card .card-img {
+    height: 195px;
+  }
+
+  .events-card .container-title {
+    font-size: 1.35rem;
+  }
+
+  .events-card .container-text {
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .events-card .btn-secondary {
+    font-size: 0.98rem;
+  }
+
+  .modal-body {
+    padding: 20px 14px;
+  }
+
+  .modal-body .container-text,
+  .modal-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .modal-body a {
+    font-size: 1.05rem;
+  }
+
+}

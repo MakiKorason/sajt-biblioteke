@@ -1,0 +1,534 @@
+/* =========================================================
+   LEGATI – MODERAN DIZAJN
+========================================================= */
+
+.legati-page {
+  padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.legati-hero {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #60451d 50%,
+      #8b6a35 100%
+    );
+
+  color: #fff;
+}
+
+.legati-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 60px 25px;
+  text-align: center;
+}
+
+.legati-hero-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+.legati-hero h1 {
+  margin: 0 0 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.legati-hero p {
+  max-width: 680px;
+  margin: 0 auto;
+
+  font-size: 1.18rem;
+  line-height: 1.8;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   HERO DECORACIJA
+========================================================= */
+
+.legati-hero-decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+}
+
+.legati-hero-decoration-left {
+  left: -150px;
+  top: -80px;
+}
+
+.legati-hero-decoration-right {
+  right: -150px;
+  bottom: -100px;
+}
+
+.legati-hero-decoration::after {
+  content: "";
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  color: #8b6a35;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+
+  color: #3f2c11;
+}
+
+.section-heading p {
+  max-width: 700px;
+  margin: 18px auto 0;
+
+  font-size: 1.08rem;
+  line-height: 1.8;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   UVOD
+========================================================= */
+
+.legati-intro-section {
+  padding: 40px 0 100px;
+}
+
+.legati-text {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #454545;
+}
+
+.legati-text p {
+  margin-bottom: 24px;
+}
+
+.legati-intro-symbol {
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  background: #f3f2ee;
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  text-align: center;
+}
+
+.legati-intro-symbol svg {
+  width: 75px;
+  height: 75px;
+
+  margin-bottom: 15px;
+
+  color: #8b6a35;
+}
+
+.legati-intro-symbol span {
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+
+  color: #60451d;
+}
+
+
+/* =========================================================
+   PREGLED LEGATA
+========================================================= */
+
+.legati-overview-section {
+  padding: 30px 0 100px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.legat-card {
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border: 1px solid rgba(63, 44, 17, 0.12);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.legat-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.legat-card-image {
+  height: 300px;
+
+  overflow: hidden;
+
+  background: #f3f2ee;
+}
+
+.legat-card-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.legat-card:hover .legat-card-image img {
+  transform: scale(1.05);
+}
+
+.legat-card-content {
+  padding: 30px;
+}
+
+.legat-card-content > span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  color: #9a7840;
+}
+
+.legat-card-content h3 {
+  margin: 12px 0 15px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  color: #3f2c11;
+}
+
+.legat-card-content p {
+  min-height: 80px;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #666;
+}
+
+.legat-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 15px;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  color: #60451d;
+
+  transition: gap 0.25s ease;
+}
+
+.legat-card-link:hover {
+  color: #3f2c11;
+  gap: 16px;
+}
+
+.legat-card-link span {
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   DETALJ LEГATA
+========================================================= */
+
+.legat-detail-section {
+  margin-bottom: 90px;
+
+  overflow: hidden;
+
+  background: #f3f2ee;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+.legat-detail-reverse {
+  background: #fff;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+}
+
+.legat-detail-image {
+  height: 100%;
+  min-height: 560px;
+
+  overflow: hidden;
+
+  background: #e9e6de;
+}
+
+.legat-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.legat-detail-section:hover
+.legat-detail-image img {
+  transform: scale(1.025);
+}
+
+.legat-detail-content {
+  padding: 55px;
+}
+
+.legat-detail-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  color: #9a7840;
+}
+
+.legat-detail-content h2 {
+  margin-bottom: 28px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  color: #3f2c11;
+}
+
+.legat-detail-content p {
+  margin-bottom: 20px;
+
+  font-size: 1.04rem;
+  line-height: 1.85;
+
+  color: #4b4b4b;
+}
+
+
+/* =========================================================
+   DEKORACIJA
+========================================================= */
+
+.legati-books-decoration {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 0 30px;
+
+  color: #8b6a35;
+}
+
+.legati-books-decoration svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .legati-hero {
+    min-height: 340px;
+    margin-bottom: 45px;
+  }
+
+  .legati-intro-section {
+    padding-top: 20px;
+  }
+
+  .legati-intro-symbol {
+    min-height: 240px;
+  }
+
+  .legat-detail-image {
+    min-height: 420px;
+  }
+
+  .legat-detail-content {
+    padding: 40px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .legati-hero {
+    min-height: 300px;
+  }
+
+  .legati-hero-content {
+    padding: 45px 20px;
+  }
+
+  .legati-hero-label {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+
+  .legati-hero h1 {
+    font-size: 3rem;
+  }
+
+  .legati-hero p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .legati-text {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .legat-card-image {
+    height: 260px;
+  }
+
+  .legat-card-content {
+    padding: 25px;
+  }
+
+  .legat-detail-section {
+    border-radius: 20px;
+    margin-bottom: 55px;
+  }
+
+  .legat-detail-image {
+    min-height: 330px;
+  }
+
+  .legat-detail-content {
+    padding: 30px 25px;
+  }
+
+  .legat-detail-content h2 {
+    font-size: 2rem;
+  }
+
+  .legat-detail-content p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+}

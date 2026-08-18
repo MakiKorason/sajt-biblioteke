@@ -1,40 +1,695 @@
+/* =========================================================
+   BOOKS SEARCH PAGE
+   ========================================================= */
 
-.cobiss-card {
-  background: linear-gradient(135deg, #f6f5f270, #bfb09b6e,#887f6c6e);
-  border: 1px solid #ddd;
-  border-radius: 2rem;
-  padding: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-align: justify;
-
+.books-search-page {
+  min-height: 100vh;
+  background: #f3f2ee;
+  color: #3f2c11;
 }
 
-.cobiss-link-text {
-  color: #66452c;
-  text-decoration: none;
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.books-search-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 90px 20px 85px;
+  margin-bottom: 75px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #59421f 55%,
+      #6c5128 100%
+    );
+
+  color: #f3f2ee;
+  text-align: center;
 }
 
-.cobiss-link-text:hover {
-  text-decoration: underline;
+.books-search-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+  margin: auto;
 }
+
+.books-search-hero-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.72;
+}
+
+.books-search-hero h1 {
+  margin: 0 0 22px;
+
+  font-family: "Garamond", Georgia, serif;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.books-search-hero p {
+  max-width: 750px;
+
+  margin: auto;
+
+  font-size: 1.25rem;
+  line-height: 1.8;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   HERO DEKORACIJA
+   ========================================================= */
+
+.books-search-decoration {
+  position: absolute;
+
+  border: 1px solid rgba(243, 242, 238, 0.12);
+
+  border-radius: 50%;
+}
+
+.books-search-decoration-left {
+  width: 450px;
+  height: 450px;
+
+  left: -180px;
+  top: -250px;
+}
+
+.books-search-decoration-right {
+  width: 550px;
+  height: 550px;
+
+  right: -220px;
+  bottom: -360px;
+}
+
+
+/* =========================================================
+   GLAVNI KONTEJNER
+   ========================================================= */
+
+.container-library {
+  max-width: 1200px;
+
+  padding-top: 0;
+  padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   SEKCIJA
+   ========================================================= */
+
+.books-section {
+  margin-bottom: 65px;
+}
+
+.books-section-heading {
+  max-width: 850px;
+
+  margin: 0 auto 30px;
+
+  text-align: center;
+}
+
+.books-section-heading span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #8b6a37;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.books-section-heading h2 {
+  margin: 0;
+
+  color: #3f2c11;
+
+  font-family: "Garamond", Georgia, serif;
+
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   OSNOVNI TEKST
+   ========================================================= */
+
+.container-library .container-text {
+  color: #55504a;
+
+  font-size: 1.18rem;
+  line-height: 1.85;
+
+  font-weight: 400;
+}
+
+.intro-text {
+  max-width: 950px;
+
+  margin: 0 auto 40px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   COBISS SLIKA
+   ========================================================= */
 
 .cobiss-image {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+
+  width: 55%;
+  max-width: 650px;
+
+  height: auto;
+
+  margin: 35px auto 40px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px rgba(63, 44, 17, 0.15);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cobiss-image:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 45px rgba(63, 44, 17, 0.2);
+}
+
+
+/* =========================================================
+   COBISS KARTICE
+   ========================================================= */
+
+.cobiss-card {
+  margin-bottom: 30px;
+
+  padding: 38px 42px;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(63, 44, 17, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cobiss-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(63, 44, 17, 0.2);
+
+  box-shadow:
+    0 18px 45px rgba(63, 44, 17, 0.11);
+}
+
+.cobiss-card .card-body {
+  padding: 0;
+}
+
+
+/* =========================================================
+   OZNAKA
+   ========================================================= */
+
+.card-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #8b6a37;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   NASLOV KARTICE
+   ========================================================= */
+
+.card-title {
+  margin: 0 0 22px;
+
+  color: #3f2c11;
+
+  font-family: "Garamond", Georgia, serif;
+
+  font-size: 2.35rem;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.cobiss-list {
+  margin: 20px 0 0;
+
+  padding-left: 28px;
+}
+
+.cobiss-list li {
+  margin-bottom: 18px;
+
+  color: #55504a;
+
+  font-size: 1.17rem;
+
+  line-height: 1.8;
+}
+
+.cobiss-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cobiss-list strong {
+  color: #3f2c11;
+}
+
+
+/* =========================================================
+   LINKOVI
+   ========================================================= */
+
+.container-library a {
+  color: #6d4d1e;
+
+  font-weight: 600;
+
+  text-decoration: underline;
+
+  text-decoration-color:
+    rgba(109, 77, 30, 0.35);
+
+  text-decoration-thickness: 1px;
+
+  text-underline-offset: 4px;
+
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+.container-library a:hover {
+  color: #3f2c11;
+
+  text-decoration-color: #3f2c11;
+}
+
+
+/* =========================================================
+   DUGME
+   ========================================================= */
+
+.cobiss-button {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding: 13px 23px;
+
+  border-radius: 9px;
+
+  background: #3f2c11;
+
+  color: #ffffff !important;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  text-decoration: none !important;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cobiss-button:hover {
+  background: #59421f;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   UPUTSTVO
+   ========================================================= */
+
+.instruction-section {
+  margin-top: 65px;
+
+  margin-bottom: 30px;
+}
+
+.instruction-card {
+  padding: 42px;
+
+  border: 1px solid rgba(63, 44, 17, 0.1);
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(63, 44, 17, 0.07);
+}
+
+.instruction-title {
+  margin: 0 0 25px;
+
+  color: #3f2c11;
+
+  font-family: "Garamond", Georgia, serif;
+
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.instruction-card > .container-text {
+  max-width: 900px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   LISTA UPUTSTVA
+   ========================================================= */
+
+.instruction-list {
+  max-width: 950px;
+
+  margin: 0;
+
+  padding-left: 32px;
+}
+
+.instruction-list li {
+  padding-left: 8px;
+
+  margin-bottom: 20px;
+
+  color: #55504a;
+
+  font-size: 1.17rem;
+
+  line-height: 1.8;
+}
+
+.instruction-list li:last-child {
+  margin-bottom: 0;
+}
+
+.instruction-list li::marker {
+  color: #8b6a37;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ANIMATED CARD
+   ========================================================= */
+
+.container-library .animated-card {
+  width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .books-search-hero {
+    padding: 75px 20px 70px;
+  }
+
+  .books-search-hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .books-search-hero p {
+    font-size: 1.18rem;
+  }
+
+  .container-library .container-text {
+    font-size: 1.15rem;
+  }
+
+  .cobiss-image {
+    width: 70%;
+  }
+
+  .cobiss-card,
+  .instruction-card {
+    padding: 32px;
+  }
+
+  .card-title {
+    font-size: 2.2rem;
+  }
+
+  .cobiss-list li,
+  .instruction-list li {
+    font-size: 1.14rem;
+  }
 
 }
 
-h2 {
-  font-family: "Garamond", serif;
+
+/* =========================================================
+   MOBILNI
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .books-search-hero {
+    padding: 60px 18px 55px;
+
+    margin-bottom: 55px;
+  }
+
+  .books-search-hero-label {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .books-search-hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .books-search-hero p {
+    font-size: 1.1rem;
+
+    line-height: 1.75;
+  }
+
+  .container-library {
+    padding: 0 15px 50px;
+  }
+
+  .books-section {
+    margin-bottom: 50px;
+  }
+
+  .books-section-heading {
+    margin-bottom: 25px;
+  }
+
+  .books-section-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .container-library .container-text {
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+  }
+
+  .intro-text {
+    text-align: left;
+  }
+
+  .cobiss-image {
+    width: 92%;
+
+    margin: 30px auto 35px;
+
+    border-radius: 14px;
+  }
+
+  .cobiss-card,
+  .instruction-card {
+    padding: 27px 23px;
+
+    border-radius: 18px;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .cobiss-list {
+    padding-left: 25px;
+  }
+
+  .cobiss-list li {
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 17px;
+  }
+
+  .instruction-section {
+    margin-top: 50px;
+  }
+
+  .instruction-title {
+    font-size: 2rem;
+  }
+
+  .instruction-list {
+    padding-left: 27px;
+  }
+
+  .instruction-list li {
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+  }
+
 }
-.cobiss-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; 
-  margin-top: -400px; 
-}
-.border-end {
-  border-right: 2px solid black;
-  padding-right: 15px; 
+
+
+/* =========================================================
+   VEOMA MALI EKRANI
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .books-search-hero {
+    padding: 50px 15px 45px;
+  }
+
+  .books-search-hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .books-search-hero p {
+    font-size: 1.05rem;
+  }
+
+  .container-library {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .books-section-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .container-library .container-text {
+    font-size: 1.07rem;
+  }
+
+  .cobiss-image {
+    width: 100%;
+  }
+
+  .cobiss-card,
+  .instruction-card {
+    padding: 23px 18px;
+
+    border-radius: 16px;
+  }
+
+  .card-title {
+    font-size: 1.85rem;
+  }
+
+  .cobiss-list {
+    padding-left: 23px;
+  }
+
+  .cobiss-list li {
+    font-size: 1.05rem;
+  }
+
+  .instruction-title {
+    font-size: 1.85rem;
+  }
+
+  .instruction-list li {
+    font-size: 1.05rem;
+  }
+
+  .cobiss-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
 }

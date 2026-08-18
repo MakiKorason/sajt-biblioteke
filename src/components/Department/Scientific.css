@@ -1,0 +1,729 @@
+/* =====================================================
+   SCIENTIFIC PAGE
+===================================================== */
+
+.scientific-page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.scientific-hero {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #513914 50%,
+      #6b4d1c 100%
+    );
+
+  color: #ffff;
+}
+
+
+.scientific-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1100px, 90%);
+
+  margin: auto;
+
+  text-align: center;
+}
+
+
+.scientific-hero-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #ffff;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.scientific-hero h1 {
+  margin: 0;
+
+  font-size: clamp(3rem, 6vw, 5.2rem);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -3px;
+}
+
+
+.scientific-hero p {
+  max-width: 720px;
+
+  margin: 30px auto 0;
+
+  color: rgba(243,242,238,0.78);
+
+  font-size: 1.15rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   HERO DECORATION
+===================================================== */
+
+.scientific-hero-decoration {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border: 1px solid rgba(216,189,128,0.25);
+
+  border-radius: 50%;
+}
+
+
+.scientific-hero-decoration-left {
+  left: -130px;
+  top: -100px;
+}
+
+
+.scientific-hero-decoration-right {
+  right: -130px;
+  bottom: -100px;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.scientific-page .section-heading {
+  max-width: 850px;
+
+  margin-bottom: 65px;
+}
+
+
+.scientific-page .section-heading > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #967338;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.scientific-page .section-heading h2 {
+  margin: 0;
+
+  color: #3f2c11;
+
+  font-size: clamp(2.7rem, 5vw, 4.8rem);
+
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  letter-spacing: -2px;
+}
+
+
+.scientific-page .section-heading p {
+  max-width: 720px;
+
+  margin-top: 25px;
+
+  color: #6a6257;
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.scientific-intro-section {
+  padding: 100px 0;
+}
+
+
+.scientific-text {
+  color: #514a41;
+}
+
+
+.scientific-text p {
+  margin-bottom: 25px;
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   IMAGE STACK
+===================================================== */
+
+.scientific-image-stack {
+  position: relative;
+
+  min-height: 570px;
+}
+
+
+.scientific-image-card {
+  position: absolute;
+
+  overflow: hidden;
+
+  background: #e8e3d8;
+
+  box-shadow:
+    0 20px 50px rgba(63,44,17,0.12);
+}
+
+
+.scientific-image-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.scientific-image-main {
+  top: 0;
+  right: 0;
+
+  width: 82%;
+  height: 500px;
+
+  border-radius: 0 70px 0 70px;
+}
+
+
+.scientific-image-small {
+  left: 0;
+  bottom: 0;
+
+  width: 52%;
+  height: 250px;
+
+  border: 10px solid #f3f2ee;
+
+  border-radius: 50px 0 50px 0;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.scientific-services-section {
+  padding: 100px 0;
+}
+
+
+.scientific-info-card {
+  height: 100%;
+
+  padding: 45px 35px;
+
+  background: #eeeae1;
+
+  border: 1px solid rgba(63,44,17,0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.scientific-info-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(63,44,17,0.1);
+}
+
+
+.scientific-card-icon {
+  margin-bottom: 25px;
+
+  color: #967338;
+
+  font-size: 2.8rem;
+}
+
+
+.scientific-info-card > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #967338;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.scientific-info-card h3 {
+  margin-bottom: 20px;
+
+  color: #3f2c11;
+
+  font-size: 1.7rem;
+
+  line-height: 1.2;
+}
+
+
+.scientific-info-card p {
+  margin: 0;
+
+  color: #625a50;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CULTURAL SECTION
+===================================================== */
+
+.scientific-cultural-section {
+  padding: 100px 0;
+}
+
+
+/* =====================================================
+   EVENT CARD
+===================================================== */
+
+.scientific-event-card {
+  overflow: hidden;
+
+  margin-bottom: 70px;
+
+  background: #eeeae1;
+
+  border: 1px solid rgba(63,44,17,0.08);
+
+  box-shadow:
+    0 15px 45px rgba(63,44,17,0.07);
+}
+
+
+.scientific-event-content {
+  padding: 60px;
+}
+
+
+.scientific-event-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #967338;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+
+.scientific-event-content h3 {
+  margin-bottom: 25px;
+
+  color: #3f2c11;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.05;
+
+  font-weight: 600;
+}
+
+
+.scientific-event-content p {
+  margin-bottom: 20px;
+
+  color: #5f574d;
+
+  font-size: 1.05rem;
+
+  line-height: 1.85;
+}
+
+
+.scientific-event-image {
+  min-height: 450px;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+.scientific-event-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.scientific-mission {
+  margin-top: 100px;
+
+  padding: 100px 30px;
+
+  background: #3f2c11;
+
+  color: #f3f2ee;
+
+  text-align: center;
+}
+
+
+.scientific-mission-inner {
+  max-width: 850px;
+
+  margin: auto;
+}
+
+
+.scientific-mission-inner > svg {
+  margin-bottom: 25px;
+
+  color: #d8bd80;
+
+  font-size: 3rem;
+}
+
+
+.scientific-mission h2 {
+  margin: 0 0 30px;
+
+  color: #f3f2ee;
+
+  font-size: clamp(2.8rem, 5vw, 5rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+
+.scientific-mission p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: rgba(243,242,238,0.72);
+
+  font-size: 1.1rem;
+
+  line-height: 1.85;
+}
+
+
+/* =====================================================
+   BOOK DECORATION
+===================================================== */
+
+.scientific-books-decoration {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  padding: 60px 0 20px;
+
+  color: #967338;
+
+  font-size: 1.5rem;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+  .scientific-page {
+    padding-top: 60px;
+  }
+
+
+  .scientific-intro-section,
+  .scientific-services-section,
+  .scientific-cultural-section {
+    padding: 70px 0;
+  }
+
+
+  .scientific-image-stack {
+    min-height: 520px;
+
+    margin-top: 20px;
+  }
+
+
+  .scientific-image-main {
+    width: 82%;
+
+    height: 450px;
+  }
+
+
+  .scientific-event-content {
+    padding: 45px;
+  }
+
+
+  .scientific-event-image {
+    min-height: 380px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+  .scientific-hero {
+    min-height: 420px;
+
+    padding: 70px 20px;
+  }
+
+
+  .scientific-hero h1 {
+    font-size: 3.1rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .scientific-hero-label {
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  .scientific-hero p {
+    font-size: 1rem;
+  }
+
+
+  .scientific-page {
+    padding-top: 30px;
+
+    padding-bottom: 50px;
+  }
+
+
+  .scientific-intro-section,
+  .scientific-services-section,
+  .scientific-cultural-section {
+    padding: 60px 0;
+  }
+
+
+  .scientific-page .section-heading {
+    margin-bottom: 40px;
+  }
+
+
+  .scientific-page .section-heading h2 {
+    font-size: 2.8rem;
+  }
+
+
+  .scientific-text p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+
+  .scientific-image-stack {
+    min-height: 430px;
+
+    margin-top: 20px;
+  }
+
+
+  .scientific-image-main {
+    width: 86%;
+
+    height: 370px;
+  }
+
+
+  .scientific-image-small {
+    width: 55%;
+
+    height: 200px;
+  }
+
+
+  .scientific-info-card {
+    padding: 35px 25px;
+  }
+
+
+  .scientific-event-card {
+    margin-bottom: 45px;
+  }
+
+
+  .scientific-event-content {
+    padding: 35px 25px;
+  }
+
+
+  .scientific-event-content h3 {
+    font-size: 2.2rem;
+  }
+
+
+  .scientific-event-content p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+
+  .scientific-event-image {
+    min-height: 300px;
+  }
+
+
+  .scientific-mission {
+    margin-top: 60px;
+
+    padding: 70px 20px;
+  }
+
+
+  .scientific-mission h2 {
+    font-size: 3rem;
+  }
+
+
+  .scientific-mission p {
+    font-size: 1rem;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .scientific-hero h1 {
+    font-size: 2.7rem;
+  }
+
+
+  .scientific-page .section-heading h2 {
+    font-size: 2.4rem;
+  }
+
+
+  .scientific-image-stack {
+    min-height: 360px;
+  }
+
+
+  .scientific-image-main {
+    height: 310px;
+  }
+
+
+  .scientific-image-small {
+    height: 160px;
+  }
+
+
+  .scientific-event-content {
+    padding: 30px 20px;
+  }
+
+
+  .scientific-event-content h3 {
+    font-size: 2rem;
+  }
+
+
+  .scientific-event-image {
+    min-height: 260px;
+  }
+
+
+  .scientific-mission h2 {
+    font-size: 2.5rem;
+  }
+
+}

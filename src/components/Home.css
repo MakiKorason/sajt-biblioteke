@@ -1,648 +1,1230 @@
-.carousel-control-prev,
-.carousel-control-next {
- display: none;
- color: black;
-   
-}
-.carousel-indicators {
- z-index: 10;
+/* =========================================================
+   GLOBAL HOME
+========================================================= */
+
+:root {
+  --library-brown: #3f2c11;
+  --library-brown-dark: #2b1d0b;
+  --library-brown-light: #6b4b28;
+  --library-cream: #f3f2ee;
+  --library-white: #ffffff;
+  --library-gray: #6f6f6f;
+  --library-border: rgba(63, 44, 17, 0.12);
+  --library-shadow: 0 15px 45px rgba(45, 31, 14, 0.10);
+  --library-shadow-hover: 0 22px 55px rgba(45, 31, 14, 0.16);
+  --library-radius: 18px;
 }
 
-.carousel-caption{
-animation: flashEffect 10s forwards;
-font-size: 1.5rem;
-}
-.carousel-caption-text {
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 3px #000;
-  font-size: 1.35em;
-  letter-spacing: 0.5px;
+.home-section {
+  padding: 75px 0;
 }
 
-.slide-notice-box {
-  width: 50%;
-  margin: 0 auto;
-  padding: 1.4rem 1.8rem;
-  background-color: #fff;
-  border: 3px solid #000;
-  color: #111;
-  text-shadow: none;
-  font-size: 2.2rem;
-  line-height: 1.45;
+.home-section:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.home-section img {
+  max-width: 100%;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 45px;
   text-align: center;
 }
-.image-carousel {
- max-width: 100%; 
-max-height: auto;
- opacity: 0;
- animation: flashEffect 10s forwards; 
- object-fit: cover;
- height: 215vh;
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--library-brown-light);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-/* Ensure carousel works on all screen sizes */
-.carousel {
+.section-heading h2 {
+  margin: 0;
+  color: var(--library-brown);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-heading p {
+  max-width: 700px;
+  margin: 18px auto 0;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--library-brown);
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.section-link:hover {
+  color: var(--library-brown-light);
+  gap: 14px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.home-hero {
+  position: relative;
+  width: 100%;
   overflow: hidden;
+  background: #17120c;
 }
 
-.carousel-inner {
+.home-carousel {
+  position: relative;
+}
+
+.home-carousel-image {
   width: 100%;
+  height: min(72vh, 720px);
+  min-height: 460px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-.carousel-item {
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 13, 5, 0.88) 0%,
+      rgba(20, 13, 5, 0.58) 38%,
+      rgba(20, 13, 5, 0.12) 75%,
+      rgba(20, 13, 5, 0.05) 100%
+    );
+}
+
+.home-caption {
+  right: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
   width: 100%;
-}
-@media (max-width: 768px) {
-  .image-carousel {
-    height: 350px;
-  }
-
-  .carousel-caption p {
-    font-size: 14px;
-    padding: 5px;
-  }
-
-  .slide-notice-box {
-    width: 90%;
-    font-size: 1.15rem;
-    padding: 0.9rem;
-  }
-  
-  /* Optimizacija za karusel u oglasnoj tabli na telefonima */
-  .container-image {
-    max-width: 280px !important;
-    width: 100% !important;
-  }
-  
-  /* Smanjivanje gap-a na telefonima */
-  .carousel-container {
-    gap: 10px !important;
-  }
-  
-  .carousel-images {
-    gap: 15px !important;
-  }
-  
-  /* Smanjivanje grba za digitalni fond na mobilnim uređajima */
-  
-  
-  /* Smanjivanje loga za književni konkurs na mobilnim uređajima */
-  .konkurs-logo {
-    width: 35% !important;
-  }
-}
-
-
-@keyframes flashEffect {
- 0% {
-   opacity: 0;
-   transform: scale(0.9); 
- }
- 50% {
-   opacity: 1;
-   transform: scale(1); 
- }
- 100% {
-   opacity: 1;
-   transform: scale(1);
- }
-}
-
-.container-button{
-   color: black;
-   font-size: 50%;
-   padding: 0.6rem 0.7rem;
-   background-color: #f3f2ee;
-   border-radius: 50%;
-   font-family: 'Arial';
-   margin: 0 auto;
-   display: block;
-   width: fit-content;
-}
-
-/* Kritični stilovi koji se učitavaju odmah */
-.container-library {
- width: 95%;
- max-width: 95%;
- padding: 2.5rem;
- background-color: #f3f2ee;
- border-radius: 8px;
- box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
- border: 1px solid #3f2c11;
- position: relative;
- margin: 0 auto;
-}
-
-.container-title {
- font-size: 3rem;
- font-weight: bold;
- text-align: center;
- margin-bottom: 10px;
- color:#3f2c11;
- font-family:'Arsenal';
- animation: fadeInText 3s forwards;
- animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-}
-
-@media (max-width: 768px) {
- .container-title {
-   font-size: 1.3rem;
-   line-height: 1.4;
-   padding: 0 15px;
- }
-}
-
-/* Nekritični stilovi koji se mogu učitati kasnije */
-
-/* Optimizacija animacija */
-.container-image {
-  transition: transform 0.3s ease;
-  will-change: transform;
- }
-
-/* Optimizacija za print */
-@media print {
-  .container-button,
-  .carousel-indicators {
-    display: none !important;
-  }
-}
-
-/* Optimizacija za dark mode */
-@media (prefers-color-scheme: dark) {
-  .container-library {
-    background-color: #1a1a1a;
-    color: #fff;
-  }
-}
-
-.container-day{
-max-width: 95%;
-padding: 3%;
-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
-
-}
-.container-icon {
- color: #3f2c11; 
- font-size:3rem; 
- text-align: center;
-}
-
-.container-icon.left-align {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5em;
-  margin-right: 1em;
+  max-width: 850px;
+  padding: 60px 8% 80px;
   text-align: left;
 }
 
-.container-text {
- color: #3f2c11;
- font-size: 25px;
- margin-bottom: 30px;
- text-align: left;
- opacity: 0; 
- animation: fadeInText 3s forwards;
- animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
- word-spacing: -1.8px; 
- font-family: 'Arial';
+.caption-content {
+  max-width: 720px;
 }
 
-.about-details-toggle {
-  margin-top: 10px;
+.caption-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #e4d5b9;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
 }
 
-.about-more-details {
-  overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.2s ease;
+.caption-content h2 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
 }
 
-.about-more-details.collapsed {
-  max-height: 0;
-  opacity: 0;
+.caption-content p {
+  max-width: 700px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
 }
 
-.about-more-details.expanded {
-  max-height: 900px; /* dovoljno za ceo dodatni tekst */
-  opacity: 1;
-}
-
-.about-more-details p {
-  margin-top: 14px;
-}
-@media (max-width: 768px) {
- .container-text {
-   font-size: 0.9rem;
-   line-height: 1.4;
-   padding: 0 15px;
- }
-}
-@keyframes fadeInText {
- 0% {
-   opacity: 0; 
-   color: white; 
- }
- 100% {
-   opacity: 1; 
-   color:#66452c;
-  
-   
- }
-}
- 
-.image-event {
-  max-width: 100%; 
-  border-radius: 5%;
-  transition: transform 0.3s ease;
-}
-
-.image-event:hover {
- transform: scale(1.2); 
-}
-
-.container-iframe {
- position: relative;
- width: 100%;
- padding-bottom: 56.25%; 
- height: 0;
- overflow: hidden;
-}
-
-.container-iframe iframe {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
-}
-
-.image-background {
- background-image:url('../images/biblioteka.webp');
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- padding: 5% 0; 
- color: white; 
- position:relative;
- height: 60%;
-}
-
-.image-background::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background: rgba(255, 255, 255, 0.7); 
-}
-
-.react-calendar {
- background-color: #f4f4f4;
- border-radius: 10px;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  padding: 24px;
- position: relative;
-  font-size: 1.3rem;
-  width: 100%;
-  max-width: 420px;
-  margin-left: 2rem;
-}
-
-/* Povećanje kontrasta teksta u kalendaru (WCAG AA) */
-.react-calendar abbr {
-  color: #1a1a1a;
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 23px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--library-brown);
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
-.react-calendar__month-view__weekdays abbr {
-  color: #1a1a1a;
+.home-button:hover {
+  background: var(--library-brown-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.home-button-light {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--library-brown) !important;
+}
+
+.home-button-light:hover {
+  background: #fff;
+  color: var(--library-brown-dark) !important;
+}
+
+.home-carousel .carousel-indicators {
+  z-index: 5;
+  margin-bottom: 25px;
+}
+
+.home-carousel .carousel-indicators button {
+  width: 35px;
+  height: 4px;
+  margin: 0 5px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.home-carousel .carousel-control-prev,
+.home-carousel .carousel-control-next {
+  z-index: 4;
+  width: 8%;
+}
+
+.home-carousel .carousel-control-prev-icon,
+.home-carousel .carousel-control-next-icon {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 45%;
+}
+
+/* =========================================================
+   NOTICE / CONTEST
+========================================================= */
+
+.notice-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr);
+  overflow: hidden;
+  border: 1px solid var(--library-border);
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.notice-image {
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.notice-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.notice-card:hover .notice-image img {
+  transform: scale(1.025);
+}
+
+.notice-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px;
+}
+
+.notice-content h2 {
+  margin-bottom: 15px;
+  color: var(--library-brown);
+  font-size: 2rem;
   font-weight: 700;
 }
 
-/* Ensure all abbr elements in tiles have proper contrast - default to dark text */
-.react-calendar__tile abbr {
-  color: #1a1a1a;
+.notice-content p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* Override for tiles with dark backgrounds - use white text */
-.react-calendar__tile--active abbr,
-.react-calendar__tile--range abbr,
-.react-calendar__tile--rangeStart abbr,
-.react-calendar__tile--rangeEnd abbr,
-.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
+.notice-content .home-button {
+  align-self: flex-start;
 }
 
-.react-calendar__navigation button {
-  color: #1a1a1a;
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events-section {
+  background: #ebe8df;
 }
 
-.react-calendar__tile {
-  color: #1a1a1a;
+.calendar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
 }
 
-.react-calendar__month-view__days__day--neighboringMonth {
-  color: #4a4a4a;
+.calendar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #eee9df;
+  color: var(--library-brown);
+  font-size: 1.2rem;
 }
 
-.react-calendar__tile--now {
-  background: #d4c5b0;
-  color: #1a1a1a;
-}
-
-.react-calendar__tile {
-border-radius: 50%; 
-transition: background-color 0.2s ease; 
-}
-
-.react-calendar__tile.marked-date {
-  background-color: #8c5a2f; /* топлија смеђа, у складу са брендингом, боља приступачност од зелене */
-  color: #ffffff !important; 
-  font-weight: bold;
-}
-
-/* Данашњи датум – наглашен оквиром, без тамне позадине */
-
-
-
-.react-calendar__tile.marked-date:hover abbr,
-.react-calendar__tile.marked-date:focus abbr {
-  color: #ffffff !important;
-}
-
-/* Active and range states with sufficient contrast */
-.react-calendar__tile--active {
-  background: #3f2c11 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--active abbr {
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--range {
-  background: #5a3f1f;
-  color: #ffffff;
-}
-
-.react-calendar__tile--range abbr {
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--rangeStart,
-.react-calendar__tile--rangeEnd {
-  background: #3f2c11 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--rangeStart abbr,
-.react-calendar__tile--rangeEnd abbr {
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--rangeBothEnds {
-  background: #3f2c11 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
-}
-
-/* Handle --now with active/range combinations */
-.react-calendar__tile--now.react-calendar__tile--active,
-.react-calendar__tile--now.react-calendar__tile--range,
-.react-calendar__tile--now.react-calendar__tile--rangeStart,
-.react-calendar__tile--now.react-calendar__tile--rangeEnd,
-.react-calendar__tile--now.react-calendar__tile--rangeBothEnds {
-  background: #3f2c11 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile--now.react-calendar__tile--active abbr,
-.react-calendar__tile--now.react-calendar__tile--range abbr,
-.react-calendar__tile--now.react-calendar__tile--rangeStart abbr,
-.react-calendar__tile--now.react-calendar__tile--rangeEnd abbr,
-.react-calendar__tile--now.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
-}
-
-/* Ensure marked dates in active/range states maintain contrast */
-.react-calendar__tile.marked-date.react-calendar__tile--active,
-.react-calendar__tile.marked-date.react-calendar__tile--range,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeStart,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds {
-  background-color: #004d00 !important;
-  color: #ffffff !important;
-}
-
-/* Ensure abbr elements in marked dates with active/range states have white text */
-.react-calendar__tile.marked-date.react-calendar__tile--active abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--range abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeStart abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
-}
-
-/* Handle marked-date with --now class combination */
-.react-calendar__tile.marked-date.react-calendar__tile--now {
-  background-color: #006400 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile.marked-date.react-calendar__tile--now abbr {
-  color: #ffffff !important;
-}
-
-/* Handle marked-date with --now and --active/--range combinations */
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--active,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--range,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeStart,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeEnd,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeBothEnds {
-  background-color: #004d00 !important;
-  color: #ffffff !important;
-}
-
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--active abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--range abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeStart abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeEnd abbr,
-.react-calendar__tile.marked-date.react-calendar__tile--now.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
-}
-
-/* Specific selector for the exact combination mentioned in the error */
-button.react-calendar__tile.react-calendar__month-view__days__day.marked-date abbr,
-button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day abbr,
-button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.marked-date abbr {
-  color: #ffffff !important;
-  font-weight: bold;
-}
-
-/* Universal rule: any abbr inside marked-date button should be white */
-button.react-calendar__tile.marked-date abbr {
-  color: #ffffff !important;
-  font-weight: bold;
-}
-
-/* Universal rule: any abbr inside active/range buttons should be white */
-button.react-calendar__tile--active abbr,
-button.react-calendar__tile--range abbr,
-button.react-calendar__tile--rangeStart abbr,
-button.react-calendar__tile--rangeEnd abbr,
-button.react-calendar__tile--rangeBothEnds abbr {
-  color: #ffffff !important;
-}
-
-/* Universal rule: any abbr inside marked-date with any combination should be white */
-button.react-calendar__tile.marked-date.react-calendar__tile--active abbr,
-button.react-calendar__tile.marked-date.react-calendar__tile--range abbr,
-button.react-calendar__tile.marked-date.react-calendar__tile--rangeStart abbr,
-button.react-calendar__tile.marked-date.react-calendar__tile--rangeEnd abbr,
-button.react-calendar__tile.marked-date.react-calendar__tile--rangeBothEnds abbr,
-button.react-calendar__tile.marked-date.react-calendar__tile--now abbr {
-  color: #ffffff !important;
-  font-weight: bold;
-}
-
-/* Hover states with sufficient contrast */
-.react-calendar__tile:hover:not(.react-calendar__tile--disabled) {
-  background-color: #d4c5b0;
-  color: #1a1a1a;
-}
-
-.react-calendar__tile--now:hover {
-  background-color: #c4b5a0;
-  color: #1a1a1a;
-}
-
-/* Disabled states with sufficient contrast */
-.react-calendar__tile--disabled {
-  background-color: #e0e0e0;
-  color: #6a6a6a;
-}
-
-.react-calendar__tile--disabled abbr {
-  color: #6a6a6a;
-}
-
-/* Ensure navigation buttons have sufficient contrast */
-.react-calendar__navigation button:enabled:hover,
-.react-calendar__navigation button:enabled:focus {
-  background-color: #d4c5b0;
-  color: #1a1a1a;
-}
-
-.react-calendar__navigation button:disabled {
-  background-color: #e0e0e0;
-  color: #6a6a6a;
-}
-
-.react-calendar__navigation__label {
-font-size: 1.2rem;
-font-weight: bold;
-color: #1a1a1a;
-}
-
-/* Custom stil za vertikalni meni preporuka */
-.nav-pills .nav-link {
-  background-color: #f3f2ee;
-  color: #3f2c11;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  border: 1px solid #b5a999;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  background-color: #f3e9d2;
-  color: #3f2c11;
-  border: 2px solid #b5a999;
-}
-
-/* Veće slike u oglasnoj tabli */
-.container-library .image-event {
+.calendar-card .react-calendar {
   width: 100%;
-  height: 480px;
+  max-width: 370px;
+  border: 0;
+  font-family: inherit;
+  background: transparent;
+}
+
+.calendar-card .react-calendar button {
+  border-radius: 7px;
+}
+
+.calendar-card .react-calendar__tile {
+  padding: 14px 5px;
+  color: #3c3c3c;
+}
+
+.calendar-card .react-calendar__tile--now {
+  background: #eee9df;
+  color: var(--library-brown);
+}
+
+.calendar-card .react-calendar__tile--active {
+  background: var(--library-brown);
+  color: #fff;
+}
+
+.calendar-card .react-calendar__navigation button {
+  color: var(--library-brown);
+  font-weight: 700;
+}
+
+.marked-date {
+  position: relative;
+  background: #e4d4b7 !important;
+  color: var(--library-brown) !important;
+  font-weight: 800 !important;
+}
+
+.marked-date::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--library-brown);
+  transform: translateX(-50%);
+}
+
+.events-gallery {
+  padding: 35px;
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.events-gallery-header {
+  margin-bottom: 25px;
+}
+
+.events-gallery-header h3 {
+  margin: 0;
+  color: var(--library-brown);
+  font-size: 1.7rem;
+}
+
+.event-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.event-images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   display: block;
-  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.event-images img:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--library-shadow-hover);
+}
+
+.calendar-loading {
+  padding: 50px 20px;
+  color: #777;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.event-modal .modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 16px;
+  background: var(--library-cream);
+}
+
+.event-modal .modal-header,
+.event-modal .modal-footer {
+  border-color: rgba(63, 44, 17, 0.1);
+  background: var(--library-cream);
+}
+
+.event-modal .modal-title {
+  color: var(--library-brown);
+  font-weight: 700;
+}
+
+.event-modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   AUDIO BOOKS
+========================================================= */
+
+.audio-section {
+  background: #f7f5f0;
+}
+
+.audio-images {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.audio-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: var(--library-shadow);
+  transition: transform 0.35s ease;
+}
+
+.audio-images img:hover {
+  transform: translateY(-5px);
+}
+
+.content-card {
+  padding: 40px;
+  border: 1px solid var(--library-border);
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.content-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: #eee9df;
+  color: var(--library-brown);
+  font-size: 1.4rem;
+}
+
+.content-card p {
+  color: #505050;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.content-card a,
+.instructions-card a {
+  color: var(--library-brown);
+  font-weight: 700;
+}
+
+.instructions-card {
+  margin-top: 55px;
+  padding: 40px;
+  border-radius: var(--library-radius);
+  background: var(--library-brown);
+  color: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.instructions-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.instructions-header svg {
+  font-size: 1.5rem;
+  color: #e2cda7;
+}
+
+.instructions-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.instructions-card ol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.instructions-card li {
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+}
+
+.instructions-card a {
+  color: #e3cda5;
+}
+
+/* =========================================================
+   QUICK ACCESS
+========================================================= */
+
+.quick-section {
+  background: #fff;
+}
+
+.quick-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 360px;
+  padding: 35px 25px;
+  overflow: hidden;
+  border: 1px solid var(--library-border);
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(63, 44, 17, 0.22);
+  box-shadow: var(--library-shadow-hover);
+}
+
+.quick-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #eee9df;
+  color: var(--library-brown);
+}
+
+.quick-card h3 {
+  min-height: 58px;
+  margin: 0 0 15px;
+  color: var(--library-brown);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.quick-card img {
+  width: 70%;
+  max-width: 250px;
+  height: 150px;
+  object-fit: contain;
+  margin: auto;
+}
+
+.quick-card img.digital-logo {
+  width: 90%;
+  max-width: 330px;
+}
+
+.quick-card img.contest-logo {
+  width: 48%;
+}
+
+.quick-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--library-brown);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MATICA
+========================================================= */
+
+.maticа-section {
+  background: #f4f1e9;
+}
+
+.matica-section {
+  background: #f4f1e9;
+}
+
+.matica-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.matica-gallery > img,
+.matica-gallery > div img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  box-shadow: var(--library-shadow);
+}
+
+.matica-gallery > img {
+  height: 100%;
   object-fit: cover;
 }
 
-/* Smanjen razmak između kalendara i slike u oglasnoj tabli */
-.container-library .row > .col-md-4:first-child {
-  padding-right: 0.3rem;
-}
-.container-library .row > .col-md-4:nth-child(2) {
-  padding-left: 0.3rem;
+.matica-gallery > div {
+  display: grid;
+  gap: 15px;
 }
 
-.feature-icon-title {
-  min-height: 86px;
+.matica-content {
+  padding: 30px;
+}
+
+.matica-content h2 {
+  margin-bottom: 25px;
+  color: var(--library-brown);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+.matica-content p {
+  color: #555;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.documents-section {
+  background: #fff;
+}
+
+.document-card {
+  height: 100%;
+  padding: 35px;
+  border: 1px solid var(--library-border);
+  border-radius: var(--library-radius);
+  background: #faf9f6;
+  box-shadow: 0 8px 25px rgba(45, 31, 14, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--library-shadow);
+}
+
+.document-icon {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 0.8rem;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #eee9df;
+  color: var(--library-brown);
 }
 
-.feature-icon-image {
-  display: block;
-  margin: 0 auto;
+.document-card h3 {
+  min-height: 80px;
+  margin-bottom: 25px;
+  color: var(--library-brown);
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .react-calendar {
-    padding: 6px;
-    font-size: 1rem;
+.document-card .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   PARTNERS
+========================================================= */
+
+.partners-section {
+  background: #f3f2ee;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 145px;
+  padding: 25px;
+  border: 1px solid var(--library-border);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(45, 31, 14, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--library-shadow);
+}
+
+.partner-logo img {
+  width: auto;
+  max-width: 80%;
+  max-height: 90px;
+  object-fit: contain;
+}
+
+.partner-logo .partner-ministry {
+  width: 75px;
+}
+
+.partner-logo .partner-municipality {
+  width: 125px;
+}
+
+.partner-logo .partner-province {
+  width: 70px;
+}
+
+.partner-logo .partner-matica {
+  width: 110px;
+}
+
+.partner-logo .partner-national {
+  width: 75px;
+}
+
+.partner-logo .partner-museum {
+  width: 140px;
+}
+
+.partner-logo .partner-tourism {
+  width: 120px;
+}
+
+.partner-logo .partner-cultural {
+  width: 65px;
+}
+
+.friends-box {
+  padding: 35px;
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.friends-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.friends-header h3 {
+  margin: 0;
+  color: var(--library-brown);
+  font-size: 1.8rem;
+}
+
+.friends-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--library-brown);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.friends-toggle:hover {
+  background: var(--library-brown-dark);
+  transform: translateY(-2px);
+}
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+  padding-top: 30px;
+  border-top: 1px solid var(--library-border);
+}
+
+.friend-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  padding: 15px;
+}
+
+.friend-logo img {
+  width: 100%;
+  max-width: 180px;
+  max-height: 85px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   BOOTSTRAP BUTTON OVERRIDE
+========================================================= */
+
+.home-section .btn-secondary {
+  border: 0;
+  background: var(--library-brown);
+  color: #fff;
+}
+
+.home-section .btn-secondary:hover {
+  background: var(--library-brown-dark);
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .home-section {
+    padding: 60px 0;
+  }
+
+  .home-carousel-image {
+    height: 580px;
+    min-height: 420px;
+  }
+
+  .home-caption {
+    padding: 45px 7% 70px;
+  }
+
+  .notice-card {
+    grid-template-columns: 1fr;
+  }
+
+  .notice-image {
+    min-height: 350px;
+  }
+
+  .event-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .friends-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .matica-content {
+    padding: 10px 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .home-section {
+    padding: 45px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-heading p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  /* HERO */
+
+  .home-carousel-image {
+    height: 570px;
+    min-height: 500px;
+  }
+
+  .carousel-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 13, 5, 0.12) 0%,
+        rgba(20, 13, 5, 0.32) 35%,
+        rgba(20, 13, 5, 0.9) 100%
+      );
+  }
+
+  .home-caption {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    padding: 30px 25px 60px;
+    text-align: center;
+  }
+
+  .caption-content {
     max-width: 100%;
-    margin-left: 0;
-  }
-  
-  /* Responsive stilovi za kolаж сарадње */
-  .container-library .row .col-md-4 {
-    margin-bottom: 1rem;
   }
 
-  .feature-icon-title {
+  .caption-kicker {
+    font-size: 0.7rem;
+  }
+
+  .caption-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .caption-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .home-button {
+    min-height: 44px;
+    padding: 10px 17px;
+    font-size: 0.8rem;
+  }
+
+  .home-carousel .carousel-control-prev,
+  .home-carousel .carousel-control-next {
+    width: 13%;
+  }
+
+  .home-carousel .carousel-control-prev-icon,
+  .home-carousel .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* NOTICE */
+
+  .notice-image {
+    min-height: 220px;
+  }
+
+  .notice-content {
+    padding: 30px 25px;
+  }
+
+  .notice-content h2 {
+    font-size: 1.6rem;
+  }
+
+  /* EVENTS */
+
+  .calendar-card {
+    padding: 15px;
+  }
+
+  .calendar-card .react-calendar__tile {
+    padding: 10px 3px;
+  }
+
+  .events-gallery {
+    padding: 25px 18px;
+  }
+
+  .event-images {
+    grid-template-columns: 1fr;
+  }
+
+  .event-images img {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* AUDIO */
+
+  .audio-images {
+    grid-template-columns: 1fr;
+  }
+
+  .audio-images img:nth-child(2) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .content-card {
+    padding: 28px 22px;
+  }
+
+  .content-card p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .instructions-card {
+    margin-top: 35px;
+    padding: 28px 22px;
+  }
+
+  .instructions-header {
+    align-items: flex-start;
+  }
+
+  .instructions-header h3 {
+    font-size: 1.2rem;
+  }
+
+  /* QUICK */
+
+  .quick-card {
+    min-height: 330px;
+  }
+
+  /* MATICA */
+
+  .matica-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .matica-gallery > img {
+    max-height: 400px;
+  }
+
+  .matica-content {
+    padding: 10px 0;
+  }
+
+  .matica-content h2 {
+    font-size: 2rem;
+  }
+
+  .matica-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* DOCUMENTS */
+
+  .document-card {
+    padding: 28px 22px;
+  }
+
+  .document-card h3 {
     min-height: auto;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 
-  .feature-icons-row {
-    row-gap: 0.2rem;
+  /* PARTNERS */
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .feature-icon-col.mt-4 {
-    margin-top: 0.45rem !important;
+  .partner-logo {
+    min-height: 110px;
+    padding: 15px;
   }
 
-  .matica-section .matica-text {
-    margin-top: 1.2rem !important;
+  .partner-logo img {
+    max-width: 80%;
+    max-height: 65px;
   }
 
-  .matica-section .matica-text-col {
-    order: 1;
+  .friends-box {
+    padding: 25px 18px;
   }
 
-  .matica-section .matica-images-left,
-  .matica-section .matica-images-right {
-    order: 2;
-    margin-top: -0.35rem;
+  .friends-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .matica-section .matica-image {
-    margin-bottom: 0.65rem;
+  .friends-header h3 {
+    font-size: 1.45rem;
   }
 
-  .matica-section .matica-image-stack {
-    margin-top: 0.1rem;
+  .friends-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .friend-logo {
+    min-height: 80px;
   }
 }
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-carousel-image {
+    height: 530px;
+    min-height: 480px;
+  }
+
+  .home-caption {
+    padding: 25px 18px 55px;
+  }
+
+  .caption-content h2 {
+    font-size: 1.55rem;
+  }
+
+  .caption-content p {
+    font-size: 0.9rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .notice-content {
+    padding: 25px 20px;
+  }
+
+  .calendar-card .react-calendar__tile {
+    padding: 8px 2px;
+    font-size: 0.85rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .partner-logo {
+    min-height: 95px;
+  }
+
+  .friends-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.home-carousel-image:focus,
+.event-images img:focus,
+.quick-card:focus,
+.friends-toggle:focus {
+  outline: 3px solid rgba(63, 44, 17, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-carousel-image,
+  .notice-image img,
+  .event-images img,
+  .audio-images img,
+  .quick-card,
+  .partner-logo,
+  .home-button {
+    transition: none;
+  }
+}
