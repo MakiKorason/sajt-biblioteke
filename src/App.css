@@ -107,6 +107,11 @@ a {
   min-height: 38px;
 }
 
+
+/* =========================================================
+   POKRETNA INFORMACIONA TRAKA
+========================================================= */
+
 .top-notice {
   display: flex;
   align-items: center;
@@ -117,8 +122,15 @@ a {
 
   letter-spacing: 0.2px;
 
-  white-space: nowrap;
+  min-width: 0;
+
+  flex: 1;
+
+  overflow: hidden;
 }
+
+
+/* Fiksna zlatna tačka */
 
 .notice-dot {
   width: 7px;
@@ -131,6 +143,71 @@ a {
   flex-shrink: 0;
 }
 
+
+/* Prostor kroz koji tekst prolazi */
+
+.notice-marquee {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+
+/* Pokretni sadržaj */
+
+.notice-marquee-content {
+  display: inline-flex;
+
+  width: max-content;
+
+  white-space: nowrap;
+
+  animation:
+    noticeScroll 30s linear infinite;
+}
+
+
+/* Svaki tekst ima razmak od sledećeg */
+
+.notice-marquee-content span {
+  display: inline-block;
+
+  padding-right: 120px;
+}
+
+
+/* Animacija */
+
+@keyframes noticeScroll {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* Pauza kada korisnik pređe mišem preko trake */
+
+.notice-marquee:hover .notice-marquee-content {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   TOP INFORMATION RIGHT
+========================================================= */
+
 .top-info {
   display: flex;
   align-items: center;
@@ -142,6 +219,8 @@ a {
   font-size: 15px;
 
   color: rgba(255, 255, 255, 0.8);
+
+  flex-shrink: 0;
 }
 
 .top-info a {
@@ -971,7 +1050,9 @@ hr {
 
   .top-bar-inner {
     padding: 0 15px;
-
+ .notice-marquee-content {
+    animation-duration: 30s;
+  }
     justify-content: center;
   }
 
@@ -982,9 +1063,19 @@ hr {
   .top-notice {
     font-size: 12px;
 
-    overflow: hidden;
+    width: 100%;
 
-    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .notice-marquee {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .notice-marquee-content {
+    animation-duration: 22s;
   }
 
 
@@ -1183,6 +1274,21 @@ hr {
     width: 100%;
   }
 
+  .notice-dot {
+    width: 6px;
+    height: 6px;
+
+    margin-right: 2px;
+  }
+
+  .notice-marquee-content {
+    animation-duration: 18s;
+  }
+
+  .notice-marquee-content span {
+    padding-right: 80px;
+  }
+
 
   /* BRAND */
 
@@ -1322,6 +1428,10 @@ hr {
 
   .top-notice {
     font-size: 10px;
+  }
+
+  .notice-marquee-content {
+    animation-duration: 16s;
   }
 
   .language-tools {

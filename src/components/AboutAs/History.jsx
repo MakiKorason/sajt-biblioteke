@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import { LiaBookSolid } from 'react-icons/lia';
-
+import biblioteka from '../../images/biblioteka.webp';
 import AnimatedImage from '../Department/AnimatedImage';
 import AnimatedCard from '../Department/AnimatedCard';
 
@@ -211,7 +211,21 @@ const History = () => {
                   За свој рад добила је значајна друштвена и
                   професионална признања.
                 </p>
-
+                   <AnimatedImage
+                  src={biblioteka}
+                  alt="Зграда Дома војске, данашња Градска библиотека у Руми"
+            style={{
+  width: '50%',
+  marginLeft: '25%',
+  height: 'auto',
+  marginTop: '20px',
+  borderRadius: '18px',
+  border: '4px solid #ffffff',
+  boxShadow: '0 10px 30px rgba(63, 44, 17, 0.25)',
+  padding: '5px',
+  background: '#ffffff'
+}}
+                />
               </div>
 
             </Col>

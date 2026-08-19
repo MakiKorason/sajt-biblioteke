@@ -30,7 +30,6 @@ import { Helmet } from 'react-helmet-async';
 
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
-
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
@@ -41,31 +40,24 @@ import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import logoDigitalna from '../images/logoDigitalna.webp';
-
 import filmTesla from '../images/filmTesla.png';
 import kosare from '../images/kosare.png';
 import karavansaraj from '../images/karavansaraj.png';
-
 import saradnja from '../images/saradnja.jpg';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
-
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
 import trkulja from '../images/trkulja.webp';
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
-
 import karoselSlika from '../images/karoselSlika.webp';
 import digitalna from '../images/digitalna.webp';
-
 import pokrajina from '../images/pokrajina.webp';
-import audioKnjiga from '../images/audioKnjiga.png';
 import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
-
 import 'react-calendar/dist/Calendar.css';
 
 const Calendar = React.lazy(() => import('react-calendar'));
@@ -741,14 +733,10 @@ const Home = () => {
             </a>
           </div>
 
-          <Row className="align-items-center g-5">
+          <Row className="align-items-center g-2">
             <Col lg={6}>
               <div className="audio-images">
-                <img
-                  src={audioKnjiga}
-                  alt="Аудио-књиге"
-                  loading="lazy"
-                />
+          
 
                 <img
                   src={saradnja}

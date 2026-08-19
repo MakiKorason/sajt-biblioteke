@@ -441,8 +441,8 @@
 
 .audio-images {
   display: grid;
-  grid-template-columns: 1fr 0.75fr;
-  gap: 18px;
+  grid-template-columns: 1.5fr 0.45fr;
+  gap: 22px;
   align-items: center;
 }
 
@@ -795,7 +795,7 @@
 .friends-box {
   padding: 35px;
   border-radius: var(--library-radius);
-  background: #fff;
+  background: #e1dfdf;;
   box-shadow: var(--library-shadow);
 }
 
@@ -851,9 +851,10 @@
 
 .friend-logo img {
   width: 100%;
-  max-width: 180px;
-  max-height: 85px;
+  max-width: 220px;
+  max-height:115px;
   object-fit: contain;
+   
 }
 
 /* =========================================================

@@ -46,7 +46,7 @@ import {
 
 import { HelmetProvider } from 'react-helmet-async';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import AnimatedPage from './components/Department/AnimatedPage';
 import ImageModal from './components/ImageModal';
@@ -78,6 +78,256 @@ function getInitialLanguage() {
     return 'sr';
 
   }
+
+}
+
+
+/* =========================================================
+   GOOGLE TRANSLATE
+========================================================= */
+
+function GoogleTranslateLoader() {
+
+  useEffect(() => {
+
+    /*
+      Google Translate callback
+    */
+
+    window.googleTranslateElementInit = () => {
+
+      if (
+        window.google &&
+        window.google.translate &&
+        document.getElementById(
+          'google_translate_element'
+        )
+      ) {
+
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'sr',
+            includedLanguages: 'sr,en',
+            autoDisplay: false,
+            multilanguagePage: true
+          },
+          'google_translate_element'
+        );
+
+      }
+
+    };
+
+
+    /*
+      Google Translate script
+    */
+
+    if (
+      !document.querySelector(
+        'script[src*="translate_a/element.js"]'
+      )
+    ) {
+
+      const script =
+        document.createElement('script');
+
+      script.src =
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+
+      script.async = true;
+
+      document.body.appendChild(script);
+
+    } else if (
+      window.google &&
+      window.google.translate
+    ) {
+
+      window.googleTranslateElementInit();
+
+    }
+
+
+    /*
+      CSS za sakrivanje Google Translate elemenata
+    */
+
+    const style =
+      document.createElement('style');
+
+    style.id =
+      'google-translate-custom-style';
+
+    style.innerHTML = `
+
+      /* Google Translate traka */
+
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+
+      body {
+        top: 0 !important;
+      }
+
+      html {
+        margin-top: 0 !important;
+      }
+
+      .goog-te-banner-frame {
+        display: none !important;
+      }
+
+      .goog-tooltip {
+        display: none !important;
+      }
+
+      .goog-te-spinner-pos {
+        display: none !important;
+      }
+
+      #google_translate_element {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        left: -9999px;
+        top: -9999px;
+      }
+
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+
+      .goog-te-gadget-simple {
+        display: none !important;
+      }
+
+      iframe.goog-te-banner-frame {
+        display: none !important;
+      }
+
+    `;
+
+    if (
+      !document.getElementById(
+        'google-translate-custom-style'
+      )
+    ) {
+
+      document.head.appendChild(style);
+
+    }
+
+
+    return () => {
+
+      const existingStyle =
+        document.getElementById(
+          'google-translate-custom-style'
+        );
+
+      if (existingStyle) {
+
+        existingStyle.remove();
+
+      }
+
+    };
+
+  }, []);
+
+
+  return (
+
+    <div
+      id="google_translate_element"
+      aria-hidden="true"
+    />
+
+  );
+
+}
+
+
+/* =========================================================
+   GOOGLE TRANSLATE FUNCTION
+========================================================= */
+
+function translateWholePage(language) {
+
+  const tryTranslate = () => {
+
+    const select =
+      document.querySelector(
+        '.goog-te-combo'
+      );
+
+    if (!select) {
+
+      return false;
+
+    }
+
+
+    /*
+      Google koristi sr kao originalni jezik.
+    */
+
+    if (language === 'sr') {
+
+      select.value = 'sr';
+
+    } else {
+
+      select.value = 'en';
+
+    }
+
+
+    select.dispatchEvent(
+      new Event(
+        'change',
+        {
+          bubbles: true
+        }
+      )
+    );
+
+    return true;
+
+  };
+
+
+  /*
+    Google Translate se učitava asinhrono,
+    pa pokušavamo nekoliko puta.
+  */
+
+  if (tryTranslate()) {
+
+    return;
+
+  }
+
+
+  let attempts = 0;
+
+  const interval =
+    setInterval(() => {
+
+      attempts++;
+
+      if (tryTranslate() || attempts >= 30) {
+
+        clearInterval(interval);
+
+      }
+
+    }, 300);
 
 }
 
@@ -276,7 +526,7 @@ const translations = {
       'DEPARTMENTS',
 
     children:
-      'Children\'s Department',
+      "Children's Department",
 
     adults:
       'Adult Department',
@@ -334,16 +584,21 @@ const translations = {
 
 function InnerApp() {
 
-  const location = useLocation();
+  const location =
+    useLocation();
+
 
   const [expanded, setExpanded] =
     useState(false);
 
+
   const [language, setLanguage] =
     useState(getInitialLanguage);
 
+
   const [showImageModal, setShowImageModal] =
     useState(false);
+
 
   const [selectedImage, setSelectedImage] =
     useState({
@@ -355,6 +610,54 @@ function InnerApp() {
 
   const t =
     translations[language];
+
+
+  /* =======================================================
+     INITIAL LANGUAGE
+  ======================================================= */
+
+  useEffect(() => {
+
+    /*
+      Ako je korisnik ranije izabrao EN,
+      pokreni Google Translate kada se učita sajt.
+    */
+
+    if (language === 'en') {
+
+      setTimeout(() => {
+
+        translateWholePage('en');
+
+      }, 1000);
+
+    }
+
+  }, []);
+
+
+  /* =======================================================
+     ROUTE CHANGE
+  ======================================================= */
+
+  useEffect(() => {
+
+    /*
+      Kada korisnik promeni stranicu,
+      Google Translate ponovo prevodi novi sadržaj.
+    */
+
+    if (language === 'en') {
+
+      setTimeout(() => {
+
+        translateWholePage('en');
+
+      }, 500);
+
+    }
+
+  }, [location.pathname, language]);
 
 
   /* =======================================================
@@ -385,8 +688,11 @@ function InnerApp() {
     if (
       targetLanguage === language
     ) {
+
       return;
+
     }
+
 
     try {
 
@@ -399,7 +705,24 @@ function InnerApp() {
       // ignore
     }
 
-    setLanguage(targetLanguage);
+
+    setLanguage(
+      targetLanguage
+    );
+
+
+    /*
+      SR = originalni jezik
+      EN = Google Translate
+    */
+
+    setTimeout(() => {
+
+      translateWholePage(
+        targetLanguage
+      );
+
+    }, 100);
 
   };
 
@@ -419,6 +742,11 @@ function InnerApp() {
 
     <>
 
+      {/* GOOGLE TRANSLATE */}
+
+      <GoogleTranslateLoader />
+
+
       {/* =================================================
           TOP INFORMATION BAR
       ================================================= */}
@@ -431,9 +759,21 @@ function InnerApp() {
 
             <span className="notice-dot"></span>
 
-            <span>
-              {t.notice}
-            </span>
+            <div className="notice-marquee">
+
+              <div className="notice-marquee-content">
+
+                <span>
+                  {t.notice}
+                </span>
+
+                <span aria-hidden="true">
+                  {t.notice}
+                </span>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -488,15 +828,11 @@ function InnerApp() {
 
       <header className="main-header">
 
-
-        {/* BRAND AREA */}
-
         <div className="brand-area">
 
           <Container>
 
             <div className="brand-content">
-
 
               <Navbar.Brand
                 as={Link}
@@ -536,10 +872,7 @@ function InnerApp() {
               </Navbar.Brand>
 
 
-              {/* QUICK LINKS */}
-
               <div className="header-links">
-
 
                 <a
                   href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru"
@@ -574,7 +907,6 @@ function InnerApp() {
 
                 </a>
 
-
               </div>
 
             </div>
@@ -599,7 +931,6 @@ function InnerApp() {
               className="main-navbar"
             >
 
-
               <Navbar.Toggle
                 aria-controls="main-navigation"
               />
@@ -608,7 +939,6 @@ function InnerApp() {
               <Navbar.Collapse
                 id="main-navigation"
               >
-
 
                 <Nav className="main-nav">
 
@@ -837,7 +1167,6 @@ function InnerApp() {
 
                   </div>
 
-
                 </Nav>
 
               </Navbar.Collapse>
@@ -868,7 +1197,6 @@ function InnerApp() {
             location={location}
             key={location.pathname}
           >
-
 
             <Route
               path="/"
@@ -1246,7 +1574,6 @@ function InnerApp() {
               element={<NotFound />}
             />
 
-
           </Routes>
 
         </AnimatePresence>
@@ -1319,7 +1646,8 @@ function InnerApp() {
               >
 
                 <FaEnvelope />
-gbasruma@gmail.com
+
+                gbasruma@gmail.com
 
               </a>
 
@@ -1418,7 +1746,6 @@ gbasruma@gmail.com
 
             </div>
 
-
           </div>
 
 
@@ -1435,7 +1762,6 @@ gbasruma@gmail.com
             </span>
 
           </div>
-
 
         </Container>
 
