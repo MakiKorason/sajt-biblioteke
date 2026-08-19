@@ -161,8 +161,6 @@ function GoogleTranslateLoader() {
 
     style.innerHTML = `
 
-      /* Google Translate traka */
-
       .goog-te-banner-frame.skiptranslate {
         display: none !important;
       }
@@ -321,7 +319,10 @@ function translateWholePage(language) {
 
       attempts++;
 
-      if (tryTranslate() || attempts >= 30) {
+      if (
+        tryTranslate() ||
+        attempts >= 30
+      ) {
 
         clearInterval(interval);
 
@@ -625,15 +626,17 @@ function InnerApp() {
 
     if (language === 'en') {
 
-      setTimeout(() => {
+      const timer = setTimeout(() => {
 
         translateWholePage('en');
 
       }, 1000);
 
+      return () => clearTimeout(timer);
+
     }
 
-  }, []);
+  }, [language]);
 
 
   /* =======================================================
@@ -649,11 +652,13 @@ function InnerApp() {
 
     if (language === 'en') {
 
-      setTimeout(() => {
+      const timer = setTimeout(() => {
 
         translateWholePage('en');
 
       }, 500);
+
+      return () => clearTimeout(timer);
 
     }
 
