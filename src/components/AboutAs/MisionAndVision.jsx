@@ -24,6 +24,7 @@ import {
 
 import { LiaBookSolid } from "react-icons/lia";
 
+import PageHero from "../shared/PageHero";
 import "./MisionAndVision.css";
 
 
@@ -146,30 +147,18 @@ const MisionAndVision = () => {
           HERO
       ===================================================== */}
 
-      <section className="mission-hero">
-
-        <div className="mission-hero-background">
-
-          <div className="mission-hero-circle mission-circle-one"></div>
-
-          <div className="mission-hero-circle mission-circle-two"></div>
-
-        </div>
-
-
-        <div className="mission-hero-book mission-book-left">
-          <GiOpenBook />
-        </div>
+      <PageHero
+        title={
+          <>
+            Визија <em>&</em> мисија
+          </>
+        }
+        description="Простор знања, културе, учења и сусрета — отворен за све генерације и све људе нашег grada."
+      />
 
 
-        <div className="mission-hero-book mission-book-right">
-          <GiBookshelf />
-        </div>
-
-
-        <Container>
-
-          <div className="mission-hero-content">
+      {/* =====================================================
+          MAIN CONTENT
 
             <div className="mission-hero-label">
 
