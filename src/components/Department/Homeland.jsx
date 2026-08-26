@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 import "./Homelend.css";
 
-import zavicajno from "../../images/zavicajno.webp";
+// import zavicajno from "../../images/zavicajno.webp";
 import AnimatedImage from "./AnimatedImage";
 
 const Homelend = () => {
