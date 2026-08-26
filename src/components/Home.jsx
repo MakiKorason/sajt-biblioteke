@@ -50,7 +50,7 @@ import saradnja3 from '../images/saradnja3.webp';
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
-import trkulja from '../images/trkulja.webp';
+// import trkulja from '../images/trkulja.png';
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
 import karoselSlika from '../images/karoselSlika.webp';
@@ -246,7 +246,7 @@ const Home = () => {
     {
       image: ministarstvo,
       alt: 'Министарство културе Србије',
-      className: 'partner-ministry'
+      className: 'partner-cultural'
     },
     {
       image: opstina,
@@ -261,22 +261,22 @@ const Home = () => {
     {
       image: matica,
       alt: 'Матица српска',
-      className: 'partner-matica'
+      className: 'partner-cultural'
     },
     {
       image: narodna,
       alt: 'Народна библиотека Србије',
-      className: 'partner-national'
+      className: 'partner-cultural'
     },
     {
       image: muzej,
       alt: 'Музеј у Руми',
-      className: 'partner-museum'
+      className: 'partner-cultural'
     },
     {
       image: turisticka,
       alt: 'Туристичка организација Рума',
-      className: 'partner-tourism'
+      className: 'partner-cultural'
     },
     {
       image: kc,
@@ -294,10 +294,10 @@ const Home = () => {
       image: Boss,
       alt: 'Босс компанија Рума'
     },
-    {
-      image: trkulja,
-      alt: 'Тркуља керамика Рума'
-    },
+    // {
+    //   image: trkulja,
+    //   alt: 'Тркуља керамика Рума'
+    // },
     {
       image: Frigo,
       alt: 'Фриго Жика Рума'

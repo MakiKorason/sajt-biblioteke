@@ -24,7 +24,6 @@ import {
 
 import { LiaBookSolid } from "react-icons/lia";
 
-import PageHero from "../shared/PageHero";
 import "./MisionAndVision.css";
 
 
@@ -147,32 +146,48 @@ const MisionAndVision = () => {
           HERO
       ===================================================== */}
 
-      <PageHero
-        title={
-          <>
-            Визија <em>&</em> мисија
-          </>
-        }
-        description="Простор знања, културе, учења и сусрета — отворен за све генерације и све људе нашег grada."
-      />
+      <section className="mission-hero">
+
+        <div className="mission-hero-background">
+
+          <div className="mission-hero-circle circle-one"></div>
+
+          <div className="mission-hero-circle circle-two"></div>
+
+        </div>
 
 
-      {/* =====================================================
-          MAIN CONTENT
+        <div className="mission-hero-book mission-book-left">
+
+          <LiaBookSolid />
+
+        </div>
+
+
+        <div className="mission-hero-book mission-book-right">
+
+          <GiOpenBook />
+
+        </div>
+
+
+        <Container>
+
+          <div className="mission-hero-content">
 
             <div className="mission-hero-label">
 
-              <span></span>
+              <span className="mission-label-line"></span>
 
               ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
 
-              <span></span>
+              <span className="mission-label-line"></span>
 
             </div>
 
 
             <h1>
-              Визија <em>&</em> мисија
+              Визија <em>&amp;</em> мисија
             </h1>
 
 
@@ -189,41 +204,55 @@ const MisionAndVision = () => {
 
 
       {/* =====================================================
-          MAIN CONTENT
+          INTRO
       ===================================================== */}
 
       <Container className="mission-page">
 
-
-        {/* =====================================================
-            INTRO
-        ===================================================== */}
-
         <section className="mission-intro">
 
-          <div className="mission-eyebrow">
+          <div className="mission-intro-heading">
 
-            <span></span>
+            <div className="mission-eyebrow">
 
-            НАША ПРИЧА
+              <span></span>
+
+              НАША ПРИЧА
+
+            </div>
+
+
+            <h2>
+              Библиотека која расте
+              <br />
+              <em>заједно са својом заједницом.</em>
+            </h2>
 
           </div>
 
 
-          <h2>
-            Библиотека која расте
-            <br />
-            <em>заједно са својом заједницом.</em>
-          </h2>
+          <div className="mission-intro-content">
+
+            <div className="mission-intro-icon">
+
+              <GiBookshelf />
+
+            </div>
 
 
-          <p className="mission-intro-text">
-            Градска библиотека „Атанасије Стојковић“ представља
-            простор у којем се сусрећу књига, знање, култура,
-            технологија и људи. Наш рад усмерен је ка стварању
-            библиотеке која одговара потребама савременог корисника,
-            али истовремено чува вредности читања и културног наслеђа.
-          </p>
+            <div className="mission-intro-text">
+
+              <p>
+                Градска библиотека „Атанасије Стојковић“ представља
+                простор у којем се сусрећу књига, знање, култура,
+                технологија и људи. Наш рад усмерен је ка стварању
+                библиотеке која одговара потребама савременог корисника,
+                али истовремено чува вредности читања и културног наслеђа.
+              </p>
+
+            </div>
+
+          </div>
 
         </section>
 
@@ -240,8 +269,11 @@ const MisionAndVision = () => {
           <div className="mission-stat">
 
             <div className="mission-stat-icon">
+
               <FaUsers />
+
             </div>
+
 
             <div className="mission-counter">
 
@@ -261,8 +293,11 @@ const MisionAndVision = () => {
           <div className="mission-stat">
 
             <div className="mission-stat-icon">
+
               <FaBook />
+
             </div>
+
 
             <div className="mission-counter">
 
@@ -282,8 +317,11 @@ const MisionAndVision = () => {
           <div className="mission-stat">
 
             <div className="mission-stat-icon">
+
               <FaCalendarAlt />
+
             </div>
+
 
             <div className="mission-counter">
 
@@ -296,7 +334,6 @@ const MisionAndVision = () => {
             </div>
 
           </div>
-
 
         </section>
 

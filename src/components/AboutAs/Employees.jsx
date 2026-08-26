@@ -322,6 +322,16 @@ const Employees = () => {
                       Маријана Даничић
                     </strong>
                   </li>
+                  
+                    <li>
+                    <span className="employee-role">
+                      Библиотекар
+                    </span>
+
+                    <strong>
+                     Милица Јовичић
+                    </strong>
+                  </li>
 
                 </ul>
 
@@ -753,16 +763,7 @@ const Employees = () => {
                     </strong>
                   </li>
 
-                  <li>
-                    <span className="employee-role">
-                      Техничар за одржавање аудио-видео система
-                      и остале опреме
-                    </span>
-
-                    <strong>
-                      Драган Маричић
-                    </strong>
-                  </li>
+              
 
                 </ul>
 

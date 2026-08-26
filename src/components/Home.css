@@ -1229,3 +1229,9 @@
     transition: none;
   }
 }
+.partner-cultural {
+  width: 220px !important;
+  height: 220px !important;
+  max-width: none;
+  object-fit: contain;
+}

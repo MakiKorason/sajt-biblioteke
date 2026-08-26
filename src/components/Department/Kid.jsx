@@ -2,11 +2,11 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { LiaBookSolid } from 'react-icons/lia';
 import { Helmet } from 'react-helmet-async';
-
-import './Kid.css';
+import jole from '../../images/jole.jpg'
+import './Kid.css'
 
 import decije from '../../images/decije.webp';
-import isidora from '../../images/isidora.webp';
+
 
 import AnimatedImage from './AnimatedImage';
 
@@ -100,25 +100,37 @@ const Kid = () => {
         </script>
       </Helmet>
 
-
-      {/* =====================================================
+      {/* =========================================================
           HERO
-      ===================================================== */}
+      ========================================================= */}
 
       <section className="kid-hero">
 
-        <div className="kid-hero-decoration kid-hero-decoration-left"></div>
+        <div className="kid-hero-background">
+          <div className="kid-hero-circle kid-circle-one"></div>
+          <div className="kid-hero-circle kid-circle-two"></div>
+        </div>
 
-        <div className="kid-hero-decoration kid-hero-decoration-right"></div>
+        <div className="kid-hero-decoration kid-hero-decoration-left">
+          <LiaBookSolid />
+        </div>
+
+        <div className="kid-hero-decoration kid-hero-decoration-right">
+          <LiaBookSolid />
+        </div>
 
         <div className="kid-hero-content">
 
-          <span className="kid-hero-label">
+          <div className="kid-hero-label">
+            <span className="kid-label-line"></span>
+
             ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-          </span>
+
+            <span className="kid-label-line"></span>
+          </div>
 
           <h1>
-            Одељење за децу
+            Одељење <span>за децу</span>
           </h1>
 
           <p>
@@ -133,91 +145,123 @@ const Kid = () => {
 
       <Container className="kid-page">
 
+        {/* =========================================================
+            INTRO
+        ========================================================= */}
 
-        {/* =====================================================
-            UVOD
-        ===================================================== */}
+        <section className="kid-intro">
 
-        <section className="kid-intro-section">
+          <div className="kid-eyebrow">
+            <span></span>
+            О НАШЕМ ОДЕЉЕЊУ
+          </div>
 
-          <div className="section-heading">
-
-            <span>
-              О НАШЕМ ОДЕЉЕЊУ
-            </span>
+          <div className="kid-intro-heading">
 
             <h2>
-              Место где почиње љубав према књизи
+              Место где почиње <em>љубав према књизи</em>
             </h2>
 
           </div>
 
 
-          <Row className="g-5 align-items-center">
+          <div className="kid-intro-content">
+
+            <div className="kid-intro-icon">
+              <LiaBookSolid />
+            </div>
+
+            <div className="kid-intro-text">
+
+              <p>
+                Одељење за децу броји око 18.000 публикација.
+                Фонд је уређен по УДК систему и унутар група
+                узбучен. Богат је бројним двојезичним књигама,
+                сликовницама, лектирaма, моторичким књигама,
+                звучним књигама и енциклопедијама.
+              </p>
+
+              <p>
+                Одељење за децу је организовано у две просторије.
+                Прва просторија је намењена публикацијама које су
+                изложене за читаоце, док је друга просторија
+                намењена радионицама.
+              </p>
+
+              <p>
+                У радионицама учествују наши најмлађи корисници:
+                бројне вртићке групе, ученици основних школа,
+                као и неки разреди средњошколаца.
+              </p>
+
+              <p>
+                Успешну сарадњу, поред државних образовно-
+                васпитних институција, остварујемо и са Дневним
+                боравком „Солидарност“, као и са приватним
+                школицама језика, чуваоницама деце и музичким
+                школицама.
+              </p>
+
+              <p>
+                Свако одељење за децу представља место на коме
+                се рађају и стварају будући љубитељи књига.
+                Из тог разлога негујемо вишегодишњу традицију
+                доделе бесплатних чланских картица првацима
+                и предшколцима.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================================================
+            IMAGE FEATURE
+        ========================================================= */}
+
+        <section className="kid-feature">
+
+          <Row className="g-4 align-items-stretch">
 
             <Col lg={7}>
 
-              <div className="kid-text">
+              <div className="kid-feature-image kid-feature-image-large">
 
-                <p>
-                  Одељење за децу броји око 18.000 публикација.
-                  Фонд је уређен по УДК систему и унутар група
-                  узбучен. Богат је бројним двојезичним књигама,
-                  сликовницама, лектирaма, моторичким књигама,
-                  звучним књигама и енциклопедијама.
-                </p>
-
-                <p>
-                  Одељење за децу је организовано у две просторије.
-                  Прва просторија је намењена публикацијама које су
-                  изложене за читаоце, док је друга просторија
-                  намењена радионицама.
-                </p>
-
-                <p>
-                  У радионицама учествују наши најмлађи корисници:
-                  бројне вртићке групе, ученици основних школа,
-                  као и неки разреди средњошколаца.
-                </p>
-
-                <p>
-                  Успешну сарадњу, поред државних образовно-
-                  васпитних институција, остварујемо и са Дневним
-                  боравком „Солидарност“, као и са приватним
-                  школицама језика, чуваоницама деце и музичким
-                  школицама.
-                </p>
-
-                <p>
-                  Свако одељење за децу представља место на коме
-                  се рађају и стварају будући љубитељи књига.
-                  Из тог разлога негујемо вишегодишњу традицију
-                  доделе бесплатних чланских картица првацима
-                  и предшколцима.
-                </p>
+                <AnimatedImage
+                  src={decije}
+                  alt="Одељење за децу Градске библиотеке Рума"
+                />
 
               </div>
 
             </Col>
 
-
             <Col lg={5}>
 
-              <div className="kid-image-stack">
+              <div className="kid-feature-side">
 
-                <div className="kid-image-card kid-image-main">
-
-                  <AnimatedImage
-                    src={decije}
-                    alt="Одељење за децу Градске библиотеке Рума"
-                  />
-
+                <div className="kid-eyebrow">
+                  <span></span>
+                  ПРОСТОР ЗА ДЕЦУ
                 </div>
 
-                <div className="kid-image-card kid-image-small">
+                <h3>
+                  Књига, игра и машта на једном месту
+                </h3>
+
+                <p>
+                  Простор Одељења за децу осмишљен је тако да
+                  најмлађим читаоцима пружи могућност да књигу
+                  упознају кроз игру, дружење, истраживање и
+                  креативни рад.
+                </p>
+
+                <div className="kid-feature-small-image">
 
                   <AnimatedImage
-                    src={isidora}
+                    src={jole}
                     alt="Радионица за децу у Градској библиотеци Рума"
                   />
 
@@ -232,20 +276,21 @@ const Kid = () => {
         </section>
 
 
-        {/* =====================================================
-            KULTURNI KUTAK
-        ===================================================== */}
+        {/* =========================================================
+            CULTURAL PROGRAMS
+        ========================================================= */}
 
-        <section className="kid-cultural-section">
+        <section className="kid-programs">
 
-          <div className="section-heading">
+          <div className="kid-section-heading">
 
-            <span>
+            <div className="kid-eyebrow">
+              <span></span>
               КУЛТУРНИ ПРОГРАМИ
-            </span>
+            </div>
 
             <h2>
-              Културни кутак
+              Културни <em>кутак</em>
             </h2>
 
             <p>
@@ -257,23 +302,39 @@ const Kid = () => {
           </div>
 
 
-          {/* LITERARNI KONKURSI */}
+          {/* =====================================================
+              EVENT 01
+          ===================================================== */}
 
-          <div className="kid-event-card">
+          <article className="kid-card">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
               <Col lg={7}>
 
-                <div className="kid-event-content">
+                <div className="kid-card-content">
 
-                  <span className="kid-event-label">
+                  <div className="kid-card-top">
+
+                    <div className="kid-card-icon">
+                      <LiaBookSolid />
+                    </div>
+
+                    <span className="kid-card-number">
+                      01
+                    </span>
+
+                  </div>
+
+                  <span className="kid-card-label">
                     ЛИТЕРАРНИ КОНКУРСИ
                   </span>
 
                   <h3>
                     „Имам и ја своја права“
                   </h3>
+
+                  <div className="kid-divider"></div>
 
                   <p>
                     На Одељењу за децу наше библиотеке одржавали
@@ -293,37 +354,37 @@ const Kid = () => {
 
               </Col>
 
-
               <Col lg={5}>
 
-                <div className="kid-event-image">
+                <div className="kid-card-image">
 
-                  <AnimatedImage
-                    src={isidora}
-                    alt="Радионица и активности за децу у библиотеци"
-                  />
-
+               <AnimatedImage
+  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.6435-9/89436364_2500658463585918_3498270756880515072_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1441&ctp=s2048x1441&_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=gYVPL8ebah4Q7kNvwEAJqnL&_nc_oc=AdqyPmkeV0ysZ_2ILyWPLHiVZRww0NuYvpZYLCqpsRtDuvLzjYlz603ysdxIYFycUKY&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=VgR4VeExBf_vrTwX3p_KPg&_nc_ss=7b2a8&oh=00_AQH-wFZr4L9icPLCXfS15nuLoKHluBFrqN5-q_XL53DWog&oe=6AB661CE"
+  alt="Литерарни конкурс"
+/>
                 </div>
 
               </Col>
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* MODERNA BAJKA */}
+          {/* =====================================================
+              EVENT 02
+          ===================================================== */}
 
-          <div className="kid-event-card">
+          <article className="kid-card kid-card-reverse">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
               <Col lg={5} className="order-2 order-lg-1">
 
-                <div className="kid-event-image">
+                <div className="kid-card-image">
 
                   <AnimatedImage
-                    src={decije}
+                    src='https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/710079491_1614015560724061_7057539699838988866_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_ZW7Lo0fHbYQ7kNvwHqDbtH&_nc_oc=AdqGV0_C4V7S2MwwwK-jXd3pHo4vx_NcPuO6wNXXNmHRig0_abmg5pmapMDwUWDvB0w&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=TgAG7o-dJQVjiXozSa5-7A&_nc_ss=7b2a8&oh=00_AQF_nqHI5orS1TRB85ttwh58VZepkc72drV52_dAwFgetQ&oe=6A94AD72'
                     alt="Дечје одељење Градске библиотеке Рума"
                   />
 
@@ -331,18 +392,31 @@ const Kid = () => {
 
               </Col>
 
-
               <Col lg={7} className="order-1 order-lg-2">
 
-                <div className="kid-event-content">
+                <div className="kid-card-content">
 
-                  <span className="kid-event-label">
+                  <div className="kid-card-top">
+
+                    <div className="kid-card-icon">
+                      <LiaBookSolid />
+                    </div>
+
+                    <span className="kid-card-number">
+                      02
+                    </span>
+
+                  </div>
+
+                  <span className="kid-card-label">
                     ЛИТЕРАРНИ КОНКУРС
                   </span>
 
                   <h3>
                     „Моја модерна бајка“
                   </h3>
+
+                  <div className="kid-divider"></div>
 
                   <p>
                     Кроз литерарни конкурс „Моја модерна бајка“
@@ -363,27 +437,29 @@ const Kid = () => {
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* SVETSKI DAN POEZIJE */}
+          {/* =====================================================
+              POEZIJA
+          ===================================================== */}
 
-          <div className="kid-full-event">
+          <div className="kid-highlight">
 
-            <div className="section-heading">
+            <div className="kid-section-heading">
 
-              <span>
+              <div className="kid-eyebrow">
+                <span></span>
                 ПОЕЗИЈА
-              </span>
+              </div>
 
               <h2>
-                Светски дан поезије
+                Светски дан <em>поезије</em>
               </h2>
 
             </div>
 
-
-            <p className="kid-centered-text">
+            <p>
               Библиотека сваке године обележава Светски дан
               поезије уз музичке тачке и дечје рецитације.
               Ови сусрети пружају деци прилику да упознају
@@ -391,35 +467,52 @@ const Kid = () => {
               своје таленте.
             </p>
 
+            <div className="kid-decoration">
 
-            <div className="kid-poetry-decoration">
+              <span></span>
 
               <LiaBookSolid />
-              <LiaBookSolid />
-              <LiaBookSolid />
+
+              <span></span>
 
             </div>
 
           </div>
 
 
-          {/* SVETI SAVA */}
+          {/* =====================================================
+              SVETI SAVA
+          ===================================================== */}
 
-          <div className="kid-event-card kid-final-event">
+          <article className="kid-card kid-card-final">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
               <Col lg={7}>
 
-                <div className="kid-event-content">
+                <div className="kid-card-content">
 
-                  <span className="kid-event-label">
+                  <div className="kid-card-top">
+
+                    <div className="kid-card-icon">
+                      <LiaBookSolid />
+                    </div>
+
+                    <span className="kid-card-number">
+                      03
+                    </span>
+
+                  </div>
+
+                  <span className="kid-card-label">
                     КУЛТУРА И ОБРАЗОВАЊЕ
                   </span>
 
                   <h3>
                     Свети Сава
                   </h3>
+
+                  <div className="kid-divider"></div>
 
                   <p>
                     И дан Светог Саве је посебан дан за нашу
@@ -437,13 +530,12 @@ const Kid = () => {
 
               </Col>
 
-
               <Col lg={5}>
 
-                <div className="kid-event-image">
+                <div className="kid-card-image">
 
                   <AnimatedImage
-                    src={isidora}
+                    src='https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.6435-9/88965758_2500654240253007_4216655211671846912_n.jpg?stp=dst-jpg_tt6&cstp=mx714x960&ctp=s714x960&_nc_cat=103&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=m7eH_ZTNOWYQ7kNvwEYoF2u&_nc_oc=Adojkw1ir_sX4YX12-gztZQwX0s48v3p2ZqTlf0R2baF60aGZNyhmgG8dd4zf1zisGE&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=T378OokcqmM4x3NoqtVKXQ&_nc_ss=7b2a8&oh=00_AQHmOxTnm4K3qHbf4CT_433jqQkKxrEclCTkRi3jR5NQvA&oe=6AB6609C'
                     alt="Културна радионица за децу"
                   />
 
@@ -453,49 +545,48 @@ const Kid = () => {
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* PESNICKA SMOTRA */}
+          {/* =====================================================
+              RECITATION
+          ===================================================== */}
 
-          <div className="kid-full-event kid-recitation-event">
+          <div className="kid-highlight kid-recitation">
 
-            <div className="section-heading">
+            <div className="kid-section-heading">
 
-              <span>
+              <div className="kid-eyebrow">
+                <span></span>
                 ПЕСНИЧЕ НАРОДА МОГ
-              </span>
+              </div>
 
               <h2>
-                Место сусрета младих талената
+                Место сусрета <em>младих талената</em>
               </h2>
 
             </div>
 
-
-            <p className="kid-centered-text">
-
+            <p>
               Простори наше библиотеке увек су радо отворени,
               па смо већ две године заредом, са посебним
               задовољством, угостили учеснике општинске смотре
               рецитатора „Песниче народа мог“.
-
             </p>
 
-
-            <p className="kid-centered-text">
-
+            <p>
               Као домаћини овог значајног такмичења, које
               традиционално организује Основна школа
               „Душан Јерковић“, пружили смо подршку младим
               талентима у њиховом креативном изражавању.
-
             </p>
 
           </div>
 
 
-          {/* ZAVRSNA PORUKA */}
+          {/* =====================================================
+              MISSION
+          ===================================================== */}
 
           <div className="kid-mission">
 
@@ -506,7 +597,7 @@ const Kid = () => {
               <h2>
                 Читање, игра,
                 <br />
-                машта и учење.
+                <span>машта и учење.</span>
               </h2>
 
               <p>
@@ -521,20 +612,27 @@ const Kid = () => {
           </div>
 
 
-          {/* DEKORACIJA */}
+          {/* =====================================================
+              BOTTOM DECORATION
+          ===================================================== */}
 
           <div className="kid-books-decoration">
 
+            <span></span>
+
             <LiaBookSolid />
+
             <LiaBookSolid />
+
             <LiaBookSolid />
+
+            <span></span>
 
           </div>
 
         </section>
 
       </Container>
-
     </>
   );
 };

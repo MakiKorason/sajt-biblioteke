@@ -1,17 +1,30 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Helmet } from 'react-helmet-async';
-import { LiaBookSolid } from 'react-icons/lia';
-import biblioteka from '../../images/biblioteka.webp';
-import AnimatedImage from '../Department/AnimatedImage';
-import AnimatedCard from '../Department/AnimatedCard';
+import React from "react";
 
-import DJNA from '../../images/DJNA.webp';
-import DJNA1 from '../../images/DJNA1.webp';
+import { Container, Row, Col } from "react-bootstrap";
 
-import './History.css';
+import { Helmet } from "react-helmet-async";
+
+import AnimatedImage from "../Department/AnimatedImage";
+import AnimatedCard from "../Department/AnimatedCard";
+
+import biblioteka from "../../images/biblioteka.webp";
+import DJNA from "../../images/DJNA.webp";
+import DJNA1 from "../../images/DJNA1.webp";
+
+import {
+  LiaBookSolid,
+  LiaLandmarkSolid,
+} from "react-icons/lia";
+
+import "./History.css";
+
 
 const History = () => {
+
+  /* =====================================================
+     SEO
+  ===================================================== */
+
   const pageTitle =
     'Историјат – Градска библиотека „Атанасије Стојковић“ Рума';
 
@@ -19,25 +32,46 @@ const History = () => {
     'Историјат Градске библиотеке „Атанасије Стојковић“ у Руми, њена зграда, архитектура и значај у локалној заједници.';
 
   const canonicalUrl =
-    'https://www.bibliotekaruma.rs/istorijat-biblioteke';
+    "https://www.bibliotekaruma.rs/istorijat-biblioteke";
+
 
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Library',
-    '@id': `${canonicalUrl}#library`,
-    name: 'Градска библиотека „Атанасије Стојковић“ Рума',
+
+    "@context": "https://schema.org",
+
+    "@type": "Library",
+
+    "@id": `${canonicalUrl}#library`,
+
+    name:
+      'Градска библиотека „Атанасије Стојковић“ Рума',
+
     url: canonicalUrl,
+
     description: pageDescription,
+
     address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Главна 114',
-      addressLocality: 'Рума',
-      postalCode: '22400',
-      addressCountry: 'RS',
+
+      "@type": "PostalAddress",
+
+      streetAddress: "Главна 114",
+
+      addressLocality: "Рума",
+
+      postalCode: "22400",
+
+      addressCountry: "RS",
+
     },
-    openingHours: 'Mo-Fr 08:00-20:00, Sa 08:00-13:00',
-    telephone: '022/490-047',
+
+    openingHours:
+      "Mo-Fr 08:00-20:00, Sa 08:00-13:00",
+
+    telephone:
+      "022/490-047",
+
   };
+
 
   return (
     <>
@@ -46,17 +80,23 @@ const History = () => {
       ===================================================== */}
 
       <Helmet>
-        <title>{pageTitle}</title>
+
+        <title>
+          {pageTitle}
+        </title>
+
 
         <meta
           name="description"
           content={pageDescription}
         />
 
+
         <link
           rel="canonical"
           href={canonicalUrl}
         />
+
 
         <link
           rel="alternate"
@@ -64,7 +104,8 @@ const History = () => {
           href={canonicalUrl}
         />
 
-        {/* Open Graph */}
+
+        {/* OPEN GRAPH */}
 
         <meta
           property="og:title"
@@ -96,7 +137,8 @@ const History = () => {
           content="https://www.bibliotekaruma.rs/images/DJNA1.webp"
         />
 
-        {/* Twitter */}
+
+        {/* TWITTER */}
 
         <meta
           name="twitter:card"
@@ -118,11 +160,13 @@ const History = () => {
           content="https://www.bibliotekaruma.rs/images/DJNA1.webp"
         />
 
-        {/* Structured Data */}
+
+        {/* STRUCTURED DATA */}
 
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
+
       </Helmet>
 
 
@@ -131,30 +175,55 @@ const History = () => {
       ===================================================== */}
 
       <section className="history-hero">
+      
+        <div className="history-hero-background">
 
-        <div className="history-hero-decoration history-hero-decoration-left"></div>
+          <div className="history-hero-circle circle-one"></div>
+          
+          <div className="history-hero-circle circle-two">
 
-        <div className="history-hero-decoration history-hero-decoration-right"></div>
-
-        <div className="history-hero-content">
-
-          <span className="history-hero-label">
-            ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-          </span>
-
-          <h1>
-            Историјат библиотеке
-          </h1>
-
-          <p>
-            Више од једног века културе, образовања,
-            књиге и очувања културне баштине Руме.
-          </p>
+            
+          </div>
 
         </div>
 
+
+        <div className="history-hero-book history-book-left">
+
+          <LiaLandmarkSolid />          
+
+        </div>
+  
+
+        <Container>
+
+          <div className="history-hero-content">
+
+            <div className="history-hero-label">
+
+              ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+
+            </div>
+
+            <h1>
+              <em>Историјат</em> библиотеке
+            </h1>
+       
+            <p>
+              Више од једног века културе, образовања,
+              књиге и очувања културне баштине Руме.
+            </p>
+
+          </div>
+
+        </Container>
+
       </section>
 
+
+      {/* =====================================================
+          MAIN PAGE
+      ===================================================== */}
 
       <Container className="history-page">
 
@@ -171,6 +240,7 @@ const History = () => {
               О НАШОЈ БИБЛИОТЕЦИ
             </span>
 
+
             <h2>
               Од најстарије културне установе
               до савремене библиотеке
@@ -180,6 +250,9 @@ const History = () => {
 
 
           <Row className="g-5 align-items-start">
+
+
+            {/* TEXT */}
 
             <Col lg={8}>
 
@@ -192,12 +265,14 @@ const History = () => {
                   промоцији културе и образовања.
                 </p>
 
+
                 <p>
                   Иако је једно време била интегрисана у рад
                   Културног центра, 1991. године одлуком Скупштине
                   општине Рума, библиотека је постала самостална
                   установа, носећи назив Градска библиотека.
                 </p>
+
 
                 <p>
                   Овај корак јој је омогућио да настави са својом
@@ -207,25 +282,30 @@ const History = () => {
                   Атанасија Стојковића.
                 </p>
 
+
                 <p>
                   За свој рад добила је значајна друштвена и
                   професионална признања.
                 </p>
-                   <AnimatedImage
+
+
+                <AnimatedImage
                   src={biblioteka}
                   alt="Зграда Дома војске, данашња Градска библиотека у Руми"
-            style={{
-  width: '50%',
-  marginLeft: '25%',
-  height: 'auto',
-  marginTop: '20px',
-  borderRadius: '18px',
-  border: '4px solid #ffffff',
-  boxShadow: '0 10px 30px rgba(63, 44, 17, 0.25)',
-  padding: '5px',
-  background: '#ffffff'
-}}
+                  style={{
+                    width: "50%",
+                    marginLeft: "25%",
+                    height: "auto",
+                    marginTop: "20px",
+                    borderRadius: "18px",
+                    border: "4px solid #ffffff",
+                    boxShadow:
+                      "0 10px 30px rgba(63, 44, 17, 0.25)",
+                    padding: "5px",
+                    background: "#ffffff",
+                  }}
                 />
+
               </div>
 
             </Col>
@@ -237,11 +317,13 @@ const History = () => {
 
               <div className="history-years-card">
 
+
                 <div className="history-years-header">
 
                   <span>
                     КЉУЧНЕ ГОДИНЕ
                   </span>
+
 
                   <LiaBookSolid />
 
@@ -335,13 +417,19 @@ const History = () => {
           </Row>
 
 
-          {/* COBISS */}
+          {/* =====================================================
+              COBISS
+          ===================================================== */}
 
           <div className="history-highlight">
 
+
             <div className="history-highlight-icon">
+
               <LiaBookSolid />
+
             </div>
+
 
             <div>
 
@@ -349,12 +437,14 @@ const History = () => {
                 САВРЕМЕНА БИБЛИОТЕЧКА УСЛУГА
               </span>
 
+
               <p>
                 Од 2007. године пуноправна је чланица COBISS.SR,
                 а од јула 2010. године укључена је у стварно
                 COBISS/OPAC окружење и све услуге корисницима
                 пружа преко овог сервиса.
               </p>
+
 
               <p>
                 Свети Јован Богослов је заштитник Градске
@@ -375,15 +465,18 @@ const History = () => {
 
         <section className="history-building">
 
+
           <div className="history-section-heading">
 
             <span>
               НОВА ЗГРАДА
             </span>
 
+
             <h2>
               Нови простор за савремену библиотеку
             </h2>
+
 
             <p>
               После више од седам деценија библиотека је
@@ -395,6 +488,9 @@ const History = () => {
 
           <Row className="g-5 align-items-center">
 
+
+            {/* TEXT */}
+
             <Col lg={5}>
 
               <div className="history-text">
@@ -404,6 +500,7 @@ const History = () => {
                   „Атанасије Стојковић“ је пресељена на нову
                   локацију.
                 </p>
+
 
                 <p>
                   Услед повећања броја публикација, услуга које
@@ -417,6 +514,8 @@ const History = () => {
 
             </Col>
 
+
+            {/* VIDEO */}
 
             <Col lg={7}>
 
@@ -451,6 +550,9 @@ const History = () => {
 
           <Row className="g-5 align-items-center">
 
+
+            {/* IMAGE */}
+
             <Col lg={6}>
 
               <div className="history-image-card">
@@ -466,6 +568,8 @@ const History = () => {
             </Col>
 
 
+            {/* TEXT */}
+
             <Col lg={6}>
 
               <div className="history-section-heading history-heading-left">
@@ -473,6 +577,7 @@ const History = () => {
                 <span>
                   СПОМЕНИК КУЛТУРЕ
                 </span>
+
 
                 <h2>
                   Зграда са богатом архитектонском историјом
@@ -490,11 +595,13 @@ const History = () => {
                   кроз рад савремене библиотеке.
                 </p>
 
+
                 <p>
                   Објекат је изграђен у стилу тада веома модерне
                   сецесије и Хисторизма и припада периоду
                   Југендштила.
                 </p>
+
 
                 <p>
                   Градња је завршена 1912. године, под надзором
@@ -516,11 +623,13 @@ const History = () => {
 
         <section className="history-architecture">
 
+
           <div className="history-section-heading">
 
             <span>
               АРХИТЕКТУРА
             </span>
+
 
             <h2>
               Архитектонски опис
@@ -530,6 +639,9 @@ const History = () => {
 
 
           <Row className="g-5 align-items-center">
+
+
+            {/* LEFT */}
 
             <Col lg={6}>
 
@@ -541,6 +653,7 @@ const History = () => {
                   зарубљеног прочеља са мањим троделним тремом
                   ослоњеним на два снажна вретенаста стуба.
                 </p>
+
 
                 <p>
                   Изнад се налази велики двокрилни полукружни
@@ -563,6 +676,8 @@ const History = () => {
             </Col>
 
 
+            {/* RIGHT */}
+
             <Col lg={6}>
 
               <div className="history-text">
@@ -574,20 +689,24 @@ const History = () => {
                   националне традиције.
                 </p>
 
+
                 <p>
                   Скулптура је названа по песми „Деда и унук“,
                   Јована Јовановића Змаја.
                 </p>
+
 
                 <p>
                   Пространа луковичаста купола, са шиљастим
                   декоративним завршетком, чини врх главне зграде.
                 </p>
 
+
                 <p>
                   Посебни естетски доживљај дају овални прозори
                   са бојеним стакленим пољима.
                 </p>
+
 
                 <p>
                   Са обе стране, у обе улице, на централну зграду
@@ -603,13 +722,19 @@ const History = () => {
           </Row>
 
 
-          {/* ZAVRSNI TEKST */}
+          {/* =====================================================
+              FINAL TEXT
+          ===================================================== */}
 
           <div className="history-final">
 
+
             <div className="history-final-icon">
+
               <LiaBookSolid />
+
             </div>
+
 
             <p>
               Зграда Градске библиотеке „Атанасије Стојковић“
@@ -625,20 +750,25 @@ const History = () => {
 
 
         {/* =====================================================
-            DECORATION
+            BOTTOM DECORATION
         ===================================================== */}
 
         <div className="history-books-decoration">
 
           <LiaBookSolid />
+
           <LiaBookSolid />
+
           <LiaBookSolid />
 
         </div>
 
+
       </Container>
+
     </>
   );
 };
+
 
 export default History;

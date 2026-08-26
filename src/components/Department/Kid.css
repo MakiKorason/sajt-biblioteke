@@ -1,712 +1,1116 @@
-/* =====================================================
+/* =========================================================
    KID PAGE
-===================================================== */
+========================================================= */
 
 .kid-page {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  max-width: 1240px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  color: #30251b;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .kid-hero {
   position: relative;
-  min-height: 480px;
+  min-height: 500px;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+
   overflow: hidden;
 
   background:
     linear-gradient(
       135deg,
       #3f2c11 0%,
-      #513914 50%,
-      #6b4d1c 100%
+      #503815 48%,
+      #2c2115 100%
     );
 
-  color: #ffff;
+  color: #f7eee8;
 }
 
+.kid-hero-background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.kid-hero-circle {
+  position: absolute;
+
+  border: 1px solid rgba(231, 198, 137, 0.18);
+  border-radius: 50%;
+}
+
+.kid-circle-one {
+  width: 520px;
+  height: 520px;
+
+  right: -150px;
+  top: -180px;
+}
+
+.kid-circle-two {
+  width: 720px;
+  height: 720px;
+
+  left: -400px;
+  bottom: -550px;
+}
 
 .kid-hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
-  width: min(1100px, 90%);
-  margin: auto;
+  max-width: 850px;
 
-  text-align: center;
+  padding: 90px 0;
+  margin-left: max(20px, calc((100vw - 1240px) / 2));
 }
-
 
 .kid-hero-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 
-  font-size: 1rem;
-  letter-spacing: 3px;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
 
-  color: #ffff;
+  color: #d9b978;
 }
 
+.kid-label-line {
+  width: 36px;
+  height: 1px;
+
+  background: #d9b978;
+}
 
 .kid-hero h1 {
   margin: 0;
 
-  font-size: clamp(2.2rem, 7vw, 5.5rem);
-  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
 
-  font-weight: 700;
-  letter-spacing: -3px;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -0.045em;
 }
 
+.kid-hero h1 span {
+  color: #d9b978;
+  font-style: italic;
+}
 
 .kid-hero p {
-  max-width: 700px;
+  max-width: 650px;
 
-  margin: 30px auto 0;
+  margin: 35px 0 0;
 
-  color: rgba(243,242,238,0.78);
-
-  font-size: 1.55rem;
+  font-size: 1.2rem;
   line-height: 1.8;
+
+  color: rgba(247, 242, 232, 0.82);
 }
 
 
-/* dekoracija */
+/* =========================================================
+   HERO DECORATION
+========================================================= */
 
 .kid-hero-decoration {
   position: absolute;
+  z-index: 2;
 
-  width: 260px;
-  height: 260px;
+  color: rgba(217, 185, 120, 0.12);
 
-  border: 1px solid rgba(216,189,128,0.25);
+  pointer-events: none;
+}
+
+.kid-hero-decoration svg {
+  width: 220px;
+  height: 220px;
+}
+
+.kid-hero-decoration-left {
+  left: 5%;
+  bottom: -30px;
+
+  transform: rotate(-15deg);
+}
+
+.kid-hero-decoration-right {
+  right: 5%;
+  top: 50px;
+
+  transform: rotate(10deg);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.kid-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #9b742f;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.kid-eyebrow span {
+  width: 30px;
+  height: 2px;
+
+  background: #c39a50;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.kid-intro {
+  margin-bottom: 110px;
+}
+
+.kid-intro-heading {
+  max-width: 800px;
+
+  margin-bottom: 45px;
+}
+
+.kid-intro-heading h2,
+.kid-section-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+
+  color: #352719;
+}
+
+.kid-intro-heading h2 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.kid-intro-heading em,
+.kid-section-heading em {
+  color: #a4782d;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+========================================================= */
+
+.kid-intro-content {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 45px;
+
+  padding: 48px;
+
+  background: #fffdf8;
+
+  border: 1px solid #e8dfcf;
+  border-radius: 4px;
+
+  box-shadow:
+    0 18px 45px rgba(63, 44, 17, 0.06);
+}
+
+.kid-intro-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: #a47a32;
+}
+
+.kid-intro-icon svg {
+  width: 72px;
+  height: 72px;
+}
+
+.kid-intro-text p {
+  margin: 0 0 20px;
+
+  font-size: 1.08rem;
+  line-height: 1.85;
+
+  color: #55483a;
+}
+
+.kid-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   IMAGE FEATURE
+========================================================= */
+
+.kid-feature {
+  margin-bottom: 110px;
+}
+
+.kid-feature-image {
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #f3eee5;
+
+  border: 1px solid #e5dccd;
+  border-radius: 5px;
+
+  box-shadow:
+    0 15px 40px rgba(54, 38, 17, 0.08);
+}
+
+.kid-feature-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.kid-feature-image:hover img {
+  transform: scale(1.03);
+}
+
+.kid-feature-image-large {
+  min-height: 500px;
+}
+
+.kid-feature-side {
+  height: 100%;
+
+  padding: 42px;
+
+  background: #f7f3eb;
+
+  border: 1px solid #e5dccd;
+  border-radius: 5px;
+}
+
+.kid-feature-side h3 {
+  margin: 0 0 22px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2.25rem;
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  color: #352719;
+}
+
+.kid-feature-side > p {
+  margin: 0 0 30px;
+
+  font-size: 1.02rem;
+  line-height: 1.8;
+
+  color: #625548;
+}
+
+.kid-feature-small-image {
+  height: 190px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+}
+
+.kid-feature-small-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.kid-feature-small-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PROGRAMS
+========================================================= */
+
+.kid-programs {
+  margin-bottom: 90px;
+}
+
+.kid-section-heading {
+  max-width: 780px;
+
+  margin-bottom: 48px;
+}
+
+.kid-section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.kid-section-heading p {
+  max-width: 680px;
+
+  margin: 22px 0 0;
+
+  font-size: 1.08rem;
+  line-height: 1.75;
+
+  color: #716456;
+}
+
+
+/* =========================================================
+   EVENT CARDS
+========================================================= */
+
+.kid-card {
+  position: relative;
+
+  margin-bottom: 35px;
+
+  overflow: hidden;
+
+  background: #fffdf8;
+
+  border: 1px solid #e5dccd;
+  border-radius: 5px;
+
+  box-shadow:
+    0 10px 35px rgba(54, 38, 17, 0.055);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.kid-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 0;
+
+  background: #b08337;
+
+  transition: height 0.35s ease;
+}
+
+.kid-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #d2bc93;
+
+  box-shadow:
+    0 20px 55px rgba(54, 38, 17, 0.11);
+}
+
+.kid-card:hover::before {
+  height: 100%;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.kid-card-content {
+  min-height: 430px;
+
+  padding: 42px;
+}
+
+.kid-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.kid-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background: #f2eadc;
+  color: #956b28;
+
+  font-size: 1.8rem;
+}
+
+.kid-card-number {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1rem;
+
+  color: #b9aa94;
+}
+
+.kid-card-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+
+  color: #9b742f;
+}
+
+.kid-card h3 {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  color: #352719;
+}
+
+.kid-divider {
+  width: 45px;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #c7a668;
+}
+
+.kid-card-content p {
+  margin: 0 0 17px;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: #625548;
+}
+
+.kid-card-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.kid-card-image {
+  height: 100%;
+  min-height: 430px;
+
+  overflow: hidden;
+
+  background: #eee7db;
+}
+
+.kid-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.kid-card:hover .kid-card-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   HIGHLIGHT SECTIONS
+========================================================= */
+
+.kid-highlight {
+  position: relative;
+
+  max-width: 950px;
+
+  margin: 110px auto;
+
+  padding: 65px 70px;
+
+  text-align: center;
+
+  background: #f7f3eb;
+
+  border-top: 1px solid #ded3c0;
+  border-bottom: 1px solid #ded3c0;
+}
+
+.kid-highlight .kid-section-heading {
+  max-width: 750px;
+
+  margin: 0 auto 30px;
+}
+
+.kid-highlight .kid-eyebrow {
+  justify-content: center;
+}
+
+.kid-highlight .kid-section-heading h2 {
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+}
+
+.kid-highlight > p {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: 1.08rem;
+  line-height: 1.85;
+
+  color: #625548;
+}
+
+.kid-highlight > p + p {
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.kid-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 35px;
+
+  color: #c8b28d;
+}
+
+.kid-decoration span {
+  width: 90px;
+  height: 1px;
+
+  background: #ded3c0;
+}
+
+.kid-decoration svg {
+  width: 25px;
+  height: 25px;
+
+  opacity: 0.65;
+}
+
+.kid-decoration svg:first-of-type {
+  color: #9c7330;
+}
+
+.kid-decoration svg:last-of-type {
+  color: #c8b28d;
+}
+
+
+/* =========================================================
+   RECITATION
+========================================================= */
+
+.kid-recitation {
+  background:
+    linear-gradient(
+      135deg,
+      #f7f3eb 0%,
+      #fffdf8 100%
+    );
+}
+
+
+/* =========================================================
+   FINAL EVENT
+========================================================= */
+
+.kid-card-final {
+  margin-bottom: 110px;
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.kid-mission {
+  position: relative;
+
+  margin-bottom: 80px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11,
+      #5a411c
+    );
+
+  color: #fff;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 20px 55px rgba(63, 44, 17, 0.16);
+}
+
+.kid-mission::before,
+.kid-mission::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border: 1px solid rgba(217, 185, 120, 0.12);
 
   border-radius: 50%;
 }
 
-
-.kid-hero-decoration-left {
-  left: -130px;
-  top: -100px;
+.kid-mission::before {
+  right: -250px;
+  top: -260px;
 }
 
-
-.kid-hero-decoration-right {
-  right: -130px;
-  bottom: -100px;
+.kid-mission::after {
+  left: -280px;
+  bottom: -300px;
 }
-
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
-
-.kid-page .section-heading {
-  max-width: 850px;
-
-  margin-bottom: 65px;
-}
-
-
-.kid-page .section-heading > span {
-  display: block;
-
-  margin-bottom: 15px;
-
-  color: #967338;
-
-  font-size: 0.95rem;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-}
-
-
-.kid-page .section-heading h2 {
-  margin: 0;
-
-  color: #3f2c11;
-
-  font-size: clamp(2.7rem, 5vw, 4.8rem);
-  line-height: 1.05;
-
-  font-weight: 600;
-
-  letter-spacing: -2px;
-}
-
-
-.kid-page .section-heading p {
-  max-width: 700px;
-
-  margin-top: 25px;
-
-  color: #6a6257;
-
-  font-size: 1.5rem;
-  line-height: 1.8;
-}
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-.kid-intro-section {
-  padding: 100px 0;
-}
-
-
-.kid-text {
-  color: #514a41;
-}
-
-
-.kid-text p {
-  margin-bottom: 25px;
-
-  font-size: 1.18rem;
-  line-height: 1.9;
-}
-
-
-/* =====================================================
-   IMAGE STACK
-===================================================== */
-
-.kid-image-stack {
-  position: relative;
-
-  min-height: 570px;
-}
-
-
-.kid-image-card {
-  position: absolute;
-
-  overflow: hidden;
-
-  background: #e8e3d8;
-
-  box-shadow:
-    0 20px 50px rgba(63,44,17,0.12);
-}
-
-
-.kid-image-card img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-.kid-image-main {
-  top: 0;
-  right: 0;
-
-  width: 82%;
-  height: 500px;
-
-  border-radius: 0 70px 0 70px;
-}
-
-
-.kid-image-small {
-  left: 0;
-  bottom: 0;
-
-  width: 52%;
-  height: 250px;
-
-  border: 10px solid #f3f2ee;
-
-  border-radius: 50px 0 50px 0;
-}
-
-
-/* =====================================================
-   CULTURAL SECTION
-===================================================== */
-
-.kid-cultural-section {
-  padding: 100px 0;
-}
-
-
-/* =====================================================
-   EVENT CARD
-===================================================== */
-
-.kid-event-card {
-  overflow: hidden;
-
-  margin-bottom: 70px;
-
-  background: #eeeae1;
-
-  border: 1px solid rgba(63,44,17,0.08);
-
-  box-shadow:
-    0 15px 45px rgba(63,44,17,0.07);
-}
-
-
-.kid-event-content {
-  padding: 60px;
-}
-
-
-.kid-event-label {
-  display: block;
-
-  margin-bottom: 18px;
-
-  color: #967338;
-
-  font-size: 1rem;
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-}
-
-
-.kid-event-content h3 {
-  margin-bottom: 25px;
-
-  color: #3f2c11;
-
-  font-size: clamp(2rem, 4vw, 3.5rem);
-
-  line-height: 1.05;
-
-  font-weight: 600;
-}
-
-
-.kid-event-content p {
-  margin-bottom: 20px;
-
-  color: #5f574d;
-
-  font-size: 1.25rem;
-
-  line-height: 1.85;
-}
-
-
-.kid-event-image {
-  height: 100%;
-
-  min-height: 450px;
-
-  overflow: hidden;
-}
-
-
-.kid-event-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-/* =====================================================
-   FULL EVENT
-===================================================== */
-
-.kid-full-event {
-  padding: 90px 40px;
-
-  margin-bottom: 70px;
-
-  text-align: center;
-
-  background: #f3f2ee;
-}
-
-
-.kid-full-event .section-heading {
-  margin-left: auto;
-  margin-right: auto;
-
-  margin-bottom: 35px;
-}
-
-
-.kid-centered-text {
-  max-width: 800px;
-
-  margin: 0 auto 25px;
-
-  color: #5f574d;
-
-  font-size: 1.18rem;
-
-  line-height: 1.9;
-}
-
-
-/* =====================================================
-   POETRY
-===================================================== */
-
-.kid-poetry-decoration {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 3px;
-
-  margin-top: 40px;
-
-  color: #967338;
-
-  font-size: 1.5rem;
-}
-
-
-/* =====================================================
-   RECITATION
-===================================================== */
-
-.kid-recitation-event {
-  background: #e9e4d9;
-}
-
-
-/* =====================================================
-   FINAL EVENT
-===================================================== */
-
-.kid-final-event {
-  background: #f0ede6;
-}
-
-
-/* =====================================================
-   MISSION
-===================================================== */
-
-.kid-mission {
-  margin-top: 100px;
-
-  padding: 100px 30px;
-
-  background: #3f2c11;
-
-  color: #f3f2ee;
-
-  text-align: center;
-}
-
 
 .kid-mission-inner {
-  max-width: 850px;
+  position: relative;
+  z-index: 2;
 
-  margin: auto;
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  padding: 70px 40px;
+
+  text-align: center;
 }
-
 
 .kid-mission-inner > svg {
+  width: 58px;
+  height: 58px;
+
   margin-bottom: 25px;
 
-  color: #d8bd80;
+  color: #d9b978;
+}
 
-  font-size: 3rem;
+.kid-mission-inner h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+
+  color: #fff;
+}
+
+.kid-mission-inner h2 span {
+  color: #d9b978;
+
+  font-style: italic;
+}
+
+.kid-mission-inner p {
+  max-width: 620px;
+
+  margin: 28px auto 0;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.72);
 }
 
 
-.kid-mission h2 {
-  margin: 0 0 30px;
-
-  color: #f3f2ee;
-
-  font-size: clamp(2.8rem, 5vw, 5rem);
-
-  line-height: 1;
-
-  letter-spacing: -2px;
-}
-
-
-.kid-mission p {
-  max-width: 700px;
-
-  margin: auto;
-
-  color: rgba(243,242,238,0.72);
-
-  font-size: 1.5rem;
-
-  line-height: 1.85;
-}
-
-
-/* =====================================================
-   BOOK DECORATION
-===================================================== */
+/* =========================================================
+   BOTTOM BOOKS
+========================================================= */
 
 .kid-books-decoration {
   display: flex;
-
+  align-items: center;
   justify-content: center;
 
-  gap: 3px;
+  gap: 18px;
 
-  padding: 60px 0 20px;
+  margin-top: 80px;
 
-  color: #967338;
+  color: #c8b28d;
+}
 
-  font-size: 1.5rem;
+.kid-books-decoration span {
+  width: 90px;
+  height: 1px;
+
+  background: #ded3c0;
+}
+
+.kid-books-decoration svg {
+  width: 25px;
+  height: 25px;
+
+  opacity: 0.65;
+}
+
+.kid-books-decoration svg:nth-of-type(2) {
+  width: 35px;
+  height: 35px;
+
+  color: #9c7330;
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 991px) {
 
   .kid-page {
-    padding-top: 60px;
+    padding-top: 70px;
   }
 
-
-  .kid-intro-section,
-  .kid-cultural-section {
-    padding: 70px 0;
+  .kid-hero {
+    min-height: 440px;
   }
 
+  .kid-hero-content {
+    padding: 75px 20px;
 
-  .kid-image-stack {
-    min-height: 520px;
-
-    margin-top: 20px;
+    margin-left: 0;
   }
 
-
-  .kid-image-main {
-    width: 82%;
-    height: 450px;
+  .kid-hero-decoration {
+    opacity: 0.6;
   }
 
+  .kid-intro-content {
+    grid-template-columns: 1fr;
 
-  .kid-event-content {
-    padding: 45px;
+    gap: 25px;
   }
 
+  .kid-intro-icon {
+    justify-content: flex-start;
+  }
 
-  .kid-event-image {
-    min-height: 380px;
+  .kid-feature-image-large {
+    min-height: 420px;
+  }
+
+  .kid-feature-side {
+    min-height: 420px;
+  }
+
+  .kid-card-content {
+    min-height: auto;
+  }
+
+  .kid-card-image {
+    min-height: 400px;
   }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 767px) {
 
+  .kid-page {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
   .kid-hero {
     min-height: 420px;
-
-    padding: 70px 20px;
   }
 
-
-  .kid-hero h1 {
-    font-size: 3.3rem;
-
-    letter-spacing: -2px;
+  .kid-hero-content {
+    padding: 65px 20px;
   }
-
 
   .kid-hero-label {
     font-size: 0.65rem;
-
-    letter-spacing: 2px;
+    line-height: 1.5;
   }
 
+  .kid-label-line {
+    display: none;
+  }
+
+  .kid-hero h1 {
+    font-size: 4rem;
+  }
 
   .kid-hero p {
-    font-size: 1.5rem;
-  }
+    margin-top: 25px;
 
-
-  .kid-page {
-    padding-top: 30px;
-    padding-bottom: 50px;
-  }
-
-
-  .kid-intro-section,
-  .kid-cultural-section {
-    padding: 60px 0;
-  }
-
-
-  .kid-page .section-heading {
-    margin-bottom: 40px;
-  }
-
-
-  .kid-page .section-heading h2 {
-    font-size: 2.8rem;
-  }
-
-
-  .kid-text p {
     font-size: 1rem;
-
-    line-height: 1.8;
+    line-height: 1.65;
   }
 
-
-  .kid-image-stack {
-    min-height: 430px;
-
-    margin-top: 20px;
+  .kid-hero-decoration {
+    opacity: 0.3;
   }
 
-
-  .kid-image-main {
-    width: 86%;
-
-    height: 370px;
+  .kid-hero-decoration-right {
+    right: -50px;
   }
 
-
-  .kid-image-small {
-    width: 55%;
-
-    height: 200px;
+  .kid-hero-decoration-left {
+    left: -70px;
   }
 
-
-  .kid-event-card {
-    margin-bottom: 45px;
+  .kid-intro {
+    margin-bottom: 75px;
   }
 
-
-  .kid-event-content {
-    padding: 35px 25px;
+  .kid-intro-heading h2 {
+    font-size: 2.5rem;
   }
 
-
-  .kid-event-content h3 {
-    font-size: 2.2rem;
+  .kid-intro-content {
+    padding: 30px 25px;
   }
 
-
-  .kid-event-content p {
-    font-size: 1.2rem;
-
-    line-height: 1.8;
+  .kid-intro-text p {
+    font-size: 1rem;
   }
 
+  .kid-feature {
+    margin-bottom: 75px;
+  }
 
-  .kid-event-image {
+  .kid-feature-image-large {
+    min-height: 330px;
+  }
+
+  .kid-feature-side {
+    min-height: auto;
+
+    padding: 30px 25px;
+  }
+
+  .kid-feature-side h3 {
+    font-size: 2rem;
+  }
+
+  .kid-feature-small-image {
+    height: 180px;
+  }
+
+  .kid-programs {
+    margin-bottom: 60px;
+  }
+
+  .kid-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .kid-section-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .kid-card {
+    margin-bottom: 25px;
+  }
+
+  .kid-card-content {
+    padding: 30px 25px;
+  }
+
+  .kid-card h3 {
+    font-size: 1.7rem;
+  }
+
+  .kid-card-image {
     min-height: 300px;
   }
 
+  .kid-highlight {
+    margin: 75px auto;
 
-  .kid-full-event {
-    padding: 60px 20px;
-
-    margin-bottom: 45px;
+    padding: 45px 25px;
   }
 
-
-  .kid-centered-text {
-    font-size: 1.5rem;
-
-    line-height: 1.8;
+  .kid-highlight .kid-section-heading h2 {
+    font-size: 2.35rem;
   }
 
+  .kid-highlight > p {
+    font-size: 1rem;
+  }
+
+  .kid-decoration {
+    margin-top: 30px;
+  }
+
+  .kid-decoration span {
+    width: 45px;
+  }
+
+  .kid-card-final {
+    margin-bottom: 75px;
+  }
 
   .kid-mission {
-    margin-top: 60px;
-
-    padding: 70px 20px;
+    margin-bottom: 55px;
   }
 
-
-  .kid-mission h2 {
-    font-size: 3rem;
+  .kid-mission-inner {
+    padding: 55px 25px;
   }
 
+  .kid-mission-inner h2 {
+    font-size: 2.7rem;
+  }
 
-  .kid-mission p {
+  .kid-mission-inner p {
     font-size: 1rem;
+  }
+
+  .kid-books-decoration {
+    margin-top: 55px;
+  }
+
+  .kid-books-decoration span {
+    width: 45px;
   }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 480px) {
 
   .kid-hero h1 {
-    font-size: 2.8rem;
+    font-size: 3.4rem;
   }
 
-
-  .kid-page .section-heading h2 {
-    font-size: 2.4rem;
+  .kid-hero p {
+    font-size: 0.95rem;
   }
 
-
-  .kid-image-stack {
-    min-height: 360px;
+  .kid-intro-heading h2 {
+    font-size: 2.2rem;
   }
 
-
-  .kid-image-main {
-    height: 310px;
+  .kid-section-heading h2 {
+    font-size: 2.1rem;
   }
 
-
-  .kid-image-small {
-    height: 160px;
+  .kid-card-content {
+    padding: 25px 20px;
   }
 
-
-  .kid-event-content {
-    padding: 30px 20px;
+  .kid-card h3 {
+    font-size: 1.55rem;
   }
 
-
-  .kid-event-content h3 {
-    font-size: 2rem;
+  .kid-card-content p {
+    font-size: 0.98rem;
   }
 
-
-  .kid-event-image {
-    min-height: 260px;
+  .kid-card-image {
+    min-height: 250px;
   }
 
+  .kid-feature-side {
+    padding: 25px 20px;
+  }
 
-  .kid-mission h2 {
-    font-size: 2.5rem;
+  .kid-feature-side h3 {
+    font-size: 1.8rem;
+  }
+
+  .kid-highlight {
+    padding: 40px 20px;
+  }
+
+  .kid-mission-inner {
+    padding: 50px 20px;
+  }
+
+  .kid-mission-inner h2 {
+    font-size: 2.35rem;
   }
 
 }
