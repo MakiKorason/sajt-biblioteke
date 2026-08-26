@@ -189,7 +189,8 @@ const Homelend = () => {
               <div className="homelend-image-card">
 
                 <AnimatedImage
-                  src={zavicajno}
+                  src='https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkli4srDjC4YjAZKJU6eCRCtvP4Baz5azm_K-Gtcej2h-qi-UxGaKXuBKkjg-ALc6YOYYtFziHBlT9xQnwLAAH8_EwX7rAlHGULyDEDZweJmyFvTRoqMgYudUfa4sYc_7sbAQyiav6G0pms=w221-h221-n-k-no-nu'
+         
                   alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
                 />
 
@@ -215,6 +216,11 @@ const Homelend = () => {
             <h2>
               Грађа која сведочи о завичају
             </h2>
+            <hr/> <AnimatedImage
+                  src='https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9eFoQt45W5q0p5GUAGNbn9Hawy9lXvfRIkYoJy79aPRkGfVglGRq0D8nOM9oLt6657RHjAD0YMecJmyTmdYhKvH3GgFGzAyD2Zr2RI0WAz8YxQmiyagla7pEwEz_-3SF73rv2yuGhRJra=w221-h368-n-k-no-nu'
+                  alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
+                /> 
+                <br/>
 
           </div>
 
