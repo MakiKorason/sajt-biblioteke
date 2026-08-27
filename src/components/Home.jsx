@@ -39,7 +39,7 @@ import konkurs from '../images/konkurs.webp';
 import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
-import logoDigitalna from '../images/logoDigitalna.webp';
+import digitalnaLogo from '../images/digitalnaLogo.png';
 import filmTesla from '../images/filmTesla.png';
 import kosare from '../images/kosare.png';
 import karavansaraj from '../images/karavansaraj.png';
@@ -556,9 +556,11 @@ const Home = () => {
               </p>
 
               <a
-                href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
-                className="home-button"
-              >
+  href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
+  className="home-button"
+  target="_blank"
+  rel="noopener noreferrer"
+>
                 ДЕТАЉНИЈЕ
                 <FaArrowRight />
               </a>
@@ -916,7 +918,7 @@ const Home = () => {
                   </h3>
 
                   <img
-                    src={logoDigitalna}
+                    src={digitalnaLogo}
                     alt="Дигитална библиотека Рума"
                     className="digital-logo"
                     loading="lazy"
