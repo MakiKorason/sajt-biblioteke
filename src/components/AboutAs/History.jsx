@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { Helmet } from "react-helmet-async";
-
+import { GiOpenBook } from "react-icons/gi";
 import AnimatedImage from "../Department/AnimatedImage";
 import AnimatedCard from "../Department/AnimatedCard";
 
@@ -193,7 +193,9 @@ const History = () => {
           <LiaLandmarkSolid />          
 
         </div>
-  
+   <div className="contact-hero-book contact-book-right">
+      <GiOpenBook />
+    </div>
 
         <Container>
 

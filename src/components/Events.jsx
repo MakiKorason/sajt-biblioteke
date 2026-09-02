@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import ImageModal from './ImageModal';
 import { BsCalendar2Heart } from 'react-icons/bs';
-import { LiaBookSolid } from "react-icons/lia";
+
 
 import daniSlovensk from '../images/daniSlovensk.webp';
 import Atanasije from '../images/Atanasije.webp';
@@ -14,7 +14,8 @@ import rumskoKulturnoLeto2 from '../images/rumskoKulturnoLeto2.webp';
 import kvizOAtanasiju from '../images/kvizOAtanasiju.webp';
 import ikona from '../images/ikona.webp';
 import knjizevnaKolonija3 from '../images/knjizevnaKolonija3.webp';
-
+import { LiaBookSolid } from "react-icons/lia";
+import { GiOpenBook } from "react-icons/gi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AnimatedCard from './Department/AnimatedCard';
@@ -188,23 +189,46 @@ const Events = () => {
       
       {/* HERO */}
 
-      <section className="contact-hero">
-        <div className="contact-hero-decoration contact-hero-decoration-left"></div>
-        <div className="contact-hero-decoration contact-hero-decoration-right"></div>
+    
+<section className="contact-hero">
 
-        <div className="contact-hero-content">
-          <span className="contact-hero-label">
-            ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-          </span>
+  <div className="contact-hero-background">
+    <div className="contact-hero-circle circle-one"></div>
+    <div className="contact-hero-circle circle-two"></div>
+  </div>
 
-          <h1>   Културни програм библиотеке</h1>
+  <div className="contact-hero-book contact-book-left">
+    <LiaBookSolid />
+  </div>
 
-          <p>
-          Упознајте манифестације које Градска библиотека „Атанасије Стојковић“
-            организује и подржава током године.
-          </p>
-        </div>
-      </section>
+  <div className="contact-hero-book contact-book-right">
+    <GiOpenBook />
+  </div>
+
+  <Container>
+    <div className="contact-hero-content">
+
+      <div className="contact-hero-label">
+        <span className="contact-label-line"></span>
+        ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+        <span className="contact-label-line"></span>
+      </div>
+
+      <h1>
+        Културни <span>програм</span>
+      </h1>
+
+      <p>
+        Упознајте манифестације које Градска библиотека
+        „Атанасије Стојковић“ организује и подржава током године.
+      </p>
+
+    </div>
+  </Container>
+
+</section>
+
+
 
 
       <Container className="events-page">

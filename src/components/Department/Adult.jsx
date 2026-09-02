@@ -1,52 +1,85 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { LiaBookSolid } from 'react-icons/lia';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { LiaBookSolid } from "react-icons/lia";
+import { Helmet } from "react-helmet-async";
 
-import './Adult.css';
+import "./Adult.css";
+import { GiOpenBook } from "react-icons/gi";
+import koncertNaOdraslom from "../../images/koncertNaOdraslom.webp";
+import osmiMart from "../../images/osmiMart.webp";
+import pesmaOTriSveta from "../../images/pesmaOTriSveta.webp";
+import likovniKonkurs1 from "../../images/likovniKonkurs1.webp";
+import likovniKonkurs2 from "../../images/likovniKonkurs2.webp";
+import likovniKonkurs3 from "../../images/likovniKonkurs3.webp";
+import cudoUBanatu from "../../images/cudoUBanatu.webp";
+import odraslo from "../../images/odraslo.webp";
 
-import koncertNaOdraslom from '../../images/koncertNaOdraslom.webp';
-import osmiMart from '../../images/osmiMart.webp';
-import pesmaOTriSveta from '../../images/pesmaOTriSveta.webp';
-import likovniKonkurs1 from '../../images/likovniKonkurs1.webp';
-import likovniKonkurs2 from '../../images/likovniKonkurs2.webp';
-import likovniKonkurs3 from '../../images/likovniKonkurs3.webp';
-import cudoUBanatu from '../../images/cudoUBanatu.webp';
-import odraslo from '../../images/odraslo.webp';
-
-import AnimatedImage from './AnimatedImage';
+import AnimatedImage from "./AnimatedImage";
 
 const Adult = () => {
+  const pageTitle =
+    'Одељење за одрасле – Градска библиотека „Атанасије Стојковић“ Рума';
+
+  const pageDescription =
+    'Одељење за одрасле Градске библиотеке „Атанасије Стојковић“ у Руми. Погледајте информације о библиотечком фонду, читаоници, културним програмима, изложбама и књижевним промоцијама.';
+
+  const canonicalUrl =
+    "https://www.bibliotekaruma.rs/odeljenje-za-odrasle";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Library",
+    "@id": `${canonicalUrl}#library`,
+    name: 'Градска библиотека „Атанасије Стојковић“ Рума',
+    url: canonicalUrl,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Главна 114",
+      addressLocality: "Рума",
+      postalCode: "22400",
+      addressCountry: "RS",
+    },
+    telephone: "+38122490047",
+  };
+
   return (
     <>
+      {/* =====================================================
+          SEO
+      ===================================================== */}
+
       <Helmet>
-        <title>
-          Одељење за одрасле – Градска библиотека „Атанасије Стојковић“ Рума
-        </title>
+        <title>{pageTitle}</title>
 
         <meta
           name="description"
-          content="Одељење за одрасле Градске библиотеке „Атанасије Стојковић“ у Руми. Погледајте информације о библиотечком фонду, читаоници, културним програмима, изложбама и књижевним промоцијама."
+          content={pageDescription}
         />
 
         <link
           rel="canonical"
-          href="https://www.bibliotekaruma.rs/odeljenje-za-odrasle"
+          href={canonicalUrl}
+        />
+
+        <link
+          rel="alternate"
+          hrefLang="sr"
+          href={canonicalUrl}
         />
 
         <meta
           property="og:title"
-          content="Одељење за одрасле – Градска библиотека Рума"
+          content={pageTitle}
         />
 
         <meta
           property="og:description"
-          content="Одељење за одрасле Градске библиотеке „Атанасије Стојковић“ у Руми."
+          content={pageDescription}
         />
 
         <meta
           property="og:url"
-          content="https://www.bibliotekaruma.rs/odeljenje-za-odrasle"
+          content={canonicalUrl}
         />
 
         <meta
@@ -54,25 +87,13 @@ const Adult = () => {
           content="website"
         />
 
+        <meta
+          property="og:locale"
+          content="sr_RS"
+        />
+
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Library',
-            '@id':
-              'https://www.bibliotekaruma.rs/odeljenje-za-odrasle#library',
-            name:
-              'Градска библиотека „Атанасије Стојковић“ Рума',
-            url:
-              'https://www.bibliotekaruma.rs/odeljenje-za-odrasle',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Главна 114',
-              addressLocality: 'Рума',
-              postalCode: '22400',
-              addressCountry: 'RS'
-            },
-            telephone: '+38122490047'
-          })}
+          {JSON.stringify(structuredData)}
         </script>
       </Helmet>
 
@@ -83,50 +104,87 @@ const Adult = () => {
 
       <section className="adult-hero">
 
-        <div className="adult-hero-decoration adult-hero-decoration-left"></div>
-        <div className="adult-hero-decoration adult-hero-decoration-right"></div>
+        <div className="adult-hero-background">
 
-        <div className="adult-hero-content">
+          <div className="adult-hero-circle circle-one"></div>
 
-          <span className="adult-hero-label">
-            ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-          </span>
-
-          <h1>
-            Одељење за одрасле
-          </h1>
-
-          <p>
-            Простор посвећен књизи, читању, учењу и културним
-            дешавањима у Градској библиотеци Рума.
-          </p>
+          <div className="adult-hero-circle circle-two"></div>
 
         </div>
+
+
+        {/* BOOK DECORATION */}
+
+        <div className="adult-hero-book adult-book-left">
+
+          <LiaBookSolid />
+
+        </div>
+ <div className="contact-hero-book contact-book-right">
+    <GiOpenBook />
+  </div>
+
+        <Container>
+
+          <div className="adult-hero-content">
+
+            <div className="adult-hero-label">
+
+              ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+
+            </div>
+
+
+            <h1>
+
+              <em>Одељење</em> за одрасле
+
+            </h1>
+
+
+            <p>
+
+              Простор посвећен књизи, читању, учењу и
+              културним дешавањима у Градској библиотеци Рума.
+
+            </p>
+
+          </div>
+
+        </Container>
 
       </section>
 
 
+      {/* =====================================================
+          MAIN PAGE
+      ===================================================== */}
+
       <Container className="adult-page">
 
 
-        {/* =====================================================
+        {/* ===================================================
             UVOD
-        ===================================================== */}
+        =================================================== */}
 
-        <section className="adult-intro-section">
+        <section className="adult-intro">
 
-          <div className="section-heading">
+          <div className="adult-section-heading">
 
-            <span>О НАШЕМ ОДЕЉЕЊУ</span>
+            <span>
+              О НАШЕМ ОДЕЉЕЊУ
+            </span>
 
             <h2>
-              Простор за књигу, читање и сусрете
+              Простор за књигу,
+              <br />
+              читање и сусрете
             </h2>
 
           </div>
 
 
-          <Row className="g-5 align-items-center">
+          <Row className="g-5 align-items-start">
 
             <Col lg={7}>
 
@@ -173,6 +231,31 @@ const Adult = () => {
                   лета и организације наше библиотеке.
                 </p>
 
+
+                <div className="adult-highlight">
+
+                  <div className="adult-highlight-icon">
+
+                    <LiaBookSolid />
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      ОДЕЉЕЊЕ ЗА ОДРАСЛЕ
+                    </span>
+
+                    <p>
+                      Простор библиотеке намењен читању,
+                      учењу, раду и сусретима са културом.
+                    </p>
+
+                  </div>
+
+                </div>
+
               </div>
 
             </Col>
@@ -183,17 +266,22 @@ const Adult = () => {
               <div className="adult-image-stack">
 
                 <div className="adult-image-card adult-image-main">
+
                   <AnimatedImage
                     src={odraslo}
                     alt="Одељење за одрасле Градске библиотеке Рума"
                   />
+
                 </div>
 
+
                 <div className="adult-image-card adult-image-small">
+
                   <AnimatedImage
                     src={koncertNaOdraslom}
                     alt="Концерт на Одељењу за одрасле"
                   />
+
                 </div>
 
               </div>
@@ -205,15 +293,17 @@ const Adult = () => {
         </section>
 
 
-        {/* =====================================================
-            KULTURNI KUTAK
-        ===================================================== */}
+        {/* ===================================================
+            KULTURNI PROGRAMI
+        =================================================== */}
 
         <section className="adult-cultural-section">
 
-          <div className="section-heading">
+          <div className="adult-section-heading">
 
-            <span>КУЛТУРНИ ПРОГРАМИ</span>
+            <span>
+              КУЛТУРНИ ПРОГРАМИ
+            </span>
 
             <h2>
               Културни кутак
@@ -227,11 +317,13 @@ const Adult = () => {
           </div>
 
 
-          {/* PESMA O TRI SVETA */}
+          {/* =================================================
+              PESMA O TRI SVETA
+          ================================================= */}
 
-          <div className="adult-event-card">
+          <article className="adult-event-card">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
               <Col lg={7}>
 
@@ -250,14 +342,14 @@ const Adult = () => {
                     библиотеке Србије, и једног од најзначајнијих
                     савремених српских писаца угостили смо 19. априла
                     2024. године. Промоција његове књиге „Песма о три
-                    света", изазвала је велико интересовање код
+                    света“ изазвала је велико интересовање код
                     љубитеља лепе књижевности, па је завршетак вечери
                     испраћен аплаузом.
                   </p>
 
                   <p>
                     У разговору са аутором учествовали су Ненад Шапоња,
-                    директор Културног центра Војводине „Милош Црњански",
+                    директор Културног центра Војводине „Милош Црњански“,
                     и Селимир Радуловић, награђивани српски песник и
                     управник Библиотеке Матице српске.
                   </p>
@@ -282,16 +374,21 @@ const Adult = () => {
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* CUDO U BANATU */}
+          {/* =================================================
+              CUDO U BANATU
+          ================================================= */}
 
-          <div className="adult-event-card">
+          <article className="adult-event-card">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
-              <Col lg={5} className="order-2 order-lg-1">
+              <Col
+                lg={5}
+                className="order-2 order-lg-1"
+              >
 
                 <div className="adult-event-image">
 
@@ -305,7 +402,10 @@ const Adult = () => {
               </Col>
 
 
-              <Col lg={7} className="order-1 order-lg-2">
+              <Col
+                lg={7}
+                className="order-1 order-lg-2"
+              >
 
                 <div className="adult-event-content">
 
@@ -318,18 +418,18 @@ const Adult = () => {
                   </h3>
 
                   <p>
-                    Књига „Чудо у Банату" је збирка кратких прича која
-                    даје приказ збивања на банатским просторима и говори
-                    о судбини тамошњих људи након Великог рата. Она је
-                    промовисана 2. децембра 2023. године у просторијама
-                    наше библиотеке.
+                    Књига „Чудо у Банату“ је збирка кратких прича
+                    која даје приказ збивања на банатским просторима
+                    и говори о судбини тамошњих људи након Великог
+                    рата. Она је промовисана 2. децембра 2023. године
+                    у просторијама наше библиотеке.
                   </p>
 
                   <p>
-                    Њен аутор, Милан Мицић, доктор историјских наука и
-                    Генерални секретар Матице српске, објавио је 50 књига
-                    историографских студија, историјских есеја,
-                    документарне прозе и поезије.
+                    Њен аутор, Милан Мицић, доктор историјских наука
+                    и генерални секретар Матице српске, објавио је
+                    50 књига историографских студија, историјских
+                    есеја, документарне прозе и поезије.
                   </p>
 
                 </div>
@@ -338,16 +438,20 @@ const Adult = () => {
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* LIKOVNA IZLOZBA */}
+          {/* =================================================
+              IZLOZBA
+          ================================================= */}
 
-          <div className="adult-full-event">
+          <section className="adult-exhibition">
 
-            <div className="section-heading">
+            <div className="adult-section-heading">
 
-              <span>ИЗЛОЖБА</span>
+              <span>
+                ИЗЛОЖБА
+              </span>
 
               <h2>
                 „Женски ликови у књижевности“
@@ -359,13 +463,13 @@ const Adult = () => {
             <p className="adult-centered-text">
               Поводом Дана жена, 8. марта 2021. године, у холу наше
               библиотеке постављена је изложба ликовних радова румских
-              гимназијалаца на тему „Женски ликови у књижевности".
+              гимназијалаца на тему „Женски ликови у књижевности“.
             </p>
 
 
             <Row className="g-4 adult-gallery">
 
-              <Col lg={4} md={4} sm={12}>
+              <Col lg={4} md={4}>
 
                 <div className="adult-gallery-item">
 
@@ -379,7 +483,7 @@ const Adult = () => {
               </Col>
 
 
-              <Col lg={4} md={4} sm={12}>
+              <Col lg={4} md={4}>
 
                 <div className="adult-gallery-item">
 
@@ -393,7 +497,7 @@ const Adult = () => {
               </Col>
 
 
-              <Col lg={4} md={4} sm={12}>
+              <Col lg={4} md={4}>
 
                 <div className="adult-gallery-item">
 
@@ -408,14 +512,16 @@ const Adult = () => {
 
             </Row>
 
-          </div>
+          </section>
 
 
-          {/* ZNAMENITE RUMLJANKE */}
+          {/* =================================================
+              ZNAMENITE RUMLJANKE
+          ================================================= */}
 
-          <div className="adult-event-card adult-final-event">
+          <article className="adult-event-card adult-final-event">
 
-            <Row className="g-0 align-items-center">
+            <Row className="g-0 align-items-stretch">
 
               <Col lg={7}>
 
@@ -432,7 +538,7 @@ const Adult = () => {
                   <p>
                     Три године касније на исти дан Александра Ћирић
                     Бошковић, тадашња председница Општине Рума, одржала
-                    је предавање под називом „Знамените Румљанке".
+                    је предавање под називом „Знамените Румљанке“.
                     Након што је директор библиотеке Дамир Васиљевић
                     Тоскић поздравио присутне, имали смо прилику да
                     чујемо изузетно излагање о улози и значају жена у
@@ -459,15 +565,54 @@ const Adult = () => {
 
             </Row>
 
-          </div>
+          </article>
 
 
-          {/* DEKORACIJA */}
+          {/* =================================================
+              FINAL STATEMENT
+          ================================================= */}
+
+          <section className="adult-final">
+
+            <div className="adult-final-icon">
+
+              <LiaBookSolid />
+
+            </div>
+
+
+            <div>
+
+              <span>
+                ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+              </span>
+
+              <h2>
+                Место за књигу,
+                <br />
+                знање и сусрете.
+              </h2>
+
+              <p>
+                Одељење за одрасле повезује библиотечки фонд,
+                читаоницу и културни живот Руме.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          {/* =================================================
+              DECORATION
+          ================================================= */}
 
           <div className="adult-books-decoration">
 
             <LiaBookSolid />
+
             <LiaBookSolid />
+
             <LiaBookSolid />
 
           </div>
@@ -475,9 +620,9 @@ const Adult = () => {
         </section>
 
       </Container>
-
     </>
   );
 };
 
 export default Adult;
+

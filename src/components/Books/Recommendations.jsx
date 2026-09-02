@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Row, Col, Container, Button, Nav } from 'react-bootstrap';
-
+import { LiaBookSolid } from 'react-icons/lia';
 import { Helmet } from 'react-helmet-async';
 import './Recommendations.css';
 import AnimatedCard from '../Department/AnimatedCard';
-
+import { GiOpenBook } from "react-icons/gi";
 
 const RECOMMENDATION_ARCHIVE_MONTHS = [
  
@@ -57,31 +57,63 @@ const Recommendations =()=>{
     `}
   </script>
 </Helmet>
- <main className="our-public-page">
-        <Container className="our-public-container">
 
-  <section className="our-public-hero">
+       
+  <section className="contact-hero">
 
-            <div className="our-public-hero-decoration our-public-hero-decoration-left"></div>
-            <div className="our-public-hero-decoration our-public-hero-decoration-right"></div>
+  {/* DEKORATIVNI KRUGOVI */}
 
-            <div className="our-public-hero-content">
+  <div className="contact-hero-background">
 
-              <span className="our-public-label">
-               ПРЕПОРУКА БИБЛИОТЕКАРА
-              </span>
+    <div className="contact-hero-circle circle-one"></div>
 
-              <h1>Препоруке наших библиотекара</h1>
+    <div className="contact-hero-circle circle-two"></div>
 
-              <p>
-  Наши библиотекари издвајају наслове различитих жанрова и тема, намењене читаоцима свих узраста и интересовања.
-              </p>
+  </div>
 
-            </div>
 
-          </section>
+  {/* STIKERI */}
 
-  <AnimatedCard className="container mt-3, mb-5">
+  <div className="contact-hero-book contact-book-left">
+    <LiaBookSolid />
+  </div>
+
+  <div className="contact-hero-book contact-book-right">
+    <GiOpenBook />
+  </div>
+
+
+  {/* HERO CONTENT */}
+
+  <Container>
+
+    <div className="contact-hero-content">
+
+      <div className="contact-hero-label">
+
+        <span className="contact-label-line"></span>
+
+        ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+
+      </div>
+
+      <h1>
+       Препорука<span> библиотекара</span>
+      </h1>
+
+      <p>
+      У фонду наше библиотеке налази се велики број књига, а библиотекари су издвојили најзанимљивија и најчитанија дела за све узрасте.                                 
+      </p>
+
+    </div>
+
+  </Container>
+
+</section>
+
+
+
+  <AnimatedCard className="container mt-5, mb-5">
 
     <br/>
 
@@ -124,7 +156,7 @@ const Recommendations =()=>{
       {/* Дечије одељење */}
       <div id="menu1" className="container tab-pane fade">
         <br/>
-        <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука — Дечије одељење</h3>
+        <h3 className="container-title" style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)' }}>Месечна препорука — Дечије одељење</h3>
         <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
                 <img
@@ -900,7 +932,7 @@ const Recommendations =()=>{
                     </p>
                        <Button
                       variant="secondary"
-                      href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib/results?q=%D0%B1%D0%B0%D1%81%D1%82%D0%B0%D1%88%D0%B8%D1%9B%2C%20%D0%BB%D0%B0%D0%BD%D0%B0&lib=gbru"
+                      href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=lana+basta%C5%A1i%C4%87"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Остала дела Лане Басташић које поседује наша библиотека"
@@ -1162,7 +1194,7 @@ const Recommendations =()=>{
   </AnimatedCard>
 
          
-        </Container>   </main>  
+         
         </>
     );
 };

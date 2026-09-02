@@ -3,133 +3,334 @@
 ========================================================= */
 
 .events-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 35px 15px 60px;
+  max-width: 1240px;
+
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  color: #30251b;
 }
 
 
 /* =========================================================
-   NASLOV STRANICE
+   HERO
+   ISTI VIZUELNI SISTEM KAO HISTORY / EMPLOYEES
 ========================================================= */
 
-.events-page-title {
-  margin-bottom: 50px;
-  text-align: center;
+.contact-hero {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f2c11 0%,
+      #503815 48%,
+      #2c2115 100%
+    );
+
+  color: #f7eee8;
 }
 
-.events-page-title span {
-  display: block;
-  margin-bottom: 12px;
-  color: #8b6a37;
-  font-size: 0.9rem;
+
+/* =========================================================
+   HERO BACKGROUND
+========================================================= */
+
+.contact-hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.contact-hero-circle {
+  position: absolute;
+
+  border: 1px solid rgba(231, 198, 137, 0.18);
+
+  border-radius: 50%;
+}
+
+.contact-hero-circle.circle-one {
+  width: 520px;
+  height: 520px;
+
+  right: -150px;
+  top: -180px;
+}
+
+.contact-hero-circle.circle-two {
+  width: 720px;
+  height: 720px;
+
+  left: -400px;
+  bottom: -550px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.contact-hero-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 800px;
+
+  padding: 90px 0;
+
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.contact-hero-label {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 28px;
+
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+
+  letter-spacing: 0.17em;
+
+  color: #d9b978;
 }
 
-.events-page-title h1 {
-  margin: 0 0 18px;
-  color: #3f2c11;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 500;
-  line-height: 1.2;
-}
+.contact-label-line {
+  width: 36px;
+  height: 1px;
 
-.events-page-title p {
-  max-width: 750px;
-  margin: 0 auto;
-  color: #6b655d;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  flex-shrink: 0;
+
+  background: #d9b978;
 }
 
 
 /* =========================================================
-   RED SA KARTICAMA
+   HERO TITLE
 ========================================================= */
 
-.events-page > .row {
-  margin-left: -12px;
-  margin-right: -12px;
-  margin-bottom: 24px;
+.contact-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(4rem, 8vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
 }
 
-.events-page > .row:last-of-type {
-  margin-bottom: 0;
-}
+.contact-hero h1 span {
+  color: #d9b978;
 
-.events-page > .row > [class*="col-"] {
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-bottom: 24px;
+  font-style: italic;
 }
 
 
 /* =========================================================
-   KARTICE
+   HERO TEXT
+========================================================= */
+
+.contact-hero p {
+  max-width: 650px;
+
+  margin: 35px 0 0;
+
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+
+  color: rgba(247, 242, 232, 0.82);
+}
+
+
+/* =========================================================
+   HERO BOOK DECORATION
+========================================================= */
+
+.contact-hero-book {
+  position: absolute;
+
+  z-index: 2;
+
+  color: rgba(217, 185, 120, 0.12);
+
+  pointer-events: none;
+}
+
+.contact-hero-book svg {
+  width: 220px;
+  height: 220px;
+}
+
+.contact-book-left {
+  left: 5%;
+  bottom: -30px;
+
+  transform: rotate(-15deg);
+}
+
+.contact-book-right {
+  right: 5%;
+  top: 50px;
+
+  transform: rotate(10deg);
+}
+
+
+/* =========================================================
+   EVENTS GRID
+========================================================= */
+
+.events-grid {
+  row-gap: 35px;
+}
+
+
+/* =========================================================
+   EVENT COLUMN
+========================================================= */
+
+.event-column {
+  display: flex;
+}
+
+
+/* =========================================================
+   EVENT CARD
 ========================================================= */
 
 .events-card {
+  position: relative;
+
+  width: 100%;
   height: 100%;
-  background: #ffffff;
-  border: 1px solid rgba(63, 44, 17, 0.14);
-  border-radius: 14px;
+
+  min-height: 300px;
+
   overflow: hidden;
 
-  box-shadow:
-    0 5px 18px rgba(63, 44, 17, 0.07);
+  background: #fffdf8;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
+  border: 1px solid #e5dccd;
 
-.events-card:hover {
-  transform: translateY(-5px);
+  border-radius: 5px;
 
   box-shadow:
-    0 12px 30px rgba(63, 44, 17, 0.12);
-
-  border-color: rgba(63, 44, 17, 0.28);
-}
-
-
-/* =========================================================
-   SADRŽAJ KARTICE
-========================================================= */
-
-.events-card .card-body {
-  padding: 20px;
-  height: 100%;
-}
-
-.events-card .row {
-  height: 100%;
-}
-
-
-/* =========================================================
-   SLIKA
-========================================================= */
-
-.events-card .card-img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 10px;
-  display: block;
+    0 10px 35px rgba(54, 38, 17, 0.055);
 
   transition:
     transform 0.35s ease,
-    filter 0.35s ease;
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.events-card:hover .card-img {
-  filter: brightness(0.96);
+
+/* GOLDEN SIDE LINE */
+
+.events-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 0;
+
+  background: #b08337;
+
+  transition: height 0.35s ease;
+
+  z-index: 5;
 }
+
+.events-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #d2bc93;
+
+  box-shadow:
+    0 20px 55px rgba(54, 38, 17, 0.11);
+}
+
+.events-card:hover::before {
+  height: 100%;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.events-card .card-body {
+  height: 100%;
+
+  padding: 30px;
+}
+
+
+/* =========================================================
+   EVENT IMAGE
+========================================================= */
+
+.event-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-image-column .card-img {
+  width: 100%;
+
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.events-card:hover .event-image-column .card-img {
+  transform: scale(1.025);
+
+  filter: saturate(0.92);
+}
+
+
+/* =========================================================
+   CLICKABLE IMAGE
+========================================================= */
 
 .clickable-image {
   cursor: pointer;
@@ -137,68 +338,101 @@
 
 
 /* =========================================================
-   NASLOV KARTICE
+   EVENT CONTENT
 ========================================================= */
 
-.events-card .container-title {
-  color: #3f2c11;
-  font-size: 1.65rem;
-  font-weight: 600;
-  line-height: 1.35;
+.event-content {
+  padding-left: 20px;
+}
+
+
+/* =========================================================
+   EVENT TITLE
+========================================================= */
+
+.container-title {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin: 0 0 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.7rem;
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  color: #352719;
+}
+
+.container-title svg {
+  flex-shrink: 0;
+
+  margin-top: 3px;
+
+  color: #a4782d;
+
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   EVENT TEXT
+========================================================= */
+
+.container-text {
   margin: 0;
-}
-
-.events-card .container-title svg {
-  color: #8a6d3b;
-  margin-left: 6px;
-  vertical-align: -2px;
-  font-size: 1.25em;
-}
-
-
-/* =========================================================
-   TEKST KARTICE
-========================================================= */
-
-.events-card .container-text {
-  color: #5e5a53;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-top: 15px;
-  margin-bottom: 22px;
-}
-
-
-/* =========================================================
-   DUGME
-========================================================= */
-
-.events-card .btn-secondary {
-  align-self: flex-start;
-
-  background-color: #3f2c11;
-  border: 1px solid #3f2c11;
-
-  color: #ffffff;
-
-  padding: 11px 22px;
-  border-radius: 7px;
 
   font-size: 1rem;
-  font-weight: 600;
 
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+  line-height: 1.75;
+
+  color: #655849;
 }
 
-.events-card .btn-secondary:hover,
-.events-card .btn-secondary:focus {
-  background-color: #5a401b;
-  border-color: #5a401b;
-  color: #ffffff;
-  transform: translateY(-1px);
+
+/* =========================================================
+   EVENT BUTTON
+========================================================= */
+
+.event-button {
+  margin-top: 22px;
+
+  padding: 9px 20px;
+
+  border: 1px solid #9b742f;
+
+  border-radius: 3px;
+
+  background: #3f2c11;
+
+  color: #fffdf8;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.event-button:hover,
+.event-button:focus {
+  background: #5a411c;
+
+  border-color: #5a411c;
+
+  color: #fffdf8;
+
+  transform: translateY(-2px);
 }
 
 
@@ -207,96 +441,155 @@
 ========================================================= */
 
 .modal-content {
-  border: none;
-  border-radius: 14px;
   overflow: hidden;
+
+  background: #fffdf8;
+
+  border: 1px solid #e2d8c7;
+
+  border-radius: 5px;
+
+  color: #44372a;
+
+  box-shadow:
+    0 25px 80px rgba(54, 38, 17, 0.18);
 }
 
 .modal-header {
-  border-bottom: 1px solid rgba(63, 44, 17, 0.12);
+  min-height: 55px;
+
+  padding: 12px 20px;
+
+  border-bottom: 1px solid #e8dfcf;
+
+  background: #f7f3eb;
 }
 
 .modal-header .btn-close {
-  margin-right: 5px;
+  opacity: 0.65;
 }
 
 .modal-body {
-  padding: 35px;
+  padding: 40px;
 }
 
 .modal-footer {
-  border-top: 1px solid rgba(63, 44, 17, 0.12);
-  padding: 18px 25px;
-}
+  padding: 15px 20px;
 
-.modal-footer .btn-secondary {
-  background-color: #3f2c11;
-  border-color: #3f2c11;
-  border-radius: 7px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  border-top: 1px solid #e8dfcf;
+
+  background: #f7f3eb;
 }
 
 
 /* =========================================================
-   TEKST U MODALU
-========================================================= */
-
-.modal-body .container-text {
-  color: #4f4a43;
-  font-size: 1.2rem;
-  line-height: 1.9;
-}
-
-.modal-body strong {
-  font-size: 1.2rem;
-}
-
-.modal-body p {
-  font-size: 1.2rem;
-  line-height: 1.9;
-}
-
-.modal-body li {
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
-
-.modal-body .container-icon {
-  color: #8a6d3b;
-  font-size: 1.35rem;
-  text-align: center;
-}
-
-
-/* =========================================================
-   SLIKE U MODALU
+   MODAL IMAGES
 ========================================================= */
 
 .modal-body .container-image {
   max-width: 100%;
+
   height: auto;
-  border-radius: 10px;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 12px 35px rgba(54, 38, 17, 0.08);
 }
 
 
 /* =========================================================
-   VIDEO
+   MODAL LINKS
+========================================================= */
+
+.modal-body a {
+  display: inline-block;
+
+  margin-left: 5px;
+
+  color: #9b742f;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(155, 116, 47, 0.35);
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.modal-body a:hover {
+  color: #5a411c;
+
+  border-color: #5a411c;
+}
+
+
+/* =========================================================
+   IFRAME
 ========================================================= */
 
 .container-iframe {
-  width: 100%;
   position: relative;
+
+  width: 100%;
+
+  margin-top: 25px;
+
   overflow: hidden;
-  border-radius: 10px;
-  background: #000;
+
+  border-radius: 4px;
+
+  background: #2c2115;
+
+  box-shadow:
+    0 15px 40px rgba(54, 38, 17, 0.12);
 }
 
 .container-iframe iframe {
-  width: 100%;
-  min-height: 450px;
-  border: 0;
   display: block;
+
+  width: 100%;
+
+  min-height: 500px;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   ICON DECORATION
+========================================================= */
+
+.container-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin: 25px 0;
+
+  color: #c4a46a;
+}
+
+.container-icon svg {
+  width: 22px;
+  height: 22px;
+
+  opacity: 0.7;
+}
+
+.container-icon svg:nth-child(2) {
+  width: 30px;
+  height: 30px;
+
+  color: #9c7330;
+
+  opacity: 1;
 }
 
 
@@ -305,27 +598,61 @@
 ========================================================= */
 
 .modal-body hr {
+  margin: 35px 0;
+
   border: 0;
-  border-top: 1px solid rgba(63, 44, 17, 0.15);
-  margin: 28px 0;
+
+  border-top: 1px solid #ded3c0;
+
+  opacity: 1;
 }
 
 
 /* =========================================================
-   LINKOVI U MODALU
+   MODAL TEXT EMPHASIS
 ========================================================= */
 
-.modal-body a {
-  color: #6d4d1e;
-  font-size: 1.2rem;
+.modal-body strong {
+  color: #3f2c11;
+
+  font-family: Georgia, "Times New Roman", serif;
+
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: rgba(109, 77, 30, 0.35);
-  text-underline-offset: 3px;
 }
 
-.modal-body a:hover {
-  color: #3f2c11;
+.modal-body em {
+  color: #9b742f;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   MODAL FOOTER BUTTON
+========================================================= */
+
+.modal-footer .btn-secondary {
+  padding: 8px 20px;
+
+  border: 1px solid #9b742f;
+
+  border-radius: 3px;
+
+  background: #3f2c11;
+
+  color: #fffdf8;
+
+  font-size: 0.8rem;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #5a411c;
+
+  transform: translateY(-2px);
 }
 
 
@@ -336,222 +663,207 @@
 @media (max-width: 991px) {
 
   .events-page {
-    padding-top: 30px;
+    padding-top: 70px;
   }
 
-  .events-page-title {
-    margin-bottom: 40px;
+  .contact-hero {
+    min-height: 440px;
   }
 
-  .events-page-title h1 {
-    font-size: 3rem;
+  .contact-hero-content {
+    padding: 75px 20px;
   }
 
-  .events-page-title p {
-    font-size: 1.15rem;
+  .contact-hero-book {
+    opacity: 0.6;
+  }
+
+  .events-card {
+    min-height: auto;
   }
 
   .events-card .card-body {
-    padding: 20px;
+    padding: 25px;
   }
 
-  .events-card .card-img {
-    height: 190px;
+  .event-content {
+    padding-left: 10px;
   }
 
-  .events-card .container-title {
-    font-size: 1.45rem;
+  .container-title {
+    font-size: 1.5rem;
   }
 
-  .events-card .container-text {
-    font-size: 1.12rem;
-    line-height: 1.75;
+  .event-image-column .card-img {
+    height: 210px;
   }
 
-  .modal-body .container-text,
-  .modal-body p {
-    font-size: 1.15rem;
+  .container-iframe iframe {
+    min-height: 420px;
   }
+
 }
 
 
 /* =========================================================
-   MOBILNI
+   MOBILE
 ========================================================= */
 
 @media (max-width: 767px) {
 
   .events-page {
-    padding: 25px 12px 45px;
-  }
+    padding-top: 55px;
 
-  .events-page-title {
-    margin-bottom: 35px;
-  }
-
-  .events-page-title span {
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-  }
-
-  .events-page-title h1 {
-    font-size: 2.4rem;
-  }
-
-  .events-page-title p {
-    font-size: 1.1rem;
-    line-height: 1.75;
+    padding-bottom: 60px;
   }
 
 
-  /* RED */
+  /* HERO */
 
-  .events-page > .row {
-    margin-left: -8px;
-    margin-right: -8px;
-    margin-bottom: 0;
+  .contact-hero {
+    min-height: 420px;
   }
 
-  .events-page > .row > [class*="col-"] {
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-bottom: 20px;
+  .contact-hero-content {
+    padding: 65px 20px;
+  }
+
+  .contact-hero-label {
+    font-size: 0.65rem;
+
+    line-height: 1.5;
+  }
+
+  .contact-label-line {
+    display: none;
+  }
+
+  .contact-hero h1 {
+    font-size: 4rem;
+  }
+
+  .contact-hero p {
+    margin-top: 25px;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+  .contact-hero-book {
+    opacity: 0.3;
+  }
+
+  .contact-book-right {
+    right: -50px;
+  }
+
+  .contact-book-left {
+    left: -70px;
   }
 
 
-  /* KARTICA */
+  /* GRID */
 
-  .events-card {
-    border-radius: 12px;
+  .events-grid {
+    row-gap: 25px;
   }
+
+
+  /* CARD */
 
   .events-card .card-body {
-    padding: 20px;
+    padding: 25px 22px;
   }
 
 
-  /* SLIKA */
+  /* IMAGE */
 
-  .events-card .card-img {
-    height: 215px;
-    margin-bottom: 8px;
+  .event-image-column {
+    margin-bottom: 25px;
+  }
+
+  .event-image-column .card-img {
+    height: 250px;
   }
 
 
-  /* NASLOV */
+  /* CONTENT */
 
-  .events-card .container-title {
-    font-size: 1.45rem;
-    line-height: 1.35;
-    margin-top: 8px;
+  .event-content {
+    padding-left: 0;
   }
 
-  .events-card .container-title svg {
-    font-size: 1.15em;
+  .container-title {
+    font-size: 1.65rem;
+
+    margin-bottom: 15px;
   }
 
+  .container-text {
+    font-size: 0.98rem;
 
-  /* TEKST */
-
-  .events-card .container-text {
-    font-size: 1.12rem;
-    line-height: 1.8;
-    margin-top: 15px;
-    margin-bottom: 22px;
+    line-height: 1.7;
   }
 
-
-  /* DUGME */
-
-  .events-card .btn-secondary {
-    align-self: center;
-    margin-top: 5px;
-    padding: 11px 22px;
-    font-size: 1rem;
+  .event-button {
+    margin-top: 18px;
   }
 
 
   /* MODAL */
 
   .modal-body {
-    padding: 22px 16px;
-  }
-
-  .modal-body .container-text,
-  .modal-body p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-
-  .modal-body strong {
-    font-size: 1.1rem;
-  }
-
-  .modal-body li {
-    font-size: 1.08rem;
-  }
-
-  .modal-body a {
-    font-size: 1.1rem;
+    padding: 25px 20px;
   }
 
   .modal-footer {
-    padding: 15px;
+    padding: 12px 20px;
   }
 
   .container-iframe iframe {
-    min-height: 250px;
+    min-height: 260px;
   }
+
 }
 
 
 /* =========================================================
-   VEOMA MALI EKRANI
+   SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 480px) {
 
-  .events-page-title h1 {
-    font-size: 2.2rem;
+  .contact-hero h1 {
+    font-size: 3.4rem;
   }
 
-  .events-page-title p {
-    font-size: 1.05rem;
+  .contact-hero p {
+    font-size: 0.95rem;
   }
 
   .events-card .card-body {
-    padding: 18px;
+    padding: 22px 18px;
   }
 
-  .events-card .card-img {
-    height: 195px;
+  .event-image-column .card-img {
+    height: 220px;
   }
 
-  .events-card .container-title {
-    font-size: 1.35rem;
+  .container-title {
+    font-size: 1.5rem;
   }
 
-  .events-card .container-text {
-    font-size: 1.08rem;
-    line-height: 1.75;
-  }
-
-  .events-card .btn-secondary {
-    font-size: 0.98rem;
+  .container-text {
+    font-size: 0.95rem;
   }
 
   .modal-body {
-    padding: 20px 14px;
+    padding: 22px 16px;
   }
 
-  .modal-body .container-text,
-  .modal-body p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-
-  .modal-body a {
-    font-size: 1.05rem;
+  .container-iframe iframe {
+    min-height: 220px;
   }
 
 }

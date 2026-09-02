@@ -4,7 +4,7 @@ import { LiaBookSolid } from 'react-icons/lia';
 import { Helmet } from 'react-helmet-async';
 import jole from '../../images/jole.jpg'
 import './Kid.css'
-
+import { GiOpenBook } from "react-icons/gi";
 import decije from '../../images/decije.webp';
 
 
@@ -115,10 +115,10 @@ const Kid = () => {
           <LiaBookSolid />
         </div>
 
-        <div className="kid-hero-decoration kid-hero-decoration-right">
-          <LiaBookSolid />
-        </div>
-
+      
+ <div className="contact-hero-book contact-book-right">
+    <GiOpenBook />
+  </div>
         <div className="kid-hero-content">
 
           <div className="kid-hero-label">
