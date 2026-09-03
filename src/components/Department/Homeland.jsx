@@ -2,12 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { LiaBookSolid } from "react-icons/lia";
 import { Helmet } from "react-helmet-async";
-
+import zavicajnoFond from "../../images/zavicajnoFond.jpg";
 import "./Homelend.css";
-
-// import zavicajno from "../../images/zavicajno.webp";
+import zavicajnoKnjige from "../../images/zavicajnoKnjige.jpg"
+import zavicajnoNovine from '../../images/zavicajnoNovine.jpg'
+import zavicajno from "../../images/zavicajno.webp";
 import AnimatedImage from "./AnimatedImage";
-
+import { GiOpenBook } from "react-icons/gi";
 const Homelend = () => {
   const pageTitle =
     "Завичајна збирка – Градска библиотека „Атанасије Стојковић“ Рума";
@@ -108,32 +109,44 @@ const Homelend = () => {
           HERO
       ===================================================== */}
 
-      <section className="homelend-hero">
+      <section className="kid-hero">
 
-        <div className="homelend-hero-decoration homelend-hero-decoration-left"></div>
+        <div className="kid-hero-background">
+          <div className="kid-hero-circle kid-circle-one"></div>
+          <div className="kid-hero-circle kid-circle-two"></div>
+        </div>
 
-        <div className="homelend-hero-decoration homelend-hero-decoration-right"></div>
+        <div className="kid-hero-decoration kid-hero-decoration-left">
+          <LiaBookSolid />
+        </div>
 
-        <div className="homelend-hero-content">
+      
+ <div className="contact-hero-book contact-book-right">
+    <GiOpenBook />
+  </div>
+        <div className="kid-hero-content">
 
-          <span className="homelend-hero-label">
+          <div className="kid-hero-label">
+            <span className="kid-label-line"></span>
+
             ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-          </span>
+
+            <span className="kid-label-line"></span>
+          </div>
 
           <h1>
-            Завичајна збирка
+            Завичајна <span>збирка</span>
           </h1>
 
           <p>
-            Место на коме се чувају књиге, документи и сећања
-            која сведоче о Руми и њеном завичају.
+             Место на коме се чувају књиге, документи и сећања
+      која сведоче о Руми и њеном завичају.
+
           </p>
 
         </div>
 
       </section>
-
-
       <Container className="homelend-page">
 
         {/* =====================================================
@@ -189,7 +202,7 @@ const Homelend = () => {
               <div className="homelend-image-card">
 
                 <AnimatedImage
-                  src='https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkli4srDjC4YjAZKJU6eCRCtvP4Baz5azm_K-Gtcej2h-qi-UxGaKXuBKkjg-ALc6YOYYtFziHBlT9xQnwLAAH8_EwX7rAlHGULyDEDZweJmyFvTRoqMgYudUfa4sYc_7sbAQyiav6G0pms=w221-h221-n-k-no-nu'
+                  src={zavicajnoFond}
          
                   alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
                 />
@@ -216,13 +229,25 @@ const Homelend = () => {
             <h2>
               Грађа која сведочи о завичају
             </h2>
-            <hr/> <AnimatedImage
-                  src='https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9eFoQt45W5q0p5GUAGNbn9Hawy9lXvfRIkYoJy79aPRkGfVglGRq0D8nOM9oLt6657RHjAD0YMecJmyTmdYhKvH3GgFGzAyD2Zr2RI0WAz8YxQmiyagla7pEwEz_-3SF73rv2yuGhRJra=w221-h368-n-k-no-nu'
+            <br/> <br/>
+            <Row>
+            <Col md={6}>
+               <div className="homelend-image-card">
+            <AnimatedImage
+                  src={zavicajnoNovine}
                   alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
                 /> 
-                <br/>
+                <br/></div></Col>
+                            <Col md={6}>
+               <div className="homelend-image-card">
+            <AnimatedImage
+                  src={zavicajnoKnjige}
+                  alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
+                /> 
+                <br/></div></Col></Row>
 
-          </div>
+                <br/></div>
+          
 
 
           <Row className="g-4">
@@ -386,7 +411,13 @@ const Homelend = () => {
               <h2>
                 „Фисика, простим језиком списана за род славено-сербски“ Атанасија Стојковића
               </h2>
-
+            <Col md={12}>
+               <div className="homelend-image-card">
+            <AnimatedImage
+                  src={zavicajno}
+                  alt="Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми"
+                /> 
+                <br/></div></Col>
               <p>
                 Најзначајнија публикација у Завичајној збирци је
                 „Фисика, простим језиком списана за род славено-сербски“ Атанасија Стојковића, штампана у три
