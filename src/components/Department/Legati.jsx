@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { LiaBookSolid } from "react-icons/lia";
 import { Helmet } from "react-helmet-async";
-
+import { GiOpenBook } from "react-icons/gi";
 import "./Legati.css";
 
 import Legat1 from "../../images/Legat1.webp";
@@ -136,31 +136,45 @@ const Legati = () => {
             HERO
         ===================================================== */}
 
-        <section className="legati-hero">
-
-          <div className="legati-hero-decoration legati-hero-decoration-left"></div>
-
-          <div className="legati-hero-decoration legati-hero-decoration-right"></div>
-
-          <div className="legati-hero-content">
-
-            <span className="legati-hero-label">
-              ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
-            </span>
-
-            <h1>
-              Легати
-            </h1>
-
-            <p>
-              Збирке које чувају успомену на људе,
-              њихово стваралаштво и време у коме су живели.
-            </p>
-
+        
+              <section className="kid-hero">
+        
+                <div className="kid-hero-background">
+                  <div className="kid-hero-circle kid-circle-one"></div>
+                  <div className="kid-hero-circle kid-circle-two"></div>
+                </div>
+        
+                <div className="kid-hero-decoration kid-hero-decoration-left">
+                  <LiaBookSolid />
+                </div>
+        
+              
+         <div className="contact-hero-book contact-book-right">
+            <GiOpenBook />
           </div>
+                <div className="kid-hero-content">
+        
+                  <div className="kid-hero-label">
+                    <span className="kid-label-line"></span>
+        
+                    ГРАДСКА БИБЛИОТЕКА „АТАНАСИЈЕ СТОЈКОВИЋ“
+        
+                    <span className="kid-label-line"></span>
+                  </div>
+        
+                  <h1>
+                       Легати 
+                  </h1>
+        
+                  <p>
+                 Збирке које чувају успомену на људе,
+              њихово стваралаштво и време у коме су живели.
 
-        </section>
-
+                  </p>
+        
+                </div>
+        
+              </section>
 
         <Container className="legati-page">
 
