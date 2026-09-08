@@ -483,7 +483,7 @@ const Home = () => {
                   <div className="caption-content">
                     <span className="caption-kicker">
                       {index === 0
-                        ? 'ВАЖНО ОБАВЕШТЕЊЕ'
+                        ? 'ГРАДСКА БИБЛИОТЕКА РУМА'
                         : 'ГРАДСКА БИБЛИОТЕКА РУМА'}
                     </span>
 
