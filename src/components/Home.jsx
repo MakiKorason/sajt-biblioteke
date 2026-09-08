@@ -59,7 +59,7 @@ import pokrajina from '../images/pokrajina.webp';
 import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
 import 'react-calendar/dist/Calendar.css';
-
+import plakatPredavanje from '../images/plakatPredavanje.png'
 const Calendar = React.lazy(() => import('react-calendar'));
 
 
@@ -100,6 +100,10 @@ const Home = () => {
       '2026-08-28': {
         image: kosare,
         title: 'Кошаре'
+      },
+        '2026-09-18': {
+        image: plakatPredavanje,
+        title: 'Film'
       }
     }),
     []
@@ -659,6 +663,17 @@ const Home = () => {
                       handleImageClick(
                         kosare,
                         'Кошаре'
+                      )
+                    }
+                  />
+                      <img
+                    src={plakatPredavanje}
+                    alt="Филм — промоција"
+                    loading="lazy"
+                    onClick={() =>
+                      handleImageClick(
+                        plakatPredavanje,
+                        'Film'
                       )
                     }
                   />
