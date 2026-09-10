@@ -539,14 +539,89 @@ const Kid = () => {
 
 
                     {activeWorkshop ===
-                      'medjunarodni-dan-decje-knjige' && (
+                      'aktuelnosti-dan-decje-knjige' && (
+
 
                       <div className="kid-event-content">
+                     
+                         <br/>
+                         <h3 style={{ textAlign: "center" }}>✨ПРОМОЦИЈА КЊИГЕ: „Јоле (ни)је чаробњак“, Маријана Дучак Поповић</h3><br/>
+                         <p>У Градскoj библиотеци „Атанасије Стојковић“ одржана је промоција књиге за децу „Јоле (ни)је чаробњак“, ауторке Маријане Дучак Поповић, уз интерактивну породичну радионицу „Пут нових чаробњака“.
+Кроз 12 поглавља испуњених загонеткама, авантурама и порукама мудрости, деца и родитељи заједно су пратили Јолетов пут, решавали задатке, откривали симболе и учествовали у креативним активностима инспирисаним књигом.
+<br/><br/>Посебну пажњу привукле су загонетке чија су решења исписана знаковним језиком, као и активности које су подстакле заједничко учешће, машту и породично повезивање. Акценат овог дружења није био само на Јолетовој причи, већ и на породичном повезивању, квалитетно проведеном времену и стварању нових успомена.
+Хвала ауторки на дивном дружењу и свим малим и великим чаробњацима који су били део данашњег програма. ✨💙</p>
+                         <Row><Col md-6>
+                         <div className="kid-card-image">
+                         <AnimatedImage src='https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/711249908_1615009687291315_8361812370013700728_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2mkqNd77y2gQ7kNvwH6k9Rf&_nc_oc=AdohJsZ4aCEY7g0B4ojCazNCay4EJ3qKakS42qpZWd9dt6CP1yZz_MS6-G2Wk0tXxMM&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=rA2sO8fxQQU0oGsgRAOVqg&_nc_ss=7b2a8&oh=00_AQJ7-puBlQIoCFuj37t8d7MsRj8DMgSpt_I1ZAljx6DLXA&oe=6AA8747B'/>
+                         </div></Col>
+                         <Col md-6>
+                         <div className="kid-card-image">
+                          <AnimatedImage src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/710461837_1615009440624673_2236432431689934992_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lHbeCBBT3AUQ7kNvwGzG_kn&_nc_oc=AdqvSeO_vAIckteLYYF8swYoXEzRuNwdzZI63CIjYsxHsmzLZQhSD1j15z4dsIoGJMo&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=zTe-vGwMKnTL0fEYseZ-fw&_nc_ss=7b2a8&oh=00_AQL6AMVKg9HTPQEIIc7cj_kumDgYwyNZsMe_vNC_lHt9oQ&oe=6AA84427"/>
+                         </div>
+                         </Col>
+                         </Row>
+                          <br/><hr/>
+                          <h3 style={{ textAlign: "center" }}>Све пустоловине зеца Петра 📖</h3><br/>
+                             <div style={{ textAlign: "center" }}>
+  <iframe
+    src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1080085731115165&show_text=false"
+    width="50%"
+    height="500"
+    style={{
+      border: "none",
+      overflow: "hidden"
+    }}
+    scrolling="no"
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
 
-                        <h3>
-                          Међународни дан дечје књиге
-                        </h3>
+<hr />
+                    
+                            <br/>
+                           <h3 style={{ textAlign: "center" }}>170 ГОДИНА ОД РОЂЕЊА НИКОЛЕ ТЕСЛЕ (1856–2026)</h3>
+                        <br/>
+                        <p>Поводом 170. годишњице рођења Николе Тесле, једног од највећих научника и проналазача свих времена, Градска библиотека „Атанасије Стојковић“ обележила је овај значајан јубилеј садржајима посвећених његовом животу, делу и трајном наслеђу.
+                          За наше најмлађе посетиоце организовано је читалиште „Приче из детињства Николе Тесле“, на ком су деца кроз читање, разговор и дружење упознала детињство великог научника и открила како су радозналост, машта и упорност постали темељ његових великих открића.
+                        </p>
+                        <Row><Col md-6><div className="kid-card-image">
+                       <AnimatedImage
+  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/744393452_1656213396504277_3204649589766495538_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Zxm5Okh_m04Q7kNvwFjDb3u&_nc_oc=Adr6VneNPThz8ftF4D1fkomt1rHdaLkrcNOQqK6uLnE6jXz2-IysMB3qcqpMhNjsKq4&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=U7HYH36cENOURAPuehVj5A&_nc_ss=7b2a8&oh=00_AQJobr1SNiEv2qBGWRRDmSpdOufaHYWi-Sseee01Xdaz8A&oe=6AA83B4E"
+  alt="Дан дечје књиге"
+/>
 
+</div></Col><Col md-6>  <div className="kid-card-image">  <AnimatedImage
+  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/741984750_1656213606504256_4495638504905464006_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_QHwcRddBTkQ7kNvwE7aT05&_nc_oc=Adr9i5pWhfhPCfcyc9esgYXP43fIx5H2MRVEQ52dV2cLcTLAB90FlJ2jwX8cZLylQHc&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=-l-6eYXxz0u-rG5FFgHF8A&_nc_ss=7b2a8&oh=00_AQI7nLl4WMpuxiGmK6J6wVHif1lyT9o8gJU6IE0LwUEmWA&oe=6AA86142"
+  alt="Дан дечје књиге"
+/></div></Col>
+
+</Row>
+<br/><hr/>
+                        <h3 style={{ textAlign: "center" }}>Радионица „Бајковити светови“📖</h3><br/>
+              <p>
+                       
+Одељење III/1 ОШ „Душан Јерковић“ провело је један школски час на Дечјем одељењу наше библиотеке. Учитељица Слађана Грандић довела је своје ученике са намером да понове знање које су стекли о бајкама, али и да га сагледају из другог угла кроз радионицу коју је водила библиотекарка Маријана.
+У Ћопићевој причи „Страшни змај” откривали су доказе и трагове који указују на то да у шуми заиста постоји змај. 
+<br/><br/>Подсетили су се и речи Десанке Максимовић да је главни јунак њених бајки управо људска доброта. Ученици су знали да наведу и бајке са тужним завршетком, па је тим поводом било речи и о животу и стваралаштву чувеног данског писца Ханса Кристијана Андерсена.
+<br/>Како се крај школске године ближи, сви су обећали да ће током распуста долазити у библиотеку, откривати нове приче и светове и још више развијати своју машту. Јер, како су научили у свету бајки, машта заиста може бити бескрајна.
+                        </p>
+
+                        <Row>
+                          <Col md-6><div className="kid-card-image">
+                       <AnimatedImage
+  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/711190025_1614015674057383_2851418143644193779_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=QFzLacndFeoQ7kNvwFEWM0q&_nc_oc=Adr1nYUjlY9rt99CEA3q1kdKJhiBQA4v7ET3Ke1USPgydV0cbTiivLZM7vLHMAaKe8g&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=b8sejJOqW3Lae0t25NQZfw&_nc_ss=7b2a8&oh=00_AQInrSFEuzffEAFOXec_Y72uFfP-8XtplY-bK5FQac-jIA&oe=6AA83F6A"
+  alt="Дан дечје књиге"
+/>
+   
+
+</div>  </Col> <Col md-6>  <div className="kid-card-image">  <AnimatedImage
+  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/710079491_1614015560724061_7057539699838988866_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=otsGVUMX6f8Q7kNvwGRBc_A&_nc_oc=AdrzpXczlutPG18LGf1UZRyzh21SRiCfuDLnuvGnVV-F4-Wc9ivWwPzFCDTYdPlNVFs&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=b63ZmxHTxh6ktQwU4wXLgw&_nc_ss=7b2a8&oh=00_AQJbJ7r_TOf8Jk3NpeRwXV25Jn8RBSjwozJk9k6KJDws-Q&oe=6AA83BB2"
+  alt="Дан дечје књиге"
+/></div></Col>
+                        </Row>
+                          
                       </div>
 
                     )}
@@ -556,6 +631,8 @@ const Kid = () => {
                       'medjunarodni-dan-decje-knjige' && (
 
                       <div className="kid-event-content">
+
+                     
 
                         <h3>
                           Међународни дан дечје књиге
