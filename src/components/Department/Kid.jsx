@@ -565,6 +565,7 @@ const Kid = () => {
                              <div style={{ textAlign: "center" }}>
   <iframe
     src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1080085731115165&show_text=false"
+    title="Све пустоловине зеца Петра"
     width="50%"
     height="500"
     style={{
