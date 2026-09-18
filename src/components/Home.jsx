@@ -23,13 +23,15 @@ import {
   FaSearch,
   FaFileAlt,
   FaUsers,
-  FaTimes
+  FaTimes,
+  FaSearchPlus
 } from 'react-icons/fa';
 
 import { Helmet } from 'react-helmet-async';
 
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
+
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
@@ -40,17 +42,20 @@ import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import digitalnaLogo from '../images/digitalnaLogo.png';
-import filmTesla from '../images/filmTesla.png';
+
 import kosare from '../images/kosare.png';
 import karavansaraj from '../images/karavansaraj.png';
+import filmTesla from '../images/filmTesla.png';
+
 import saradnja from '../images/saradnja.jpg';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
 import saradnja3 from '../images/saradnja3.webp';
+
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
-// import trkulja from '../images/trkulja.png';
+
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
 import karoselSlika from '../images/karoselSlika.webp';
@@ -58,17 +63,19 @@ import digitalna from '../images/digitalna.webp';
 import pokrajina from '../images/pokrajina.webp';
 import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
+
+import AtanasijePredavanje from '../images/AtanasijePredavanja.jpg';
+
 import 'react-calendar/dist/Calendar.css';
-import plakatPredavanje from '../images/plakatPredavanje.png'
+
 const Calendar = React.lazy(() => import('react-calendar'));
-
-
 
 const Home = () => {
   const [date, setDate] = useState(new Date());
 
   const [showImage, setShowImage] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [modalTitle, setModalTitle] = useState('');
 
   const [showFriends, setShowFriends] = useState(false);
 
@@ -82,32 +89,56 @@ const Home = () => {
   });
 
   /*
-   * --------------------------------------------------
+   * =====================================================
    * DOGAĐAJI
-   * --------------------------------------------------
+   * =====================================================
    */
 
   const events = useMemo(
     () => ({
       '2026-08-10': {
         image: filmTesla,
-        title: 'Никола Тесла: између књиге и идеје'
+        title: 'Никола Тесла: између књиге и идеје',
+        date: '10. август 2026.',
+        category: 'Филм'
       },
+
       '2026-08-26': {
         image: karavansaraj,
-        title: 'Каравансарај'
+        title: 'Каравансарај',
+        date: '26. август 2026.',
+        category: 'Књижевно вече'
       },
+
       '2026-08-28': {
         image: kosare,
-        title: 'Кошаре'
+        title: 'Кошаре',
+        date: '28. август 2026.',
+        category: 'Промоција књиге'
       },
-        '2026-09-18': {
-        image: plakatPredavanje,
-        title: 'Film'
+
+      '2026-09-21': {
+        image: AtanasijePredavanje,
+        title: 'Атанасије Стојковић',
+        date: '21. септембар 2026.',
+        category: 'Предавање'
+      },
+
+      '2026-09-22': {
+        image: AtanasijePredavanje,
+        title: 'Атанасије Стојковић',
+        date: '22. септембар 2026.',
+        category: 'Предавање'
       }
     }),
     []
   );
+
+  /*
+   * =====================================================
+   * DATUM
+   * =====================================================
+   */
 
   const getDateKey = useCallback((selectedDate) => {
     if (!(selectedDate instanceof Date)) {
@@ -115,15 +146,30 @@ const Home = () => {
     }
 
     const year = selectedDate.getFullYear();
-    const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
-    const day = String(selectedDate.getDate()).padStart(2, '0');
+
+    const month = String(
+      selectedDate.getMonth() + 1
+    ).padStart(2, '0');
+
+    const day = String(
+      selectedDate.getDate()
+    ).padStart(2, '0');
 
     return `${year}-${month}-${day}`;
   }, []);
 
+  /*
+   * =====================================================
+   * KALENDAR
+   * =====================================================
+   */
+
   const tileClassName = useCallback(
     ({ date: calendarDate, view }) => {
-      if (view !== 'month' || !(calendarDate instanceof Date)) {
+      if (
+        view !== 'month' ||
+        !(calendarDate instanceof Date)
+      ) {
         return undefined;
       }
 
@@ -147,19 +193,35 @@ const Home = () => {
 
       if (selectedEvent) {
         setModalImage(selectedEvent.image);
+        setModalTitle(selectedEvent.title);
         setShowImage(true);
       } else {
         setShowImage(false);
         setModalImage(null);
+        setModalTitle('');
       }
     },
     [events, getDateKey]
   );
 
   /*
-   * --------------------------------------------------
+   * =====================================================
+   * OTVARANJE DOGAĐAJA
+   * =====================================================
+   */
+
+  const handleEventOpen = useCallback((event) => {
+    if (!event) return;
+
+    setModalImage(event.image);
+    setModalTitle(event.title);
+    setShowImage(true);
+  }, []);
+
+  /*
+   * =====================================================
    * IMAGE MODAL
-   * --------------------------------------------------
+   * =====================================================
    */
 
   const handleImageClick = useCallback(
@@ -188,9 +250,9 @@ const Home = () => {
   }, []);
 
   /*
-   * --------------------------------------------------
+   * =====================================================
    * CAROUSEL
-   * --------------------------------------------------
+   * =====================================================
    */
 
   const carouselSlides = useMemo(
@@ -203,6 +265,7 @@ const Home = () => {
           'Поштовани корисници, уколико желите да поклоните књиге Градској библиотеци, молимо вас да се пре доношења истих најпре консултујете са библиотекарима.',
         button: null
       },
+
       {
         image: digitalna,
         alt: 'Атанасије Стојковић',
@@ -210,10 +273,12 @@ const Home = () => {
         text:
           'Румљанин Атанасије Стојковић био је најобразованији Србин прве трећине 19. века.',
         button: {
-          href: 'https://www.facebook.com/watch/?v=1235424304400303',
+          href:
+            'https://www.facebook.com/watch/?v=1235424304400303',
           text: 'ДЕТАЉНИЈЕ'
         }
       },
+
       {
         image: karoselSlika,
         alt: 'Култура за све',
@@ -221,10 +286,12 @@ const Home = () => {
         text:
           'Пројекат „Култура за све“ представља јачање техничких капацитета наше установе.',
         button: {
-          href: 'https://sremskevesti.rs/sva-odeljenja-rumske-gradske-biblioteke-atanasije-stojkovic-dostupna-ljudima-ostecenog-sluha-slepim-i-slabovidim-osobama/',
+          href:
+            'https://sremskevesti.rs/sva-odeljenja-rumske-gradske-biblioteke-atanasije-stojkovic-dostupna-ljudima-ostecenog-sluha-slepim-i-slabovidim-osobama/',
           text: 'ДЕТАЉНИЈЕ'
         }
       },
+
       {
         image: books,
         alt: 'Омиљене књиге наших корисника',
@@ -232,7 +299,8 @@ const Home = () => {
         text:
           'Погледајте које су књиге најомиљеније међу корисницима Градске библиотеке.',
         button: {
-          href: 'https://www.facebook.com/bibliotekaatanasijestojkovic.ruma/videos/967554408223187',
+          href:
+            'https://www.facebook.com/bibliotekaatanasijestojkovic.ruma/videos/967554408223187',
           text: 'ДЕТАЉНИЈЕ'
         }
       }
@@ -241,9 +309,9 @@ const Home = () => {
   );
 
   /*
-   * --------------------------------------------------
+   * =====================================================
    * PARTNERI
-   * --------------------------------------------------
+   * =====================================================
    */
 
   const institutionalPartners = [
@@ -298,10 +366,6 @@ const Home = () => {
       image: Boss,
       alt: 'Босс компанија Рума'
     },
-    // {
-    //   image: trkulja,
-    //   alt: 'Тркуља керамика Рума'
-    // },
     {
       image: Frigo,
       alt: 'Фриго Жика Рума'
@@ -315,6 +379,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
+
         <title>
           Градска библиотека Атанасије Стојковић Рума
         </title>
@@ -425,13 +490,16 @@ const Home = () => {
             }
           `}
         </script>
+
       </Helmet>
 
+
       {/* =====================================================
-          HERO CAROUSEL
+          HERO
       ====================================================== */}
 
       <section className="home-hero">
+
         <div
           id="bibliotekaCarousel"
           className="carousel slide home-carousel"
@@ -441,72 +509,105 @@ const Home = () => {
           data-bs-keyboard="true"
           data-bs-pause="hover"
         >
+
           <div className="carousel-indicators">
+
             {carouselSlides.map((slide, index) => (
+
               <button
                 key={slide.title}
                 type="button"
                 data-bs-target="#bibliotekaCarousel"
                 data-bs-slide-to={index}
-                className={index === 0 ? 'active' : ''}
+                className={
+                  index === 0
+                    ? 'active'
+                    : ''
+                }
                 aria-label={`Слајд ${index + 1}`}
               />
+
             ))}
+
           </div>
+
 
           <div className="carousel-inner">
-            {carouselSlides.map((slide, index) => (
-              <div
-                className={`carousel-item ${
-                  index === 0 ? 'active' : ''
-                }`}
-                key={slide.title}
-              >
-                <img
-                  src={slide.image}
-                  alt={slide.alt}
-                  className="d-block w-100 home-carousel-image"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  width="1200"
-                  height="675"
-                  onClick={() =>
-                    handleImageClick(
-                      slide.image,
-                      slide.alt
-                    )
-                  }
-                />
 
-                <div className="carousel-overlay" />
+            {carouselSlides.map(
+              (slide, index) => (
 
-                <div className="carousel-caption home-caption">
-                  <div className="caption-content">
-                    <span className="caption-kicker">
-                      {index === 0
-                        ? 'ГРАДСКА БИБЛИОТЕКА РУМА'
-                        : 'ГРАДСКА БИБЛИОТЕКА РУМА'}
-                    </span>
+                <div
+                  className={`carousel-item ${
+                    index === 0
+                      ? 'active'
+                      : ''
+                  }`}
+                  key={slide.title}
+                >
 
-                    <h2>{slide.title}</h2>
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    className="d-block w-100 home-carousel-image"
+                    loading={
+                      index === 0
+                        ? 'eager'
+                        : 'lazy'
+                    }
+                    width="1200"
+                    height="675"
+                    onClick={() =>
+                      handleImageClick(
+                        slide.image,
+                        slide.alt
+                      )
+                    }
+                  />
 
-                    <p>{slide.text}</p>
+                  <div className="carousel-overlay" />
 
-                    {slide.button && (
-                      <a
-                        href={slide.button.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="home-button home-button-light"
-                      >
-                        {slide.button.text}
-                        <FaArrowRight />
-                      </a>
-                    )}
+                  <div className="carousel-caption home-caption">
+
+                    <div className="caption-content">
+
+                      <span className="caption-kicker">
+                        ГРАДСКА БИБЛИОТЕКА РУМА
+                      </span>
+
+                      <h2>
+                        {slide.title}
+                      </h2>
+
+                      <p>
+                        {slide.text}
+                      </p>
+
+                      {slide.button && (
+
+                        <a
+                          href={slide.button.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="home-button home-button-light"
+                        >
+                          {slide.button.text}
+                          <FaArrowRight />
+                        </a>
+
+                      )}
+
+                    </div>
+
                   </div>
+
                 </div>
-              </div>
-            ))}
+
+              )
+            )}
+
           </div>
+
 
           <button
             className="carousel-control-prev"
@@ -518,6 +619,7 @@ const Home = () => {
             <span className="carousel-control-prev-icon" />
           </button>
 
+
           <button
             className="carousel-control-next"
             type="button"
@@ -527,25 +629,34 @@ const Home = () => {
           >
             <span className="carousel-control-next-icon" />
           </button>
+
         </div>
+
       </section>
+
 
       {/* =====================================================
           KONKURS
       ====================================================== */}
 
       <section className="home-section">
+
         <Container>
+
           <div className="notice-card">
+
             <div className="notice-image">
+
               <img
                 src={prijavaKonkurs}
                 alt="Пријава за конкурс"
                 loading="lazy"
               />
+
             </div>
 
             <div className="notice-content">
+
               <span className="section-kicker">
                 АКТУЕЛНО
               </span>
@@ -560,46 +671,80 @@ const Home = () => {
               </p>
 
               <a
-  href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
-  className="home-button"
-  target="_blank"
-  rel="noopener noreferrer"
->
+                href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
+                className="home-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 ДЕТАЉНИЈЕ
                 <FaArrowRight />
               </a>
+
             </div>
+
           </div>
+
         </Container>
+
       </section>
 
+
       {/* =====================================================
-          EVENTS
+          AKTUELNO / KALENDAR
       ====================================================== */}
 
       <section className="home-section events-section">
+
         <Container>
+
           <div className="section-heading">
+
             <span className="section-kicker">
               КАЛЕНДАР
             </span>
 
             <h2>
-              Огласна табла актуелних догађаја
+              Актуелно у библиотеци
             </h2>
 
             <p>
-              Изаберите означени датум за више
-              информација о догађају.
+              Пратите програме и догађаје који се
+              одржавају у Градској библиотеци.
             </p>
+
           </div>
 
-          <Row className="align-items-center g-4">
-            <Col lg={4}>
-              <div className="calendar-card">
-                <div className="calendar-icon">
-                  <FaCalendarAlt />
+
+          <Row className="g-4 align-items-stretch">
+
+            {/* =============================================
+                KALENDAR
+            ============================================== */}
+
+            <Col lg={5}>
+
+              <div className="compact-calendar-card h-100">
+
+                <div className="compact-calendar-header">
+
+                  <div>
+
+                    <span>
+                      КАЛЕНДАР
+                    </span>
+
+                    <h3>
+                      Догађаји
+                    </h3>
+
+                  </div>
+
+                  <div className="compact-calendar-icon">
+                    <FaCalendarAlt />
+                  </div>
+
                 </div>
+
 
                 <Suspense
                   fallback={
@@ -608,124 +753,304 @@ const Home = () => {
                     </div>
                   }
                 >
+
                   <Calendar
                     onChange={handleCalendarChange}
                     value={date}
                     tileClassName={tileClassName}
                     locale="sr-Latn"
                   />
-                </Suspense>
-              </div>
-            </Col>
 
-            <Col lg={8}>
-              <div className="events-gallery">
-                <div className="events-gallery-header">
-                  <span className="section-kicker">
-                    НАЈАВЕ
+                </Suspense>
+
+
+                <div className="calendar-note">
+
+                  <span className="calendar-dot" />
+
+                  <span>
+                    Означени датуми садрже догађај
                   </span>
 
-                  <h3>
-                    Догађаји библиотеке
-                  </h3>
                 </div>
 
-                <div className="event-images">
-                  <img
-                    src={filmTesla}
-                    alt="Никола Тесла: између књиге и идеје — пројекција филма"
-                    loading="lazy"
-                    onClick={() =>
-                      handleImageClick(
-                        filmTesla,
-                        'Никола Тесла: између књиге и идеје'
-                      )
-                    }
-                  />
-
-                  <img
-                    src={karavansaraj}
-                    alt="Каравансарај — промоција"
-                    loading="lazy"
-                    onClick={() =>
-                      handleImageClick(
-                        karavansaraj,
-                        'Каравансарај'
-                      )
-                    }
-                  />
-
-                  <img
-                    src={kosare}
-                    alt="Кошаре — промоција"
-                    loading="lazy"
-                    onClick={() =>
-                      handleImageClick(
-                        kosare,
-                        'Кошаре'
-                      )
-                    }
-                  />
-                      <img
-                    src={plakatPredavanje}
-                    alt="Филм — промоција"
-                    loading="lazy"
-                    onClick={() =>
-                      handleImageClick(
-                        plakatPredavanje,
-                        'Film'
-                      )
-                    }
-                  />
-                </div>
               </div>
+
             </Col>
+
+
+            {/* =============================================
+                NAJAVA
+            ============================================== */}
+
+            <Col lg={7}>
+
+              <div className="compact-events-board h-100">
+
+                <div className="compact-board-header">
+
+                  <div>
+
+                    <span className="section-kicker">
+                      НАЈАВЕ
+                    </span>
+
+                    <h3>
+                      Предстојећи догађај
+                    </h3>
+
+                  </div>
+
+                  <div className="upcoming-date">
+
+                    <strong>
+                      21–22
+                    </strong>
+
+                    <span>
+                      СЕП
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                {/* GLAVNA NAJAVA */}
+
+                <div className="compact-event">
+
+                  <div
+                    className="compact-event-image"
+                    onClick={() =>
+                      handleImageClick(
+                        AtanasijePredavanje,
+                        'Атанасије Стојковић — предавање'
+                      )
+                    }
+                  >
+
+                    <img
+                      src={AtanasijePredavanje}
+                      alt="Атанасије Стојковић — предавање"
+                      loading="lazy"
+                    />
+
+                    <div className="image-zoom">
+                      <FaSearchPlus />
+                    </div>
+
+                  </div>
+
+
+                  <div className="compact-event-content">
+
+                    <div className="event-date-row">
+
+                      <span>
+                        21. септембар
+                      </span>
+
+                      <span>
+                        22. септембар
+                      </span>
+
+                    </div>
+
+
+                    <h4>
+                      Атанасије Стојковић
+                    </h4>
+
+
+                    <p>
+                      Предавање посвећено Атанасију
+                      Стојковићу.
+                    </p>
+
+
+                    <button
+                      type="button"
+                      className="event-more-btn"
+                      onClick={() =>
+                        handleImageClick(
+                          AtanasijePredavanje,
+                          'Атанасије Стојковић — предавање'
+                        )
+                      }
+                    >
+
+                      Погледај објаву
+
+                      <FaArrowRight />
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                {/* PRETHODNI DOGAĐAJI */}
+
+                <div className="previous-events-compact">
+
+                  <div className="previous-events-title">
+
+                    <span>
+                      ПРЕТХОДНИ ДОГАЂАЈИ
+                    </span>
+
+                  </div>
+
+
+                  <div className="previous-events-list-compact">
+
+                    <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-08-10']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        10.08.
+                      </span>
+
+                      <span className="previous-event-name">
+                        Никола Тесла
+                      </span>
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-08-26']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        26.08.
+                      </span>
+
+                      <span className="previous-event-name">
+                        Каравансарај
+                      </span>
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-08-28']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        28.08.
+                      </span>
+
+                      <span className="previous-event-name">
+                        Кошаре
+                      </span>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </Col>
+
           </Row>
+
         </Container>
+
       </section>
 
-      {/* EVENT MODAL */}
+
+      {/* =====================================================
+          EVENT MODAL
+      ====================================================== */}
 
       <Modal
         show={showImage}
-        onHide={() => setShowImage(false)}
+        onHide={() => {
+          setShowImage(false);
+          setModalImage(null);
+          setModalTitle('');
+        }}
         centered
         size="lg"
         className="event-modal"
       >
+
         <Modal.Header closeButton>
+
           <Modal.Title>
-            Догађај
+            {modalTitle || 'Најава догађаја'}
           </Modal.Title>
+
         </Modal.Header>
 
+
         <Modal.Body>
+
           {modalImage && (
+
             <img
               src={modalImage}
-              alt="Слика за изабрани датум"
+              alt={modalTitle || 'Слика за изабрани датум'}
               className="event-modal-image"
             />
+
           )}
+
         </Modal.Body>
 
+
         <Modal.Footer>
+
           <Button
             variant="secondary"
-            onClick={() => setShowImage(false)}
+            onClick={() => {
+              setShowImage(false);
+              setModalImage(null);
+              setModalTitle('');
+            }}
           >
             Затвори
           </Button>
+
         </Modal.Footer>
+
       </Modal>
+
 
       {/* =====================================================
           AUDIO BOOKS
       ====================================================== */}
 
       <section className="home-section audio-section">
+
         <Container>
+
           <div className="section-heading">
+
             <span className="section-kicker">
               НОВА УСЛУГА
             </span>
@@ -748,23 +1073,31 @@ const Home = () => {
               Регистрација и слање захтева
               <FaArrowRight />
             </a>
+
           </div>
 
+
           <Row className="align-items-center g-2">
+
             <Col lg={6}>
+
               <div className="audio-images">
-          
 
                 <img
                   src={saradnja}
                   alt="Сарадња на пројекту аудио-књига"
                   loading="lazy"
                 />
+
               </div>
+
             </Col>
 
+
             <Col lg={6}>
+
               <div className="content-card">
+
                 <div className="content-card-icon">
                   <FaHeadphones />
                 </div>
@@ -807,19 +1140,28 @@ const Home = () => {
                   психологију, историју и школску
                   лектиру.
                 </p>
+
               </div>
+
             </Col>
+
           </Row>
 
+
           <div className="instructions-card">
+
             <div className="instructions-header">
+
               <FaBookOpen />
+
               <h3>
                 Правила за коришћење и регистрацију
               </h3>
+
             </div>
 
             <ol>
+
               <li>
                 Преузмите на свој мобилни телефон
                 Knjigapriča апликацију.
@@ -864,18 +1206,26 @@ const Home = () => {
                 у свом налогу одаберите књигу коју сте
                 позајмили.
               </li>
+
             </ol>
+
           </div>
+
         </Container>
+
       </section>
+
 
       {/* =====================================================
           QUICK ACCESS
       ====================================================== */}
 
       <section className="home-section quick-section">
+
         <Container>
+
           <div className="section-heading">
+
             <span className="section-kicker">
               БРЗИ ПРИСТУП
             </span>
@@ -883,17 +1233,23 @@ const Home = () => {
             <h2>
               Истражите наше дигиталне услуге
             </h2>
+
           </div>
 
+
           <Row className="g-4">
+
             <Col md={4}>
+
               <AnimatedCard>
+
                 <a
                   href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="quick-card"
                 >
+
                   <div className="quick-icon">
                     <FaSearch />
                   </div>
@@ -912,18 +1268,25 @@ const Home = () => {
                     Претражи фонд
                     <FaArrowRight />
                   </span>
+
                 </a>
+
               </AnimatedCard>
+
             </Col>
 
+
             <Col md={4}>
+
               <AnimatedCard>
+
                 <a
                   href="https://www.digitalna.bibliotekaruma.rs/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="quick-card"
                 >
+
                   <div className="quick-icon">
                     <FaBookOpen />
                   </div>
@@ -943,18 +1306,25 @@ const Home = () => {
                     Отвори дигиталну библиотеку
                     <FaArrowRight />
                   </span>
+
                 </a>
+
               </AnimatedCard>
+
             </Col>
 
+
             <Col md={4}>
+
               <AnimatedCard>
+
                 <a
                   href="https://www.facebook.com/photo/?fbid=1326535312805422&set=a.512519967540298"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="quick-card"
                 >
+
                   <div className="quick-icon">
                     <FaFileAlt />
                   </div>
@@ -974,22 +1344,34 @@ const Home = () => {
                     Погледај конкурс
                     <FaArrowRight />
                   </span>
+
                 </a>
+
               </AnimatedCard>
+
             </Col>
+
           </Row>
+
         </Container>
+
       </section>
+
 
       {/* =====================================================
           MATICA
       ====================================================== */}
 
       <section className="home-section matica-section">
+
         <Container>
+
           <Row className="align-items-center g-4">
+
             <Col lg={6}>
+
               <div className="matica-gallery">
+
                 <img
                   src={saradnja1}
                   alt="Сарадња са Матицом српском"
@@ -997,6 +1379,7 @@ const Home = () => {
                 />
 
                 <div>
+
                   <img
                     src={saradnja3}
                     alt="Сарадња са Матицом српском"
@@ -1008,12 +1391,18 @@ const Home = () => {
                     alt="Сарадња са Матицом српском"
                     loading="lazy"
                   />
+
                 </div>
+
               </div>
+
             </Col>
 
+
             <Col lg={6}>
+
               <div className="matica-content">
+
                 <span className="section-kicker">
                   САРАДЊА
                 </span>
@@ -1038,19 +1427,28 @@ const Home = () => {
                   улогу наше библиотеке у културном и
                   просветном животу заједнице.
                 </p>
+
               </div>
+
             </Col>
+
           </Row>
+
         </Container>
+
       </section>
+
 
       {/* =====================================================
           DOCUMENTS
       ====================================================== */}
 
       <section className="home-section documents-section">
+
         <Container>
+
           <div className="section-heading">
+
             <span className="section-kicker">
               ДОКУМЕНТИ
             </span>
@@ -1063,11 +1461,16 @@ const Home = () => {
               Преглед основних аката Градске библиотеке
               „Атанасије Стојковић“ у Руми.
             </p>
+
           </div>
 
+
           <Row className="g-4 justify-content-center">
+
             <Col md={6}>
+
               <div className="document-card">
+
                 <div className="document-icon">
                   <FaFileAlt />
                 </div>
@@ -1089,11 +1492,16 @@ const Home = () => {
                   ДЕТАЉНИЈЕ
                   <FaArrowRight />
                 </Button>
+
               </div>
+
             </Col>
 
+
             <Col md={6}>
+
               <div className="document-card">
+
                 <div className="document-icon">
                   <FaFileAlt />
                 </div>
@@ -1115,19 +1523,28 @@ const Home = () => {
                   ДЕТАЉНИЈЕ
                   <FaArrowRight />
                 </Button>
+
               </div>
+
             </Col>
+
           </Row>
+
         </Container>
+
       </section>
+
 
       {/* =====================================================
           PARTNERS
       ====================================================== */}
 
       <section className="home-section partners-section">
+
         <Container>
+
           <div className="section-heading">
+
             <span className="section-kicker">
               САРАДЊА
             </span>
@@ -1135,27 +1552,41 @@ const Home = () => {
             <h2>
               Пријатељи и сарадници библиотеке
             </h2>
+
           </div>
+
 
           <div className="partners-grid">
-            {institutionalPartners.map((partner) => (
-              <div
-                className="partner-logo"
-                key={partner.alt}
-              >
-                <img
-                  src={partner.image}
-                  alt={partner.alt}
-                  className={partner.className}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+
+            {institutionalPartners.map(
+              (partner) => (
+
+                <div
+                  className="partner-logo"
+                  key={partner.alt}
+                >
+
+                  <img
+                    src={partner.image}
+                    alt={partner.alt}
+                    className={partner.className}
+                    loading="lazy"
+                  />
+
+                </div>
+
+              )
+            )}
+
           </div>
 
+
           <div className="friends-box">
+
             <div className="friends-header">
+
               <div>
+
                 <span className="section-kicker">
                   ПОДРШКА
                 </span>
@@ -1163,7 +1594,9 @@ const Home = () => {
                 <h3>
                   Пријатељи библиотеке
                 </h3>
+
               </div>
+
 
               <button
                 type="button"
@@ -1173,6 +1606,7 @@ const Home = () => {
                 }
                 aria-expanded={showFriends}
               >
+
                 {showFriends ? (
                   <>
                     <FaTimes />
@@ -1184,28 +1618,45 @@ const Home = () => {
                     Прикажи пријатеље
                   </>
                 )}
+
               </button>
+
             </div>
 
+
             {showFriends && (
+
               <div className="friends-grid">
-                {friends.map((friend) => (
-                  <div
-                    className="friend-logo"
-                    key={friend.alt}
-                  >
-                    <img
-                      src={friend.image}
-                      alt={friend.alt}
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
+
+                {friends.map(
+                  (friend) => (
+
+                    <div
+                      className="friend-logo"
+                      key={friend.alt}
+                    >
+
+                      <img
+                        src={friend.image}
+                        alt={friend.alt}
+                        loading="lazy"
+                      />
+
+                    </div>
+
+                  )
+                )}
+
               </div>
+
             )}
+
           </div>
+
         </Container>
+
       </section>
+
 
       {/* =====================================================
           IMAGE MODAL
@@ -1219,6 +1670,7 @@ const Home = () => {
         title={selectedImage.title}
         size={selectedImage.size || 'lg'}
       />
+
     </>
   );
 };
