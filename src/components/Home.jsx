@@ -65,6 +65,7 @@ import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
 
 import AtanasijePredavanje from '../images/AtanasijePredavanja.jpg';
+import fruskaGora from '../images/fruskaGora.jpg';
 
 import 'react-calendar/dist/Calendar.css';
 
@@ -103,12 +104,19 @@ const Home = () => {
         category: 'Филм'
       },
 
-      '2026-08-26': {
+      '2026-09-30': {
+        image: fruskaGora,
+        title: 'Уздаси са Фрушке горе',
+        date: '30. септембар 2026.',
+        category: 'Промоција књиге'
+      },
+         '2026-08-26': {
         image: karavansaraj,
         title: 'Каравансарај',
         date: '26. август 2026.',
         category: 'Књижевно вече'
       },
+
 
       '2026-08-28': {
         image: kosare,
@@ -804,7 +812,7 @@ const Home = () => {
                   <div className="upcoming-date">
 
                     <strong>
-                      21–22
+                      30
                     </strong>
 
                     <span>
@@ -824,15 +832,15 @@ const Home = () => {
                     className="compact-event-image"
                     onClick={() =>
                       handleImageClick(
-                        AtanasijePredavanje,
-                        'Атанасије Стојковић — предавање'
+                        fruskaGora,
+                        'Уздаси са Фрушке горе — Слободан Радојчић'
                       )
                     }
                   >
 
                     <img
-                      src={AtanasijePredavanje}
-                      alt="Атанасије Стојковић — предавање"
+                      src={fruskaGora}
+                      alt="Уздаси са Фрушке горе — Слободан Радојчић"
                       loading="lazy"
                     />
 
@@ -848,24 +856,24 @@ const Home = () => {
                     <div className="event-date-row">
 
                       <span>
-                        21. септембар
+                        30. септембар
                       </span>
 
                       <span>
-                        22. септембар
+                        18 часова
                       </span>
 
                     </div>
 
 
                     <h4>
-                      Атанасије Стојковић
+                      Уздаси са Фрушке горе
                     </h4>
 
 
                     <p>
-                      Предавање посвећено Атанасију
-                      Стојковићу.
+                      Промоција збирке песама Слободана
+                      Радојчића.
                     </p>
 
 
@@ -874,8 +882,8 @@ const Home = () => {
                       className="event-more-btn"
                       onClick={() =>
                         handleImageClick(
-                          AtanasijePredavanje,
-                          'Атанасије Стојковић — предавање'
+                          fruskaGora,
+                          'Уздаси са Фрушке горе — Слободан Радојчић'
                         )
                       }
                     >
@@ -911,17 +919,38 @@ const Home = () => {
                       className="previous-event-item"
                       onClick={() =>
                         handleEventOpen(
-                          events['2026-08-10']
+                          events['2026-09-21']
                         )
                       }
                     >
 
                       <span className="previous-event-date">
-                        10.08.
+                        21.09.
                       </span>
 
                       <span className="previous-event-name">
-                        Никола Тесла
+                        Атанасије Стојковић
+                      </span>
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-08-28']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        28.08.
+                      </span>
+
+                      <span className="previous-event-name">
+                        Кошаре
                       </span>
 
                     </button>
@@ -953,17 +982,17 @@ const Home = () => {
                       className="previous-event-item"
                       onClick={() =>
                         handleEventOpen(
-                          events['2026-08-28']
+                          events['2026-08-10']
                         )
                       }
                     >
 
                       <span className="previous-event-date">
-                        28.08.
+                        10.08.
                       </span>
 
                       <span className="previous-event-name">
-                        Кошаре
+                        Никола Тесла
                       </span>
 
                     </button>
