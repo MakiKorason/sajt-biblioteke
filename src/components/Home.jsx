@@ -31,7 +31,7 @@ import { Helmet } from 'react-helmet-async';
 
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
-
+import velimir from '../images/velimir.jpg'
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
@@ -823,81 +823,80 @@ const Home = () => {
 
                 </div>
 
+{/* GLAVNA NAJAVA */}
 
-                {/* GLAVNA NAJAVA */}
+<div className="compact-event">
 
-                <div className="compact-event">
+  <div
+    className="compact-event-image"
+    onClick={() =>
+      handleImageClick(
+        velimir,
+        'Љубави, волим твој језик — Нека смрт сачека'
+      )
+    }
+  >
 
-                  <div
-                    className="compact-event-image"
-                    onClick={() =>
-                      handleImageClick(
-                        fruskaGora,
-                        'Уздаси са Фрушке горе — Слободан Радојчић'
-                      )
-                    }
-                  >
+    <img
+      src={velimir}
+      alt="Љубави, волим твој језик — Нека смрт сачека"
+      loading="lazy"
+    />
 
-                    <img
-                      src={fruskaGora}
-                      alt="Уздаси са Фрушке горе — Слободан Радојчић"
-                      loading="lazy"
-                    />
+    <div className="image-zoom">
+      <FaSearchPlus />
+    </div>
 
-                    <div className="image-zoom">
-                      <FaSearchPlus />
-                    </div>
-
-                  </div>
-
-
-                  <div className="compact-event-content">
-
-                    <div className="event-date-row">
-
-                      <span>
-                        30. септембар
-                      </span>
-
-                      <span>
-                        18 часова
-                      </span>
-
-                    </div>
+  </div>
 
 
-                    <h4>
-                      Уздаси са Фрушке горе
-                    </h4>
+  <div className="compact-event-content">
+
+    <div className="event-date-row">
+
+      <span>
+        5. октобар
+      </span>
+
+      <span>
+        19 часова
+      </span>
+
+    </div>
 
 
-                    <p>
-                      Промоција збирке песама Слободана
-                      Радојчића.
-                    </p>
+    <h4>
+      Љубави, волим твој језик<br />
+      Нека смрт сачека
+    </h4>
 
 
-                    <button
-                      type="button"
-                      className="event-more-btn"
-                      onClick={() =>
-                        handleImageClick(
-                          fruskaGora,
-                          'Уздаси са Фрушке горе — Слободан Радојчић'
-                        )
-                      }
-                    >
+    <p>
+      Представљање збирке поезије „Љубави, волим твој језик“ 
+      и романа „Нека смрт сачека“.
+    </p>
 
-                      Погледај објаву
 
-                      <FaArrowRight />
+    <button
+      type="button"
+      className="event-more-btn"
+      onClick={() =>
+        handleImageClick(
+          velimir,
+          'Љубави, волим твој језик — Нека смрт сачека'
+        )
+      }
+    >
 
-                    </button>
+      Погледај објаву
 
-                  </div>
+      <FaArrowRight />
 
-                </div>
+    </button>
 
+  </div>
+
+</div>
 
                 {/* PRETHODNI DOGAĐAJI */}
 
@@ -913,6 +912,25 @@ const Home = () => {
 
 
                   <div className="previous-events-list-compact">
+                      <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-09-30']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        30.09.
+                      </span>
+                          
+                      <span className="previous-event-name">
+                      Уздаси са Фрушке горе
+                      </span>
+
+                    </button>
 
                     <button
                       type="button"
@@ -927,7 +945,7 @@ const Home = () => {
                       <span className="previous-event-date">
                         21.09.
                       </span>
-
+                          
                       <span className="previous-event-name">
                         Атанасије Стојковић
                       </span>
