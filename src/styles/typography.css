@@ -1,0 +1,224 @@
+/* =========================================================
+   SITE-WIDE TEXT OPTIMIZATION
+   Loaded last so it overrides per-page hero sizes.
+========================================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-wrap: balance;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+p,
+li,
+td,
+th,
+label,
+blockquote,
+.container-text,
+.caption-content p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-wrap: pretty;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+
+/* Brand name in header (not a page H1) */
+
+.brand-text .brand-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3.2vw, 3.35rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--brown);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+
+/* Page heroes — all inner pages */
+
+[class*="-hero"] h1,
+.page-hero h1 {
+  max-width: 100%;
+  font-size: clamp(2.15rem, 5.8vw, 5.2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+}
+
+[class*="-hero"] p,
+.page-hero p {
+  max-width: min(680px, 100%);
+  overflow-wrap: break-word;
+}
+
+
+/* Home carousel captions */
+
+.caption-content h2 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.home-page-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* Section titles */
+
+[class*="-section-heading"] h2,
+[class*="-intro"] h2,
+.section-heading h2,
+.page-intro h2,
+.page-section-heading h2 {
+  max-width: 100%;
+  line-height: 1.2;
+}
+
+
+@media (max-width: 1200px) {
+
+  .brand-text .brand-title {
+    font-size: 2.2rem;
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  .brand-text .brand-title {
+    font-size: clamp(1.35rem, 3.8vw, 1.7rem);
+    letter-spacing: -0.3px;
+  }
+
+  [class*="-hero"] h1,
+  .page-hero h1 {
+    font-size: clamp(2rem, 6.2vw, 3.35rem) !important;
+    line-height: 1.16 !important;
+  }
+
+  .caption-content h2 {
+    font-size: clamp(1.55rem, 4.5vw, 2.2rem);
+    line-height: 1.18;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  [class*="-hero"] h1,
+  .page-hero h1 {
+    font-size: clamp(1.85rem, 8vw, 2.5rem) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  [class*="-hero"] p,
+  .page-hero p,
+  .caption-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  [class*="-section-heading"] h2,
+  [class*="-intro"] h2,
+  .section-heading h2,
+  .page-intro h2 {
+    font-size: clamp(1.55rem, 6vw, 2.15rem) !important;
+    line-height: 1.22 !important;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .brand-small {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  .brand-text .brand-title {
+    font-size: clamp(1.12rem, 5vw, 1.4rem);
+    line-height: 1.2;
+  }
+
+  .brand-location {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+
+  .container-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  [class*="-hero"] h1,
+  .page-hero h1 {
+    font-size: clamp(1.7rem, 8.4vw, 2.15rem) !important;
+  }
+
+  .caption-content h2 {
+    font-size: 1.45rem;
+    line-height: 1.22;
+  }
+
+  .caption-content p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .brand-text .brand-title {
+    font-size: 1.05rem;
+  }
+
+}

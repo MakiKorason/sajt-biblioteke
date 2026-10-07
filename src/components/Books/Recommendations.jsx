@@ -35,8 +35,8 @@ const Recommendations =()=>{
     return (
 
             <><Helmet>
-  <title>Препоруке библиотекара - Библиотека Рума</title>
-  <meta name="description" content="Издвојене препоруке библиотекара Градске библиотеке 'Атанасије Стојковић' у Руми. Препоручујемо најзанимљивија и најчитанија дела за све узрасте." />
+  <title>Препоруке библиотекара – Библиотека Рума</title>
+  <meta name="description" content="Препоруке библиотекара Градске библиотеке „Атанасије Стојковић“ у Руми: најчитанија дела за све узрасте." />
   <link rel="canonical" href="https://www.bibliotekaruma.rs/preporuke-bibliotekara" />
   <script type="application/ld+json">
     {`

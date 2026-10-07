@@ -11,10 +11,10 @@ import AnimatedImage from "./AnimatedImage";
 import { GiOpenBook } from "react-icons/gi";
 const Homelend = () => {
   const pageTitle =
-    "Завичајна збирка – Градска библиотека „Атанасије Стојковић“ Рума";
+    "Завичајна збирка – Библиотека Рума";
 
   const pageDescription =
-    "Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми броји преко 3.000 библиотечких јединица и чува вредну грађу о Руми и њеном завичају.";
+    "Завичајна збирка Градске библиотеке „Атанасије Стојковић“ у Руми чува преко 3.000 јединица о Руми и завичају.";
 
   const canonicalUrl =
     "https://www.bibliotekaruma.rs/zavicajna-zbirka";

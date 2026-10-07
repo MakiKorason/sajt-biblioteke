@@ -54,6 +54,7 @@ import ImageModal from './components/ImageModal';
 import { AnimatePresence } from 'framer-motion';
 
 import NotFound from './components/NotFound';
+import './styles/typography.css';
 
 
 /* =========================================================
@@ -218,9 +219,9 @@ function InnerApp() {
                   </div>
 
 
-                  <h1>
+                  <p className="brand-title">
                     „Атанасије Стојковић“
-                  </h1>
+                  </p>
 
 
                   <div className="brand-location">
