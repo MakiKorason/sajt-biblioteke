@@ -32,6 +32,7 @@ import { Helmet } from 'react-helmet-async';
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
 import velimir from '../images/velimir.jpg'
+import maticaJelena from '../images/maticaJelena.jpg'
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
@@ -97,6 +98,20 @@ const Home = () => {
 
   const events = useMemo(
     () => ({
+      '2026-10-12': {
+        image: maticaJelena,
+        title: 'Уздарије пчелињем јату',
+        date: '12. октобар 2026.',
+        category: 'Промоција књиге'
+      },
+
+      '2026-10-05': {
+        image: velimir,
+        title: 'Љубави, волим твој језик — Нека смрт сачека',
+        date: '5. октобар 2026.',
+        category: 'Промоција књиге'
+      },
+
       '2026-08-10': {
         image: filmTesla,
         title: 'Никола Тесла: између књиге и идеје',
@@ -816,11 +831,11 @@ const Home = () => {
                   <div className="upcoming-date">
 
                     <strong>
-                      30
+                     12
                     </strong>
 
                     <span>
-                      СЕП
+                      ОКТ
                     </span>
 
                   </div>
@@ -835,15 +850,15 @@ const Home = () => {
     className="compact-event-image"
     onClick={() =>
       handleImageClick(
-        velimir,
-        'Љубави, волим твој језик — Нека смрт сачека'
+        maticaJelena,
+        'Уздарије пчелињем јату — Јелена Веселинов'
       )
     }
   >
 
     <img
-      src={velimir}
-      alt="Љубави, волим твој језик — Нека смрт сачека"
+      src={maticaJelena}
+      alt="Уздарије пчелињем јату — Јелена Веселинов"
       loading="lazy"
     />
 
@@ -859,25 +874,25 @@ const Home = () => {
     <div className="event-date-row">
 
       <span>
-        5. октобар
+        12. октобар
       </span>
 
       <span>
-        19 часова
+        18 часова
       </span>
 
     </div>
 
 
     <h4>
-      Љубави, волим твој језик<br />
-      Нека смрт сачека
+      Уздарије пчелињем јату<br />
+      Јелена Веселинов
     </h4>
 
 
     <p>
-      Представљање збирке поезије „Љубави, волим твој језик“ 
-      и романа „Нека смрт сачека“.
+      Промоција књиге „Уздарије пчелињем јату“
+      из едиције „Задужбинари Матице српске“.
     </p>
 
 
@@ -886,8 +901,8 @@ const Home = () => {
       className="event-more-btn"
       onClick={() =>
         handleImageClick(
-          velimir,
-          'Љубави, волим твој језик — Нека смрт сачека'
+          maticaJelena,
+          'Уздарије пчелињем јату — Јелена Веселинов'
         )
       }
     >
@@ -916,6 +931,26 @@ const Home = () => {
 
 
                   <div className="previous-events-list-compact">
+                      <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-10-05']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        05.10.
+                      </span>
+                          
+                      <span className="previous-event-name">
+                      Љубави, волим твој језик
+                      </span>
+
+                    </button>
+
                       <button
                       type="button"
                       className="previous-event-item"
