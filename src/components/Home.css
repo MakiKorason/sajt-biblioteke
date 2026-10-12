@@ -220,6 +220,67 @@
 }
 
 /* =========================================================
+   ZADUŽBINARI
+========================================================= */
+
+.zaduzbinari-band {
+  padding: 28px 0 8px;
+}
+
+.zaduzbinari-card {
+  overflow: hidden;
+  border: 1px solid var(--library-border);
+  border-radius: var(--library-radius);
+  background: #fff;
+  box-shadow: var(--library-shadow);
+}
+
+.zaduzbinari-copy {
+  padding: 36px 40px 28px;
+  border-bottom: 1px solid var(--library-border);
+  background:
+    linear-gradient(
+      180deg,
+      #faf8f3 0%,
+      #ffffff 100%
+    );
+}
+
+.zaduzbinari-copy h2 {
+  margin: 8px 0 14px;
+  color: var(--library-brown);
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.zaduzbinari-copy p {
+  max-width: 920px;
+  margin: 0;
+  color: #5c5348;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.zaduzbinari-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.zaduzbinari-grid img {
+  width: 100%;
+  height: min(58vh, 540px);
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  display: block;
+}
+
+.zaduzbinari-grid img:first-child {
+  border-right: 1px solid var(--library-border);
+}
+
+/* =========================================================
    NOTICE / CONTEST
 ========================================================= */
 
@@ -1207,6 +1268,14 @@
     padding: 45px 7% 70px;
   }
 
+  .zaduzbinari-copy {
+    padding: 28px 28px 22px;
+  }
+
+  .zaduzbinari-grid img {
+    height: 420px;
+  }
+
   .notice-card {
     grid-template-columns: 1fr;
   }
@@ -1321,6 +1390,34 @@
   .home-carousel .carousel-control-next-icon {
     width: 35px;
     height: 35px;
+  }
+
+  /* ZADUŽBINARI */
+
+  .zaduzbinari-band {
+    padding: 18px 0 0;
+  }
+
+  .zaduzbinari-copy {
+    padding: 24px 22px 20px;
+  }
+
+  .zaduzbinari-copy p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .zaduzbinari-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zaduzbinari-grid img {
+    height: 380px;
+  }
+
+  .zaduzbinari-grid img:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--library-border);
   }
 
   /* NOTICE */
@@ -1544,6 +1641,7 @@
 ========================================================= */
 
 .home-carousel-image:focus,
+.zaduzbinari-grid img:focus,
 .event-images img:focus,
 .quick-card:focus,
 .friends-toggle:focus,

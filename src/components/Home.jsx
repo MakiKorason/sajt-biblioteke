@@ -64,6 +64,8 @@ import digitalna from '../images/digitalna.webp';
 import pokrajina from '../images/pokrajina.webp';
 import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
+import zaduzbinari1 from '../images/zaduzbinari1.jpg';
+import zaduzbinari2 from '../images/zaduzbinari2.jpg';
 
 import AtanasijePredavanje from '../images/AtanasijePredavanja.jpg';
 import fruskaGora from '../images/fruskaGora.jpg';
@@ -658,6 +660,72 @@ const Home = () => {
           </button>
 
         </div>
+
+      </section>
+
+
+      {/* =====================================================
+          ZADUŽBINARI
+      ====================================================== */}
+
+      <section className="zaduzbinari-band">
+
+        <Container>
+
+          <div className="zaduzbinari-card">
+
+            <div className="zaduzbinari-copy">
+
+              <span className="section-kicker">
+                ПРОМОЦИЈА КЊИГЕ
+              </span>
+
+              <h2>
+                Уздарје пчелињем јату
+              </h2>
+
+              <p>
+                Промоција књиге „Уздарје пчелињем јату:
+                задужбинари Матице српске“ први је програм
+                у циклусу предавања и промоција књига који
+                се реализује у оквиру сарадње Матице српске
+                и Градске библиотеке „Атанасије Стојковић“
+                у Руми.
+              </p>
+
+            </div>
+
+            <div className="zaduzbinari-grid">
+
+              <img
+                src={zaduzbinari1}
+                alt="Књига Уздарије пчелињем јату Јелене Веселинов"
+                loading="lazy"
+                onClick={() =>
+                  handleImageClick(
+                    zaduzbinari1,
+                    'Уздарије пчелињем јату'
+                  )
+                }
+              />
+
+              <img
+                src={zaduzbinari2}
+                alt="Промоција књиге Уздарије пчелињем јату"
+                loading="lazy"
+                onClick={() =>
+                  handleImageClick(
+                    zaduzbinari2,
+                    'Промоција књиге Уздарије пчелињем јату'
+                  )
+                }
+              />
+
+            </div>
+
+          </div>
+
+        </Container>
 
       </section>
 
