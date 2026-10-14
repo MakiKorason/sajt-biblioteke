@@ -300,7 +300,7 @@ const Home = () => {
           'Румљанин Атанасије Стојковић био је најобразованији Србин прве трећине 19. века.',
         button: {
           href:
-            'http://localhost:3000/atanasije-stojkovic',
+            '/atanasije-stojkovic',
           text: 'ДЕТАЉНИЈЕ'
         }
       },
