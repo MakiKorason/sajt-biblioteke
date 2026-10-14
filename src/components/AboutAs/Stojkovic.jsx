@@ -1,16 +1,14 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-
+import zavicajno from '../../images/zavicajno.webp'
 import { Helmet } from "react-helmet-async";
 import { GiOpenBook } from "react-icons/gi";
 import AnimatedImage from "../Department/AnimatedImage";
-
-import atanasijePortret from "../../images/AtanasijePredavanja.jpg";
-import atanasijeKnjiga from "../../images/atanasijeDjordje.png";
-import kandor from "../../images/Ourpublic/Kandor.webp";
-import konkursRoman from "../../images/konkursRoman.jpg";
-import biblioteka from "../../images/biblioteka.webp";
+import Atanasije from '../../images/Atanasije.webp';
+import public4 from '../../images/Ourpublic/public4.webp'
+import Kandor from '../../images/Ourpublic/Kandor.webp'
+import konkurs from '../../images/konkurs.webp'
 
 import {
   LiaBookSolid,
@@ -139,7 +137,22 @@ const Stojkovic = () => {
                   универзитета. У Харкову је предавао на катедри за
                   физику и два пута је биран за ректора.
                 </p>
-
+                <Col md-6 className='text-center'>
+            <AnimatedImage
+  src={Atanasije}
+alt='Atanasije Stojkovic'
+  style={{
+    width: '30%',
+    maxWidth: '400px',
+    height: 'auto',
+    borderRadius: '20px',
+    display: 'block',
+    margin: '0 auto',
+    objectFit: 'cover'
+  }}
+/>
+                </Col>
+                <br/>
                 <p>
                   У родном граду изградио је основу за даља знања
                   која су му омогућила висока признања у старим
@@ -293,19 +306,6 @@ const Stojkovic = () => {
 
                 </div>
 
-
-                <div className="history-year">
-
-                  <strong>
-                    2011.
-                  </strong>
-
-                  <p>
-                    Градска библиотека у Руми носи његово име.
-                  </p>
-
-                </div>
-
               </div>
 
             </Col>
@@ -345,24 +345,10 @@ const Stojkovic = () => {
 
         <section className="history-cultural-building">
 
-          <Row className="g-5 align-items-center">
+          <Row className="g-2 align-items-center">
 
-            <Col lg={6}>
-
-              <div className="history-image-card">
-
-                <AnimatedImage
-                  src={atanasijePortret}
-                  alt="Портрет Атанасија Стојковића"
-                  className="history-main-image"
-                />
-
-              </div>
-
-            </Col>
-
-
-            <Col lg={6}>
+          
+            <Col lg={12}>
 
               <div className="history-section-heading history-heading-left">
 
@@ -375,7 +361,21 @@ const Stojkovic = () => {
                 </h2>
 
               </div>
+                 <Col lg={8} >
 
+              <div className="history-image-card">
+
+                <AnimatedImage
+                  src={zavicajno}
+                alt='fizika'
+                  className="history-main-image"
+                />
+
+    
+              </div>
+
+            </Col>
+            <br/>
               <div className="history-text">
 
                 <p>
@@ -487,8 +487,8 @@ const Stojkovic = () => {
               <div className="history-image-card">
 
                 <AnimatedImage
-                  src={atanasijeKnjiga}
-                  alt="Књига Ђорђа Арсенића о Атанасију Стојковићу"
+                  src='https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/487485063_1079797184181944_5934430657574610169_n.jpg?stp=dst-jpg_tt6&cstp=mx628x840&ctp=s628x840&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=C5Pj_X4hGosQ7kNvwGePFDr&_nc_oc=Adq4iII20qg9NQbUiLciLT4_yJE4nsGuUunwEOEgxVb5IkAObSzkziZ2bhO0ppu0KnI&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=n8lCLHbn_c8jpzG9kpSDIA&_nc_ss=7b2a8&oh=00_AQMBTv1x73qBIl_NCLNjHO3SItEAaYoDwDUE6Lk25dOy1Q&oe=6AD566AD'
+                  alt="Knjige Atanasija Stojkovica"
                   className="history-main-image"
                 />
 
@@ -510,9 +510,31 @@ const Stojkovic = () => {
               <div className="history-image-card">
 
                 <AnimatedImage
-                  src={kandor}
-                  alt="Насловна страна дела Кандор или Откровење египатских тајни"
-                  className="history-main-image"
+                  src={public4}
+                  alt="Aristid i Natalija"
+                 style={{
+    width: '70%',
+    maxWidth: '400px',
+    height: 'auto',
+    borderRadius: '20px',
+    display: 'block',
+    margin: '0 auto',
+    objectFit: 'cover'
+  }}
+                />
+                <hr/>
+                    <AnimatedImage
+                  src={Kandor}
+                  alt="Aristid i Natalija"
+                 style={{
+    width: '70%',
+    maxWidth: '400px',
+    height: 'auto',
+    borderRadius: '20px',
+    display: 'block',
+    margin: '0 auto',
+    objectFit: 'cover'
+  }}
                 />
 
               </div>
@@ -658,14 +680,11 @@ const Stojkovic = () => {
                 </p>
 
                 <p>
-                  Потпуна библиографија још није утврђена. Постоји
-                  велика вероватноћа да су нека дела непронађена,
-                  јер је објављивао и у страним часописима. Сачувана
-                  писма и документи, којих је релативно мало за личност
-                  са толиком активношћу, потичу углавном из бечких
-                  архива – Карловачког и Цетињског – а колико их је
-                  тек морало бити у руским, немачким и мађарским
-                  архивима.
+                    <strong> Градска библиотека у Руми сваке године расписује
+              конкурс за „Награду за први необјављени роман на
+              српском језику“. Од 2011. године установа свом називу
+              додаје и име овог знаменитог Румљанина.
+                  архивима.</strong>
                 </p>
 
               </div>
@@ -678,8 +697,8 @@ const Stojkovic = () => {
               <div className="history-image-card history-image-card-small">
 
                 <AnimatedImage
-                  src={biblioteka}
-                  alt="Зграда Градске библиотеке Атанасије Стојковић у Руми"
+                  src='https://static.kupindoslike.com/Novi-Zavet-prevod-Atanasije-Stojkovic-1830-god-_slika_XL_147874129.jpg'
+                  alt="Novi zavet -prevod Atanasija Stojkovica"
                   className="history-main-image"
                 />
 
@@ -688,7 +707,7 @@ const Stojkovic = () => {
               <div className="history-image-card history-image-card-small">
 
                 <AnimatedImage
-                  src={konkursRoman}
+                  src={konkurs}
                   alt="Награда Атанасије Стојковић за први необјављени роман"
                   className="history-main-image"
                 />
@@ -699,22 +718,10 @@ const Stojkovic = () => {
 
           </Row>
 
-        </section>
+     
 
 
-        <section className="history-architecture">
-
-          <div className="history-section-heading">
-
-            <span>
-              НАСЛЕЂЕ У РУМИ
-            </span>
-
-            <h2>
-              Име које носи Градска библиотека
-            </h2>
-
-          </div>
+ 
 
 
           <div className="history-text">
@@ -727,44 +734,6 @@ const Stojkovic = () => {
             </p>
 
           </div>
-
-
-          <div className="history-section-heading" style={{ marginTop: "70px" }}>
-
-            <span>
-              ЛИТЕРАТУРА
-            </span>
-
-            <h2>
-              Извори
-            </h2>
-
-          </div>
-
-
-          <ol className="stojkovic-literature">
-
-            <li>
-              Арсенић, Ђ., <em>Атанасије Стојковић</em>, Институт за
-              нуклеарне науке Винча, Београд, 1995.
-            </li>
-
-            <li>
-              Новаковић, С., <em>Пут до крста Светог Владимира</em>,
-              Градска библиотека Атанасије Стојковић, Рума, 2012.
-            </li>
-
-            <li>
-              Стојковић А., <em>Аристид и Наталија: Физика</em>,
-              поговор Јован Деретић, Нолит, Београд, 1973.
-            </li>
-
-            <li>
-              Стојковић А., <em>Кандор или откровеније египатски тајни</em>,
-              Градска библиотека Атанасије Стојковић, Рума, 2008.
-            </li>
-
-          </ol>
 
 
           <div className="history-final">
