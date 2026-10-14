@@ -1,0 +1,75 @@
+/* =========================================================
+   ATANASIJE STOJKOVIĆ – extra styles on History layout
+========================================================= */
+
+.stojkovic-quote {
+  margin: 0 0 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.35rem;
+
+  font-style: italic;
+
+  line-height: 1.5;
+
+  color: #d9b978;
+}
+
+.stojkovic-quote-source {
+  margin: 0;
+
+  color: rgba(247, 242, 232, 0.7);
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.04em;
+}
+
+.stojkovic-literature {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.stojkovic-literature li {
+  padding: 20px 0;
+
+  border-bottom: 1px solid #e2d8c8;
+
+  color: #665a4d;
+
+  font-size: 1.02rem;
+
+  line-height: 1.75;
+}
+
+.stojkovic-literature li:last-child {
+  border-bottom: 0;
+
+  padding-bottom: 0;
+}
+
+.stojkovic-placeholder-note {
+  margin-top: 18px;
+
+  color: #9b742f;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 767px) {
+
+  .stojkovic-quote {
+    font-size: 1.15rem;
+  }
+
+}
