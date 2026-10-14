@@ -37,6 +37,7 @@ import Legati from './components/Department/Legati';
 
 import Project from './components/AboutAs/Project';
 import MisionAndVision from './components/AboutAs/MisionAndVision';
+import Stojkovic from './components/AboutAs/Stojkovic';
 
 import {
   FaEnvelope,
@@ -689,6 +690,16 @@ function InnerApp() {
               element={
                 <AnimatedPage>
                   <MisionAndVision />
+                </AnimatedPage>
+              }
+            />
+
+
+            <Route
+              path="/atanasije-stojkovic"
+              element={
+                <AnimatedPage>
+                  <Stojkovic />
                 </AnimatedPage>
               }
             />

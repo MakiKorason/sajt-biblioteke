@@ -54,18 +54,6 @@
   padding-bottom: 0;
 }
 
-.stojkovic-placeholder-note {
-  margin-top: 18px;
-
-  color: #9b742f;
-
-  font-size: 0.82rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.04em;
-}
-
 @media (max-width: 767px) {
 
   .stojkovic-quote {

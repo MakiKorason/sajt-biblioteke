@@ -45,6 +45,15 @@
       ]
     },
     {
+      "source": "/atanasije-stojkovic",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
       "source": "/index.html",
       "headers": [
         {
