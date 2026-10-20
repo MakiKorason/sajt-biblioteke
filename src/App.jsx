@@ -974,7 +974,7 @@ function InnerApp() {
 
                 <FaEnvelope />
 
-                gradskabibliotekaruma@gmail.com
+       gbasruma@gmail.com
 
               </a>
 

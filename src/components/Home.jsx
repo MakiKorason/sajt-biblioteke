@@ -43,11 +43,11 @@ import muzej from '../images/muzej.webp';
 import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import digitalnaLogo from '../images/digitalnaLogo.png';
-
+import zavicaj from '../images/zavicaj.jpg'
 import kosare from '../images/kosare.png';
 import karavansaraj from '../images/karavansaraj.png';
 import filmTesla from '../images/filmTesla.png';
-
+import tumor from '../images/tumor.jpg';
 import saradnja from '../images/saradnja.jpg';
 import saradnja1 from '../images/saradnja1.webp';
 import saradnja2 from '../images/saradnja2.webp';
@@ -111,6 +111,19 @@ const Home = () => {
         image: velimir,
         title: 'Љубави, волим твој језик — Нека смрт сачека',
         date: '5. октобар 2026.',
+        category: 'Промоција књиге'
+      },
+
+          '2026-10-28': {
+        image: zavicaj,
+        title: 'Неугасива љубав завичаја',
+        date: '28. октобар 2026.',
+        category: 'Промоција књиге'
+      },
+         '2026-10-30': {
+        image: tumor,
+        title: 'Друга страна огледала',
+        date: '30. октобар 2026.',
         category: 'Промоција књиге'
       },
 
@@ -879,9 +892,9 @@ const Home = () => {
             {/* =============================================
                 NAJAVA
             ============================================== */}
-
+               
             <Col lg={7}>
-
+        
               <div className="compact-events-board h-100">
 
                 <div className="compact-board-header">
@@ -893,99 +906,118 @@ const Home = () => {
                     </span>
 
                     <h3>
-                      Предстојећи догађај
+                      Предстојећи догађаји
                     </h3>
 
                   </div>
 
-                  <div className="upcoming-date">
+                   <div className="upcoming-date">
 
                     <strong>
-                     12
+                     28 и 30
                     </strong>
 
                     <span>
-                      ОКТ
+                      ОКТОБАР
                     </span>
 
-                  </div>
+                  </div> 
 
                 </div>
 
 {/* GLAVNA NAJAVA */}
 
-<div className="compact-event">
+{/* GLAVNE NAJAVE */}
 
-  <div
-    className="compact-event-image"
-    onClick={() =>
-      handleImageClick(
-        maticaJelena,
-        'Уздарије пчелињем јату — Јелена Веселинов'
-      )
-    }
-  >
+<div className="compact-event-pair">
 
-    <img
-      src={maticaJelena}
-      alt="Уздарије пчелињем јату — Јелена Веселинов"
-      loading="lazy"
-    />
+  {/* PRVA SLIKA — 28. OKTOBAR */}
 
-    <div className="image-zoom">
-      <FaSearchPlus />
+  <div className="compact-event">
+    <div
+      className="compact-event-image"
+      onClick={() =>
+        handleImageClick(
+          zavicaj,
+          'Неугасива љубав завичаја'
+        )
+      }
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleImageClick(
+            zavicaj,
+            'Неугасива љубав завичаја'
+          );
+        }
+      }}
+    >
+      <img
+        src={zavicaj}
+        alt="Неугасива љубав завичаја — 28. октобар"
+        loading="lazy"
+      />
+
+      <div className="image-zoom">
+        <FaSearchPlus />
+      </div>
     </div>
 
+    {/* Датум је намерно закоментарисан
+    <div className="compact-event-content">
+      <div className="event-date-row">
+        <span>28. октобар</span>
+      </div>
+    </div>
+    */} <div
+      className="compact-event-image"
+      onClick={() =>
+        handleImageClick(
+          tumor,
+          'Друга страна огледала'
+        )
+      }
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleImageClick(
+            tumor,
+            'Друга страна огледала'
+          );
+        }
+      }}
+    >
+      <img
+        src={tumor}
+        alt="Друга страна огледала — 30. октобар"
+        loading="lazy"
+      />
+
+      <div className="image-zoom">
+        <FaSearchPlus />
+      </div>
   </div>
 
 
-  <div className="compact-event-content">
+  {/* DRUGA SLIKA — 30. OKTOBAR */}
 
-    <div className="event-date-row">
+   
 
-      <span>
-        12. октобар
-      </span>
-
-      <span>
-        18 часова
-      </span>
-
+    {/* Датум је намерно закоментарисан
+    <div className="compact-event-content">
+      <div className="event-date-row">
+        <span>30. октобар</span>
+      </div>
     </div>
-
-
-    <h4>
-      Уздарије пчелињем јату<br />
-      Јелена Веселинов
-    </h4>
-
-
-    <p>
-      Промоција књиге „Уздарије пчелињем јату“
-      из едиције „Задужбинари Матице српске“.
-    </p>
-
-
-    <button
-      type="button"
-      className="event-more-btn"
-      onClick={() =>
-        handleImageClick(
-          maticaJelena,
-          'Уздарије пчелињем јату — Јелена Веселинов'
-        )
-      }
-    >
-
-      Погледај објаву
-
-      <FaArrowRight />
-
-    </button>
-
+    */}
   </div>
 
 </div>
+
 
                 {/* PRETHODNI DOGAĐAJI */}
 
@@ -1001,25 +1033,27 @@ const Home = () => {
 
 
                   <div className="previous-events-list-compact">
+               
                       <button
                       type="button"
                       className="previous-event-item"
                       onClick={() =>
                         handleEventOpen(
-                          events['2026-10-05']
+                          events['2026-10-12']
                         )
                       }
                     >
 
                       <span className="previous-event-date">
-                        05.10.
+                        12.10.
                       </span>
                           
                       <span className="previous-event-name">
-                      Љубави, волим твој језик
+                      Уздарје пчелињем јату
                       </span>
 
                     </button>
+
 
                       <button
                       type="button"
@@ -1030,6 +1064,7 @@ const Home = () => {
                         )
                       }
                     >
+                      
 
                       <span className="previous-event-date">
                         30.09.
@@ -1041,88 +1076,7 @@ const Home = () => {
 
                     </button>
 
-                    <button
-                      type="button"
-                      className="previous-event-item"
-                      onClick={() =>
-                        handleEventOpen(
-                          events['2026-09-21']
-                        )
-                      }
-                    >
 
-                      <span className="previous-event-date">
-                        21.09.
-                      </span>
-                          
-                      <span className="previous-event-name">
-                        Атанасије Стојковић
-                      </span>
-
-                    </button>
-
-
-                    <button
-                      type="button"
-                      className="previous-event-item"
-                      onClick={() =>
-                        handleEventOpen(
-                          events['2026-08-28']
-                        )
-                      }
-                    >
-
-                      <span className="previous-event-date">
-                        28.08.
-                      </span>
-
-                      <span className="previous-event-name">
-                        Кошаре
-                      </span>
-
-                    </button>
-
-
-                    <button
-                      type="button"
-                      className="previous-event-item"
-                      onClick={() =>
-                        handleEventOpen(
-                          events['2026-08-26']
-                        )
-                      }
-                    >
-
-                      <span className="previous-event-date">
-                        26.08.
-                      </span>
-
-                      <span className="previous-event-name">
-                        Каравансарај
-                      </span>
-
-                    </button>
-
-
-                    <button
-                      type="button"
-                      className="previous-event-item"
-                      onClick={() =>
-                        handleEventOpen(
-                          events['2026-08-10']
-                        )
-                      }
-                    >
-
-                      <span className="previous-event-date">
-                        10.08.
-                      </span>
-
-                      <span className="previous-event-name">
-                        Никола Тесла
-                      </span>
-
-                    </button>
 
                   </div>
 

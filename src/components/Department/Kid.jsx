@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
+import jole3 from '../../images/jole3.jpg'
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-
+import azbukvar from '../../images/azbukvar.jpg'
 import { LiaBookSolid } from 'react-icons/lia';
-
+import jole2 from '../../images/jole2.jpg';
 import { Helmet } from 'react-helmet-async';
-
-import jole from '../../images/jole.jpg';
+import tesla1 from '../../images/tesla1.jpg';
+import tesla2 from '../../images/tesla2.jpg';
 
 import './Kid.css';
 
@@ -333,7 +333,7 @@ const Kid = () => {
                 <div className="kid-feature-small-image">
 
                   <AnimatedImage
-                    src={jole}
+                    src={azbukvar}
                     alt="Радионица за децу у Градској библиотеци Рума"
                   />
 
@@ -631,7 +631,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/711249908_1615009687291315_8361812370013700728_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2mkqNd77y2gQ7kNvwH6k9Rf&_nc_oc=AdohJsZ4aCEY7g0B4ojCazNCay4EJ3qKakS42qpZWd9dt6CP1yZz_MS6-G2Wk0tXxMM&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=rA2sO8fxQQU0oGsgRAOVqg&_nc_ss=7b2a8&oh=00_AQJ7-puBlQIoCFuj37t8d7MsRj8DMgSpt_I1ZAljx6DLXA&oe=6AA8747B"
+                                  src={jole2}
                                   alt="Промоција књиге Јоле (ни)је чаробњак"
                                 />
 
@@ -645,7 +645,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/710461837_1615009440624673_2236432431689934992_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lHbeCBBT3AUQ7kNvwGzG_kn&_nc_oc=AdqvSeO_vAIckteLYYF8swYoXEzRuNwdzZI63CIjYsxHsmzLZQhSD1j15z4dsIoGJMo&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=zTe-vGwMKnTL0fEYseZ-fw&_nc_ss=7b2a8&oh=00_AQL6AMVKg9HTPQEIIc7cj_kumDgYwyNZsMe_vNC_lHt9oQ&oe=6AA84427"
+                                  src={jole3}
                                   alt="Породична радионица Пут нових чаробњака"
                                 />
 
@@ -730,7 +730,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/744393452_1656213396504277_3204649589766495538_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Zxm5Okh_m04Q7kNvwFjDb3u&_nc_oc=Adr6VneNPThz8ftF4D1fkomt1rHdaLkrcNOQqK6uLnE6jXz2-IysMB3qcqpMhNjsKq4&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=U7HYH36cENOURAPuehVj5A&_nc_ss=7b2a8&oh=00_AQJobr1SNiEv2qBGWRRDmSpdOufaHYWi-Sseee01Xdaz8A&oe=6AA83B4E"
+                                  src={tesla1}
                                   alt="Дан дечје књиге"
                                 />
 
@@ -744,7 +744,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/741984750_1656213606504256_4495638504905464006_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_QHwcRddBTkQ7kNvwE7aT05&_nc_oc=Adr9i5pWhfhPCfcyc9esgYXP43fIx5H2MRVEQ52dV2cLcTLAB90FlJ2jwX8cZLylQHc&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=-l-6eYXxz0u-rG5FFgHF8A&_nc_ss=7b2a8&oh=00_AQI7nLl4WMpuxiGmK6J6wVHif1lyT9o8gJU6IE0LwUEmWA&oe=6AA86142"
+                                  src={tesla2}
                                   alt="Дан дечје књиге"
                                 />
 

@@ -718,11 +718,7 @@ alt='Atanasije Stojkovic'
 
           </Row>
 
-     
-
-
- 
-
+    
 
           <div className="history-text">
 
