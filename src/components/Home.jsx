@@ -19,7 +19,7 @@ import {
   FaArrowRight,
   FaCalendarAlt,
   FaBookOpen,
-  FaHeadphones,
+  // FaHeadphones,
   FaSearch,
   FaFileAlt,
   FaUsers,
@@ -48,10 +48,10 @@ import kosare from '../images/kosare.png';
 import karavansaraj from '../images/karavansaraj.png';
 import filmTesla from '../images/filmTesla.png';
 import tumor from '../images/tumor.jpg';
-import saradnja from '../images/saradnja.jpg';
-import saradnja1 from '../images/saradnja1.webp';
-import saradnja2 from '../images/saradnja2.webp';
-import saradnja3 from '../images/saradnja3.webp';
+// import saradnja from '../images/saradnja.jpg';
+// import saradnja1 from '../images/saradnja1.webp';
+// import saradnja2 from '../images/saradnja2.webp';
+// import saradnja3 from '../images/saradnja3.webp';
 
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
@@ -1154,7 +1154,7 @@ const Home = () => {
       {/* =====================================================
           AUDIO BOOKS
       ====================================================== */}
-
+{/* 
       <section className="home-section audio-section">
 
         <Container>
@@ -1323,7 +1323,7 @@ const Home = () => {
 
         </Container>
 
-      </section>
+      </section> */}
 
 
       {/* =====================================================
@@ -1471,7 +1471,7 @@ const Home = () => {
       {/* =====================================================
           MATICA
       ====================================================== */}
-
+{/* 
       <section className="home-section matica-section">
 
         <Container>
@@ -1546,7 +1546,7 @@ const Home = () => {
 
         </Container>
 
-      </section>
+      </section> */}
 
 
       {/* =====================================================

@@ -7,8 +7,16 @@ import jole2 from '../../images/jole2.jpg';
 import { Helmet } from 'react-helmet-async';
 import tesla1 from '../../images/tesla1.jpg';
 import tesla2 from '../../images/tesla2.jpg';
-
+import radionicaAtanasije1 from '../../images/radionicaAtanasije1.jpg'
+import radionicaAtanasije2 from '../../images/radionicaAtanasije2.jpg'
+import radionicaAtanasije3 from '../../images/radionicaAtanasije3.jpg'
+import radionicaAtanasije4 from '../../images/radionicaAtanasije4.jpg'
+import bajkovitiSvet1 from '../../images/bajkovitiSvet1.jpg'
+import bajkovitiSvet2 from '../../images/bajkovitiSvet2.jpg'
+import literarniKonkurs from '../../images/literarniKonkurs.jpg'
+import dodelaKartica from '../../images/dodelaKartica.jpg'
 import './Kid.css';
+import opstinskaSmotra from '../../images/opstinskaSmotra.jpg'
 
 import { GiOpenBook } from 'react-icons/gi';
 
@@ -812,7 +820,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/711190025_1614015674057383_2851418143644193779_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=QFzLacndFeoQ7kNvwFEWM0q&_nc_oc=Adr1nYUjlY9rt99CEA3q1kdKJhiBQA4v7ET3Ke1USPgydV0cbTiivLZM7vLHMAaKe8g&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=b8sejJOqW3Lae0t25NQZfw&_nc_ss=7b2a8&oh=00_AQInrSFEuzffEAFOXec_Y72uFfP-8XtplY-bK5FQac-jIA&oe=6AA83F6A"
+                                  src={bajkovitiSvet1}
                                   alt="Радионица Бајковити светови"
                                 />
 
@@ -826,7 +834,7 @@ const Kid = () => {
                               <div className="kid-card-image">
 
                                 <AnimatedImage
-                                  src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/710079491_1614015560724061_7057539699838988866_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=otsGVUMX6f8Q7kNvwGRBc_A&_nc_oc=AdrzpXczlutPG18LGf1UZRyzh21SRiCfuDLnuvGnVV-F4-Wc9ivWwPzFCDTYdPlNVFs&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=b63ZmxHTxh6ktQwU4wXLgw&_nc_ss=7b2a8&oh=00_AQJbJ7r_TOf8Jk3NpeRwXV25Jn8RBSjwozJk9k6KJDws-Q&oe=6AA83BB2"
+                                  src={bajkovitiSvet2}
                                   alt="Радионица Бајковити светови"
                                 />
 
@@ -839,7 +847,79 @@ const Kid = () => {
                         </div>
 
                       )}
+{activeWorkshop === 'dani-atanasija-stojkovica' && (
 
+  <div className="kid-event-content">
+
+    <br />
+
+    <h3 style={{ textAlign: "center" }}>
+      ДАНИ АТАНАСИЈА СТОЈКОВИЋА
+    </h3>
+
+    <br />
+
+    <p>
+    ДЕЦА И МЛАДИ УПОЗНАЈУ АТАНАСИЈА СТОЈКОВИЋА
+Протекла недеља у Градској библиотеци „Атанасије Стојковић“ била је, између осталих активности, посвећена деци и младима и њиховом упознавању са ликом, делом и наслеђем Атанасија Стојковића. 
+Програм је осмишљен у оквиру 4. Дана Атанасија Стојковића.
+<br/><hr/>
+Кроз три различита сусрета, ученици су Атанасија Стојковића упознавали из различитих углова – кроз науку, књижевност и његову повезаност са завичајем.
+🚀 Едукативна радионица „Свемир“ окупила је ученике III/2 разреда ОШ „Змај Јова Јовановић“. Кроз игру, тимски рад и занимљиве задатке, ученици су истраживали свет свемира, а посебан део био је посвећен Стојковићевом интересовању за науку. Радионицу је осмислила и водила библиотекарка Маја Зорић, уз учешће учитељице Марије Војновић.
+
+<br/><hr/>📖 Књижевни сусрет „Аристид и Наталија“ био је намењен ученицима другог и трећег разреда гимназије. 
+Са романом који се сматра првим српским модерним романом, његовим аутором и просветитељским идејама ученици су се упознали кроз разговор о пријатељству, љубави, породичним односима и животним изазовима. Сусрет је водила Маријана Бизимић, у пратњи професорке Надице Покрајац.
+
+<br/><hr/>🌿 Час у природи „Ода Борковачком извору“ одржан је за ученике V, VI и VII разреда ОШ „Иво Лола Рибар“, у пратњи наставника Милоша Комленца и Иване Јовановић, на Девојачкој чесми на Борковцу. Читајући „Оду на Источник Борковачки“, ученици су повезали Стојковићево дело са природом, завичајем и местом које је инспирисало његово стваралаштво. Час је водила Маријана Даничић.
+Три сусрета, три различита приступа и једна заједничка идеја – да Атанасије Стојковић буде ближи новим генерацијама, не само као име које носи наша библиотека, већ као научник, писац и мислилац чије дело и данас може да покрене питања, машту и радозналост.
+Тако је протекла недеља била још један омаж Атанасију Стојковићу, у оквиру манифестације коју посвећујемо његовом имену и наслеђу. 
+    </p>
+<hr/>
+    <Row>
+
+      <Col md={3}>
+        <div className="kid-card-image">
+          <AnimatedImage
+            src={radionicaAtanasije1}
+            alt="Дани Атанасија Стојковића"
+          />
+        </div>
+      </Col>
+
+      <Col md={3}>
+        <div className="kid-card-image">
+          <AnimatedImage
+            src={radionicaAtanasije2}
+            alt="Предавање посвећено Атанасију Стојковићу"
+          />
+        </div>
+      </Col>
+         <Col md={3}>
+        <div className="kid-card-image">
+          <AnimatedImage
+            src={radionicaAtanasije4}
+            alt="Предавање посвећено Атанасију Стојковићу"
+          />
+        </div>
+      </Col>
+         <Col md={3}>
+        <div className="kid-card-image">
+          <AnimatedImage
+            src={radionicaAtanasije3}
+            alt="Предавање посвећено Атанасију Стојковићу"
+          />
+        </div>
+      </Col>
+
+    </Row>
+
+    <br />
+
+    <hr />
+
+  </div>
+
+)}
 
                     {/* =================================================
                         MEĐUNARODNI DAN DEČJE KNJIGE
@@ -868,9 +948,7 @@ const Kid = () => {
 
                         <div className="kid-event-content">
 
-                          <h3>
-                            Дани Атанасија Стојковића
-                          </h3>
+                      
 
                         </div>
 
@@ -932,102 +1010,121 @@ const Kid = () => {
                       EVENT 01 – LIKOVNI I LITERARNI KONKURS
                   ================================================= */}
 
-                  <article className="kid-card">
+               <article className="kid-card">
 
-                    <Row className="g-0 align-items-stretch">
+  <Row className="g-0 align-items-stretch">
 
+    <Col lg={7}>
 
-                      <Col lg={7}>
+      <div className="kid-card-content">
 
-                        <div className="kid-card-content">
+        <div className="kid-card-top">
 
-                          <div className="kid-card-top">
+          <div className="kid-card-icon">
+            <LiaBookSolid />
+          </div>
 
-                            <div className="kid-card-icon">
+          <span className="kid-card-number">
+            01
+          </span>
 
-                              <LiaBookSolid />
+        </div>
 
-                            </div>
+        <span className="kid-card-label">
+          ДЕЧИЈА НЕДЕЉА
+        </span>
 
-                            <span className="kid-card-number">
+        <h3>
+          📚 „Да би деца срећна била: љубав и поштовање,
+          а не сила“
+        </h3>
 
-                              01
+        <div className="kid-divider"></div>
 
-                            </span>
+        <p>
+          У оквиру Дечије недеље, која се ове године
+          одржава од 5. до 11. октобра под слоганом
+          <strong>
+            {" "}„Да би деца срећна била: љубав и поштовање,
+            а не сила“
+          </strong>,
+          Градска библиотека „Атанасије Стојковић“
+          наставила је своју дугогодишњу традицију
+          бесплатног учлањења деце предшколског узраста.
+        </p>
 
-                          </div>
+        <p>
+          И ове године свим предшколцима са територије
+          наше општине поклонили смо чланску карту
+          библиотеке, која им омогућава да наше услуге
+          користе до краја основне школе.
 
+          Ове године учланили смо чак
+          <strong> 469 предшколаца!</strong>
+        </p>
 
-                          <span className="kid-card-label">
+        <p>
+          Верујемо да је чланска карта један од
+          најлепших првих поклона које дете може добити
+          од библиотеке – позив да у свет књига уђе
+          рано, слободно и са радошћу.
 
-                            ДЕЧИЈА НЕДЕЉА
+          Овом традицијом желимо да подстакнемо љубав
+          према читању, развијање читалачких навика и
+          да библиотека од најранијег узраста буде
+          место сусрета, маште, знања и дружења.
+        </p>
 
-                          </span>
+        <p>
+          Поводом доделе чланских карата, у месецу
+          књиге, приређена је и дечија представа
+          <strong> „Деда Мразове невоље“</strong>,
+          у извођењу Јовице Јашина, која је најмлађима
+          донела много смеха и радости и учинила њихов
+          први сусрет са библиотеком још лепшим.
+        </p>
 
+        <p>
+          Током Дечије недеље у библиотеци је одржана
+          и едукативно-креативна радионица
+          <strong>
+            {" "}„Повежи, откриј, погоди – упознај животиње“
+          </strong>,
+          коју је осмислила и водила библиотекарка
+          Маја Зорић.
 
-                          <h3>
+          Ученици III разреда ОШ „Змај Јова Јовановић“,
+          са учитељицом Душанком Кокиновић, кроз игру,
+          тимски рад и креативне задатке учили су о
+          животињском свету.
+        </p>
 
-                            🌸 Ликовни и литерарни конкурс 🌸
+        <p>
+          Јер када детету поклонимо књигу, знање и место
+          у библиотеци – поклањамо му могућност да расте
+          уз приче, машту и љубав према читању. 📚💛
+        </p>
 
-                          </h3>
+      </div>
 
+    </Col>
 
-                          <div className="kid-divider"></div>
+    <Col lg={5}>
 
+      <div className="kid-card-image">
 
-                          <p>
+        <AnimatedImage
+          src={dodelaKartica}
+          alt="Дечија недеља – бесплатан упис предшколаца и активности у библиотеци"
+        />
 
-                            Градска библиотека је поводом Дечије недеље
-                            организовала ликовни и литерарни конкурс за
-                            ученике основних школа, желећи да деци пружи
-                            прилику да искажу своју креативност, машту и
-                            таленат кроз слику и реч.
+      </div>
 
-                          </p>
+    </Col>
 
+  </Row>
 
-                          <p>
-
-                            Тема ликовног конкурса била је
-                            <strong> „Моја школа из маште“</strong>,
-                            а тема литерарног конкурса
-                            <strong> „Приче из ђачке клупе“</strong>.
-
-                          </p>
-
-
-                          <p>
-
-                            На литерарни конкурс пристигло је
-                            <strong> 27 радова</strong> ученика од петог
-                            до осмог разреда из
-                            <strong> 6 основних школа</strong> са
-                            територије румске општине.
-
-                          </p>
-
-                        </div>
-
-                      </Col>
-
-
-                      <Col lg={5}>
-
-                        <div className="kid-card-image">
-
-                          <AnimatedImage
-                            src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/559635650_1402648615194091_3062437590122940908_n.jpg?stp=dst-jpg_tt6&cstp=mx1069x1600&ctp=s1069x1600&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=0_pyyyVWfFcQ7kNvwF-Mpyp&_nc_oc=Adp_Gtv-Ch6dBmAR4c-J-PR8Dn0O5_Y8rTMVkkX0KnEuV2eI82NRg1Lh4uAtGTMbR70&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=cjXt-akzLrELCgZ9sOEIQg&_nc_ss=7b2a8&oh=00_AQLVrmgl2bkb7uun7ySjmOliPF5fy-uOc-OJtIiygMhzlg&oe=6AADDFE1"
-                            alt="Дечија недеља – ликовни и литерарни конкурс"
-                          />
-
-                        </div>
-
-                      </Col>
-
-                    </Row>
-
-                  </article>
-
+</article>
 
                   {/* =================================================
                       EVENT 02 – IMAM I JA SVOJA PRAVA
@@ -1135,7 +1232,7 @@ const Kid = () => {
                         <div className="kid-card-image">
 
                           <AnimatedImage
-                            src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.6435-9/89436364_2500658463585918_3498270756880515072_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1441&ctp=s2048x1441&_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=gYVPL8ebah4Q7kNvwEAJqnL&_nc_oc=AdqyPmkeV0ysZ_2ILyWPLHiVZRww0NuYvpZYLCqpsRtDuvLzjYlz603ysdxIYFycUKY&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=VgR4VeExBf_vrTwX3p_KPg&_nc_ss=7b2a8&oh=00_AQH-wFZr4L9icPLCXfS15nuLoKHluBFrqN5-q_XL53DWog&oe=6AB661CE"
+                            src={literarniKonkurs}
                             alt="Литерарни конкурс"
                           />
 
@@ -1217,7 +1314,7 @@ const Kid = () => {
                           <div className="kid-card-image">
 
                             <AnimatedImage
-                              src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t39.30808-6/650963537_1541044828021135_3752259225659191040_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=G_ZVGrmKI2oQ7kNvwH_mBk_&_nc_oc=AdqSfnGzYRRRDNLCZhNJtSHBEX3t-teDTLTEKLK5F1FeD-tXlhQGSEjkchh3NQUL5bk&_nc_zt=23&_nc_ht=scontent.fbeg4-1.fna&_nc_gid=HeB7MbOwIe87wAXxLyhCJw&_nc_ss=7b2a8&oh=00_AQJ-urCuQRgxYEf4VIPQdG25-7sJHcYgX8KFIC_A3gbajg&oe=6AADFB03"
+                              src={opstinskaSmotra}
                               alt="Општинска смотра рецитатора"
                           
                             />
