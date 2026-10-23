@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import rumaSlepi from '../../images/rumaSlepi.jpg'
 import kulturaZaSve1 from "../../images/kulturaZaSve1.webp";
 import kulturaZaSve2 from "../../images/kulturaZaSve2.webp";
-
+import taktilnaTabla from '../../images/taktilnaTabla.jpg'
 import AnimatedImage from "../Department/AnimatedImage";
 
 import {
@@ -176,7 +176,7 @@ const Project = () => {
 
 
           <p>
-            Пројекат „КУЛТУРА ЗА СВЕ“ представља јачање
+            Пројекати „ЗВУК КУЛТУРЕ“ и „КУЛТУРА ЗА СВЕ“ представљају јачање
             техничких капацитета наше установе како би све
             културне садржаје које планом и програмом
             спроводимо учинили доступним особама са
@@ -195,47 +195,30 @@ const Project = () => {
 
           <Row className="align-items-center g-5">
 
-            <Col lg={5}>
 
-        <div
-  className="projects-image-wrapper"
-  style={{
-    width: "150%",
-    maxWidth: "none",
-    marginLeft: "-20%",
-  }}
->
-  <div
-    style={{
-      position: "relative",
-      width: "100%",
-      aspectRatio: "16 / 9",
-      overflow: "hidden",
-      borderRadius: "18px",
-    }}
-  >
-    <iframe
-      src="https://www.youtube.com/embed/T6GxvxVnW-M"
-      title="Пројекат Култура за све"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-      style={{
-        position: "absolute",
-        inset: 0,
-        width: "80%",
-        height: "100%",
-        border: 0,
-      }}
-    />
-  </div>
-</div>
+<Col md={6}>
+<div className="projects-image-wrapper">
 
-            </Col>
+                <AnimatedImage
+                  src={taktilnaTabla}
+                  alt="Пројекат Култура за све"
+                
+                />
 
+                <div className="projects-image-label">
 
-            <Col lg={7}>
+                  <FaUniversalAccess />
+
+                  <span>
+                    Приступачност за све
+                  </span>
+
+                </div>
+
+              </div><br/></Col>
+       
+
+            <Col lg={6}>
 
               <div className="projects-feature-content">
 
