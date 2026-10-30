@@ -28,10 +28,10 @@ import {
 } from 'react-icons/fa';
 
 import { Helmet } from 'react-helmet-async';
-
+import veruj from '../images/veruj.jpg'
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
-import velimir from '../images/velimir.jpg'
+
 import maticaJelena from '../images/maticaJelena.jpg'
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
@@ -44,9 +44,8 @@ import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import digitalnaLogo from '../images/digitalnaLogo.png';
 import zavicaj from '../images/zavicaj.jpg'
-import kosare from '../images/kosare.png';
-import karavansaraj from '../images/karavansaraj.png';
-import filmTesla from '../images/filmTesla.png';
+
+
 import tumor from '../images/tumor.jpg';
 // import saradnja from '../images/saradnja.jpg';
 // import saradnja1 from '../images/saradnja1.webp';
@@ -66,9 +65,6 @@ import biblioteka from '../images/biblioteka.webp';
 import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
 import zaduzbinari1 from '../images/zaduzbinari1.jpg';
 import zaduzbinari2 from '../images/zaduzbinari2.jpg';
-
-import AtanasijePredavanje from '../images/AtanasijePredavanja.jpg';
-import fruskaGora from '../images/fruskaGora.jpg';
 
 import 'react-calendar/dist/Calendar.css';
 
@@ -107,12 +103,7 @@ const Home = () => {
         category: 'Промоција књиге'
       },
 
-      '2026-10-05': {
-        image: velimir,
-        title: 'Љубави, волим твој језик — Нека смрт сачека',
-        date: '5. октобар 2026.',
-        category: 'Промоција књиге'
-      },
+    
 
           '2026-10-28': {
         image: zavicaj,
@@ -127,47 +118,7 @@ const Home = () => {
         category: 'Промоција књиге'
       },
 
-      '2026-08-10': {
-        image: filmTesla,
-        title: 'Никола Тесла: између књиге и идеје',
-        date: '10. август 2026.',
-        category: 'Филм'
-      },
-
-      '2026-09-30': {
-        image: fruskaGora,
-        title: 'Уздаси са Фрушке горе',
-        date: '30. септембар 2026.',
-        category: 'Промоција књиге'
-      },
-         '2026-08-26': {
-        image: karavansaraj,
-        title: 'Каравансарај',
-        date: '26. август 2026.',
-        category: 'Књижевно вече'
-      },
-
-
-      '2026-08-28': {
-        image: kosare,
-        title: 'Кошаре',
-        date: '28. август 2026.',
-        category: 'Промоција књиге'
-      },
-
-      '2026-09-21': {
-        image: AtanasijePredavanje,
-        title: 'Атанасије Стојковић',
-        date: '21. септембар 2026.',
-        category: 'Предавање'
-      },
-
-      '2026-09-22': {
-        image: AtanasijePredavanje,
-        title: 'Атанасије Стојковић',
-        date: '22. септембар 2026.',
-        category: 'Предавање'
-      }
+  
     }),
     []
   );
@@ -912,14 +863,10 @@ const Home = () => {
                   </div>
 
                    <div className="upcoming-date">
-
-                    <strong>
-                     28 и 30
+                          <strong>
+                     30. октобар и 2. новембар
                     </strong>
 
-                    <span>
-                      ОКТОБАР
-                    </span>
 
                   </div> 
 
@@ -938,8 +885,8 @@ const Home = () => {
       className="compact-event-image"
       onClick={() =>
         handleImageClick(
-          zavicaj,
-          'Неугасива љубав завичаја'
+          veruj,
+          'Веруј срцем'
         )
       }
       role="button"
@@ -948,15 +895,15 @@ const Home = () => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleImageClick(
-            zavicaj,
-            'Неугасива љубав завичаја'
+            veruj,
+            'Веруј срцем'
           );
         }
       }}
     >
       <img
-        src={zavicaj}
-        alt="Неугасива љубав завичаја — 28. октобар"
+        src={veruj}
+        alt="Веруј срцем — 2. новембар"
         loading="lazy"
       />
 
@@ -1003,17 +950,8 @@ const Home = () => {
   </div>
 
 
-  {/* DRUGA SLIKA — 30. OKTOBAR */}
-
-   
-
-    {/* Датум је намерно закоментарисан
-    <div className="compact-event-content">
-      <div className="event-date-row">
-        <span>30. октобар</span>
-      </div>
-    </div>
-    */}
+    
+    
   </div>
 
 </div>
@@ -1054,30 +992,25 @@ const Home = () => {
 
                     </button>
 
-
-                      <button
+    <button
                       type="button"
                       className="previous-event-item"
                       onClick={() =>
                         handleEventOpen(
-                          events['2026-09-30']
+                          events['2026-10-28']
                         )
                       }
                     >
-                      
 
                       <span className="previous-event-date">
-                        30.09.
+                        28.10.
                       </span>
                           
                       <span className="previous-event-name">
-                      Уздаси са Фрушке горе
+                  Неугасива љубав завичаја
                       </span>
 
                     </button>
-
-
-
                   </div>
 
                 </div>
