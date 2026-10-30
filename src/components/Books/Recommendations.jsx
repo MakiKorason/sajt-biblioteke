@@ -161,7 +161,7 @@ const Recommendations =()=>{
       <div id="menu1" className="container tab-pane fade">
         <br/>
             <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа</h3>
-             <Row>
+             <hr/><br/><Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
     
               <img
