@@ -31,7 +31,7 @@ import { Helmet } from 'react-helmet-async';
 import veruj from '../images/veruj.jpg'
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
-
+import maticaPetak from '../images/maticaPetak.jpg'
 import maticaJelena from '../images/maticaJelena.jpg'
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
@@ -44,8 +44,6 @@ import kc from '../images/kc.webp';
 import turisticka from '../images/turisticka.webp';
 import digitalnaLogo from '../images/digitalnaLogo.png';
 import zavicaj from '../images/zavicaj.jpg'
-
-
 import tumor from '../images/tumor.jpg';
 // import saradnja from '../images/saradnja.jpg';
 // import saradnja1 from '../images/saradnja1.webp';
@@ -62,7 +60,6 @@ import karoselSlika from '../images/karoselSlika.webp';
 import digitalna from '../images/digitalna.webp';
 import pokrajina from '../images/pokrajina.webp';
 import biblioteka from '../images/biblioteka.webp';
-import prijavaKonkurs from '../images/prijavaKonkurs.jpg';
 import zaduzbinari1 from '../images/zaduzbinari1.jpg';
 import zaduzbinari2 from '../images/zaduzbinari2.jpg';
 
@@ -103,8 +100,6 @@ const Home = () => {
         category: 'Промоција књиге'
       },
 
-    
-
           '2026-10-28': {
         image: zavicaj,
         title: 'Неугасива љубав завичаја',
@@ -117,7 +112,12 @@ const Home = () => {
         date: '30. октобар 2026.',
         category: 'Промоција књиге'
       },
-
+           '2026-11-06': {
+        image: maticaPetak,
+        title: 'Хајдуци-предавање',
+        date: '6. новембар 2026.',
+        category: 'Промоција књиге'
+      },
   
     }),
     []
@@ -696,59 +696,6 @@ const Home = () => {
       </section>
 
 
-      {/* =====================================================
-          KONKURS
-      ====================================================== */}
-
-      <section className="home-section">
-
-        <Container>
-
-          <div className="notice-card">
-
-            <div className="notice-image">
-
-              <img
-                src={prijavaKonkurs}
-                alt="Пријава за конкурс"
-                loading="lazy"
-              />
-
-            </div>
-
-            <div className="notice-content">
-
-              <span className="section-kicker">
-                АКТУЕЛНО
-              </span>
-
-              <h2>
-                Пријава за конкурс
-              </h2>
-
-              <p>
-                Погледајте актуелни конкурс и
-                информације о начину пријављивања.
-              </p>
-
-              <a
-                href="https://www.bibliotekaruma.rs/konkurs-biblioteke"
-                className="home-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ДЕТАЉНИЈЕ
-                <FaArrowRight />
-              </a>
-
-            </div>
-
-          </div>
-
-        </Container>
-
-      </section>
-
 
       {/* =====================================================
           AKTUELNO / KALENDAR
@@ -864,7 +811,7 @@ const Home = () => {
 
                    <div className="upcoming-date">
                           <strong>
-                     30. октобар и 2. новембар
+              6. новембар
                     </strong>
 
 
@@ -922,6 +869,37 @@ const Home = () => {
       className="compact-event-image"
       onClick={() =>
         handleImageClick(
+          maticaPetak,
+          'Друга страна огледала'
+        )
+      }
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleImageClick(
+            tumor,
+            'Предавање о хајдуцима'
+          );
+        }
+      }}
+    >
+      <img
+        src={maticaPetak}
+        alt="Предавање о хајдуцима — 6. новембар"
+        loading="lazy"
+      />
+
+      <div className="image-zoom">
+        <FaSearchPlus />
+      </div>
+  </div>
+
+ <div
+      className="compact-event-image"
+      onClick={() =>
+        handleImageClick(
           tumor,
           'Друга страна огледала'
         )
@@ -949,10 +927,10 @@ const Home = () => {
       </div>
   </div>
 
-
     
     
   </div>
+  
 
 </div>
 
