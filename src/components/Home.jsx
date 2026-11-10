@@ -49,7 +49,7 @@ import tumor from '../images/tumor.jpg';
 // import saradnja1 from '../images/saradnja1.webp';
 // import saradnja2 from '../images/saradnja2.webp';
 // import saradnja3 from '../images/saradnja3.webp';
-
+import cergarka from '../images/cergarka.jpg'
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
@@ -118,6 +118,13 @@ const Home = () => {
         date: '6. новембар 2026.',
         category: 'Промоција књиге'
       },
+           '2026-11-13': {
+        image: cergarka,
+        title: 'Чергарка',
+        date: '13. новембар 2026.',
+        category: 'Промоција књиге'
+      },
+  
   
     }),
     []
@@ -811,7 +818,7 @@ const Home = () => {
 
                    <div className="upcoming-date">
                           <strong>
-              6. новембар
+              13. новембар
                     </strong>
 
 
@@ -828,6 +835,36 @@ const Home = () => {
   {/* PRVA SLIKA — 28. OKTOBAR */}
 
   <div className="compact-event">
+     <div
+      className="compact-event-image"
+      onClick={() =>
+        handleImageClick(
+          cergarka,
+          'Чергарка'
+        )
+      }
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleImageClick(
+            cergarka,
+            'Чергарка'
+          );
+        }
+      }}
+    >
+      <img
+        src={cergarka}
+        alt="Чергарка — 13. новембар"
+        loading="lazy"
+      />
+
+      <div className="image-zoom">
+        <FaSearchPlus />
+      </div>
+    </div>
     <div
       className="compact-event-image"
       onClick={() =>
@@ -865,7 +902,10 @@ const Home = () => {
         <span>28. октобар</span>
       </div>
     </div>
-    */} <div
+    */} 
+    
+    
+    <div
       className="compact-event-image"
       onClick={() =>
         handleImageClick(
