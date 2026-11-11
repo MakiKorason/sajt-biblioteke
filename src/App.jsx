@@ -36,6 +36,7 @@ import Homeland from './components/Department/Homeland';
 import Legati from './components/Department/Legati';
 
 import Project from './components/AboutAs/Project';
+import PosterProject from './components/AboutAs/PosterProject';
 import MisionAndVision from './components/AboutAs/MisionAndVision';
 import Stojkovic from './components/AboutAs/Stojkovic';
 
@@ -341,19 +342,35 @@ function InnerApp() {
 
                     <NavDropdown.Item
                       as={Link}
+                      to="/konkurs-biblioteke"
+                      onClick={closeMenu}
+                    >
+                      Конкурс
+                    </NavDropdown.Item>
+
+                  </NavDropdown>
+
+
+                  <NavDropdown
+                    title="ПРОЈЕКТИ"
+                    id="projects-dropdown"
+                  >
+
+                    <NavDropdown.Item
+                      as={Link}
                       to="/projekti-biblioteke"
                       onClick={closeMenu}
                     >
-                      Пројекти
+                      Култура за све
                     </NavDropdown.Item>
 
 
                     <NavDropdown.Item
                       as={Link}
-                      to="/konkurs-biblioteke"
+                      to="/projekat-zastita-plakata"
                       onClick={closeMenu}
                     >
-                      Конкурс
+                      Заштита плаката
                     </NavDropdown.Item>
 
                   </NavDropdown>
@@ -676,6 +693,16 @@ function InnerApp() {
 
 
             <Route
+              path="/projekat-zastita-plakata"
+              element={
+                <AnimatedPage>
+                  <PosterProject />
+                </AnimatedPage>
+              }
+            />
+
+
+            <Route
               path="/legati-biblioteke"
               element={
                 <AnimatedPage>
@@ -868,6 +895,17 @@ function InnerApp() {
               element={
                 <Navigate
                   to="/projekti-biblioteke"
+                  replace
+                />
+              }
+            />
+
+
+            <Route
+              path="/пројекат-заштита-плаката"
+              element={
+                <Navigate
+                  to="/projekat-zastita-plakata"
                   replace
                 />
               }

@@ -926,6 +926,36 @@
 
 
 /* =========================================================
+   GALLERY
+========================================================= */
+
+.projects-gallery {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.projects-gallery-item {
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background: #f5eee3;
+}
+
+.projects-gallery-image {
+  width: 100%;
+  height: 240px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -936,8 +966,9 @@
   }
 
 
-  .projects-assistive-grid {
-    grid-template-columns: 1fr;
+  .projects-assistive-grid,
+  .projects-gallery {
+    grid-template-columns: 1fr 1fr;
   }
 
 
@@ -1025,6 +1056,15 @@
 
   .projects-main-image {
     height: 360px;
+  }
+
+  .projects-assistive-grid,
+  .projects-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-gallery-image {
+    height: 280px;
   }
 
 
