@@ -370,7 +370,7 @@ function InnerApp() {
                       to="/projekat-zastita-plakata"
                       onClick={closeMenu}
                     >
-                      Заштита плаката
+                      Депоновање и превентивна заштита плаката
                     </NavDropdown.Item>
 
                   </NavDropdown>
