@@ -8,10 +8,9 @@ import ormani2 from "../../images/ormani2.jpg";
 import ormani3 from "../../images/ormani3.jpg";
 import ormani4 from "../../images/ormani4.jpg";
 import ormani5 from "../../images/ormani5.jpg";
-import ormani6 from "../../images/ormani6.jpg";
 import ormani7 from "../../images/ormani7.jpg";
 import ormani8 from "../../images/ormani8.jpg";
-import ormani9 from "../../images/ormani9.jpg";
+
 
 import { FaArchive, FaMap, FaShieldAlt } from "react-icons/fa";
 import { GiBookshelf, GiScrollUnfurled } from "react-icons/gi";
@@ -19,15 +18,14 @@ import { GiBookshelf, GiScrollUnfurled } from "react-icons/gi";
 import "./Project.css";
 
 const cabinetImages = [
-  { src: ormani1, alt: "Архивски ормар за хоризонтално одлагање плаката" },
+
   { src: ormani2, alt: "Фиоке архивског ормара за плакате и графичку грађу" },
   { src: ormani3, alt: "Одлагање плаката у архивски ормар" },
   { src: ormani4, alt: "Превентивна заштита плаката у Завичајној збирци" },
   { src: ormani5, alt: "Архивски ормар са пет фиока" },
-  { src: ormani6, alt: "Чување графичке грађе у хоризонталном положају" },
   { src: ormani7, alt: "Услови чувања плаката у Градској библиотеци Рума" },
   { src: ormani8, alt: "Депоновање плаката Завичајне збирке" },
-  { src: ormani9, alt: "Нови архивски ормари за плакате" },
+  
 ];
 
 const PosterProject = () => {
@@ -135,12 +133,12 @@ const PosterProject = () => {
 
         <section className="projects-feature">
           <Row className="align-items-center g-5">
-            <Col md={6}>
+            <Col md={5}>
               <div className="projects-image-wrapper">
                 <AnimatedImage
                   src={ormani1}
                   alt="Архивски ормар за хоризонтално одлагање плаката"
-                  className="projects-main-image"
+                  
                 />
 
                 <div className="projects-image-label">
