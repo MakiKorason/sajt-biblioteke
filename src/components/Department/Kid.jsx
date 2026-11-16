@@ -13,6 +13,8 @@ import radionicaAtanasije3 from '../../images/radionicaAtanasije3.jpg'
 import radionicaAtanasije4 from '../../images/radionicaAtanasije4.jpg'
 import bajkovitiSvet1 from '../../images/bajkovitiSvet1.jpg'
 import bajkovitiSvet2 from '../../images/bajkovitiSvet2.jpg'
+import uskrsnjeRadionice1 from '../../images/uskrsnjeRadionice 1.jpg'
+import uskrsnjeRadionice2 from '../../images/uskrsnjeRadionice 2.jpg'
 import literarniKonkurs from '../../images/literarniKonkurs.jpg'
 import dodelaKartica from '../../images/dodelaKartica.jpg'
 import './Kid.css';
@@ -785,7 +787,19 @@ const Kid = () => {
                             двадесет појединачних цртежа, испуњених шареним
                             јајима, зечићима и дечјом маштом.
                           </p>
-
+                          <Row>
+                            <Col md={5} className="kid-card-image">
+                           <AnimatedImage
+                            src={uskrsnjeRadionice1}
+                            alt="Ускршње раднице"
+                           /></Col>
+                             <Col md={7} className="kid-card-image">
+                           <AnimatedImage
+                            src={uskrsnjeRadionice2}
+                            alt="Ускршње раднице"
+                           /></Col>
+                           </Row>
+                           <br/><hr/>
                           <p>
                             Сви радови изложени су у нашој библиотеци, где
                             својом ведрином и креативношћу красе простор и
@@ -899,7 +913,7 @@ const Kid = () => {
                           </div>
 
                           <div className="kid-meet">
-                            <div className="kid-meet-mark">КЊИЖЕВНОСТ</div>
+                            <div className="kid-meet-mark">КЊИЖЕ-<br/>ВНОСТ</div>
                             <div>
                               <h4>Књижевни сусрет „Аристид и Наталија“</h4>
                               <p>
@@ -931,25 +945,6 @@ const Kid = () => {
                               </p>
                             </div>
                           </div>
-
-                        </div>
-
-                        <div className="kid-story-body">
-
-                          <p>
-                            Три сусрета, три различита приступа и једна
-                            заједничка идеја – да Атанасије Стојковић буде
-                            ближи новим генерацијама, не само као име које
-                            носи наша библиотека, већ као научник, писац и
-                            мислилац чије дело и данас може да покрене питања,
-                            машту и радозналост.
-                          </p>
-
-                          <p>
-                            Тако је протекла недеља била још један омаж
-                            Атанасију Стојковићу, у оквиру манифестације коју
-                            посвећујемо његовом имену и наслеђу.
-                          </p>
 
                         </div>
 
@@ -990,8 +985,29 @@ const Kid = () => {
                               />
                             </div>
                           </Col>
+                          <br/>
 
                         </Row>
+                        <br/><hr/>
+                        <div className="kid-story-body">
+
+                          <p>
+                            Три сусрета, три различита приступа и једна
+                            заједничка идеја – да Атанасије Стојковић буде
+                            ближи новим генерацијама, не само као име које
+                            носи наша библиотека, већ као научник, писац и
+                            мислилац чије дело и данас може да покрене питања,
+                            машту и радозналост.
+                          </p>
+
+                          <p>
+                            Тако је протекла недеља била још један омаж
+                            Атанасију Стојковићу, у оквиру манифестације коју
+                            посвећујемо његовом имену и наслеђу.
+                          </p>
+
+                        </div>
+
 
                       </article>
 
