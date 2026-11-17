@@ -53,7 +53,7 @@ import cergarka from '../images/cergarka.jpg'
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
-
+import petao from '../images/petao.jpg'
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
 import karoselSlika from '../images/karoselSlika.webp';
@@ -124,7 +124,18 @@ const Home = () => {
         date: '13. новембар 2026.',
         category: 'Промоција књиге'
       },
-  
+       '2026-11-02': {
+        image: veruj,
+        title: 'Друга страна огледала',
+        date: '2. новембар 2026.',
+        category: 'Промоција књиге'
+      },
+   '2026-11-19': {
+        image: petao,
+        title: 'Друга страна огледала',
+        date: '19. новембар 2026.',
+        category: 'Промоција књиге'
+      },
   
     }),
     []
@@ -818,7 +829,7 @@ const Home = () => {
 
                    <div className="upcoming-date">
                           <strong>
-              13. новембар
+              19. новембар
                     </strong>
 
 
@@ -833,8 +844,39 @@ const Home = () => {
 <div className="compact-event-pair">
 
   {/* PRVA SLIKA — 28. OKTOBAR */}
+  
 
   <div className="compact-event">
+       <div
+      className="compact-event-image"
+      onClick={() =>
+        handleImageClick(
+          petao,
+          'Петао који је престао да кукуриче'
+        )
+      }
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleImageClick(
+            petao,
+            'Петао који је престао да кукуриче'
+          );
+        }
+      }}
+    >
+      <img
+        src={petao}
+        alt="Петао који је престао да кукуриче — 19. новембар"
+        loading="lazy"
+      />
+
+      <div className="image-zoom">
+        <FaSearchPlus />
+      </div>
+    </div>
      <div
       className="compact-event-image"
       onClick={() =>
@@ -865,111 +907,10 @@ const Home = () => {
         <FaSearchPlus />
       </div>
     </div>
-    <div
-      className="compact-event-image"
-      onClick={() =>
-        handleImageClick(
-          veruj,
-          'Веруј срцем'
-        )
-      }
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleImageClick(
-            veruj,
-            'Веруј срцем'
-          );
-        }
-      }}
-    >
-      <img
-        src={veruj}
-        alt="Веруј срцем — 2. новембар"
-        loading="lazy"
-      />
 
-      <div className="image-zoom">
-        <FaSearchPlus />
-      </div>
-    </div>
-
-    {/* Датум је намерно закоментарисан
-    <div className="compact-event-content">
-      <div className="event-date-row">
-        <span>28. октобар</span>
-      </div>
-    </div>
-    */} 
-    
-    
-    <div
-      className="compact-event-image"
-      onClick={() =>
-        handleImageClick(
-          maticaPetak,
-          'Друга страна огледала'
-        )
-      }
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleImageClick(
-            tumor,
-            'Предавање о хајдуцима'
-          );
-        }
-      }}
-    >
-      <img
-        src={maticaPetak}
-        alt="Предавање о хајдуцима — 6. новембар"
-        loading="lazy"
-      />
-
-      <div className="image-zoom">
-        <FaSearchPlus />
-      </div>
-  </div>
-
- <div
-      className="compact-event-image"
-      onClick={() =>
-        handleImageClick(
-          tumor,
-          'Друга страна огледала'
-        )
-      }
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleImageClick(
-            tumor,
-            'Друга страна огледала'
-          );
-        }
-      }}
-    >
-      <img
-        src={tumor}
-        alt="Друга страна огледала — 30. октобар"
-        loading="lazy"
-      />
-
-      <div className="image-zoom">
-        <FaSearchPlus />
-      </div>
-  </div>
-
-    
     
   </div>
+  
   
 
 </div>
@@ -990,7 +931,8 @@ const Home = () => {
 
                   <div className="previous-events-list-compact">
                
-                      <button
+               
+                <button
                       type="button"
                       className="previous-event-item"
                       onClick={() =>
@@ -1010,25 +952,70 @@ const Home = () => {
 
                     </button>
 
-    <button
+                     <button
                       type="button"
                       className="previous-event-item"
                       onClick={() =>
                         handleEventOpen(
-                          events['2026-10-28']
+                          events['2026-11-02']
                         )
                       }
                     >
 
                       <span className="previous-event-date">
-                        28.10.
+                        2.11.
                       </span>
                           
                       <span className="previous-event-name">
-                  Неугасива љубав завичаја
+                     Веруј срцем
                       </span>
 
                     </button>
+
+                     <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-11-06']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        6.11.
+                      </span>
+                          
+                      <span className="previous-event-name">
+                  Хајдуци у српској историји
+                      </span>
+
+                    </button>
+
+
+
+                      <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-10-30']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        30.10.
+                      </span>
+                          
+                      <span className="previous-event-name">
+                   Друга страна огледала
+                      </span>
+
+                    </button>
+                    
+
+ 
                   </div>
 
                 </div>
