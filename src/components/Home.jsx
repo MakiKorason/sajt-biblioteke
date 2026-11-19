@@ -53,7 +53,7 @@ import cergarka from '../images/cergarka.jpg'
 import beke from '../images/beke.webp';
 import Frigo from '../images/Frigo.webp';
 import Boss from '../images/Boss.webp';
-import petao from '../images/petao.jpg'
+// import petao from '../images/petao.jpg'
 import books from '../images/books.webp';
 import Panonija from '../images/Panonija.webp';
 import karoselSlika from '../images/karoselSlika.webp';
@@ -130,12 +130,12 @@ const Home = () => {
         date: '2. новембар 2026.',
         category: 'Промоција књиге'
       },
-   '2026-11-19': {
-        image: petao,
-        title: 'Друга страна огледала',
-        date: '19. новембар 2026.',
-        category: 'Промоција књиге'
-      },
+  //  '2026-11-19': {
+  //       image: petao,
+  //       title: 'Друга страна огледала',
+  //       date: '19. новембар 2026.',
+  //       category: 'Промоција књиге'
+  //     },
   
     }),
     []
@@ -829,7 +829,7 @@ const Home = () => {
 
                    <div className="upcoming-date">
                           <strong>
-              19. новембар
+              13. новембар
                     </strong>
 
 
@@ -847,7 +847,7 @@ const Home = () => {
   
 
   <div className="compact-event">
-       <div
+       {/* <div
       className="compact-event-image"
       onClick={() =>
         handleImageClick(
@@ -871,12 +871,12 @@ const Home = () => {
         src={petao}
         alt="Петао који је престао да кукуриче — 19. новембар"
         loading="lazy"
-      />
-
+      /> */}
+{/* 
       <div className="image-zoom">
         <FaSearchPlus />
       </div>
-    </div>
+    </div> */}
      <div
       className="compact-event-image"
       onClick={() =>
