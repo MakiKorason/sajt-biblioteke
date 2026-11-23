@@ -17,15 +17,16 @@ const RECOMMENDATION_ARCHIVE_MONTHS = [
    ['jun', "Јун"],
    ['jul', "Јул"],
    ['avgust', 'Август'],
-   ['septembar', 'Септембар']
+   ['septembar', 'Септембар'],
+     ['oktobar', 'Октобар']
    
 ];
 
 const Recommendations =()=>{
 
-  const [activeKey, setActiveKey] = useState('septembar');
-  const [activeKeyDeca, setActiveKeyDeca] = useState('septembar');
-  const [activeKeyNaucno, setActiveKeyNaucno] = useState('septembar');
+  const [activeKey, setActiveKey] = useState('oktobar');
+  const [activeKeyDeca, setActiveKeyDeca] = useState('oktobar');
+  const [activeKeyNaucno, setActiveKeyNaucno] = useState('oktobar');
 
 
 
@@ -165,8 +166,8 @@ const Recommendations =()=>{
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
     
               <img
-                src="https://static.kupindoslike.com/%D0%98%D0%BB%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BF%D1%80%D0%B8%D1%87%D0%B5-%D0%B8%D0%B7-%D0%B3%D1%80%D1%87%D0%BA%D0%B5-%D0%BC%D0%B8%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%98%D0%B5_slika_O_140700189.jpg"
-                alt="Митологија"
+                src="https://delfi.rs/_img/artikli/Knjiga/236204/vv/1757335232-image-2.png"
+                alt="Мафин: Мој пријатељ ракун"
                 loading="lazy"
                 width="380"
                 height="570"
@@ -187,17 +188,22 @@ const Recommendations =()=>{
           </Col>
           <Col xs={12} md={8} lg={8}>
             <p className='container-text'>
-            
-              <strong>Наслов:</strong> „Илустроване приче из грчке митологије“<br/><br/>
-          Свет грчке митологије испуњен је храбрим јунацима, страшним чудовиштима, моћним боговима и невероватним пустоловинама. 
+               
+              <strong>Аутор:</strong> Сара Гали<br/>
+              <strong>Наслов:</strong> „Мафин: Мој пријатељ ракун“<br/><br/>
+      Шта се догоди када девојчица која сања о мачки за љубимца добије – ракуна? Луси, која се са родитељима доселила из Италије у Њујорк, неочекивано постаје власница несташног Мафина, чије авантуре њен свакодневни живот претварају у низ забавних и непредвидивих ситуација. 
               <br/><br/>
-            Књига „Илустроване приче из грчке митологије“, у издању Креативног центра, доноси неке од најпознатијих прича из богате ризнице античких митова. У њој нас очекују Тројански коњ, Минотаур, Белерофонт и крилати Пегаз, дванаест Херклових подвига, Персеј и Медуза, као и Одисејеве пустоловине. 
+          Мафин је сналажљив, радознао и склон невољама, али иза његових несташлука крије се прича о пријатељству, прихватању и међусобном разумевању. 
               <br/><br/>
-          Посебну вредност овом издању дају раскошне илустрације у боји, које дочаравају необичан свет митских бића и јунака, као и приказ грчких богова и богиња. Узбудљиве приче и прелепо опремљена књига чине ово издање одличним избором за децу која воле авантуре, тајне и фантастичне светове, али и за све оне који тек откривају чаролију грчке митологије.
+      Уз пуно хумора, топлине и прелепих илустрација, ова књига нас подсећа да понекад најлепша пријатељства настају сасвим неочекивано. Топла и духовита прича која ће измамити осмех и малим и великим читаоцима.
+
               <br/><br/>
            
               📖 Препоручује Градска библиотека „Атанасије Стојковић“ Рума.
-            </p></Col></Row>
+            </p> 
+            </Col>
+            
+            </Row>
 
         <Row><br /><hr />
           <Col md={3}>
@@ -210,6 +216,8 @@ const Recommendations =()=>{
             </Nav>
           </Col>
           <Col md={9}>
+        
+ 
             {activeKeyDeca === 'april' && (
               <Row>
                 <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
@@ -281,6 +289,8 @@ const Recommendations =()=>{
 
               </Row>
             )}
+            
+
 
             {activeKeyDeca === 'avgust' && (
              <Row>
@@ -317,6 +327,48 @@ const Recommendations =()=>{
                         Остала дела овог аутора којe поседује наша библиотека
                       </Button>
           </Col>
+        </Row>
+            )}
+
+            {activeKeyDeca === 'oktobar' && (
+             <Row>
+        <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
+    
+              <img
+                src="https://static.kupindoslike.com/%D0%98%D0%BB%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BF%D1%80%D0%B8%D1%87%D0%B5-%D0%B8%D0%B7-%D0%B3%D1%80%D1%87%D0%BA%D0%B5-%D0%BC%D0%B8%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%98%D0%B5_slika_O_140700189.jpg"
+                alt="Митологија"
+                loading="lazy"
+                width="380"
+                height="570"
+                itemProp="image"
+                referrerPolicy="no-referrer"
+                style={{
+                  width: '100%',
+                  maxWidth: 'min(100%, 420px)',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  marginTop: '1rem'
+                }}
+                
+              />
+       
+          
+          </Col>
+          <Col xs={12} md={8} lg={8}>
+            <p className='container-text'>
+            
+              <strong>Наслов:</strong> „Илустроване приче из грчке митологије“<br/><br/>
+          Свет грчке митологије испуњен је храбрим јунацима, страшним чудовиштима, моћним боговима и невероватним пустоловинама. 
+              <br/><br/>
+            Књига „Илустроване приче из грчке митологије“, у издању Креативног центра, доноси неке од најпознатијих прича из богате ризнице античких митова. У њој нас очекују Тројански коњ, Минотаур, Белерофонт и крилати Пегаз, дванаест Херклових подвига, Персеј и Медуза, као и Одисејеве пустоловине. 
+              <br/><br/>
+          Посебну вредност овом издању дају раскошне илустрације у боји, које дочаравају необичан свет митских бића и јунака, као и приказ грчких богова и богиња. Узбудљиве приче и прелепо опремљена књига чине ово издање одличним избором за децу која воле авантуре, тајне и фантастичне светове, али и за све оне који тек откривају чаролију грчке митологије.
+              <br/><br/>
+           
+              📖 Препоручује Градска библиотека „Атанасије Стојковић“ Рума.
+            </p></Col>
+
         </Row>
             )}
 
@@ -533,81 +585,54 @@ const Recommendations =()=>{
       {/* Научно одељење */}
       <div id="menu2" className="container tab-pane fade">
         <br/>
-              <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа</h3>
+              <h3 className="container-title" style={{ fontSize: 'clamp(1.4rem, 4vw, 2.2rem)' }}>Месечна препорука романа
+  
+
+              </h3>
+              
         <hr/><br/>
-        <Row>
-          <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
-       
-              <img
-                src="https://delfi.rs/_img/artikli/2021/11/o_porodici_vv.jpg"
-                alt="О породици — Владета Јеротић"
+     <Row>
+                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
+                   
+ <img
+                src="https://delfi.rs/_img/artikli/Knjiga/236383/vv/1757422063-image-3.png"
+                alt="Блуз твоје душе — Андерс Хансен"
                 loading="lazy"
-                width="380"
-                height="570"
+                width="300"
+                height="450"
                 itemProp="image"
                 referrerPolicy="no-referrer"
                 style={{
-                  width: '100%',
-                  maxWidth: 'min(100%, 420px)',
+                  maxWidth: '100%',
                   height: 'auto',
                   display: 'block',
                   margin: '0 auto',
-                  marginTop: '1rem'
+                  marginTop: '2rem'
                 }}
               />
-          
-          
-          </Col>
-          <Col xs={12} md={8} lg={8}>
-            <p className='container-text'>
-              <strong>Аутор:</strong> Владета Јеротић<br/>
-              <strong>Наслов:</strong> „О породици“<br/><br/>
-              У књизи „О породици“, истакнути српски психијатар, психотерапеут и писац Владета Јеротић промишља о породици као једној од најстаријих и најсложенијих људских заједница.
-              <br/><br/>
-              Кроз психолошку, филозофску и хришћанску перспективу, аутор истражује породичне односе, љубав, блискост, нежност и сигурност као темељне човекове потребе. Посебну пажњу посвећује променама породице кроз историју, али и њеном месту у савременом свету.
-              <br/><br/>
-              У својим разматрањима Јеротић се осврће и на неизвесност будућности, човекову слободу и духовност, истичући значај вере, наде и љубави као трајних животних ослонаца. Подсећа нас да се, упркос свим променама и кризама, човекова потреба за смислом и блискошћу не мења.
-              <br/><br/>
-              Књига која нас подстиче да боље разумемо себе, своје ближње и значај породице у човековом животу.
-              <br/><br/>
-              📖 Препоручује Градска библиотека „Атанасије Стојковић“ Рума.
+                </Col>
+                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
+                <p className='container-text'>
+              <strong>Аутор:</strong> Питер О'Донел<br/>
+              <strong>Наслов:</strong> „Модести Блејз“<br/><br/>
+         Модести Блејз, легендарна јунакиња коју је створио британски сценариста Питер О’Донел, 
+         већ деценијама осваја љубитеље стрипа широм света.<br/><br/> Паметна, храбра, вешта и неустрашива, 
+         Модести је јунакиња која се не ослања само на снагу, већ и на интелигенцију и довитљивост. У друштву верног сарадника Вилија Гарвина упушта се у узбудљиве авантуре испуњене опасностима, интригама и неочекиваним обртима. Ово издање доноси сценарио Питера О’Донела и препознатљив, динамичан цртеж Енрикеа Ромера. За све љубитеље класичног авантуристичког стрипа, али и оне који тек желе да упознају
+          једну од његових најпознатијих јунакиња – Модести Блејз је право откриће!
             </p>
-            <Button
-              variant="secondary"
-              href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=jerotic,+vladeta*"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Остала дела Владете Јеротића у фонду библиотеке"
-              style={{ marginTop: '0.5rem' }}
-            >
-              Остала дела овог аутора која поседује наша библиотека
-            </Button>
-              <div
-              style={{
-                width: '100%',
-                maxWidth: '800px',
-                margin: '1.5rem auto',
-              }}
-            >
-              <iframe
-                src="https://www.youtube.com/embed/dd5x2w7U0X8"
-                title="Утицај вере на породицу — Владета Јеротић"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-                style={{
-                  width: '50%',
-                  aspectRatio: '16 / 9',
-                  border: 0,
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  display: 'block',
-                }}
-              />
-            </div>
-          </Col>
-        </Row>
+              <Button
+                        variant="secondary"
+                        href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=%D0%BF%D0%B8%D1%82%D0%B5%D1%80+%D0%BE%27%D0%B4%D0%BE%D0%BD%D0%B5%D0%BB"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    
+                        style={{marginTop: '0.5rem'}}
+                      >
+                        Остала дела овог аутора којe поседује наша библиотека
+                      </Button>
+                </Col>
+              </Row>
+
 
         <Row><br /><hr />
           <Col md={3}>
@@ -619,6 +644,7 @@ const Recommendations =()=>{
               ))}
             </Nav>
           </Col>
+          
            <Col md={9}>
             {activeKeyNaucno === 'april' && (
               <Row>
@@ -707,38 +733,84 @@ const Recommendations =()=>{
               </Row>
             )}
 
-              {activeKeyNaucno === 'maj' && (
-              <Row>
-                <Col xs={12} sm={12} md={4} lg={4} className="text-center mt-4">
-                   
- <img
-                src="https://static.kupindoslike.com/Bluz-tvoje-duse-Anders-Hansen_slika_O_166544681.jpg"
-                alt="Блуз твоје душе — Андерс Хансен"
+
+             {activeKeyNaucno === 'oktobar' && (
+            <Row>
+          <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
+       
+              <img
+                src="https://delfi.rs/_img/artikli/2021/11/o_porodici_vv.jpg"
+                alt="О породици — Владета Јеротић"
                 loading="lazy"
-                width="300"
-                height="450"
+                width="380"
+                height="570"
                 itemProp="image"
                 referrerPolicy="no-referrer"
                 style={{
-                  maxWidth: '100%',
+                  width: '100%',
+                  maxWidth: 'min(100%, 420px)',
                   height: 'auto',
                   display: 'block',
                   margin: '0 auto',
-                  marginTop: '2rem'
+                  marginTop: '1rem'
                 }}
               />
-                </Col>
-                <Col xs={12} sm={12} md={8} lg={8} className="mt-4">
-                <p className='container-text'>
-              <strong>Аутор:</strong> Андерс Хансен<br/>
-              <strong>Наслов:</strong> „Блуз твоје душе"<br/><br/>
-              „Блуз твоје душе" је научнопопуларна књига која на занимљив начин разматра једну велику савремену загонетку — зашто многи људи имају проблема с менталним здрављем, упркос све бољим условима живота. Полазећи од чињенице да смо потомци оних који су преживљавали у много тежим околностима, аутор објашњава како наш мозак и даље функционише по старим обрасцима. Књига нуди биолошки увид у наше ментално и физичко стање, с циљем да боље разумемо сопствене реакције и осећања.
+          
+          
+          </Col>
+          <Col xs={12} md={8} lg={8}>
+            <p className='container-text'>
+              <strong>Аутор:</strong> Владета Јеротић<br/>
+              <strong>Наслов:</strong> „О породици“<br/><br/>
+              У књизи „О породици“, истакнути српски психијатар, психотерапеут и писац Владета Јеротић промишља о породици као једној од најстаријих и најсложенијих људских заједница.
               <br/><br/>
-              Интересантно и корисно штиво за све који су спремни да мењају поглед на себе и свет.
+              Кроз психолошку, филозофску и хришћанску перспективу, аутор истражује породичне односе, љубав, блискост, нежност и сигурност као темељне човекове потребе. Посебну пажњу посвећује променама породице кроз историју, али и њеном месту у савременом свету.
+              <br/><br/>
+              У својим разматрањима Јеротић се осврће и на неизвесност будућности, човекову слободу и духовност, истичући значај вере, наде и љубави као трајних животних ослонаца. Подсећа нас да се, упркос свим променама и кризама, човекова потреба за смислом и блискошћу не мења.
+              <br/><br/>
+              Књига која нас подстиче да боље разумемо себе, своје ближње и значај породице у човековом животу.
+              <br/><br/>
+              📖 Препоручује Градска библиотека „Атанасије Стојковић“ Рума.
             </p>
-                </Col>
-              </Row>
+            <Button
+              variant="secondary"
+              href="https://plus.cobiss.net/cobiss/sr/sr/search/cobib?lib=gbru&q=jerotic,+vladeta*"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Остала дела Владете Јеротића у фонду библиотеке"
+              style={{ marginTop: '0.5rem' }}
+            >
+              Остала дела овог аутора која поседује наша библиотека
+            </Button>
+              <div
+              style={{
+                width: '100%',
+                maxWidth: '800px',
+                margin: '1.5rem auto',
+              }}
+            >
+              <iframe
+                src="https://www.youtube.com/embed/dd5x2w7U0X8"
+                title="Утицај вере на породицу — Владета Јеротић"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{
+                  width: '80%',
+                  aspectRatio: '16 / 9',
+                  border: 0,
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  display: 'block',
+                }}
+              />
+            </div>
+          </Col>
+        </Row>
+
             )}
+ 
           {activeKeyNaucno === 'jun' && (
             <Row>
           <Col xs={12} md={4} lg={4} className="text-center mt-2 mt-md-0">
