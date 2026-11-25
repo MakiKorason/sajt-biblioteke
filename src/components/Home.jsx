@@ -62,7 +62,7 @@ import pokrajina from '../images/pokrajina.webp';
 import biblioteka from '../images/biblioteka.webp';
 import zaduzbinari1 from '../images/zaduzbinari1.jpg';
 import zaduzbinari2 from '../images/zaduzbinari2.jpg';
-
+import Popovo from '../images/Popovo.jpg'
 import 'react-calendar/dist/Calendar.css';
 
 const Calendar = React.lazy(() => import('react-calendar'));
@@ -126,7 +126,7 @@ const Home = () => {
         category: 'Промоција књиге'
       },
           '2026-12-04': {
-        image: veruj,
+        image:Popovo,
         title: 'Друга страна огледала',
         date: '2. новембар 2026.',
         category: 'Промоција књиге'
@@ -830,7 +830,7 @@ const Home = () => {
 
                    <div className="upcoming-date">
                           <strong>
-              13. новембар
+             4. децембар
                     </strong>
 
 
@@ -882,8 +882,8 @@ const Home = () => {
       className="compact-event-image"
       onClick={() =>
         handleImageClick(
-          cergarka,
-          'Чергарка'
+          Popovo,
+          'Попово'
         )
       }
       role="button"
@@ -892,15 +892,15 @@ const Home = () => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleImageClick(
-            cergarka,
-            'Чергарка'
+            Popovo,
+            'Попово'
           );
         }
       }}
     >
       <img
-        src={cergarka}
-        alt="Чергарка — 13. новембар"
+        src={Popovo}
+        alt="Попово — 4. децембар"
         loading="lazy"
       />
 
@@ -951,6 +951,25 @@ const Home = () => {
                           
                       <span className="previous-event-name">
                      Веруј срцем
+                      </span>
+
+                    </button>
+                    <button
+                      type="button"
+                      className="previous-event-item"
+                      onClick={() =>
+                        handleEventOpen(
+                          events['2026-11-13']
+                        )
+                      }
+                    >
+
+                      <span className="previous-event-date">
+                        13.11.
+                      </span>
+                          
+                      <span className="previous-event-name">
+                     Чергарка
                       </span>
 
                     </button>
