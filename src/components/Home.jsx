@@ -32,7 +32,7 @@ import veruj from '../images/veruj.jpg'
 import ImageModal from './ImageModal';
 import AnimatedCard from './Department/AnimatedCard';
 import maticaPetak from '../images/maticaPetak.jpg'
-import maticaJelena from '../images/maticaJelena.jpg'
+
 import cobbis from '../images/cobbis.webp';
 import matica from '../images/matica.webp';
 import narodna from '../images/narodna.webp';
@@ -93,12 +93,7 @@ const Home = () => {
 
   const events = useMemo(
     () => ({
-      '2026-10-12': {
-        image: maticaJelena,
-        title: 'Уздарије пчелињем јату',
-        date: '12. октобар 2026.',
-        category: 'Промоција књиге'
-      },
+
 
           '2026-10-28': {
         image: zavicaj,
@@ -125,6 +120,12 @@ const Home = () => {
         category: 'Промоција књиге'
       },
        '2026-11-02': {
+        image: veruj,
+        title: 'Друга страна огледала',
+        date: '2. новембар 2026.',
+        category: 'Промоција књиге'
+      },
+          '2026-12-04': {
         image: veruj,
         title: 'Друга страна огледала',
         date: '2. новембар 2026.',
@@ -932,25 +933,7 @@ const Home = () => {
                   <div className="previous-events-list-compact">
                
                
-                <button
-                      type="button"
-                      className="previous-event-item"
-                      onClick={() =>
-                        handleEventOpen(
-                          events['2026-10-12']
-                        )
-                      }
-                    >
-
-                      <span className="previous-event-date">
-                        12.10.
-                      </span>
-                          
-                      <span className="previous-event-name">
-                      Уздарје пчелињем јату
-                      </span>
-
-                    </button>
+            
 
                      <button
                       type="button"

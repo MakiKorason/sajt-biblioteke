@@ -619,7 +619,7 @@ const Events = () => {
                   <div className="container-iframe">
 
                     <iframe
-                      src="https://www.youtube-nocookie.com/embed/2bseDBcsU2U?start=964"
+                      src="https://www.youtube.com/embed/0YMsOn1nliY"
                       title="Свечано отварање Дана словенске писмености и културе"
                       allowFullScreen
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
@@ -648,7 +648,7 @@ const Events = () => {
                   посвећеношћу стварају ученици основних школа
                   општине Рума.
 
-                </p>
+                </p><br/>
 
               </Col>
 
