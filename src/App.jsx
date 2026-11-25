@@ -28,7 +28,7 @@ import DigitalLibrary from './components/Books/DigitalLibrary';
 import BooksSearche from './components/Books/BooksSearche';
 import Events from './components/Events';
 import OurPublic from './components/Books/OurPublic';
-
+import NovoMesto from './components/AboutAs/NovoMesto';
 import Kid from './components/Department/Kid';
 import Adult from './components/Department/Adult';
 import Scientific from './components/Department/Scientific';
@@ -373,6 +373,14 @@ function InnerApp() {
                       Депоновање и превентивна заштита плаката
                     </NavDropdown.Item>
 
+                  
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/projekat-unapredjenje-uslova-zastite-i-prezentacije-stare-i-retke-grade-zavichajne-zbirke"
+                      onClick={closeMenu}
+                    >
+                    Унапређење услова заштите и презентације старе и ретке грађе Завичајне збирке
+                    </NavDropdown.Item>
                   </NavDropdown>
 
 
@@ -700,7 +708,15 @@ function InnerApp() {
                 </AnimatedPage>
               }
             />
-
+         
+            <Route
+              path="/projekat-unapredjenje-uslova-zastite-i-prezentacije-stare-i-retke-grade-zavichajne-zbirke"
+              element={
+                <AnimatedPage>
+                  <NovoMesto />
+                </AnimatedPage>
+              }
+            />
 
             <Route
               path="/legati-biblioteke"
