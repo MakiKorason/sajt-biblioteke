@@ -24,6 +24,10 @@ const heritageImages = [
   {
     src: vitrina2,
     alt: "Стара и ретка библиотечка грађа изложена у витринама",
+  },
+  {
+    src: vitrina3,
+    alt: "Издања дела Атанасија Стојковића",
   }
 ];
 
@@ -165,6 +169,36 @@ const NovoMestoProject = () => {
             ГБ „Атанасије Стојковић“ у Руми набавком изложбених
             витрина“.
           </p>
+          
+         <div className="projects-gallery">
+  {heritageImages.map((image, index) => (
+    <div
+      key={index}
+      className="projects-gallery-item"
+      style={{
+        minHeight: "300px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#f3f2ee",
+        padding: "10px",
+      }}
+    >
+      <AnimatedImage
+        src={image.src}
+        alt={image.alt}
+        style={{
+          width: "100%",
+          height: "auto",
+          maxHeight: "420px",
+          objectFit: "contain",
+          objectPosition: "center",
+          display: "block",
+        }}
+      />
+    </div>
+  ))}
+</div>
         </section>
 
         {/* ZNACAJ PROJEKTA */}
@@ -205,7 +239,7 @@ const NovoMestoProject = () => {
                 </h2>
 
                 <p>
-                  Набавком изложбених витрина створени су бољи
+                  Значај пројекта је у томе што су створени бољи
                   услови за чување, заштиту и представљање
                   драгоцене старе и ретке грађе. На тај начин
                   културно наслеђе наше средине постаје
@@ -334,35 +368,6 @@ const NovoMestoProject = () => {
             </p>
           </div>
 
-         <div className="projects-gallery">
-  {heritageImages.map((image, index) => (
-    <div
-      key={index}
-      className="projects-gallery-item"
-      style={{
-        minHeight: "300px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#f3f2ee",
-        padding: "10px",
-      }}
-    >
-      <AnimatedImage
-        src={image.src}
-        alt={image.alt}
-        style={{
-          width: "100%",
-          height: "auto",
-          maxHeight: "420px",
-          objectFit: "contain",
-          objectPosition: "center",
-          display: "block",
-        }}
-      />
-    </div>
-  ))}
-</div>
         </section>
 
         {/* ZNACAJ ZA ZAJEDNICU */}
